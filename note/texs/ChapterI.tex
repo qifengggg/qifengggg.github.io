@@ -1,0 +1,676 @@
+\chapter{函数、极限、连续}
+\section{函数}
+\subsection{函数的性质}
+\subsubsection{奇偶性}
+奇函数导数为偶函数;偶函数导数为奇函数;
+
+奇函数积分为偶函数;偶函数积分不一定为奇函数.
+
+且对
+$$
+    F(x)=\int^{x}_{a}f(t)\textrm{d}t
+$$ 
+
+有
+$$
+    \begin{cases}
+    \textrm{若}f(t)\textrm{可积，}& \textrm{则}F(t)\textrm{连续}\\
+    \textrm{若}f(t)\textrm{连续，}& \textrm{则}F(t)\textrm{可导，且}F'(t)=f(t)
+    \end{cases}
+$$ 
+
+\subsubsection{有界性}
+\noindent\textbf{(上、下)界均为常数}
+\newline
+
+$
+    x_{n}=\displaystyle\sum^{n}_{i=1}\frac{1}{i^{2}}
+$
+收敛.
+
+\begin{proof}
+显然前者单调递增.而
+
+\begin{align*}
+    x_{n}<{}&1+\frac{1}{1\times2}+\cdots+\frac{1}{(n-1)\times n}\\
+    ={}&1+1-\frac{1}{2}+\cdots+\frac{1}{n-1}-\frac{1}{n}\\
+    \leq{}&2<\infty
+\end{align*}
+
+故其有上界，因而收敛.
+\end{proof}
+
+注意，证明中\textbf{必须指出作为常数的上界的存在性}.
+
+\noindent\textbf{求导与有界的相关性}\newline
+
+在一区间上，$ f(x) $ 有界与 $ f'(x) $ 有界相互无法推出，
+但是在一闭区间$ [a,b] $ 上，$ f'(x) $ 有界可以推出 $ f(x) $ 有界.
+
+\begin{proof}
+    只需证明 $ \exists M',\forall x\in [a,b],|f'(x)|\leq M' $ 成立.由于
+    \begin{eqnarray*}
+        |f(x)|={}&|f(x)-f(a)+f(a)|\\
+        <{}&|f(x)-f(a)|+|f(a)|\\
+        \leq{}&|f'(\varepsilon)|(b-a)+|f(a)|
+    \end{eqnarray*}
+    因此，令 $ M'= |f'(\varepsilon)|(b-a)+|f(a)|$，则
+    令前式成立的$ M' $ 显然存在.
+\end{proof}
+
+\subsubsection{周期性}
+\begin{enumerate}
+    \item 周期函数的导数是周期函数，且周期一致;
+    \item 周期函数的原函数不一定是周期函数;
+    \item 周期函数之和不一定是周期的，如
+    $ f(x)=\sin(2x),\quad{} g(x)=\cos(\pi x) $
+    的和显然不是周期函数.
+\end{enumerate}
+
+\subsubsection{单调性}
+\begin{Def}[单调性的等价定义]
+
+    $ \forall x_{1}\neq x_{2}, $ 有
+    $$
+    \begin{cases}
+        \displaystyle\frac{f(x_{1})-f(x_{2})}{x_1-x_2}>0 & \textrm{则单增}\vspace{10pt}\\
+        \displaystyle\frac{f(x_{1})-f(x_{2})}{x_1-x_2}<0 & \textrm{则单减}\\
+    \end{cases}        
+    $$ 
+\end{Def}
+
+仅使用\textbf{单调增加(减少)}和\textbf{单调不减(增)}的概念.
+
+\subsection{函数}
+\subsubsection{函数的复合及反问题}
+仅考察\textbf{有分段函数参与的复合问题}.
+\subsubsection{初等函数}
+\textbf{考研数学中常出现的非初等函数：}
+\begin{enumerate}
+    \item 分段函数;
+    \item 绝对值函数;
+    \item 符号函数 $ y={\rm sgn}(x) $;
+    \item 最值函数;
+    \item 取整函数 $ [x] $，即不超过$ x $ 的最大整数;
+    \item 极限函数 $ f(x)=\lim\limits_{n\rightarrow\infty}\displaystyle\frac{x}{1+x^{2n}} $;
+    \item 变限积分函数 $ F(x)=\int^{x}_{a} f(t)\mathrm{d}t $.
+\end{enumerate}
+
+其中，对取整函数，有一例:求
+$$
+    \iint\limits_{D}xy[1+x^2+y^2]\mathrm{d}x\mathrm{d}y,\quad{}
+    D:\{x^2+y^2\leq\sqrt{2},x\geq0,y\geq0\}
+$$ 
+
+此时，由于$ x^2+y^2 \leq \sqrt{2} $，对 $ D $，可以在 $ \rho=\sqrt{2} $ 处分块.
+
+对变限积分函数，有
+$$
+    \left[\int^{\varphi_2(x)}_{\varphi_1(x)}f(t)\mathrm{d}t\right]'=f(\varphi_2(x))\varphi_2'(x)-f(\varphi_1(x))\varphi_1'(x)
+$$ 
+
+\section{无穷大与无穷小}
+\subsection{无穷小的判定}
+
+若 $ \lim\limits_{x\rightarrow\infty}f(x)=0 $，则称 $ x\rightarrow x_0 $ 时 $ f(x) $ 
+为无穷小(量).
+若 $ \lim\limits_{x\rightarrow\infty}f(x)=\infty $，则称 $ x\rightarrow x_0 $ 时 $ f(x) $ 
+为无穷大(量).
+
+无穷大(小)与极限过程有关.
+
+\subsection{无穷小的性质}
+
+\begin{enumerate}
+    \item 无穷小与有界量之积仍为无穷小;
+    \item 有限个无穷小之和仍为无穷小(但无限个不一定);
+    \item 有限个无穷小之积仍为无穷小(但无限个不一定).
+\end{enumerate}
+
+\subsection{无穷小的比较}
+\begin{enumerate}
+    \item $
+    f(x)=g(x)\Rightarrow f(x)\sim g(x)
+    $;
+    \item 分子分母上的乘积因式可等价代换;
+    \item 分子分母上的代数和一般不能等价代换.
+\end{enumerate}
+
+\begin{Field}[代数和求等价]
+\begin{enumerate}
+    \item 抓大头;
+    \item 充分条件：若 $ x\rightarrow x_0 $ 时 $ f(x)\sim f_1(x) $，
+    $ g(x)\sim g_1(x) $，且$ f(x)\nsim g(x) $，则 $ f(x)-g(x)\sim f_1(x)-g_1(x) $;
+    \item \textbf{泰勒展开}.    
+\end{enumerate}
+\end{Field}
+
+\subsection{常用的等价无穷小及其替换定理}
+
+当 $ x\rightarrow0 $ 时，有
+
+\begin{itemize}
+    \item $ \sin x\sim x $ ;
+    \item $ \tan x \sim x $ ;
+    \item $ \arcsin x \sim x $ ;
+    \item $ \arctan x \sim x $ ;
+    \item $ 1-\cos x\sim \frac{x^2}{2} $ ;
+    \item $ e^x-1\sim x $ ;
+    \item $ \ln(1+x)\sim x $ ;
+    \item $ (1+x)^{\alpha}-1\sim \alpha x  $ .
+\end{itemize}
+
+对于以上等价无穷小，有
+
+\begin{enumerate}
+    \item 可变量代换。如 $ \sin \square \sim \square,\ \tan \square \sim \square,\cdots $ ；
+    \item $ x\rightarrow0 $ 时，$ a^x-1=e^{x\ln a} -1\sim x\ln a,\ \log_a(1+x)=\frac{\ln(x+1)}{\ln a}\sim \frac{x}{\ln a}$；
+    \item 若 $ x\rightarrow a $ ，可以令 $ t = x - a \rightarrow 0 $ 。
+\end{enumerate}
+
+\begin{Field}[广义等价]
+
+    若有 $ \displaystyle\frac{f(x)}{g(x)}=1 $ ，则称 $ x\rightarrow x_0 $ ， $ f(x)\sim g(x) $ ，
+    如在 $ x\rightarrow0 $时，  $ (1+\cos x)^2 \sim 4,\ e^x+1\sim 2$
+\end{Field}
+
+\begin{Def}[广义等价替换定理]
+
+    若 $ x\rightarrow x_0 $ 时， $ f(x)\sim f_1(x),\ g(x)\sim g_1(x) $ ，则$$
+        \lim_{x\rightarrow x_0}\frac{f(x)}{g(x)}=\lim_{x\rightarrow x_0}\frac{f_1(x)}{g_1(x)}
+    $$ 
+\end{Def}
+
+注：
+\begin{enumerate}
+    \item 分子分母上的乘积因式可等价代换；
+    \item 分子分母上的代数和一般不能等价代换；
+    \item 若 $ x\rightarrow x_0 $ ，总可以令 $ t=x-x_0\rightarrow0 $ 。
+\end{enumerate}
+
+等价替换三步骤：
+\begin{enumerate}
+    \item 判断形态；
+    \item 化简：
+    \begin{enumerate}
+        \item 等价代换
+        \item 四则运算
+        \item 变量代换
+        \item 恒等变换
+    \end{enumerate}
+    \item 泰勒展开/洛必达法则。
+\end{enumerate}
+
+\subsection{无穷小的阶}
+
+\begin{Def}[无穷小阶的定义]
+
+    设 $ x\rightarrow x_0 $ 时 $ f(x),g(x) $ 无穷小，若
+    $ \displaystyle\lim_{x\rightarrow x_0}\frac{f(x)}{g^k(x)}=k\neq0 $ ，
+    则称 $ x\rightarrow x_0 $ 时，$ f(x) $ 是 $ g(x) $ 的 k阶无穷小，也称与 $ g^k(x) $ 同阶。
+\end{Def}
+
+\subsection{极限和无穷小的关系}
+
+对于极限和无穷小，
+$$
+    \lim f(x)=A\Leftrightarrow f(x)=A+\alpha(x), \textrm{其中}\lim \alpha(x)=0
+$$ 
+
+常用于已知抽象函数一表达式极限时求该函数另一表达式的极限。
+
+\subsection{无穷大}
+
+\begin{Def}[无穷大的定义]
+
+    若 $ \displaystyle\lim_{x\rightarrow x_0}f(x)=\infty $， $ \forall M\geq 0 $ ，$ \exists\ \delta>0 $ ，使得
+    $ \forall x\in \displaystyle\bigcup^o_{\delta}(x_0) $ ，有 $ |f(x)|>M\Leftrightarrow f(x) < -M \textrm{或} f(x) > M $。    
+\end{Def}
+
+\begin{Def}[有界和无界的定义]
+
+    若 $ f(x) $ 在 $ x_0 $ 附近一区间 E 有界，则 $ \exists M\geq0 $ ，使得 $ \forall x \in E $ ，有 $ |f(x)|\leq M $，
+    反之则无界。
+\end{Def}
+
+无穷大必无界，反之不一定。例：
+\begin{enumerate}
+    \item $ x\rightarrow0 $ 时，$ \frac{1}{x_2}\sin(\frac{1}{x}) $ 无界，非无穷大；
+    \item $ x\rightarrow0 $ 时，$ f(x)=x^2\cos(\frac{1}{x})+\frac{1}{x_2}\sin(\frac{1}{x}) $ 无界，非无穷大；
+    \item 数列 $ 1,2,3,\dots,n,\dots $ 无界，无穷大；
+    \item 数列 $ 1,-1,2,-2,\dots,n,-n,\dots $ 无界，无穷大；
+    \item 数列 $ 1,0,2,0,\dots,n,0,\dots $ 无界，非无穷大。
+\end{enumerate}
+
+\subsection{无穷大与无穷小的关系}
+
+在 $ x $ 的同一变化过程中，若 $ f(x) $ 为无穷大，且 $ f(x)\neq 0 $ ，则 $ \frac{1}{f(x)} $ 为无穷小；
+若 $ f(x) $ 为无穷小，且 $ f(x)\neq 0 $ ，则 $ \frac{1}{f(x)} $ 为无穷大。
+
+\section{极限}
+
+\subsection{极限概念}
+
+若 $ \forall \varepsilon>0$，$ \exists N $ ，当 $ n>N $ ，有 $ |x_n-A|<\varepsilon $ ，则称数列 $ \{x_n\} $ 收敛于 $ A $  ，记作
+$ \displaystyle\lim_{n\rightarrow\infty}x_n=A $ 。
+
+设$ f(x) $在$ x_0 $ 的某去心邻域内有定义，若 $ \forall \varepsilon>0$，$ \exists \delta $ ，当 $ 0<|x-x_0|<\delta $ ，
+有 $ |f(x)-A|<\varepsilon $ ，则称函数 $ f(x) $ 收敛于 $ A $  ，记作
+$ \displaystyle\lim_{x\rightarrow x_0}f(x)=A $ 。
+
+$ f(x) $ 在 $ x_{0} $ 上是否有定义与该极限是否存在没有关系。
+
+\subsection{性质}
+
+\subsubsection{保序性}
+
+\begin{Theo}[保序性]
+
+    设 $ \displaystyle\lim_{n\rightarrow +\infty}x_n=a $ ,$ \displaystyle\lim_{n\rightarrow +\infty}y_n=b $ ,
+    若$ a<b $， 则 $ \exists\ N\in \mathbb{N}$ ， $ \forall n\geq N $，有 $ x_{n}<y_n $ 。
+    
+    当 $ a\leq b $ 时，该性质不再成立。
+\end{Theo}
+
+\begin{Infer}[保号性]
+
+    设 $ \displaystyle\lim_{n\rightarrow +\infty}x_n=a $，若 $ a \lessgtr 0 $ ，
+    则$ \exists\ N\in\mathbb{N} $ ，$ \forall n\geq N$，有$ x_{n}\lessgtr0 $  。
+\end{Infer}
+
+\begin{Theo}[\ ]
+
+    若$ x_n\leq y_n $ ，且$ \displaystyle\lim_{n\rightarrow+\infty}x_n=a $ ，$ \displaystyle\lim_{n\rightarrow+\infty}y_n=b $ ，
+    则有 $ a\leq  b $ 。
+\end{Theo}
+
+\begin{Theo}[\ ]
+
+    设 $ \displaystyle\lim_{n\rightarrow x_0}f(x)=a $ ,$ \displaystyle\lim_{n\rightarrow x_0}g(x)=b $ ,
+    若$ a<b $， 则 $ \exists\ \delta>0$ ， $ \forall x\in \bigcup\limits^o_\delta(x_0)$ 有 $ f(x)<g(x) $ 。
+    
+    当 $ a\leq b $ 时，该性质不再成立。
+\end{Theo}
+
+
+\begin{Infer}[\ ]
+
+    设 $ \displaystyle\lim_{n\rightarrow x_0}f(x)=a $，若 $ a \lessgtr 0 $ ，
+    则$ \exists\ \delta>0 $ ，$ \forall x\in \bigcup\limits^o_\delta(x_0)$ 有 $ f(x)\lessgtr0 $ 。
+\end{Infer}
+
+\begin{Theo}[\ ]
+
+    若在 $ x_0 $ 的某去心邻域内有 $ f(x)\leq g(x) $ ，且$ \displaystyle\lim_{x\rightarrow x_0}f(x)=a $ ，
+    $ \displaystyle\lim_{x\rightarrow x_0}g(x)=b $ ，则 $ a\leq b $ 。
+\end{Theo}
+
+\subsubsection{唯一性}
+
+\begin{Theo}[唯一性]
+
+    设 $ \displaystyle\lim f(x)=A $ ，$ \lim f(x)=B $ ，则 $ A=B $ 。    
+\end{Theo}
+
+\subsubsection{局部有界性}
+
+\begin{Theo}[\ ]
+
+    收敛数列必有界。即，若数列$ \{x_n\} $ 收敛，则 $ \exists M\geq0 $ ，$ \forall n\in\mathbb{N} $ ，都有 $ |x_n|\leq M $ 。
+\end{Theo}
+
+\begin{Theo}[\ ]
+
+    若$ \displaystyle\lim_{x\rightarrow x_0}f(x)=A $ ，则$ \exists M\geq 0 $ ,$ \exists \delta>0 $ 使
+    $ \forall x\in\bigcup\limits^o_\delta(x_0) $ 有$ |f(x)|\leq M $ 。
+\end{Theo}
+
+
+\subsection{极限存在定理}
+
+\subsubsection{夹逼定理}
+
+\begin{Theo}[夹逼定理]
+
+    若数列 $ \{x_n\},\{y_{n}\},\{z_{n}\} $ 满足
+    \begin{enumerate}
+        \item $ y_{n}<x_{n}<z_{n} $ ；
+        \item $ \displaystyle\lim_{n\rightarrow\infty}y_n=\displaystyle\lim_{n\rightarrow\infty}z_n=a $ ，其中 $ a $ 是常数；
+    \end{enumerate}
+    则数列 $ \{x_n\} $ 收敛，且 $ \displaystyle\lim_{n\rightarrow\infty}x_n=a $ 。
+\end{Theo}
+
+对于 $ n $ 项和的极限，常见的求法有
+\begin{enumerate}
+    \item 直接求和；
+    \item 夹逼定理；
+    \item 定积分定义；
+    \item 数项级数求和。
+\end{enumerate}
+
+\begin{Field}[两个常见的极限]
+
+    \begin{enumerate}
+        \item $ \forall a>0,\displaystyle\lim_{n\rightarrow\infty}\sqrt[n]{a}=1 $ ；
+        \item $ \displaystyle\lim_{n\rightarrow\infty}\sqrt[n]{n}=1 $ 。
+    \end{enumerate}
+\end{Field}
+
+\subsubsection{单调有界原理}
+
+\begin{itemize}
+    \item 数列单调递增有上界必收敛；
+    \item 数列单调递减有下界必收敛。
+\end{itemize}
+
+注意，
+\begin{enumerate}
+    \item 常用于证明无通项公式的数列收敛，如
+    \begin{itemize}
+        \item 由递推公式给出的数列；
+        \item 不等式；
+        \item 方程的根；
+    \end{itemize}
+    \item \textbf{必须先证明收敛性}，再求极限。
+\end{enumerate}
+
+\subsection{重要极限}
+
+以下是部分重要的极限。
+
+$$
+    \lim_{x\rightarrow0}\frac{\sin x}{x}=1
+$$ 
+$$
+    \lim_{x\rightarrow0}(1+x)^{\frac 1x}=e\Leftrightarrow \lim_{t\rightarrow\infty}(1+\frac 1t)^t=e
+$$ 
+
+对以上极限，可以应用变量代换。
+
+\subsection{极限的四则运算法则}
+
+设 $ \lim f(x) $ 存在且等于 $ A $ ，$ \lim g(x) $ 存在且等于 $ B $ ，那么
+\begin{enumerate}
+    \item $ \lim[f(x)\pm g(x)]$存在且为$A\pm B $ ；
+    \item $ \lim[f(x)\cdot{} g(x)]$ 存在且为$ AB $ ；
+    \item 若 $ B\neq0 $ ， $ \lim\frac{f(x)}{g(x)} $ 存在且为$ \frac AB $ 。
+\end{enumerate}
+
+若 $ \lim f(x) $ 存在但 $ \lim g(x) $ 不存在，则 $ \lim f(x)\star g(x) $ 不存在，其中 $ \star $ 为任意四则运算符。
+
+\begin{Field}[广义极限四则运算]
+
+    \begin{itemize}
+        \item 若 $ \lim f(x) $ 存在，则 $ \lim [f(x)\pm g(x)]=\lim f(x) + \lim g(x) $ ；
+        \item 若 $ \lim f(x) $ 存在且不为0，则 $ \lim [f(x)\cdot{} g(x)]=\lim f(x) \cdot{} \lim g(x) $ ；
+        \item 若 $ \lim f(x) $ 存在且不为0，则 $ \lim \frac{f(x)}{g(x)}=\frac{\lim f(x)}{\lim g(x)}$ 。
+    \end{itemize}
+    注意，这里不要求也无法直接给出 $ \lim g(x) $ 的存在性。
+\end{Field}
+
+\subsection{洛必达法则}
+
+\begin{Theo}[$ \frac00 $  形式的洛必达法则]
+
+    设
+    \begin{enumerate}
+        \item $ \lim f(x)=0,\lim g(x)=0 $；
+        \item $ x $ 变化过程中，$ f'(x) $ 与 $ g'(x) $ \textbf{都存在}；
+        \item $ \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty) $ ，
+    \end{enumerate}
+    则 $ \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty) $ 。
+\end{Theo}
+
+\begin{Theo}[$ \frac\infty\infty $  形式的洛必达法则]
+
+    设
+    \begin{enumerate}
+        \item $ \lim f(x)=\infty,\lim g(x)=\infty $；
+        \item $ x $ 变化过程中，$ f'(x) $ 与 $ g'(x) $ \textbf{都存在}；
+        \item $ \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty) $ ，
+    \end{enumerate}
+    则 $ \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty) $ 。
+\end{Theo}
+
+注意：
+\begin{enumerate}
+    \item 对非以上两种情况的未定型($ 0\cdot\infty;\infty-\infty;1^{\infty};0^0;\infty^{0} $ )，将其变为以上两种情况。
+    其中，对于 $ \infty-\infty $ 型，可以采用的方法有
+    \begin{enumerate}
+        \item （有分母时）通分；
+        \item （有无理数时）有理化；
+        \item 倒代换。
+    \end{enumerate}
+    \item 优先应用等价代换、四则运算、变量代换以及恒等变换化简后再应用洛必达法则；
+    \item 注意要求 $ f'(x) $ 与 $ g'(x) $ 的存在性；
+    \item 洛必达法则是充分非必要的；
+    \item 已知极限（连续、可导）求参数时，\textbf{慎用}洛必达法则。
+\end{enumerate}
+
+\subsection{海因定理}
+
+\begin{Theo}[海因定理]
+
+    若函数极限 $ \displaystyle\lim_{x\rightarrow+\infty}f(x)=A $ ，则数列极限 $ \displaystyle\lim_{n\rightarrow\infty}f(n)=A $ 。
+\end{Theo}
+
+注意：对数列，必须先应用海因定理才能使用洛必达法则。
+
+\subsection{关于极限的命题}
+
+\begin{Field}[极限命题1]
+
+    $ {\displaystyle\lim_{x\rightarrow x_0}}f(x) $ 存在 $ \Leftrightarrow $ $ {\displaystyle\lim_{x\rightarrow x_0^+}}f(x) $ 
+    与 $ {\displaystyle\lim_{x\rightarrow x_0^-}}f(x) $ 均存在且相等。
+\end{Field}
+
+常用于
+
+\begin{itemize}
+    \item 分段点处求极限；
+    \item $ x\rightarrow x_0 $ 而极限式中含 $ \frac{1}{x-x_0} $；此时，有
+    \begin{eqnarray*}
+        x\rightarrow x_0^+&\frac{1}{x-x_0}\rightarrow\infty\\
+        x\rightarrow x_0^-&\frac{1}{x-x_0}\rightarrow-\infty\\
+    \end{eqnarray*}
+\end{itemize}
+
+\begin{Field}[极限命题2]
+
+    $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=A $ $ \Rightarrow $ 
+    $ {\displaystyle\displaystyle\lim_{x\rightarrow x_0}}|f(x)| = |A| $ 
+\end{Field}
+
+\begin{Field}[极限命题3]
+
+    $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=0 $ $ \Leftrightarrow $ 
+    $ {\displaystyle\lim_{x\rightarrow x_0}}|f(x)| = 0 $ 
+\end{Field}
+
+\begin{Field}[极限命题4]
+
+    若 $ {\displaystyle\lim_{x\rightarrow x_0}}\frac{f(x)}{g(x)} $ 存在，且
+    $ {\displaystyle\lim_{x\rightarrow x_0}}g(x)=0 $成立，则
+    $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=0 $ 也成立。
+\end{Field}
+
+
+\begin{Field}[极限命题4推论]
+
+    若 $ {\displaystyle\lim_{x\rightarrow x_0}}\frac{f(x)}{g(x)} $ 存在，且
+    $ {\displaystyle\lim_{x\rightarrow x_0}}g(x)=\infty $成立，则
+    $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=\infty $ 也成立。
+\end{Field}
+
+\begin{Field}[极限命题5]
+
+    若 $ {\displaystyle\lim_{x\rightarrow x_0}}\frac{f(x)}{g(x)}\mathop{=}\limits^\exists l \neq 0 $ ，则
+    \begin{enumerate}
+        \item $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=0\Leftrightarrow {\displaystyle\lim_{x\rightarrow x_0}} g(x)=0 $ ；
+        \item $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=\infty\Leftrightarrow {\displaystyle\lim_{x\rightarrow x_0}} g(x)=\infty $ ；
+    \end{enumerate}
+\end{Field}
+
+常用于已知极限求参数。
+
+
+\section{连续与间断}
+
+\subsection{连续的概念}
+
+\subsubsection{连续}
+
+\begin{Def}[连续]
+
+    设函数 $ y=f(x) $ 在点 $ x_0 $ 某邻域内有定义，若 $ x\rightarrow x_0 $ 时，
+    函数 $ f(x) $ 的极限存在，且等于$ x_0 $ 处函数值 $ f(x_0) $ ，即 $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=f(x_0) $，
+    则称函数 $ y=f(x) $ 在 $ x_0 $ 点处连续。
+\end{Def}
+
+\begin{Def}[连续]
+
+    设函数 $ y=f(x) $ 在点 $ x_0 $ 某邻域内有定义，若 $ x\rightarrow x_0 $ 时，
+    若自变量的变化量 $ \Delta x $ (初值为$ x_0 $ ) 趋近于$ 0 $ 时，相应函数的变化量 $ \Delta y $ 也趋近于$ 0 $ ，
+    也即 $$ {\displaystyle\lim_{\Delta x\rightarrow 0}}\Delta y=0 $$ 或者 $$
+        {\displaystyle\lim_{\Delta x\rightarrow 0}}[f(x_0+\Delta x)-f(x_0)]=0
+    $$ 
+    则称函数 $ y=f(x) $ 在 $ x_0 $ 点处连续。
+\end{Def}
+
+事实上，以上的两个定义完全等价。
+
+\subsubsection{左右连续}
+
+\begin{Def}[左、右连续的定义]
+
+    设函数 $ y=f(x) $ ，若$ {\displaystyle\lim_{x\rightarrow x_0^{+(-)}}}f(x)=f(x_0) $ ，则称 $ f(x) $ 在 $ x_0 $ 点处
+    左（右）连续。
+\end{Def}
+
+\subsubsection{左右连续与连续之间的关系}
+
+\begin{Theo}[]
+
+    $$
+        f(x)\textrm{在}x_0\textrm{点连续}\Leftrightarrow
+        f(x)\textrm{在}x_0\textrm{点左连续且右连续}
+    $$ 
+    也即$$
+        {\displaystyle\lim_{x\rightarrow x_0}}f(x)=f(x_0)\Leftrightarrow
+        {\displaystyle\lim_{x\rightarrow x_0^+}}f(x)={\displaystyle\lim_{x\rightarrow x_0^-}}f(x)=f(x_0)
+    $$ 
+\end{Theo}
+
+常用于讨论分段函数的分界点处的连续性。
+
+\subsection{连续函数的运算性质}
+
+\begin{itemize}
+    \item \textbf{四则运算性质} - 在区间 $ I $ 连续的函数和、差、积以及（分母不为0时）商在区间 $ I $ 仍然连续。
+    \item \textbf{复合函数连续性} - 由连续函数经过有限次复合而成的复合函数在其定义区间内仍是连续函数。
+    \item \textbf{反函数连续性} - 在区间 $ I $ 连续且单调的函数的反函数，在对应的区间内仍然连续且单调。
+    \item \textbf{初等函数连续性} - 初等函数在其定义区间内连续。
+\end{itemize}
+
+以上结论是可显然可易证的。
+
+\subsection{闭区间上函数的性质}
+
+\begin{Theo}[最值定理]
+
+    若 $ f(x)\in C[a,b] $ ，则在 $ [a,b] $ 上必然存在最大值 $ M $ 和最小值 $ m $ 。
+\end{Theo}
+
+\begin{Theo}[介值定理]
+
+    若 $ f(x)\in C[a,b] $，且其最大值与最小值分别为 $ M,m $ ，则对于任意介于 $ m $ 和 $ M $ 的 $ c $ ，
+    都存在至少一个 $ \xi\in[a,b] $ 使得 $ f(\xi)=c $ 。
+\end{Theo}
+
+注意：
+\begin{itemize}
+    \item 对连续函数，函数值的平均值还是函数值。
+    \item 常见的平均值：\begin{itemize}
+        \item 算数平均值$$
+            \frac{\sum_{i=1}^n f(x_i)}{n}
+        $$ 
+        \item 几何平均值$$
+            \sqrt[n]{\prod_{i=1}^n f(x_n)},\quad{} (f(x_i)\geq0)
+        $$ 
+        \item 加权平均值$$
+            \frac{\sum_{i=1}^n k_if(x_i)}{\sum_{i=1}^nk_i},\quad{}k_i>0
+        $$ 
+        或者$$
+            \sum_{i=1}^nk_i f(x_i),k_i\geq0,\quad{}\sum_{i=1}^nk_i=1
+        $$ 
+    \end{itemize}
+\end{itemize}
+
+\begin{Def}[零点定理]
+
+    若 $ f(x)\in C[a,b] $ 且 $ f(a)f(b)<0 $ ，则至少存在一点 $ \xi\in (a,b) $ 使得
+    $ f(\xi)=0 $，也即 $ \xi $ 为函数的一个零点。
+\end{Def}
+
+注意：
+\begin{enumerate}
+    \item 可将其应用于证明方程 $ f(x)=0 $ 在 $ [a,b] $ 上至少有一根。
+    \item 零点定理的变形 - 若 $ f(x)\in C[a,b] $ 且 $ f(a)f(b)\leq0 $ ，则至少存在一点 $ \xi\in [a,b] $ 使得
+    $ f(\xi)=0 $，也即 $ \xi $ 为函数的一个零点。
+\end{enumerate}
+
+\subsection{函数连续的常见命题}
+
+\begin{Field}[连续命题1]
+
+    $ f(x) $ 在区间 $ I $ 上连续 $ \Rightarrow $ $ |f(x)| $ 在区间 $ I $ 上连续。
+\end{Field}
+
+\begin{Field}[连续命题2]
+
+    $ f(x),g(x)$ 在区间 $ I $ 上连续 $ \Rightarrow $ $ \max(f,g),\min(f,g) $ 在 $ I $ 上连续。
+\end{Field}
+
+\subsection{间断点及其分类}
+
+\subsubsection{定义}
+
+\begin{Def}[间断点]
+
+    设函数 $ f(x) $ 
+    \begin{itemize}
+        \item \textbf{在 $ x=a $ 的一去心邻域内有定义 }；
+        \item 在 $ x=a $ 处不连续，
+    \end{itemize}
+    则称 $ x=a $ 为一个间断点。
+\end{Def}
+
+注意，
+\begin{itemize}
+    \item 定义区间的端点；
+    \item 孤立点
+\end{itemize}
+一般不是间断点。
+
+\subsubsection{间断点的分类}
+
+设 $ x=a $ 为 $ f(x) $ 的一间断点，
+\begin{enumerate}
+    \item 若 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x) $ 与 $ {\displaystyle\lim_{x\rightarrow a^-}}f(x) $ 均存在，
+    则称 $ x=a $ 为 $ f(x) $ 的一个第一类间断点，其还能\textbf{且必须要}分为\begin{itemize}
+        \item $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)={\displaystyle\lim_{x\rightarrow a^-}}f(x) $时 - 
+        可去间断点；
+        \item $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)\neq{\displaystyle\lim_{x\rightarrow a^-}}f(x) $时 - 
+        跳跃间断点；
+    \end{itemize}
+    \item 若 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x) $ 与 $ {\displaystyle\lim_{x\rightarrow a^-}}f(x) $ 
+    中有至少一个不存在，则称其为第二类间断点。
+\end{enumerate}
+
+可能存在间断点的地方：
+\begin{itemize}
+    \item 初等函数的无定义点；
+    \item 分段函数的分段点。
+\end{itemize}
+
+

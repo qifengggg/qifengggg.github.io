@@ -1,0 +1,565 @@
+\chapter{一元函数的微分学}
+
+\section{导数}
+
+\subsection{导数的概念}
+
+\begin{Def}[导数]
+
+    设函数 $ y=f(x) $ 在点 $ x_{0} $ 的一邻域内有定义，自变量 $ x $ 在$ x_0 $ 处有增量 $ \Delta x $，因变量 $ y $ 
+    相应地有增量 $ \Delta y=f(x_0+\Delta x)-f(x_0) $ ，若 
+    $ {\displaystyle\lim_{\Delta x\rightarrow 0}}\frac{\Delta y}{\Delta x}=
+    {\displaystyle\lim_{\Delta x\rightarrow 0}}\frac{f(x+\Delta x)-f(x)}{\Delta x} $ 存在，则称此
+    极限值为函数$ y=f(x) $ 在 $ x=x_0 $ 点处的导数，也称微商，记作$$
+        f'(x)\textrm{或}\left.y'\right|_{x=x_0}\textrm{或}\left.\frac{\mathrm{d}f(x)}{\mathrm{d}x}\right|_{x=x_0}
+    $$ 
+    称函数 $ y=f(x) $ 在 $ x=x_0 $ 处可导。若上述极限不存在，则称 $ f(x) $ 在 $ x=x_0 $ 处不可导。 
+\end{Def}
+
+\begin{Field}[导数定义的等价变形]
+
+    导数定义可以等价变形为
+    $$
+        f'(x)={\displaystyle\lim_{\Delta x\rightarrow 0}}\frac{f(x+\Delta x)-f(x)}{\Delta x}=
+        {\displaystyle\lim_{x\rightarrow x_0}} \frac{f(x+x_0)-f(x)}{x-x_0}
+    $$ 
+\end{Field}
+前者适合用于求导函数。
+
+注意：
+\begin{itemize}
+    \item 定义式中分子和分母的增量必须相对应，如$$
+        {\displaystyle\lim_{\Delta x\rightarrow 0}\frac{f(x+2\Delta x)-f(x)}{\Delta x}}\neq f'(x)
+    $$ 
+    \item 在定义式中，分子中两项应当“一动一静”，否则无法推出可导性。注意，$$
+        f(x)\textrm{在}x_0\textrm{处可导}\Rightarrow {\displaystyle\lim_{\Delta x\rightarrow 0}}
+        {\displaystyle\lim_{\Delta x\rightarrow 0}}\frac{f(x+\Delta x)-f(x-\Delta x)}{\Delta x}
+    $$ 
+    $ \Leftarrow $ 反例：$ f(x)=|x| $ ， $ x_0 = 0 $ ；
+    \item 若已知 $ f(x) $ 在 一点 $ x_0 $ 可导，则可能可以利用导数定义。
+\end{itemize}
+
+\begin{Def}[左、右导数]
+
+    若$$
+        {\displaystyle\lim_{x\rightarrow x_0^-}}\frac{f(x)-f(x_0)}{x-x_0}\mathop{=}\limits^\exists f_-'(x_0)
+    $$ 
+    则称 $ f(x) $ 在  $ x_0 $ 处左可导， $ f_-'(x_0) $ 称为其左导数；
+    若$$
+    {\displaystyle\lim_{x\rightarrow x_0^+}}\frac{f(x)-f(x_0)}{x-x_0}\mathop{=}\limits^\exists f_+'(x_0)
+$$ 
+则称 $ f(x) $ 在  $ x_0 $ 处右可导， $ f_+'(x_0) $ 称为其右导数；
+\end{Def}
+
+\begin{Field}[函数在区间上的可导性]
+
+    \begin{itemize}
+        \item 若对 $ \forall x\in (a,b) $ 有 $ f(x) $ 在 $ x_0 $ 可导，则称 $ f(x) $ 在 $ (a,b) $ 上可导；
+        \item 若对 $ \forall x\in (a,b) $ 有 $ f(x) $ 在 $ x_0 $ 可导，
+        且其在 $ a $ 点右可导，在 $ b $ 点左可导，则称 $ f(x) $ 在 $ [a,b] $ 上可导。
+        则称 $ f(x) $ 在 $ (a,b) $ 上可导；
+    \end{itemize}
+\end{Field}
+
+\subsection{函数可导的条件}
+
+\begin{Theo}[函数可导的必要条件]
+
+    可导必连续。
+\end{Theo}
+$ \Leftarrow $ 反例：
+\begin{itemize}
+    \item $ f(x)=|x|,x_0=0 $ ;
+    \item $ f(x)=\sqrt[3]x,x_0=0 $ 此时其左右导数均无穷大。
+\end{itemize}
+
+\begin{Theo}[函数可导的充要条件]
+
+    $ f(x) $ 在 $ x=x_0 $ 处可导$ \Leftrightarrow f_-'(x) $ 与 $ f_+'(x) $  均存在且相等。
+\end{Theo}
+
+其常用于：\begin{enumerate}
+    \item 已知可导性求参数；
+    \item （后者）分段函数分段点的可导性。
+\end{enumerate}
+
+\subsection{导数的几何意义}
+
+若函数 $ y=f(x) $ 在 $ x_0 $ 处导数 $ f'(x_0) $ \textbf{存在}，则在几何上， $ f'(x_0) $ 表示曲线
+$ y=f(x) $ 在点 $ (x_0,f(x_0)) $ 处的切线斜率，即\begin{itemize}
+    \item 切线方程$ y-f(x_0)=f'(x_0)(x-x_0) $ ；
+    \item 法线方程$ y-f(x_0)=-\frac1{f'(x_0)}(x-x_0) $ ；
+\end{itemize}
+
+注意：
+\begin{itemize}
+    \item 求切法线的步骤：\begin{enumerate}
+        \item 求切点坐标；
+        \item 求斜率；
+        \item 写方程。
+    \end{enumerate}
+    \item 可用于处理\begin{itemize}
+        \item 显函数 $ y=f(x) $ ;
+        \item 隐函数 $ F(x,y)=0 $ ;
+        \item 参数方程、极坐标方程，极坐标时可以代$ r $ 入$ \theta $ 。
+    \end{itemize}
+\end{itemize}
+
+\subsection{导数的运算}
+
+以下是一些基本初等函数的导数公式：
+
+\begin{equation*}
+    \begin{array}{ll}
+        (c)'=0&(x^a)'=ax^{a-1}\\
+        (\sin x)'=\cos x&(\cos x)'=-\sin x\\ 
+        (\tan x)'=\sec^2 x&(\cot x)'=-\csc^2 x\\ 
+        (\sec x)'=\tan x\sec x&(\csc x)'=-\cot x\csc x\\ 
+        (\arcsin x)'=\frac{1}{\displaystyle\sqrt(1-x^2)}&(\arccos x)'=-\frac{1}{\displaystyle\sqrt(1-x^2)}\\
+        (\arctan x)'=\frac1{1+x^2} & (\textrm{arccot} x)'=-\frac1{1+x^2}\\
+        (a^x)'=a^x\ln a&(\log_a x)'=\frac1{x\ln a}\\
+    \end{array}
+\end{equation*}
+
+注意到对于三角函数，带有“正”字的正弦、正切、正割、反正弦、反正切的导数都不包含负号，
+而带有“余”字的余弦、余切、余割、反余弦、反余切的导数都包含负号。
+
+\begin{Field}[导数的四则运算法则]
+
+    设 $ f(x) $ 与 $ g(x) $ 均在 $ x $ 点可导，则
+    \begin{enumerate}
+        \item $ \left[f(x)\pm g(x)\right]'=f'(x)\pm g'(x) $ ;
+        \item $ \left[f(x)g(x)\right]'=f'(x)g(x)+g'(x)f(x) $ ;
+        \item $ \frac{f(x)}{g(x)}'=\frac{f'(x)g(x)-g'(x)f(x)}{g^2(x)}$，其中要求 $ g(x)\neq 0 $  ;
+    \end{enumerate}
+\end{Field}
+
+注意，若 $ f(x) $可导但是 $ g(x) $ 不可导于$ x=x_0 $ ，则$ f(x)\pm g(x) $ 也不可导于 $ x=x_0 $ 。
+
+可以将和、差、积的公式推广至有限多个。对乘法，有
+$$
+    \left(\prod_{i=1}^nf_i(x)\right)'=\sum_{i=1}^n\left(f'_i(x)\prod_{\begin{subarray}{align}j=1\\j\neq i\end{subarray}}^n f_j(x)\right)
+$$ 
+
+\begin{Field}[行列式函数求导]
+
+    行列式函数求导可以按行或按列求导。
+    
+    如对二阶行列式函数，有
+    \begin{equation*}
+        \begin{aligned}
+            \left[\begin{matrix}
+                a_{11}&a_{12}\\a_{21}&a_{22}
+            \end{matrix}\right]'&=(a_{11}a_{22}-a_{12}a_{21})'\\
+            &=a_{11}a_{12}'+a_{11}'a_{22}-a_{12}a_{21}'-a_{12}'a_{21}\\ 
+            &=\begin{bmatrix}
+                a_{11}'&a_{12}'\\a_{21}&a_{22}
+            \end{bmatrix}+
+            \begin{bmatrix}
+                a_{11}&a_{12}\\a_{21}'&a_{22}'
+            \end{bmatrix}\\
+            &=\begin{bmatrix}
+                a_{11}'&a_{12}\\a_{21}'&a_{22}
+            \end{bmatrix}+
+            \begin{bmatrix}
+                a_{11}&a_{12}'\\a_{21}&a_{22}'
+            \end{bmatrix}\\
+        \end{aligned}
+    \end{equation*}
+\end{Field}
+
+\begin{Field}[复合函数求导]
+
+    设 $ y=f(u) $ ，$ u=\varphi(x) $ ，若 $ \varphi(x) $ 在 $ x $ 处可导，且 $ f(u) $ 在对应的 $ u $ 处可导，
+    则复合函数 $ y=f(\varphi(x)) $ 在 $ x $ 处可导，且有$$
+        \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\mathrm{d}y}{\mathrm{d}u}\cdot
+        \frac{\mathrm{d}u}{\mathrm{d}x}=f'(\varphi(x))\varphi'(x)
+    $$  
+    对应地，有$$
+        \mathrm{d}y=f'(u)\mathrm{d}u=f'(\varphi(x))\varphi'(x)\mathrm{d}x
+    $$ 
+\end{Field}
+
+\begin{Field}[隐函数求导数]
+
+    设 $ y=y(x) $ 由方程 $ F(x,y)=0 $ 确定，则$$
+        \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}F}{\mathrm{d}x}}{\frac{\mathrm{d}F}{\mathrm{d}y}}
+        ,\quad{}\frac{\mathrm{d}^2F}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}F}{\mathrm{d}x})
+    $$ 
+\end{Field}
+
+\begin{Field}[常见初等函数的$ n $ 阶导数公式]
+
+    \begin{enumerate}
+        \item $ y=e^x \Rightarrow y^{(n)}=e^x; $ 
+        \item $ y=a^x(a>0,a\neq1)\Rightarrow y^{(n)}=a^x(\ln a)^n; $ 
+        \item $ y=\sin x \Rightarrow y^{(n)}=\sin(x+\frac{n\pi}{2});$
+        \item $ y=\cos x \Rightarrow y^{(n)}=\cos(x+\frac{n\pi}{2});$  
+        \item $ (\frac{1}{x+a})^{(n)} = \frac{(-1)^{n}n!}{(x+a)^{n+1}}$ 
+        \item $ y=\ln(x+a)\Rightarrow y^{(n)}=(\frac{1}{x+a})^{(n-1)} = \frac{(-1)^{n-1}(n-1)!}{(x+a)^{n}} $ 
+    \end{enumerate}
+\end{Field}
+
+\section{微分}
+
+\subsection{微分的概念}
+
+\begin{Def}[微分]
+
+    设函数 $ y=f(x) $ 在 $ x=x_0 $ 处有增量 $ \Delta x $ 时，若函数增量 $ \Delta y=f(x_0+\Delta x)=f(x_0) $ 
+    可以表为 $ \Delta y=A(x_0)\Delta x+o(\Delta x)(\Delta x\rightarrow 0) $ ，其中 $ A(x_0) $ 与 $ \Delta x $ 
+    无关，则称 $ f(x) $ 在 $ x=x_0 $ 处可微，$ \Delta y $ 中的主要线性部分（也称\textbf{线性主部}）
+    $ A(x_0)\Delta x $ 称为 $ f(x) $ 在 $ x=x_0 $ 处的微分，记为
+    $$
+        \mathrm{d}y\arrowvert_{x=x_0}\ \textrm{或}\ \mathrm{d}f(x)\arrowvert_{x+0}
+    $$ 
+\end{Def}
+
+\subsection{可微与导数的的关系}
+
+\begin{Theo}[可微与导数的关系]
+
+    $ f(x) $ 在 $ x=x_0 $ 处可微 $ \Leftrightarrow f(x) $ 在 $ x=x_0 $ 处可导，且
+    $ \mathrm{d}x|_{x=x_0} =A(x_0)\Delta x=f'(x_0)\mathrm{d}x $ 
+\end{Theo}
+
+一般地，$ y=f(x) $ 则有 $ \mathrm{d}y=f'(x)\mathrm{d}x $ ，故导数 $ f'(x)=\frac{\mathrm{d}y}{\mathrm{d}x} $ 也称微商，即微分之商。
+
+\subsection{微分公式与法则}
+
+\begin{Field}[]
+
+    \begin{itemize}
+        \item $ \mathrm{d}[f(x)\pm g(x)]=\mathrm{d}f(x)\pm\mathrm{d}g(x) $ ;
+        \item $ \mathrm{d}[f(x)\cdot g(x)]=g(x)\mathrm{d}f(x)+f(x)\mathrm{d}g(x) $ ;
+        \item $ g(x)\neq0 $ 时，$ \mathrm{d}\frac{f(x)}{g(x)}=\frac{g(x)\mathrm{d}f(x)-f(x)\mathrm{d}g(x)}{g^2(x)} $ .
+    \end{itemize}
+\end{Field}  
+
+\section{微分中值定理}
+
+\subsection{罗尔定理}
+
+\begin{Theo}[罗尔定理]
+
+    若函数满足
+    \begin{enumerate}
+        \item 在闭区间 $ [a,b] $ 连续；
+        \item 在开区间 $ (a,b) $ 可导；
+        \item $ f(a)=f(b) $ ，
+    \end{enumerate}
+    则至少存在一点 $ \xi\in(a,b) $ 使得 $ f'(\xi)=0 $ 。
+\end{Theo}
+
+注意：
+\begin{itemize}
+    \item 常用于证明\textbf{形如}$ f(x)=g(x) $ 的方程在一开区间上有根；
+    \item 难点：\begin{itemize}
+        \item 构造区间；
+        \item \textbf{构造辅助函数}，其中 $ F(x) $ 一般为 $ f(x)-g(x) $ 的原函数，或 $ f(x)-g(x) $ 的解。
+    \end{itemize}
+\end{itemize}
+
+\begin{Field}[构造辅助函数的方法]
+
+    \begin{enumerate}
+        \item 将等式化为方程；
+        \item 变形，直到能够积分为止；具体而言，可以\begin{itemize}
+            \item 同乘同除一因式；
+            \item 添加能正负相消的两项。
+        \end{itemize}
+        \item 取不定积分；
+        \item 整理，直到满足其在 $ [a,b] $ 上连续，$ (a,b) $ 上可导为止
+    \end{enumerate}
+    注意，以上方法在草稿纸上，不注重严谨性。
+\end{Field}
+
+不难发现，\begin{itemize}
+    \item $ f(x)g'(x)-f'(x)=0\Rightarrow F(x)=f(x)e^{-g(x)} $ ;
+    \item $ f(x)+f'(x)=0\Rightarrow F(x)=f(x)e^x $ ;
+    \item $ f(x)-f'(x)=0\Rightarrow F(x)=f(x)e^{-x} $ ;
+    \item $ f(x)+\lambda f'(x)=0\Rightarrow F(x)=f(x)e^{\lambda x} $ ;
+\end{itemize}
+
+\subsection{拉格朗日中值定理}
+
+\begin{Theo}[拉格朗日中值定理]
+
+    若函数 $ f(x) $ 满足
+    \begin{enumerate}
+        \item 在 $ [a,b] $ 上连续；
+        \item 在 $ (a,b) $ 上可导， 
+    \end{enumerate}
+    则至少存在一点 $ \xi \in (a,b) $ 使得 $ f'(\xi)=\frac{f(b)-f(a)}{b-a} 
+    \Rightarrow f'(\xi)(b-a)=f(b)-f(a)$ ;
+\end{Theo}
+
+注意：\begin{enumerate}
+    \item 证明：令 $ F(x)=f(x)-\frac{f(b)-f(a)}{b-a}x $ 并且利用罗尔定理；
+    \item 可证方程在开区间 $ (a,b) $ 上有根；
+    \item 可证不等式；
+    \item 出现一函数增量 $ \Rightarrow $ 利用拉格朗日中值定理；
+    \item 联系 $ f(x) $ 与 $ f'(x) $ 的桥梁；
+    \item 与割线有关。
+\end{enumerate}
+
+\begin{Infer}[拉格朗日中值定理推论]
+
+    \begin{itemize}
+        \item 若 $ f(x) $ 在 $ (a,b) $ 内可导，且 $ f'(x)\equiv0 $ ，则 $ f(x) $ 在 $ (a,b) $ 内为常数；
+        \item 若 $ f(x) $ 在 $ (a,b) $ 内可导，且 $ f'(x)\equiv k $ ，则在 $ (a,b) $ 上 $ f(x)=kx+c $ ，
+        其中 $ c $ 为常数。
+    \end{itemize}
+\end{Infer}
+
+\section{柯西中值定理}
+
+\begin{Theo}[柯西中值定理]
+
+    设 $ f(x) $ 和 $ g(x) $ 满足
+    \begin{enumerate}
+        \item 在闭区间 $ [a,b] $ 上皆连续；
+        \item 在开区间 $ (a,b) $ 内皆可导；
+        \item 且 $ g'(x)\neq 0 $ ；
+    \end{enumerate}
+    则存在 $ \xi\in (a,b) $ 使得 $ \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}(a<\xi<b) $ 。
+\end{Theo}
+
+注意：\begin{enumerate}
+    \item 证明：令 $ F(x)=\frac{f(b)-f(a)}{g(b)-g(a)}g(x)-f(x) $，利用罗尔定理可证；
+    \item 可证方程有根；
+    \item 出现两个函数增量 $ \Rightarrow $ 使用柯西中值定理证明；
+    \item 若要求两个不同的中值，则寻求一特殊点 $ c $ 将 $ a,b $ 分为两子区间，并分别运用中值定理，如罗尔定理。
+\end{enumerate}
+
+\section{泰勒中值定理}
+
+\begin{Theo}[带拉格朗日余项的泰勒中值定理]
+
+    设 $ f(x) $ 在包含$ x_0 $ 的一邻域$ U_\delta(x_0) $ 内有 $ n+1 $ 阶导数，则对 $ x\in U_\delta $ ，
+    有$$
+        f(x) = \sum_{i=0}^n \frac{f^{(i)}(x_0)}{n!}(x-x_0)^n + R_n(x)
+    $$ 
+    其中，$ R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1} $， $ \xi $ 介于 $ x $ 与 $ x_0 $ ，
+    $ R_n(x) $ 称为拉格朗日余项。
+\end{Theo}
+
+\begin{Theo}[带皮亚诺余项的泰勒定理]
+
+    设 $ f(x) $ 在 $ x=x_0 $ 处有 $ n $ 阶导数，则$$
+        f(x) = \sum_{i=0}^n \frac{f^{(i)}(x_0)}{n!}(x-x_0)^n + R_n(x)
+    $$ 其中 $ R_n(x)=o[(x-x_0)^n],\ x\rightarrow x_0 $ 称为皮亚诺余项。
+\end{Theo}
+
+以下是一些常用函数的带皮亚诺余项的马克劳林展开式。
+
+\begin{itemize}
+    \item $\displaystyle e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3)$;
+    \item $\displaystyle \sin x = x - \frac{x^3}{6} + \dots + \frac{(-1)^{n}x^{2n+1}}{(2n+1)!} + o(x^{2n+1}) $ ;
+    \item $\displaystyle \cos x = 1 - \frac{x^2}{2} + \dots + \frac{(-1)^{n}x^{2n}}{(2n)!} + o(2n)$ ;
+    \item $\displaystyle \tan x = x + \frac{x^3}{3} + o(x^3)$ ;
+    \item $\displaystyle \arcsin x = x + \frac{x^3}{6} +o(x^3)$ ;
+    \item $\displaystyle \arctan x = x - \frac{x^3}{3} + o(x^3)$ ;
+    \item $\displaystyle \ln (x+1) = x - \frac{x^2}{2} + \frac{x^3}{3} + \dots + \frac{(-1)^{n-1}x^n}{n} + o(x^n) $;
+    \item $\displaystyle \ln(1-x) = -(x+\frac{x^2}{2} + \frac{x^3}{3}) + o(x^3)$;
+    \item $\displaystyle (1+x)^\alpha = \sum_{k=1}^n C_\alpha^kx^k + o(x^n) $ ,
+    其中 $\displaystyle C_\alpha^k=\frac{\prod_{i = 0}^{k-1}(\alpha - i)}{k!} $ 
+    \item $\displaystyle \frac{1}{1-x} = \sum_{i=0}^n x^i + o(x^n) $ ;
+    \item $\displaystyle \frac{1}{1+x} = \sum_{i=0}^n (-1)^i x^i + o(x^n) $;
+\end{itemize}
+
+注意，对于泰勒公式，
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item 可证不等式；
+        \item 可证方程有根；
+        \item 可求等价函数；
+        \item 可求极限；
+        \item 可求高阶导数值；
+        \item 可近似计算。
+    \end{enumerate}
+    \item 在不等式证明、方程有根题目中应用拉格朗日余项，否则应用皮亚诺余项。
+    \item 题目出现高阶(至少2阶)导数 $ \Rightarrow $ 可能应用泰勒中值定理。
+    \item 一般在导数已知的点展开。
+\end{enumerate}
+
+求高阶导数值时， 
+\begin{enumerate}
+    \item 求高阶导函数并代入 $ x=x_0 $ (不推荐) ；
+    \item 泰勒公式；
+    \item \Attention{奇偶性}。
+\end{enumerate}
+
+\section{导数应用}
+
+\subsection{函数单调判定定理}
+
+\begin{Theo}[函数单调判定定理]
+
+    设函数 $ f(x) $ 在 $ (a,b) $ 可导，若恒有 $ f'(x)>0(<0) $，则 $ f(x) $ 在 $ (a,b) $ 内单调递增(递减)；
+    若恒有 $ f'(x)\geq0(\leq 0) $ ，则其在 $ (a,b) $ 内单调不减(不增)。
+\end{Theo}
+
+注意，\begin{itemize}
+    \item 此为充分不必要条件；
+    \item 成立条件：要求一区间，而非一点。反例：$$
+        f(x)=\begin{cases}
+            \frac{x}{2}+x^2\sin \frac{1}{x},& x\neq 0\\
+            0,& x=0
+        \end{cases}
+    $$ 
+    \item 可证不等式。
+\end{itemize}
+
+\section{极值}
+
+\subsection{定义}
+
+\begin{Def}[极值]
+
+    设函数 $ f(x) $ 在 $ (a,b) $ 内有定义，$ x_0\in (a,b) $ ，则
+    \begin{itemize}
+        \item 若 $ x_0 $ 存在一邻域 $ U $ ，使得对 $ U $ 内任一点 $ x \neq x_0 $，
+        都有 $ f(x)<f(x_0) $ ，则称 $ f(x_0) $ 为函数 $ f(x) $ 的一个极大值，
+        $ x_0 $ 为 $ f(x) $ 一个极大值点；
+        \item 若 $ x_0 $ 存在一邻域 $ U $ ，使得对 $ U $ 内任一点 $ x \neq x_0 $，
+        都有 $ f(x)>f(x_0) $ ，则称 $ f(x_0) $ 为函数 $ f(x) $ 的一个极小值，
+        $ x_0 $ 为 $ f(x) $ 一个极小值点；
+    \end{itemize}
+    函数的极大值和极小值统称极值。极大值点与极小值点统称极值点。
+\end{Def}
+
+\subsection{极值的必要条件}
+
+\begin{itemize}
+    \item 若 $ f'(x_0)=0 $ ，则称 $ x_0 $ 为一个驻点；
+    \item 若 $ f(x) $ 在 $ x=x_0 $ 处可导，而$ f(x_0) $ 为极值，则 $ f(x_0)=0 $；
+    \item 极值点 $ \nLeftrightarrow $ 驻点，如 $ f(x)=|x|, x=0 $ ；
+    \item 可能的极值点：\begin{itemize}
+        \item $ f'(x)=0 $ 处；
+        \item $ f'(x) $ 不存在处。
+    \end{itemize}
+\end{itemize}
+
+\subsection{极值的充分条件}
+
+\begin{Theo}[极值第一充分条件]
+
+    设 $ f(x) $ 在 $ x_0 $ 处连续，在 $ 0<|x-x_0|<\delta $ 内可导，$ f'(x_0) $ 不存在或等于0，则
+    \begin{enumerate}
+        \item 若在 $ (x_0-\delta,x_0) $ 内任一点$ x $ 处有 $ f'(x)>0 $ ，而在 $ (x_0,x_0+\delta) $ 中
+        任一点$ x $ 处有 $ f'(x)<0 $ ，则 $ f(x_0) $ 为极大值，$ x_0 $ 为极大值点；
+        \item 若在 $ (x_0-\delta,x_0) $ 内任一点$ x $ 处有 $ f'(x)<0 $ ，而在 $ (x_0,x_0+\delta) $ 中
+        任一点$ x $ 处有 $ f'(x)>0 $ ，则 $ f(x_0) $ 为极小值，$ x_0 $ 为极小值点；
+        \item 若 $ (x_0-\delta,x_0) $ 内任一点与 $ (x_0,x_0+\delta) $ 中任一点
+        处导数同号，则 $ f(x_0) $ 不为极值，$ x_0 $ 不为极值点。
+    \end{enumerate}
+\end{Theo}
+
+\begin{Theo}[极值第二充分条件]
+
+    设函数 $ f(x) $ 在 $ x_0 $ 处存在二阶导数，且 $ f'(x_0)=0 $ ， $ f^"(x_0)\neq 0 $ ，
+    则\begin{itemize}
+        \item 当 $ f^"(x_0)<0 $ 时，$ f(x_0) $ 为极大值，$ x_0 $ 为极大值点；
+        \item 当 $ f^"(x_0)>0 $ 时，$ f(x_0) $ 为极小值，$ x_0 $ 为极小值点。
+    \end{itemize}
+\end{Theo}
+
+\section{最大值、最小值问题}
+
+极值与最值的区别有\begin{enumerate}
+    \item 前者局部，后者整体；
+    \item 最值可为区间端点，极值不可以；
+    \item 区间内部最值必为极值。
+\end{enumerate}
+
+最值可用于证明不等式。
+
+应用问题的最值求法的步骤如下。
+\begin{enumerate}
+    \item 设出合适的自变量；
+    \item 表示出目标函数；
+    \item 求目标函数的最值。
+\end{enumerate}
+
+\subsection{凹向与拐点}
+
+\begin{Def}[凹凸性]
+
+    设 $ f(x) $ 在区间 $ I $ 连续，若对任意两点 $ x_1 \neq x_2 $ ，都有$$
+        f(\frac{x_1+x_2}{2})>(<)\frac{1}{2}[f(x_1)+f(x_2)],
+    $$ 则称 $ f(x) $ 在 $ I $ 上是凸(凹)的。
+\end{Def}
+
+几何上，若曲线 $ y=f(x) $ 上任意两点割线在曲线下(上)，则 $ y=f(x) $ 是凸(凹)的。
+
+若 $ f(x) $ 有切线，而每一点的切线都在曲线之上(下)，则称 $ y=f(x) $ 是凸(凹)的。
+
+\begin{Theo}[凹凸判定定理]
+
+    设函数在 $ (a,b) $ 上有二阶导数，\begin{itemize}
+        \item 若对任意 $ x\in (a,b) $ 都有 $ f^"(x)>0 $ ，则称 $ f(x) $ 是凹函数；
+        \item 若对任意 $ x\in (a,b) $ 都有 $ f^"(x)<0 $ ，则称 $ f(x) $ 是凸函数；
+    \end{itemize}
+\end{Theo}
+
+\begin{Def}[拐点]
+
+    连续曲线上凹凸的分界点是曲线的拐点。
+\end{Def}
+
+\begin{Theo}[二阶可导点为拐点的必要条件]
+
+    若 $ (x_0,f(x_0)) $ 为拐点，且 $ f^"(x_0) $ 存在，则 $ f^"(x_0)=0 $ 。
+\end{Theo}
+
+\begin{Theo}[二阶可导点为拐点的充分条件]
+
+    设 $ y=f(x) $ 在 $ x=x_0 $ 连续，在 $ x_0 $ 的一去心邻域内二阶可导，\begin{enumerate}
+        \item 若二阶导函数在 $ x=x_0 $ 两侧异号，则 $ (x_0,f(x_0)) $ 为一拐点；若同号，则不是拐点；
+        \item 若在 $ x_0 $ 处二阶导数为零，而三阶导数不为零，则其为拐点；若三阶导数也为零，则不是拐点。
+    \end{enumerate}
+\end{Theo}
+
+注意，$ f'(x) $ 的极值点事实上就是 $ f(x) $ 的拐点横坐标。
+
+求拐点的步骤：\begin{enumerate}
+    \item 求 $ x_0 $ 使得 $ f^"(x_0)=0 $ 或不存在；
+    \item 判断；
+    \item 写拐点。
+\end{enumerate}
+
+\subsection{渐近线定义及其求法}
+
+\textbf{水平渐近线}
+
+若 $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)=b $ ，则称 $ y=b $ 是 $ f(x) $ 的一条水平渐近线。
+
+$ x\rightarrow-\infty $ 时同理。
+
+
+\textbf{垂直渐近线}
+
+若 $ {\displaystyle\lim_{x\rightarrow x_0^+}}f(x)=\infty $ 
+或 $ {\displaystyle\lim_{x\rightarrow x_0^-}}f(x)=\infty $，则称 $ x=x_0 $ 是 $ f(x) $ 的一条垂直渐近线，也叫铅直渐近线。
+
+\textbf{斜渐近线} 
+
+若 $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)-(kx+b)=0 $ $ (x\rightarrow-\infty) $ ，则称
+$ y=kx+b $ 为斜渐近线。
+
+具体而言，若\begin{enumerate}
+    \item $ {\displaystyle\lim_{x\rightarrow +\infty}}\frac{f(x)}{x}=k $ ；
+    \item $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)-kx = b $ ，
+\end{enumerate}
+则有斜渐近线 $ y=kx+b $ 。$ x\rightarrow-\infty $ 时同理。
+
+注意，一侧不会同时存在水平渐近线和斜渐近线。
+
+\section{曲率及曲率半径}
+
+曲率为$$
+   k=\frac{|f^"(x)|}{(1+(f'(x))^2)^{\frac{3}{2}}}
+$$ 
+
+曲率半径$ \rho $ 为 $ k $ 的倒数。

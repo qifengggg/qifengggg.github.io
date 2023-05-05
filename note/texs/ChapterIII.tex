@@ -1,0 +1,496 @@
+\chapter{一元函数积分学}
+
+\section{不定积分}
+
+\subsection{原函数}
+
+\begin{Def}[原函数]
+
+    设函数 $ f(x) $ 和 $ F(x) $ 在区间 $ I $ 上有定义，若$ F'(x) $ 在区间 $ I $ 上成立，则
+    称 $ F(x) $ 为 $ f(x) $在$ I $ 上的一个原函数。
+\end{Def}
+
+注意，原函数存在 $ \Rightarrow $ 有无穷多个，每个原函数之间仅差一个常数。
+
+设 $ f(x) $ 在区间 $ I $ 上连续，则$ f(x) $ 在区间 $ I $ 上一定存在原函数，但是其不一定是
+初等函数，如 $ \int \sin x^2 \mathrm{d}x $ ,$ \int \cos x^2 \mathrm{d}x $ ,
+$ \int \frac{\sin x}{x} \mathrm{d}x $ ,$ \int \frac{\cos x}{x} \mathrm{d}x $ ,
+$ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称其为“积不出来”。
+
+若$ f(x) $ 在区间 $ I $ 上存在第一类间断点或第二类中的无穷间断点，则其在该区间内没有原函数。
+
+注意，函数在区间内有震荡间断点的，可能有原函数。
+
+\subsection{不定积分}
+
+\begin{Def}[不定积分]
+
+    设 $ F(x) $ 为 $ f(x) $ 在区间 $ I $ 上的一个原函数，则$ f(x) $ 
+    的所有原函数 $ \{F(x)+C\},C\in \mathbb{R} $ 为 $ f(x) $在$ I $ 的不定积分，
+    记为 $ \int f(x) \mathrm{d}x$。
+\end{Def}
+
+\begin{Field}[不定积分基本性质]
+
+    设 $ \int f(x)\mathrm{d}x = F(x)+C $ ，其中 $ F(x) $ 为 $ f(x) $ 一原函数，$ C $ 为一常数，
+    则\begin{itemize}
+        \item $ \int F'(x)\mathrm{d}x=F(x)+C $ 或 $ \int \mathrm{d}F(x)=F(x)+C $ ;
+        \item $ [\int f(x)\mathrm{d}x]'=f(x) $ 或 $ \mathrm{d}[\int f(x)\mathrm{d}x]=f(x)\mathrm{d}x $ ;
+        \item $ \int kf(x)\mathrm{d}x = k\int f(x)\mathrm{d}x $ ;
+        \item $ \int [f(x)\pm g(x)]\mathrm{d}x = \int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x $ ;
+    \end{itemize}
+\end{Field}
+
+\begin{Field}[基本积分公式]
+
+    C为任意常数，则
+    \begin{enumerate}
+        \item $ \int x^\alpha \mathrm{d}x = \frac{x^{\alpha +1}}{\alpha + 1} + C\ (\alpha \neq -1) $ ;
+        \item $ \int \frac{1}{x} \mathrm{d}x = \ln|x| + C $ ;
+        \item $ \int a^x \mathrm{d}x = \frac{a^x}{\ln a} + C\ (a>0,a\neq 1) $，
+        特别地，$ \int e^x\mathrm{d}x = e^x+C $ ;
+        \item $ \int \cos x \mathrm{d}x = \sin x + C $ ;
+        \item $ \int \sin x \mathrm{d}x = -\cos x + C $ ;
+        \item $ \int \frac{1}{\cos^2 x}\mathrm{d}x = \tan x + C $ ;
+        \item $ \int -\frac{1}{\sin^2 x}\mathrm{d}x = \cot x + C $ ;
+        \item $ \int \frac{\tan x}{\cos x} \mathrm{d}x = \frac{1}{\cos x} + C $ ;
+        \item $ \int \frac{\cot x}{\sin x}\mathrm{d}x = -\frac{1}{\sin x} + C $ ;
+        \item $ \int \frac{1}{1+x^2}\mathrm{d}x = \arctan x + C = -\textrm{arccot} x + C $ ;
+        \item $ \frac{1}{\sqrt{1-x^2}}\mathrm{d}x = \arcsin x + C = -\arccos x + C $ ;
+    \end{enumerate}
+\end{Field}
+
+\subsection{不定积分法}
+
+\begin{Field}[第一换元法(凑微分)]
+
+    设 $ g(\varphi(x)) = f(x) $ ，则计算的原则是
+    \begin{equation*}
+        \begin{aligned}
+            \int f(x)\mathrm{d}x &= \int g(\varphi(x))\varphi'(x)\mathrm{d}x \\
+            &= \int g(\varphi(x))\mathrm{d}\varphi(x) \\ 
+            &= F(\varphi(x))+ C
+        \end{aligned}
+    \end{equation*}
+\end{Field}
+
+常见的凑微分形式如下。
+
+\begin{enumerate}
+    \item $ \int f(ax+b)(ax+b)\mathrm{d}x = \frac{1}{a}\int f(ax+b)\mathrm{d}(ax+b) (a\neq 0) $ ;
+    \item $ \int f(ax^n+b)x^{n-1}\mathrm{d}x = \frac{1}{na}\int f(ax^n+b)\mathrm{d}(ax^n + b) (an\neq0) $ ;
+    \item $ \int \frac{f(\ln x)}{x}\mathrm{d}x = \int f(\ln x)\mathrm{d}(\ln x)$ ;
+    \item $ \int f(\frac{1}{x})\frac{1}{x^2}\mathrm{d}x = -\int f(\frac{1}{x})\mathrm{d}(\frac{1}{x}) $ ;
+    \item $ \int \frac{f(\sqrt x)}{\sqrt x} \mathrm{d}x = 2 \int f(\sqrt x)\mathrm{d}(\sqrt x) $ ;
+    \item $ \int f(a^x)a^x\mathrm{d}x = \frac{1}{\ln a}\int f(a^x)\mathrm{d}(a^x) $,
+    特别地，$ \int f(e^x)e^x\mathrm{d}x = \int f(e^x)\mathrm{d}(e^x) $ ;
+    \item $ \int f(\sin x)\cos x \mathrm{d}x = \int f(\sin x)\mathrm{d}(\sin x) $ ;
+    \item $ \int f(\cos x)\sin x \mathrm{d}x = -\int f(\cos x)\mathrm{d}(\cos x)$ ;
+    \item $ \int \frac{f(\tan x)}{\cos^2 x}\mathrm{d}x = \int f(\tan x)\mathrm{d}(\tan x) $ ;
+    \item $ \int \frac{f(\cot x)}{\sin^2 x}\mathrm{d}x = -\int f(\cot x)\mathrm{d}(\cot x) $ ;
+    \item $ \int f(\sec x)\sec x \tan x \mathrm{d}x = \int f(\sec x)\mathrm{d}(\sec x) $ ;
+    \item $ \int f(\csc x)\csc x \cot x\mathrm{d}x = -\int f(\csc x)\mathrm{d}(\csc x) $ ;
+    \item $ \int \frac{f(\arcsin x)}{\sqrt{1-x^2}}\mathrm{d}x = \int f(\arcsin x)\mathrm{d}(\arcsin x) $ ;
+    \item $ \int \frac{f(\arccos x)}{\sqrt{1-x^2}}\mathrm{d}x = -\int f(\arccos x)\mathrm{d}(\arccos x) $ ;
+    \item $ \int \frac{f(\arctan x)}{1+x^2}\mathrm{d}x = \int f(\arctan x)\mathrm{d}(\arctan x) $ ;
+    \item $ \int \frac{f(\textrm{arccot} x)}{1+x^2}\mathrm{d}x = -\int f(\textrm{arccot} x)\mathrm{d}(\textrm{arccot} x) $ ;
+    \item $ \int \frac{f(\arctan \frac{1}{x})}{1+x^2}\mathrm{d}x = -\int f(\arctan \frac{1}{x})\mathrm{d}(\arctan \frac{1}{x}) $ ;
+    \item $ \int \frac{f|ln(x+\sqrt{x^2+a^2})|}{\sqrt{x^2+a^2}}\mathrm{d}x = 
+    \int f|ln(x+\sqrt{x^2+a^2})|\mathrm{d}(\ln(x+\sqrt(x^2+a^2))) $ ;
+    \item $ \int \frac{f|ln(x+\sqrt{x^2-a^2})|}{\sqrt{x^2-a^2}}\mathrm{d}x = 
+    \int f|ln(x+\sqrt{x^2-a^2})|\mathrm{d}(\ln(x+\sqrt(x^2-a^2))) $ ;
+    \item $ \int \frac{f'(x)}{f(x)}\mathrm{d}x = \ln|f(x)|+C\ (f(x)\neq0) $ .
+\end{enumerate}
+
+\begin{Field}[第二换元法]
+
+    设 $ x=\varphi(t) $ 具有连续导数且单调，且 $ \varphi'(t)\neq 0 $ ，若
+    $$
+        \int f[\varphi(t)]\varphi'(t)\mathrm{d}t=G(t)+C
+    $$ 
+    则有$$
+        \int f(x)\mathrm{d}x 
+        \xlongequal{\textrm{令}x=\varphi(t)}
+        \int f[\varphi(t)]\varphi'(t)\mathrm{d}t = G(t) + C = G[\varphi^{-1}(x)]+C
+    $$ 
+    其中 $ t=\varphi^{-1}(x) $ 为 $ x=\varphi(t) $ 的反函数。
+\end{Field}
+
+第二换元法多用于根式的被积函数，通过换元法去根式，具体而言，可以分为两类。
+\begin{enumerate}
+    \item 被积函数是 $ x $ 与 $ \sqrt[n]{ax+b} $ 或 $ x $ 与 $ \dis\sqrt[n]{\frac{ax+b}{cx+d}} $ 
+    或由 $ e^x $ 构成的代数式的根式，则令 $ \sqrt[n]{g(x)}=t $，使得 $ x=\varphi(t) $ 中不再含有根式，
+    此时做变量代换 $ x = \varphi(t) $ 即可。
+    \item 被积函数含有 $ \dis\sqrt{Ax^2+Bx+C}(A\not=0) $ 时，先根据$ A $ 的符号将其整理为
+    $ \sqrt{A[(x-x_0)^2\pm l^2]} $ 或 $ \sqrt{-A[l^2-(x-x_0)^2]} $ ，然后做三角替换。
+    \begin{enumerate}
+        \item 根式形如 $ \sqrt{a^2-x^2} $ 时，做 $ x=a\sin t $，此时 $ t\in[-\frac{\pi}{2},\frac{\pi}{2}] $ ；
+        \item 根式形如 $ \sqrt{x^2-a^2} $ 时，做 $ x=a\sec t $，此时 $ t\in[0,\frac{\pi}{2})\cup(\frac{pi}{2},\pi] $ 
+        \item 根式形如 $ \sqrt{a^2+x^2} $ 时，做 $ x=a\tan t $，此时 $ t\in (-\frac{pi}{2},\frac{pi}{2}) $ 。
+    \end{enumerate}
+\end{enumerate}
+
+\begin{Field}[分部积分法]
+
+    对 $ \int uv'\mathrm{d}x $ ，有$$
+        \int uv'\mathrm{d}x = \int u\mathrm{d}v=uv-\int v\mathrm{d}u
+    $$ 
+\end{Field}
+
+注意，\begin{itemize}
+    \item 被积函数为两类函数乘积；
+    \item 凑微分的优先性：指数 $ > $ 三角函数 $ > $ 幂函数。
+\end{itemize}
+
+注意，不定积分结果中一定包含常数 $ C $ ，\textbf{即使在计算过程中积分号下内容相消干净。}
+
+\subsection{特殊类型的不定积分}
+
+\subsubsection{有理分式的不定积分}
+
+\begin{Theo}[]
+
+    任何实系数多项式在实数域内均可分解为一次因式和二次因式的乘积。
+\end{Theo}
+
+\begin{Theo}[]
+
+    设 $ f(x)=\frac{P_m(x)}{Q_n(x)}$ 是有理真分式，若在实数域内分母 $ Q_n(x) $ 可因式分解为 $$
+        Q_n(x)=(x-a)^\alpha(x^2+px+q)^\beta
+    $$ 
+    则有$$
+        \frac{P_m(x)}{Q_n(x)}=\sum_{i=1}^\alpha \frac{A_i}{(x-a)^i}+
+        \sum_{i=1}^\beta \frac{C_ix+D_i}{(x^2+px+q)^i}
+    $$ 其中 $ A_i,B_i,C_i,D_i $ 等系数都是实数。
+\end{Theo}
+
+具体而言，其步骤为
+\begin{enumerate}
+    \item 将假分式分为多项式和真分式；
+    \item 将真分式分母整理至最简；
+    \item 裂项，分别积分。
+\end{enumerate}
+
+求待定系数时，去分母，并注意\begin{itemize}
+    \item 多项式相等条件：同次数的系数相等；
+    \item 待定系数的个数为分母次数。
+\end{itemize}
+
+分母次数大于4的时候，一般不用裂项法，而是寻求特殊方法。
+
+待定系数时可以代入特殊值。
+
+\subsubsection{三角有理函数的不定积分}
+
+三角有理函数指由 $ \sin x $ 和 $ \cos x $ 进行有限次四则运算得到的函数。
+
+\begin{Field}[三角有理函数的不定积分一般方法]
+
+    利用万能代换，即$\tan \dis\frac{x}{2} = t $，此时 $ \sin x = \dis\frac{2t}{t^2+1} $ ,
+    $ \cos x = \dis\frac{t^2-1}{t^2+1} $ , $ x = 2\arctan t $ ,
+    $ \dis\frac{\mathrm{d}x}{\mathrm{d}t} = \displaystyle\frac{2}{1+t^2} $ .
+\end{Field}
+
+注意，应用万能代换时， $ x $ 的次数不应当超过一次，形如$$
+    \int \dis\frac{a_1\sin x + b_1 \cos x + c_1}{a_2\sin x + b_2 \cos x + c_2}
+$$ 
+
+\sssubsection{特殊三角有理函数的积分}
+
+\begin{itemize}
+    \item 对 $$
+        I = \int \frac{a\sin x + b\cos x}{c\sin x+d\cos x}\mathrm{d}x
+    $$ 
+    可以使用待定系数法，令$$
+        a\sin x+b\cos x = A(c\sin x+d\cos x)+B(c\sin x+ d\cos x)'
+    $$ 
+    其中$ A,B $ 是待定系数，将其解出并代入原式，得$$
+        I=Ax+B\ln|c\sin x+d\cos x|+C
+    $$ 
+    \item \begin{itemize}
+        \item 若$ R(-\sin x, \cos x)=-R(\sin x, \cos x) $ ，令 $ \cos x = t $ 并换元；
+        \item 若$ R(\sin x, -\cos x)=-R(\sin x, \cos x) $ ，令 $ \sin x = t $ 并换元；
+        \item 若$ R(-\sin x, -\cos x)=R(\sin x, \cos x) $ ，令 $ \tan x = t $ 并换元；
+        \item 针对上一条，若$ R $ 形如$$
+            \int \sin^{2m} x + \cos^{2n} x \mathrm{d}x
+        $$ 其中 $ m,n\in N $ ，则应使用二倍角公式降幂。
+    \end{itemize}
+\end{itemize}
+
+
+\section{定积分}
+
+\subsection{定积分概念}
+
+\begin{Def}[]
+
+    将 $ [a,b] $ 任意地划分为 $ n $ 个小区间 $ a = x_1<x_2<\dots<x_{n-1}<x_n=b $ ，
+    细度 $ d=\max_{1\leq i \leq n}(x_i-x_{i-1}) $ , $ \xi_i $ 为 $ [x_{i-1},x_i] $ 任意一点；
+    则$ f(x) $在$ [a,b] $ 上的定积分为$$
+        \int_a^b f(x)\mathrm{d}x = {\displaystyle\lim_{d\rightarrow 0}}
+        \sum_{i=i}^nf(\xi_i)\Delta x_i
+    $$ 
+    若上述极限存在。
+    若$ f(x) $在$ [a,b] $ 上确有定积分，则称 $ f(x) $在$ [a,b] $ 可积。
+\end{Def}
+
+\begin{Theo}[连续必可积]
+
+    若$ f(x) $ 在闭区间 $ [a,b] $ 连续，则$ f(x) $在$ [a,b] $ 可积。
+\end{Theo}
+
+\begin{Theo}[]
+
+    若$ f(x) $在$ [a,b] $ 有界，且在 $ [a,b] $ 中仅有有限个间断点，则$ f(x) $在$ [a,b] $ 可积。
+\end{Theo}
+
+\begin{Theo}[可积必有界]
+
+    若$ f(x) $在$ [a,b] $ 可积，则其在 $ [a,b] $ 有界。
+\end{Theo}
+
+\begin{Theo}[定积分值的变量符号无关性]
+
+    定积分的值与积分变量的符号无关，即$$
+        \int_a^b f(x)\mathrm{d}x=\int_a^b f(t)\mathrm{d}t
+    $$ 
+\end{Theo}
+
+\sssubsection{利用定积分定义求极限}
+
+\begin{equation*}
+    \begin{aligned}
+        \int_a^b f(x)\mathrm{d}x&={\displaystyle\lim_{d\rightarrow 0}}\sum_{i=i}^nf(\xi_i)\Delta x_i\\
+        &={\displaystyle\lim_{n\rightarrow \infty}}\sum_{i=1}^n f(a+\frac{i}{n}(b-a))\frac{b-a}{n}
+    \end{aligned}
+\end{equation*}
+
+具体而言，其步骤为
+\begin{itemize}
+    \item 令 $ \Delta x_i $ 为 $ \frac{1}{n} $ 或 $ \frac{k}{n} $ ;
+    \item 取 $ \xi_i $ 的位置，如\begin{itemize}
+        \item $ \xi_i $ 取右端点： $ a+\frac{i}{n}(b-a) $ ;
+        \item $ \xi_i $ 取左端点： $ a+\frac{i-1}{n}(b-a) $ ;
+        \item $ \xi_i $ 取中点： $ a+\frac{2i-1}{2n}(b-a) $ ;
+        \item $ \xi_i $ 取三等分点： $ a+\frac{3i-2}{3n}(b-a) $ ;
+        \item $ \xi_i $ 取三分之二等分点： $ a+\frac{3i-1}{3n}(b-a) $ 等等。
+    \end{itemize}
+    \item 求 $ a={\displaystyle\lim_{n\rightarrow \infty}}\xi_1,b={\displaystyle\lim_{n\rightarrow \infty}}\xi_n $
+    \item 将求得的 $ a,b $ 用于验证 $ \Delta x_i $ 的取法是否正确，
+    即是否有$ \sum_{i=1}^n \Delta x_i = b-a $ 。
+\end{itemize}
+
+$ n $ 项和的求和方式：
+\begin{itemize}
+    \item 直接求和；
+    \item 夹逼定理；
+    \item 定积分定义；
+    \item 数项级数。
+\end{itemize}
+
+\begin{Field}[定积分的几何意义]
+
+    定积分的几何意义为面积的代数和。
+\end{Field}
+
+\subsection{定积分的性质}
+
+\begin{enumerate}
+    \item $ \int_a^b f(x)\mathrm{d}x = -\int_b^a f(x)\mathrm{d}x $ ;
+    \item $ \int_a^a f(x)\mathrm{d}x = 0 $ ;
+    \item $ \int_a^b [k_1 f_1(x)]+k_2[f_2(x)]\mathrm{d}x = k_1\int_a^b f_1(x)\mathrm{d}x + k_2\int_a^b f_2(x)\mathrm{d}x $ ;
+    \item $ \int_a^b f(x)\mathrm{d}x = \int_a^c f(x)\mathrm{d}x + \int_c^b f(x)\mathrm{d}x $，即使 $ c\not\in [a,b] $ ;
+    \item 设 $ a\leq b $ ，$ f(x)\leq g(x) $，则$ \int_a^b f(x)\mathrm{d}x \leq \int_a^b g(x)\mathrm{d}x $ ;
+    \item 设 $ a < b $ ， $ m\leq f(x)\leq M $ ，则$ m(b-a)\leq\int_a^b f(x)\mathrm{d}x \leq M(b-a)$ ;
+    \item 设 $ a<b $ ，则$ |\int_a^b f(x) \mathrm{d}x | < \int_a^b|f(x)|\mathrm{d}x $ ;
+    \item \textbf{定积分中值定理} - 设 $ f(x) $在$ [a,b] $ 上连续，则$\exists \xi \in [a,b]  $ 
+    使得 $ \int_a^b f(x)\mathrm{d}x = f(\xi)(b-a) $ ;
+    \item 称 $ \frac{1}{b-a}\int_a^b f(x)\mathrm{d}x $ 为 $ f(x) $在$ [a,b] $ 上的广义平均值。
+\end{enumerate}
+
+注意，\begin{itemize}
+    \item 定积分值与被积函数在有限个点上的值无关；
+    \item 定积分中值定理可证方程有根。
+\end{itemize}
+
+\subsection{重要定理、公式、关系}
+
+\begin{Def}[变上限函数]
+
+    设 $ f(x) $在$ [a,b] $ 可积，则函数形如 $ F(x)=\int_a^x f(t)\mathrm{d}t, x\in [a,b]  $ 
+    称为变上限积分函数。
+\end{Def}
+
+\begin{Theo}[变上限积分求导定理]
+
+    若$ f(x) $在$ [a,b] $ 可积，则$ F(x) $在$ [a,b] $ 连续。
+
+    若$ f(x) $在$ [a,b] $ 连续，则$ F(x) $在$ [a,b] $ 上可导，且 $ F'(x) = f(x) $。
+\end{Theo}
+
+注意，\begin{itemize}
+    \item 设 $$
+        F(x)=\int_{\varphi_1(x)}^{\varphi_2(x)} f(t)\mathrm{d}t
+    $$ ，且 $ \varphi_1(x),\varphi_2(x) $ 可导，$ f(x) $ 连续，则有$$
+        F'(x) = f(\varphi_2(x))\varphi_2'(x)-f(\varphi_1(x))\varphi_1'(x)
+    $$ 
+    \item 若$ x_0 $ 为 $ f(x) $在$ [a,b] $ 上的一个跳跃间断点，则$ F(x) $在$ x_0 $ 连续，
+    但没有原函数；
+    \item 若$ x_0 $ 为 $ f(x) $在$ [a,b] $ 上的一个可去间断点，则$ F(x) $在$ x_0 $ 处有原函数，
+    但 $ F(x) $ 不是其原函数。
+\end{itemize}
+
+\begin{Theo}[牛顿——莱布尼茨公式]
+
+    设$ f(x) $在$ [a,b] $可积，$ F(x) $为$ f(x) $在$ [a,b] $上的任意原函数，
+    则有$$
+        \int_a^b f(x)\mathrm{d}x=F(x)\Big|_a^b=F(b)-F(a)
+    $$ 
+\end{Theo}
+
+\subsection{定积分求法}
+
+\sssubsection{利用牛顿莱布尼茨公式}
+
+$$
+   \int_a^b f(x)\mathrm{d}x=F(x)\Big|_a^b=F(b)-F(a)
+$$ 
+
+\sssubsection{分部积分法}
+
+$$
+    \int_a^b u'v \mathrm{d}x = \int_a^b u\mathrm{d}v = uv\Big|_a^b - \int_a^b v\mathrm{d}u
+$$ 
+
+其利用技巧与不定积分的分部积分法完全一致。
+
+\sssubsection{换元积分法}
+
+设 $ f(x) $ 在 $ [a,b] $ 上连续，若变量替换 $ x=\varphi(t) $ 满足
+\begin{enumerate}
+    \item $ \varphi'(t) $ 在 $ [\alpha,\beta] $ (或者$ [\beta,\alpha] $ ) 上连续；
+    \item $ \varphi(\alpha) = a , \varphi(\beta) = b $ ，且当 $ \alpha < t < \beta $ 时，
+    有 $ a \leq \varphi(t) < b $ ，
+\end{enumerate}
+则有$$
+    \int_a^b f(x)\mathrm{d}x = \int_\alpha^\beta f[\varphi(t)]\varphi'(t)\mathrm{d}t
+$$ 
+
+\subsection{常用的定积分公式}
+
+\sssubsection{对称区间奇偶函数的积分公式}
+
+\begin{enumerate}
+    \item 设 $ f(x) $ 是在区间 $ [-a,a],(a>0) $ 上连续的偶函数，则$$
+        \int_{-a}^a f(x)\mathrm{d}x = 2 \int_0^a f(x)\mathrm{d}x
+    $$ 
+    \item 设 $ f(x) $ 是在区间 $ [-a,a],(a>0) $ 上连续的奇函数，则$$
+        \int_{-a}^af(x)\mathrm{d}x = 0
+    $$ 
+\end{enumerate}
+
+可用于积分等式的方法：
+\begin{enumerate}
+    \item 含有中值：积分中值定理；
+    \item 不含中值：\begin{itemize}
+        \item 积分区间分割；
+        \item 换元法
+    \end{itemize}
+\end{enumerate}
+
+\sssubsection{周期函数的积分公式}
+
+设 $ f(x) $ 在 $ (-\infty,+\infty) $ 内是以 $ T $ 为周期的周期函数，则对任意常数 $ a $ 、任意自然数 $ n $ 
+都有\begin{enumerate}
+    \item $ \dis \int_a^{a+T}f(x)\mathrm{d}x = \int_0^T f(x)\mathrm{d}x $ ;
+    \item $ \dis \int_a^{a+nT}f(x)\mathrm{d}x = n\int_0^T f(x)\mathrm{d}x $ ;
+\end{enumerate}
+
+\sssubsection{三角函数的积分公式}
+
+\begin{Theo}[Wallis公式(分部积分推导)]
+
+    $$
+        \int_0^\frac{\pi}{2} \sin^{2n} x \mathrm{d} x = \int_0^\frac{\pi}{2} \cos^{2n} x \mathrm{d} x = 
+        \dfrac{(2n-1)!!}{(2n)!!}\cdot \dfrac{\pi}{2}
+    $$ 
+    $$
+        \int_0^\frac{\pi}{2} \sin^{2n+1} x \mathrm{d} x = \int_0^\frac{\pi}{2} \cos^{2n+1} x \mathrm{d} x = 
+        \dfrac{(2n)!!}{(2n+1)!!}
+    $$ 
+    $$
+        \int_0^\frac{\pi}{2} \sin^{n} x \mathrm{d} x = \int_0^\frac{\pi}{2} \cos^{n} x \mathrm{d} x = 
+        \dfrac{(n-1)!!}{(n)!!}\cdot (\dfrac{\pi}{2})^\texttt{(int)(!(n\%2))}
+    $$ 
+\end{Theo}
+
+注意，当被积函数中有自然数 $ n $ 时，通过分部积分法构造递推公式，并用递推公式推出结果。
+
+三角函数的公式还有如下几个。设 $ f(x) $ 在 $ [0,1] $ 连续，则
+\begin{itemize}
+    \item $ \dis \int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x=\int_0^\frac{\pi}{2} f(\cos x)\mathrm{d}x $ 
+    \item $\dis \int_0^\frac{\pi}{2} xf(\sin x)\mathrm{d}x = 
+    \dfrac{\pi}{2}\int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x $ 
+    \item $\dis \int_0^{\pi} f(\sin x)\mathrm{d}x = 2\int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x $ 
+\end{itemize}
+
+其中，$ ii) $ 利用了区间再现公式，具体而言，令 $ t = a + b - x $ 即可。
+
+难以计算原函数的积分称为变态积分。对变态积分的计算，可以
+\begin{itemize}
+    \item 构造递推公式；
+    \item 积分区间再现。
+\end{itemize}
+
+\section{定积分应用}
+
+\subsection{平面图形求面积}
+
+\sssubsection{直角坐标系下平面图形求面积}
+
+对于由 $ x = x_1, x = x_2,y = f_1(x), y = f_2(x) (x_1 < x_2,\forall x \in [x_1,x_2]f_1(x) > f_2(x)) $ 
+围成的图形，有 $$
+    S = \int_a^b[f_1(x)-f_2(x)]\mathrm{d}x
+$$ 
+
+对于由 $ y = y_1, y = y_2,x = f_1(y), x = f_2(y) (y_1 < y_2,\forall y \in [y_1,y_2]f_1(y) > f_2(y)) $ 
+围成的图形，有 $$
+    S = \int_a^b[f_1(y)-f_2(y)]\mathrm{d}y
+$$ 
+
+\sssubsection{极坐标下的平面图形求面积}
+
+$$
+    S = \int_{\theta_1}^{\theta_2}\textcolor{red}{\dfrac{1}{2}r^2}\mathrm{d}\theta
+$$ 
+
+需要记住的平面曲线：
+\begin{itemize}
+    \item 心型线 $ r = a(1+\cos\theta) $ ;
+    \item 摆线（旋轮线）；
+    \item 星型线；
+    \item 双扭线；
+    \item 阿基米德螺线 $ r = a\theta $ ;
+    \item 对数螺线；
+    \item 三叶玫瑰线 $ r = \sin(3\theta),(0\leq\theta\leq \dfrac{\pi}{3}) $ ;
+\end{itemize}
+
+\subsection{旋转体求体积}
+
+绕 $ x $ 轴旋转时，有 $ \mathrm{d}V_x = \pi y^2 \mathrm{d}x $ ，则体积为$$
+    V = \int_a^b \pi f(x)^2 \mathrm{d}x
+$$ 
+是为薄片法。
+
+绕 $ y $ 轴旋转时，有 $ \mathrm{d}V_y = 2\pi xy \mathrm{d} x $ ，则体积为$$
+    V = \int_a^b 2\pi xf(x)\mathrm{d}x
+$$ 
+是为柱壳法。
+
+\subsection{平均值}
+
+设 $ f(x) $ 在区间 $ [a,b] $ 连续，则 $ f(x) $ 在 $ [a,b] $ 的平均值为
+$$
+    \dfrac{\dis \int_a^b f(x)\mathrm{d}x}{b-a}
+$$ 
+
