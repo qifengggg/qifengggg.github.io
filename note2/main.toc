@@ -1,0 +1,10 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}行列式}{1}{chapter.1}%
+\contentsline {section}{\numberline {I.\,}定义}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {i.}几何定义}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {ii.}逆序定义}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {iii.}展开定义}{1}{subsection.1.1.3}%
+\contentsline {section}{\numberline {II.\,}性质}{2}{section.1.2}%
+\contentsline {section}{\numberline {III.\,}重要行列式}{2}{section.1.3}%
+\contentsline {section}{\numberline {IV.\,}行列式的降阶性质}{2}{section.1.4}%
+\contentsline {section}{\numberline {V.\,}五类特殊的行列式}{3}{section.1.5}%
+\contentsline {section}{\numberline {VI.\,}克拉默法则}{4}{section.1.6}%

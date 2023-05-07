@@ -1,0 +1,165 @@
+\chapter{行列式}
+
+不妨用一排指代一行或一列。
+
+\section{定义}
+
+\subsection{几何定义}
+
+\begin{Def}[几何定义]
+
+    一 $ n $ 维方阵为 $ n $ 个 $ n $ 维向量在 $ n $ 维空间内的 $ n $ 维空间体积。
+\end{Def}
+
+注意， $ |\vec{a}_i| = 0 \Leftrightarrow \vec{a}_i $ 线性相关 $ (i = 1,2,\cdots,n) $ 。
+
+\subsection{逆序定义}
+
+\begin{Def}[逆序和逆序数]
+
+    设 $ i,j $ 为一对不相等的整数，若 $ 1>j $，则称 $ (i,j) $ 为一逆序对。
+    $ 1,2,\cdots,n $ 的一个排列 $ a_1,a_2,\dots,a_n $  中逆序对的数目为逆序数，
+    记为 $ \tau(a_1,a_2,\dots,a_n) $ 。
+
+    逆序数为奇（偶）数的排列为奇（偶）排列。
+\end{Def}
+
+\begin{Def}[逆序定义]
+
+    行列式 $ D $ 为取自 $ D $ 中不同行不同列元素积的代数和，具体而言，为$$
+        D = \sum_{j_1,j_2,\dots,j_n}(-1)^{\tau(j_1,\dots,j_n)}a_{1j_1}a_{2j_2}\dots a_{nj_n}
+    $$ 
+\end{Def}
+
+\subsection{展开定义}
+
+\begin{Def}[余子式和代数余子式]
+
+    行列式 $ D $ 去掉第 $ i $  行第 $ j $ 列而成的 $ n-1 $ 阶方阵为 $ D $ 的余子式 $ M_{ij} $ 。
+
+    $ A_{ij} = (-1)^{i+j}M_{ij} $ 是 $ D $ 的代数余子式。
+\end{Def}
+
+\begin{Def}[展开定义]
+
+    对 $ n $ 阶行列式 $ D_n $ ，有$$
+        D_n = \sum_{j=1}^n a_{ij}A_{ij},\ i=1,2,\dots,n
+    $$ 
+\end{Def}
+
+\section{性质}
+
+行列式有性质如下。
+\begin{itemize}
+    \item $ \det(A) = \det(A^T) $ ；
+    \item 两排对换，行列式变号；
+    \item 一排有公因子 $ k $ ，可提到行列式外；
+    \item 若有一排元素皆为两数之和，可据此拆成两个行列式；
+    \item 将一排的$ k $ 倍加到另一排，行列式值不变。
+\end{itemize}
+
+\section{重要行列式}
+
+\sssubsection{上下三角行列式}
+
+上下三角行列式值为主对角线元素积。
+
+\sssubsection{副三角行列式}
+
+副三角行列式值为 $ (-1)^{\frac{n(n-1)}{2}}a_{1n}\dots a_{n1} $ ，即
+副对角线代数积。
+
+\sssubsection{拉普拉斯展开}
+\begin{itemize}
+    \item 若对于分块了的行列式 $ M = \begin{vmatrix}A&C\\D&B\end{vmatrix} $，\nextline 在$ C,D $ 中至少有一个是零矩阵，则有
+    $ |M| = |A|\cdot|B| $ ；
+    \item 若对于分块了的行列式 $ M = \begin{vmatrix}C&A\\B&D\end{vmatrix} $，\nextline 在$ C,D $ 中至少有一个是零矩阵，则有
+    $ |M| = (-1)^{M\Attention{\times}N}|A|\cdot|B| $ 。
+\end{itemize}
+
+\sssubsection{范德蒙德行列式}
+
+形如
+$$
+    V_n(a_i)\xlongequal{\Delta}\begin{vmatrix}
+        a_1^0& \cdots& a_1^{n-1}\\ 
+        \vdots&\ddots&\vdots\\
+        a_n^0& \cdots& a_n^{n-1}\\
+    \end{vmatrix} = \prod_{1\leq i < j \leq n}(a_j-a_i)
+$$ 
+的行列式为范德蒙德行列式。
+
+\section{行列式的降阶性质}
+
+对 $ i,j = 1,2,\dots,n $ 有$$
+    \sum_{k = 1}^n a_{ik}A_{jk}  =\begin{cases}
+        D,& i = j\\0,& i\not=j
+    \end{cases}
+$$ 
+
+一排代数余子式与一组同长度的元素的点积为将原行列式中那一排替换为那一组
+元素的结果。
+
+\section{五类特殊的行列式}
+
+\sssubsection{主对角平行线型}
+
+对形如 $ \begin{vmatrix}
+    \bs&\ws &0 &0 \\
+    \ws&\bs &\ws &0 \\
+    0&\ws &\bs &\ws \\
+    0&0 &\ws &\bs \\
+\end{vmatrix}_n $ 的行列式：
+\begin{itemize}
+    \item 向下消零成三角；
+    \item 按首排展开递推。
+\end{itemize}
+
+\sssubsection{主对角爪型}
+
+对形如$ \begin{vmatrix}
+    \bs&\bs&\bs&\bs\\
+    \bs&\bs&0&0\\
+    \bs&0&\bs&0\\
+    \bs&0&0&\bs\\
+\end{vmatrix}_n $的行列式，\nextline 通过斜爪消平爪，
+即将第$ i>1 $ 排的 $ k_i $ 倍加到第一排以让第一排只有 $ a_{11}\neq0 $ 。
+有时只能按行列中的一个消除。
+
+\sssubsection{主对角为$ \bs $ 其他为 $ \ws $ }
+
+对形如
+$ A = \begin{vmatrix}
+    \bs&\ws&\ws&\ws\\
+    \ws&\bs&\ws&\ws\\
+    \ws&\ws&\bs&\ws\\
+    \ws&\ws&\ws&\bs\\
+\end{vmatrix}_n $ 的行列式，有 $
+    \Attention{A = [\bs + (n-1)\ws][\bs-\ws]^{n-1}}
+$.
+
+\sssubsection{$ \theta $ 型}
+
+对形如 $ \begin{vmatrix}
+    \bs&0&0&0&\theta\\
+    \ws&\bs&0&0&0\\
+    0&\ws&\bs&0&0\\
+    0&0&\ws&\bs&0\\
+    0&0&0&\ws&\bs\\
+\end{vmatrix} $ 的行列式，\nextline 从$ \theta $ 所在列(按行倒也可以)展开。
+
+\sssubsection{反$ \angle $ 型}
+
+对形如$ D_n = \begin{vmatrix}
+    \bs&\ws&&&\\ 
+    &\bs&\ws&&\\ 
+    &&\bs&\ws&\\ 
+    &&&\bs&\ws\\
+    b_n&b_{n-1}&\cdots&b_2&\theta
+\end{vmatrix} $ 的行列式，其中 $ \theta \neq0 $ ，\nextline
+$ D_{n-1} $ 为 $ D_n $ 去掉首行首列；算法为按首列(行也行)展开递推。
+
+\section{克拉默法则}
+
+对$ n $ 元一次非齐次方程组$ DX = Y $ ，若 $ D_i $ 为将 $ D $ 的第 $ i $ 列替换为 $ Y $ 的结果，则
+$ x_i  = \dfrac{D_i}{D} $ .
