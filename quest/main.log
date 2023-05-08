@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  8 MAY 2023 11:39
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  8 MAY 2023 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -865,11 +865,6 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 2.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
 [1
 
 
@@ -1057,10 +1052,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  20998 strings out of 476179
  432202 string characters out of 5813073
- 758566 words of memory out of 5000000
+ 759566 words of memory out of 5000000
  41362 multiletter control sequences out of 15000+600000
  523350 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,15n,97p,1190b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,97p,1190b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (16 pages).
