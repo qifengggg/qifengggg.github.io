@@ -458,10 +458,10 @@ $$
 
 \begin{Theo}[极值第二充分条件]
 
-    设函数 $ f(x) $ 在 $ x_0 $ 处存在二阶导数，且 $ f'(x_0)=0 $ ， $ f^"(x_0)\neq 0 $ ，
+    设函数 $ f(x) $ 在 $ x_0 $ 处存在二阶导数，且 $ f'(x_0)=0 $ ， $ f^\pprime(x_0)\neq 0 $ ，
     则\begin{itemize}
-        \item 当 $ f^"(x_0)<0 $ 时，$ f(x_0) $ 为极大值，$ x_0 $ 为极大值点；
-        \item 当 $ f^"(x_0)>0 $ 时，$ f(x_0) $ 为极小值，$ x_0 $ 为极小值点。
+        \item 当 $ f^\pprime(x_0)<0 $ 时，$ f(x_0) $ 为极大值，$ x_0 $ 为极大值点；
+        \item 当 $ f^\pprime(x_0)>0 $ 时，$ f(x_0) $ 为极小值，$ x_0 $ 为极小值点。
     \end{itemize}
 \end{Theo}
 
@@ -498,8 +498,8 @@ $$
 \begin{Theo}[凹凸判定定理]
 
     设函数在 $ (a,b) $ 上有二阶导数，\begin{itemize}
-        \item 若对任意 $ x\in (a,b) $ 都有 $ f^"(x)>0 $ ，则称 $ f(x) $ 是凹函数；
-        \item 若对任意 $ x\in (a,b) $ 都有 $ f^"(x)<0 $ ，则称 $ f(x) $ 是凸函数；
+        \item 若对任意 $ x\in (a,b) $ 都有 $ f^\pprime(x)>0 $ ，则称 $ f(x) $ 是凹函数；
+        \item 若对任意 $ x\in (a,b) $ 都有 $ f^\pprime(x)<0 $ ，则称 $ f(x) $ 是凸函数；
     \end{itemize}
 \end{Theo}
 
@@ -510,7 +510,7 @@ $$
 
 \begin{Theo}[二阶可导点为拐点的必要条件]
 
-    若 $ (x_0,f(x_0)) $ 为拐点，且 $ f^"(x_0) $ 存在，则 $ f^"(x_0)=0 $ 。
+    若 $ (x_0,f(x_0)) $ 为拐点，且 $ f^\pprime(x_0) $ 存在，则 $ f^\pprime(x_0)=0 $ 。
 \end{Theo}
 
 \begin{Theo}[二阶可导点为拐点的充分条件]
@@ -524,7 +524,7 @@ $$
 注意，$ f'(x) $ 的极值点事实上就是 $ f(x) $ 的拐点横坐标。
 
 求拐点的步骤：\begin{enumerate}
-    \item 求 $ x_0 $ 使得 $ f^"(x_0)=0 $ 或不存在；
+    \item 求 $ x_0 $ 使得 $ f^\pprime(x_0)=0 $ 或不存在；
     \item 判断；
     \item 写拐点。
 \end{enumerate}
@@ -559,7 +559,7 @@ $ y=kx+b $ 为斜渐近线。
 \section{曲率及曲率半径}
 
 曲率为$$
-   k=\frac{|f^"(x)|}{(1+(f'(x))^2)^{\frac{3}{2}}}
+   k=\frac{|f^\pprime(x)|}{(1+(f'(x))^2)^{\frac{3}{2}}}
 $$ 
 
 曲率半径$ \rho $ 为 $ k $ 的倒数。

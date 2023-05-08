@@ -1,0 +1,136 @@
+\chapter{多元函数微分学}
+
+\section{多元函数微分法}
+
+\subsection{多元函数}
+
+\begin{Def}[二元函数极限]
+
+    设 $ f(x,y) $ 在点 $ (x_0,y_0) $ 某去心邻域有定义，若 $ \forall \varepsilon > 0, \exists \delta > 0 $ 
+    使得只要 $ 0 < \dsqrt{}{(x-x_0)^2+(y-y_0)^2}<\delta $ 就有 $ |f(x,y)-A|<\varepsilon $ ，则称
+    当 $ (x,y) $ 趋近于 $ (x_0,y_0) $ 时，$ f(x,y) $ 的极限存在，值为 $ A $ ，记为
+    $ {\displaystyle\lim_{\begin{subarray}{c}
+        x\rightarrow x_0\\y\rightarrow y_0
+    \end{subarray}}}f(x,y) = A $ 或者 $ {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = A $ ；
+    否则，称为极限不存在。
+\end{Def}
+
+注意，\begin{enumerate}
+    \item 求二重极限可用的方法有
+    \begin{itemize}
+        \item 极限的四则运算；
+        \item 夹逼定理；
+        \item 等价代换；
+        \item 重要极限；
+        \item 无穷小与有界量积仍为无穷小；
+        \item 连续性；
+        \item 极坐标变换。
+    \end{itemize}
+    \item 二重积分存在充要条件$$
+        {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = A \Leftrightarrow
+        \textrm{当} (x,y) \textrm{以任意形式趋近于} (x_0,y_0) \textrm{时都有} f(x,y)\rightarrow A
+    $$ 
+    其逆否命题常用。
+\end{enumerate}
+
+\begin{Def}[二元函数连续]
+
+    若 $ {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = f(x_0,y_0) $ 
+    或者$ {\displaystyle\lim_{(\Delta x,\Delta y)\rightarrow (0,0)}}
+    f(x+\Delta x,y + \Delta y) - f(x,y) = 0 $ ，
+    则称 $ f(x,y) $ 在 $ (x_0,y_0) $ 连续。
+    若 $ f(x,y) $ 在区域 $ D $ 中每一点均连续，则称 $ f(x,y) $ 在 $ D $ 内连续。
+\end{Def}
+
+\subsection{偏导数}
+
+\begin{Def}[偏导数]
+
+    设二元函数 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 某邻域内有定义，令 $ y = y_0 $ ，
+    给 $ x $ 以增量 $ \Delta x $ ，\nextline 若 $ {\displaystyle\lim_{\Delta x\rightarrow 0}}
+    \dfrac{(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x} $ 存在，则称其为 $ z = f(x,y) $ 
+    在 $ (x_0,y_0) $ 处关于 $ x $ 的偏导数，\nextline 记为 $ f_x'(x_0,y_0) $ 
+    或者 $ \dfrac{\partial z}{\partial x}\Big|_{(x_0,y_0)} $ 
+    或者 $ z'_x\Big|_{(x_0,y_0)} $ 。此外，$$
+        f_x'(x_0,y_0) = {\displaystyle\lim_{x\rightarrow x_0}}
+        \dfrac{f(x,y_0)-f(x_0,y_0)}{x-x_0}
+    $$ 
+\end{Def}
+
+$ y $ 的偏导数可以类似地定义。
+
+注意，两偏导数在 $ (x_0,y_0) $ 处存在 $ \not\Leftrightarrow f(x,y) $ 在 $ (x_0,y_0) $ 连续。
+
+\begin{Def}[高阶偏导数]
+
+    设对 $ z = (x,y) $ 有 $ f_x' $ 和 $ f_y' $ ，则有
+    \begin{itemize}
+        \item $ \dfrac{\partial }{\partial x}\left(\dfrac{\partial z}{\partial x}\right) 
+        = \dfrac{\partial^2 z}{\partial x^2} = f^\pprime_{xx} $ ;
+        \item $ \dfrac{\partial }{\partial y}\left(\dfrac{\partial z}{\partial y}\right) 
+        = \dfrac{\partial^2 z}{\partial y^2} = f^\pprime_{yy} $ ;
+        \item $ \dfrac{\partial }{\partial y}\left(\dfrac{\partial z}{\partial x}\right) 
+        = \dfrac{\partial^2 z}{\partial x\partial y} = f^\pprime_{xy} $ ;
+        \item $ \dfrac{\partial }{\partial x}\left(\dfrac{\partial z}{\partial y}\right) 
+        = \dfrac{\partial^2 z}{\partial y\partial x} = f^\pprime_{yx} $ ;
+    \end{itemize}
+    其中后二者称为混合二阶偏导数。
+\end{Def}
+
+\begin{Theo}[二阶混合偏导数相等的充分条件]
+
+    若对 $ z = f(x,y) $ 有 $ f^\pprime_{xy} $ 与 $ f^{\prime\prime}_{yx} $ 于 $ (x_0,y_0) $ 连续，
+    则有 $ f^\pprime_{xy}(x_0,y_0) = f^\pprime_{yx}(x_0,y_0) $ 。
+\end{Theo}
+
+\subsection{全微分}
+
+\begin{Def}[全微分]
+
+    设 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 处有全增量 
+    $ \Delta z = f(x_0+\Delta x,y_0 + \Delta y) - f(x_0,y_0) $ ，
+    若 $ \Delta z = A\Delta x + B\Delta y + o(\rho),\rho = \dsqrt{}{(\Delta x)^2+(\Delta y)^2}\rightarrow0 $ 
+    其中 $ A,B $ 不依赖于 $ \Delta x,\Delta y $ ，仅与 $ x_0,y_0 $ 有关，则称 $ z = f(x,y) $ 
+    在 $ (x_0,y_0) $ 处可微，而 $ A\Delta x+B\Delta y $ 称为 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 处的
+    全微分，记为 $ \mathrm{d}z\big|_{(x_0,y_0)} $ 或 $ \mathrm{d}f\big|_{(x_0,y_0)} $
+\end{Def}
+
+
+注意，
+\begin{equation*}
+    \begin{array}{c}
+        z = f(x,y) \textrm{在} (x_0,y_0) \textrm{可微} \\
+        \Updownarrow \\
+        {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}} 
+        \dfrac{\overbrace{f(x,y)-f(x_0,y_0)}^{\dis \Delta z} - 
+        \overbrace{f'_x(x_0,y_0)(x-x_0)+f'_y(x_0,y_0)(y-y_0)}^{\dis \mathrm{d}z}}{\dis \sqrt{(x-x_0)^2+(y-y_0)^2}}
+    \end{array}
+\end{equation*}
+
+\begin{Theo}[可微的必要条件]
+
+    若 $ f(x,y) $ 在 $ (x_0,y_0) $ 可微，则\begin{itemize}
+        \item $ f(x,y) $ 在 $ (x_0,y_0) $ 连续；
+        \item $ f'_x(x,y),f'_y(x,y) $ 在 $ (x_0,y_0) $ 处均存在。
+    \end{itemize}
+\end{Theo}
+
+\begin{Theo}[可微的充分条件]
+
+    若 $ f'_x(x,y) $ 和 $ f'_y(x_0,y_0) $ 在 $ (x_0,y_0) $ 均连续，则
+    $ f(x,y) $ 在 $ (x_0,y_0) $ 可微。
+\end{Theo}
+
+\sssubsection{多元函数几个概念的联系}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[!htbp]\centering
+    \begin{tabular}{@{}lcccc@{}}
+        &  &  &  & \begin{tabular}[c]{@{}c@{}}$ f(x,y) $ 在 \\ $ (x_0,y_0) $ 连续\end{tabular} \\
+        &  &  & $\nearrow$ &  \\
+       \begin{tabular}[c]{@{}l@{}}$ f'_x(x,y) $ 和 $ f'_y(x_0,y_0) $ \\ 在 $ (x_0,y_0) $ 均连续\end{tabular} & $\longrightarrow$ & \begin{tabular}[c]{@{}c@{}}$ f(x,y) $ 在 \\ $ (x_0,y_0) $ 可微\end{tabular} &  &  \\
+        & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{$\searrow$} & \multicolumn{1}{l}{} \\
+        &  &  &  & \begin{tabular}[c]{@{}c@{}}$ f'_x(x,y),f'_y(x,y) $ 在\\  $ (x_0,y_0) $ 处均存在\end{tabular}
+    \end{tabular}
+\end{table}

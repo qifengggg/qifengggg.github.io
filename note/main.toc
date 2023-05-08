@@ -85,3 +85,11 @@
 \contentsline {subsection}{\numberline {i.}平面图形求面积}{34}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {ii.}旋转体求体积}{35}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {iii.}平均值}{35}{subsection.3.3.3}%
+\contentsline {section}{\numberline {IV.\,}反常积分}{35}{section.3.4}%
+\contentsline {subsection}{\numberline {i.}无穷区间上的反常积分}{36}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {ii.}无界函数的反常积分}{36}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}多元函数微分学}{38}{chapter.4}%
+\contentsline {section}{\numberline {I.\,}多元函数微分法}{38}{section.4.1}%
+\contentsline {subsection}{\numberline {i.}多元函数}{38}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {ii.}偏导数}{38}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {iii.}全微分}{39}{subsection.4.1.3}%

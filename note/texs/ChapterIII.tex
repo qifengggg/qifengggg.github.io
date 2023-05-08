@@ -494,3 +494,108 @@ $$
     \dfrac{\dis \int_a^b f(x)\mathrm{d}x}{b-a}
 $$ 
 
+\section{反常积分}
+
+定积分存在两种限制，由此可以引申出两种反常积分。
+对 $ \dis \int_a^b f(x)\mathrm{d}x $ ，
+\begin{itemize}
+    \item $ [a,b] $ 必须是有限区间 $ \Rightarrow $ 无穷区间上的反常积分；
+    \item $ f(x) $ 必须有界 $ \Rightarrow $ 无界函数的反常积分。
+\end{itemize}
+
+\subsection{无穷区间上的反常积分}
+
+$ \dis \int_a^{+\infty}f(x)\mathrm{d}x = {\displaystyle\lim_{t\rightarrow +\infty}}
+\int_a^t f(x)\mathrm{d}x $ 称为无穷区间上的反常积分，
+若其存在，则称该反常积分收敛，否则发散。\vspace{3pt}
+
+对 $ \dis \int_{-\infty}^b f(x)\mathrm{d}x = {\displaystyle\lim_{t\rightarrow -\infty}}
+\int_t^b f(x)\mathrm{d}x $ 同理。\vspace{3pt}
+
+对 $ \dis \int_{-\infty}^{+\infty}f(x)\mathrm{d}x $，将其拆成以上两种情况的反常积分，若二者都收敛，
+则称其收敛，否则称其发散。
+
+注意，
+\begin{enumerate}
+    \item 计算方法与积分类似，如 $\dis \int_a^{+\infty} = F(x)\Big|^{+\infty}_a = 
+    {\displaystyle\lim_{t\rightarrow +\infty}}F(t) - F(a) $ ；
+    \item 反常积分收敛时，适用对称奇偶性，否则不适用；
+    \item $ p $ 积分：对 $ \dis \int_a^{+\infty}\dfrac{1}{x^p}\mathrm{d}x,\ a>0 $ ,
+    当 $ p > 1 $ 时积分收敛，$ p\leq 1 $ 时发散；
+    \item 利用分部积分法时，可以先进行不定积分，然后再引入上下限。
+\end{enumerate}
+
+\begin{Theo}[比较判别法]
+
+    设 $ f $ 与 $ g $ 在 $ [a,+\infty) $ 上非负且在任意区间 $ [a,b],b<\infty $ 可积，且 $ f \leq g $ ，
+    $ x\in[a,+\infty) $ ，则\begin{enumerate}
+        \item 若 $ \int_a^{+\infty}g(x)\mathrm{d}x $ 收敛，则$ \int_a^{+\infty}f(x)\mathrm{d}x $收敛；
+        \item 若 $ \int_a^{+\infty}f(x)\mathrm{d}x $ 发散，则$ \int_a^{+\infty}g(x)\mathrm{d}x $发散。
+    \end{enumerate}
+\end{Theo}
+
+\begin{Theo}[比较判别法]
+
+    设 $ f $ 与 $ g $ 在 $ [a,+\infty) $ 上非负，则
+    \begin{enumerate}
+        \item 若 $ g(x) > 0 $ 且 $ \dis {\displaystyle\lim_{x\rightarrow +\infty}}
+        \dfrac{f(x)}{g(x)} = k \neq 0 $ ，则 $ \int_a^{+\infty}f(x)\mathrm{d}x $ 与
+        $ \int_a^{+\infty}g(x)\mathrm{d}x $ 的敛散性相同；
+        \item 若当 $ x\rightarrow+\infty $时，$ f\sim g $，则 $ \int_a^{+\infty}f(x)\mathrm{d}x $ 与
+        $ \int_a^{+\infty}g(x)\mathrm{d}x $ 的敛散性相同。
+    \end{enumerate}
+\end{Theo}
+
+\begin{Theo}[绝对收敛必收敛]
+
+    若 $ f(x) \in C[a,\infty) $ 且 $ \dis \int_a^{+\infty}|f(x)|\mathrm{d}x $ 收敛，则
+    $ \dis \int_a^{+\infty}f(x)\mathrm{d}x $ 收敛。
+\end{Theo}
+
+\subsection{无界函数的反常积分}
+
+设 $ {\displaystyle\lim_{x\rightarrow b^-}}f(x) = \infty $，则称 $ b $ 为瑕点，
+$ \dis \int_a^b f(x)\mathrm{d}x = {\displaystyle\lim_{t\rightarrow b^-}}
+\int_a^t f(x)\mathrm{d}x $ 为无界函数的反常积分，若其存在，称其收敛，否则其发散。
+
+瑕点在区间左端点或区间内时类似。瑕点在区间内而拆成两个积分时，二积分全部收敛则收敛，
+否则发散。
+
+注意，
+\begin{enumerate}
+    \item 计算方法与积分类似，如 $\dis \int_a^{b} = F(x)\Big|^{b}_a = 
+    {\displaystyle\lim_{t\rightarrow b^-}}F(t) - F(a) $ ；
+    \item 反常积分收敛时，适用对称奇偶性，否则不适用；
+    \item $ p $ 积分：对 $ \dis \int_0^{a}\dfrac{1}{x^p}\mathrm{d}x,\ a>0 $ ,
+    当 $ p < 1 $ 时积分收敛，$ p\geq 1 $ 时发散；
+    \item 利用分部积分法时，可以先进行不定积分，然后再引入上下限。
+\end{enumerate}
+
+\begin{Theo}[比较判别法]
+
+    设 $ {\displaystyle\lim_{x\rightarrow b^-}}f(x) = \infty,{\displaystyle\lim_{x\rightarrow b^-}}
+    g(x) = \infty $ ，$ f,g $ 在 $ [a,b) $ 非负且对任意 $ \xi < b $ 都有在 $ [a,\xi] $ 上可积，$ f\leq g $ ，
+    则\begin{enumerate}
+        \item 若 $ \int_a^{b}g(x)\mathrm{d}x $ 收敛，则$ \int_a^{b}f(x)\mathrm{d}x $收敛；
+        \item 若 $ \int_a^{b}f(x)\mathrm{d}x $ 发散，则$ \int_a^{b}g(x)\mathrm{d}x $发散。
+    \end{enumerate}
+\end{Theo}
+
+\begin{Theo}[比较判别法]
+
+    设 $ {\displaystyle\lim_{x\rightarrow b^-}}f(x) = \infty,{\displaystyle\lim_{x\rightarrow b^-}}
+    g(x) = \infty $ ，$ f,g $ 在 $ [a,b) $ 非负
+    \begin{enumerate}
+        \item 若 $ g(x) > 0, x\in[a,b) $ 且 $ \dis {\displaystyle\lim_{x\rightarrow b^-}}
+        \dfrac{f(x)}{g(x)} = k \neq 0 $ ，则 $ \int_a^{b}f(x)\mathrm{d}x $ 与
+        $ \int_a^{b}g(x)\mathrm{d}x $ 的敛散性相同；
+        \item 若当 $ x\rightarrow b^- $时，$ f\sim g $，则 $ \int_a^{b}f(x)\mathrm{d}x $ 与
+        $ \int_a^{b}g(x)\mathrm{d}x $ 的敛散性相同。
+    \end{enumerate}
+\end{Theo}
+
+\begin{Theo}[绝对收敛必收敛]
+
+    若 $ {\displaystyle\lim_{x\rightarrow b^-}}f(x)=\infty $ 且 $ \dis \int_a^{b}|f(x)|\mathrm{d}x $ 收敛，则
+    $ \dis \int_a^{b}f(x)\mathrm{d}x $ 收敛。
+\end{Theo}
