@@ -1,0 +1,188 @@
+\chapter{随机事件和概率}
+
+\section{随机事件、古典与几何概型}
+
+\sssubsection{随机事件和样本空间}
+
+\begin{itemize}
+    \item 样本空间 $ \Omega $ - 随机试验所有可能结果组成的集合；
+    \item 样本点 $ \omega $ - 样本空间的元素；
+    \item 随机事件 - 样本空间 $ \Omega $ 的子集；
+    \item 事件发生 - 当且仅当一子集中一样本点出现时称其发生；
+\end{itemize}
+
+\sssubsection{古典概型}
+
+若随机试验 $ E $ 
+\begin{itemize}
+    \item 只有有限个样本点(有限性)；
+    \item 每个样本点出现的可能性相等(等可能性)；
+\end{itemize}
+则称 $ E $ 为古典型试验。
+
+若事件 $ A $ 中含有 $ k $ 个样本点，则其概率为
+$ \dis P(A) = \dfrac{A\textrm{样本点个数}}{\Omega\textrm{中样本点个数}} = \dfrac{k}{n} $ 。
+
+若随机试验 $ E $ 
+\begin{itemize}
+    \item 有无限个样本点；
+    \item 每个样本点出现的可能性相等；
+\end{itemize}
+则称 $ E $ 为几何型试验。
+
+对事件 $ A $ ，$ P(A) = \dfrac{L(A)}{L(\Omega)} $ ，
+其中 $ L $ 代表对应事件的几何度量。
+
+\section{事件关系与概率性质及公式}
+
+\sssubsection{事件运算的性质}
+
+进行事件运算时，一般先逆后积再和差；运算还有性质如下。
+\begin{itemize}
+    \item 交换律 - $ \dis A \cup B = B \cup A; AB = BA $ ;
+    \item 结合律 - $ \dis (A\cup B) \cup C = A\cup(B\cup C);\dis (A\cap B) \cap C = A\cap(B\cap C) $ ;
+    \item 分配律 - $ \dis (A\cap B)C = (AC)\cap(BC); A\cup(BC) = (A\cup B)(A\cup C) $ ;
+    \item 德摩根律 - $ \dis \overline{A\cup B} = \overline A\cap\overline B;
+    \overline{A\cap B} = \overline A\cup\overline B; $ 
+\end{itemize}
+
+\sssubsection{概率的定义、性质与公式}
+
+\begin{Def}[概率的公理化定义]
+
+    设 $ E $ 是一随机事件，$ \Omega $ 是其样本空间，$ P(A) $ 是一映射将每一个事件 $ A $ 映射到一实数，
+    若集合函数 $ P\{\bullet\} $ 满足
+    \begin{itemize}
+        \item 非负性 - 对任意事件 $ A $ 有 $ P(A)>0 $ ;
+        \item 规范性 - 对必然事件 $ \Omega $ 有 $ P(\Omega) = 1 $ ;
+        \item 可列可加性 - $ \forall i\neq j, i,j \in N^*, A_iA_j = \emptyset $，
+        有 $ P(A_1\cup A_2\cup \dots) = P(A_1) + P(A_2) + \dots $ ;
+    \end{itemize}
+    则称 $ P(A) $ 为事件 $ A $ 的概率。
+\end{Def}
+
+概率有以下性质。
+\begin{itemize}
+    \item 非负性 - $ \forall A \in \Omega, 0 \leq P(A) \leq 1 $ ;
+    \item 规范性 - $ P(\emptyset) = 0; P(\Omega) = 1 $ ;
+    \item 有限可加性 - $ \forall i\neq j, i,j = 1,2,\dots,n, A_iA_j = \emptyset $，\newline
+    有 $ P(A_1\cup A_2\cup \dots \cup A_n) = P(A_1) + P(A_2) + \dots + P(A_n)$ ;
+\end{itemize}
+
+概率有以下公式。
+\begin{itemize}
+    \item 求逆公式 - 对任意事件 $ A , P(\overline A) = 1 - P(A) $，常用于正难则反；
+    \item 加法公式 - $ P(A\cup B) = P(A) + P(B) - P(AB) $ ;
+    \item 减法公式 - 对任意二事件 $ A,B $ 有 $ P(A-B) = P(A\overline B)=P(A)-P(AB) $ ;
+    特别地，若有 $ B\subset A $ ，则有 $ P(A-B)=P(A)-P(B) $ , $ P(B)\leq P(A) $ ;
+\end{itemize}
+
+\begin{Field}[概率不等式]
+
+    \begin{enumerate}
+        \item $ 0 \leq P(A) leq 1 $ ;
+        \item $ B\subset A =  P(B)\leq P(A) $ ;
+        \item $ P(A\cup B)\leq P(A)+P(B) $ .
+    \end{enumerate}
+\end{Field}
+
+\section{条件概率与乘法公式}
+
+\begin{Def}[条件概率]
+
+    设 $ A,B $ 为二事件，且 $ P(A) > 0 $ ，则称 $ P(B|A) = \dfrac{P(AB)}{P(A)} $ 
+    为在事件 $ A $ 发生的条件下，事件 $ B $ 发生的条件概率。
+\end{Def}
+
+注意，条件概率满足概率的一切性质。
+
+条件概率具有以下性质。
+\begin{itemize}
+    \item $ 0\leq P(B|A)\leq 1 $ ;
+    \item $ P(\emptyset|A) = 0,P(\Omega|A) = 1 $ ;
+    \item $ P(\overline B|A) = 1-P(B|A) $ ;
+    \item $ P(B_1\cup B_2|A) = P(B_1|A) + P(B_2|A) - P(B_1B_2|A) $ .
+\end{itemize}
+
+计算条件概率时，抽象问题用定义；
+对具体问题，将概率空间从 $ \Omega $ 缩小到 $ A $ ；
+对逆概问题，利用贝叶斯公式。
+
+\begin{Field}[条件概率的乘法公式]
+
+    \begin{itemize}
+        \item 若 $ P(A)>0 $ ，则 $ P(AB) = P(A)P(B|A) $ ;
+        \item 对事件 $ A,B,C $ ，若 $ P(AB)>0 $ ，则
+        $ P(ABC) = P(A)P(B|A)P(C|AB) $ .
+    \end{itemize}
+\end{Field}
+
+\section{独立性与伯努利概型}
+
+\sssubsection{独立性}
+
+\begin{Def}[独立性]
+
+    若 $ P(AB)=P(A)P(B) $ 则称事件 $ A,B $ 相互独立。
+
+    若 $ A,B $ 相互独立，则 $\overline A,B $和$ A,\overline B $还有$ \overline A,\overline B $ 都独立。
+\end{Def}
+
+\sssubsection{三事件独立性}
+
+\begin{equation*}
+    A,B,C\textrm{相互独立}\Leftrightarrow\left.\begin{array}{r}
+        \begin{cases}
+            P(AB) = P(A)P(B)\\
+            P(AC) = P(A)P(C)\\
+            P(BC) = P(B)P(C)\\
+        \end{cases}\\P(ABC)=P(A)P(B)P(C)
+    \end{array}\right\}\Leftrightarrow A,B,C \textrm{相互独立}
+\end{equation*}
+
+若 $ A,B,C $ 相互独立，则 $ A,B $ 经过和、积、差运算后得到的事件与 $ C,\overline C $ 独立，
+但是 $ A,B,C $ 经过运算的事件不一定。
+
+二事件独立的等价条件
+
+\begin{itemize}
+    \item $ P(AB)=P(A)P(B) $ ;
+    \item $ \dfrac{P(AB)}{P(A)} = P(B) = P(B|A), P(A)>0 $ ;
+    \item $ P(B|\overline A) = P(B|A),0<P(A)<1 $ ;
+    \item $ \Attention{P(B|A)+P(\overline B|\overline A) = 1,0<P(A)<1} $ ;
+    \item $ \Attention{P(B|\overline A)+P(\overline B|A) = 1,0<P(A)<1} $ .
+\end{itemize}
+
+\sssubsection{$ n $ 重伯努利概型}
+
+若试验 $ E $ 只有 $ A $ 和 $ \overline{A} $ 两个可能结果，称
+$ E $ 为伯努利试验，每次实验中，$ P(A) = p,P(\overline A) = 1-p $ ；
+将伯努利试验独立重复 $ n $ 次，则其中成功 $ k $ 次的概率为
+$$
+    P_n(k) = C_n^kp^k(1-p)^{n-k},k = 0,1,\dots,n
+$$ 
+
+\section{全概率公式与贝叶斯公式}
+
+\begin{Field}[完备事件组]
+
+    若一组事件 $ A_n $ 满足$$
+        \bigcup_{i=1}^nA_i = \Omega,A_iA_j = \emptyset, 1 \leq i \neq j \leq n
+    $$ 则称其为完备事件组。
+\end{Field}
+
+\begin{Field}[全概率公式]
+
+    若一组事件 $ A_n $ 是完备事件组，且 $ P(A_i) > 0,i = 1,2,\dots,n $ ，则$$
+        P(B) = \sum_{i=1}^nP(A_i)P(B|A_i)
+    $$ 
+\end{Field}
+
+\begin{Field}[贝叶斯公式]
+
+    若一组事件 $ A_n $ 是完备事件组，且 $P(B)>0, P(A_i) > 0,i = 1,2,\dots,n $ ，则
+    $$
+        P(A_j|B) = \dfrac{P(A_j)P(B|A_j)}{\dis \sum_{i=1}^nP(A_i)P(B|A_i)},j = 1,2,\dots,n
+    $$ 
+\end{Field}
+

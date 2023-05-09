@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  8 MAY 2023 17:07
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  9 MAY 2023 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -913,10 +913,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[2])
-\tf@thm=\write6
-\openout6 = `main.thm'.
-
+[2]
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
 
@@ -927,7 +924,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[3]
+[3])
+\tf@thm=\write6
+\openout6 = `main.thm'.
+
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
 

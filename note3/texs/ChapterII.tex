@@ -1,0 +1,195 @@
+\chapter{随机变量及其分布}
+
+\section{随机变量及其分布函数}
+
+将样本空间 $ \Omega $ 上的实值单值函数 $ X = X(\omega),\omega \in \Omega $ 
+称为随机变量。
+
+$ F(x) = P\{X\leq x\},x\in (-\infty,+\infty) $ 是随机变量的分布函数。
+
+分布函数具有以下性质。
+\begin{itemize}
+    \item 非负性 - $ 0\leq F(x)\leq 1 $ ;
+    \item 规范性 - $ F(-\infty) = {\displaystyle\lim_{x\rightarrow -\infty}}F(x) = 0;
+    F(+\infty) = {\displaystyle\lim_{x\rightarrow +\infty}}F(x) = 1; $ 
+    \item 单调不减性 - $ \forall x_1 < x_2, F(x_1)\leq F(x_2) $ ;
+    \item 右连续性 - $ \forall x_0 \in R, F(x_0)={\displaystyle\lim_{x\rightarrow x_0^+}}F(x) = F(x_0+0) $ .
+\end{itemize}
+
+其中规范性可以优先考虑，因为其与微积分有关。
+
+当已知随机变量 $ X $ 的分布函数 $ F(x) $ 时，有
+\begin{itemize}
+    \item $ P(X\leq b) = F(b) $ ;
+    \item $ P(X = b) = F(b) - F(b-0)$ ;
+    \item $ P(X < b) = F(b-0) $ ;
+    \item $ P(X > b) = 1 - P(X \leq b) = 1 - F(b) $ ;
+    \item $ P(a < X \leq b) = P(X\leq b) - P(X\leq a) = F(b) - F(a) $ ;
+    \item $ P(a \leq X < b) = P(X < b) - P(X < a) = F(b-0) - F(a-0) $ ;
+    \item $ P(a \leq X \leq b) = P(X\leq b) - P(X < a) = F(b) - F(a-0) $ ;
+    \item $ P(a < X < b) = P(X < b) - P(X \leq a) = F(b-0) - F(a) $ ;
+\end{itemize}
+
+其中，前三条的应用最为广泛。
+
+\sssubsection{离散型随机变量}
+
+离散型随机变量的概率分布形如下表。
+
+\begin{table}[!htbp]\centering
+    \begin{tabular}{l|lllll}
+    X & $x_1$ & $x_2$ & $\dots$ & $x_k$ & $\dots$ \\ \hline
+    P & $p_1$ & $p_2$ & $\dots$ & $p_k$ & $\dots$
+    \end{tabular}
+\end{table}
+
+其中 $ p_k>\geq0,k\in N^*,\sum_{i=1}^{\infty}p_i = 1 $.
+
+离散型随机变量的分布函数为右连续的阶梯型函数，区间左开右闭，为概率的累加。
+
+\sssubsection{连续型随机变量}
+
+\begin{Def}[连续型随机变量概率密度]
+
+    设随机变量 $ X $ 的分布函数为 $ F(x) $ ，
+    若存在非负可积函数 $ f(x)\geq 0, x\in R $ 使得对任意实数 $ x $ ，都有
+    $ \dis F(x) = P\{X \leq x\} = \int_{-\infty}^x f(t)\mathrm{d}t $, 则称 $ X $ 为
+    连续型随机变量，函数 $ f(x) $ 为 $ X $ 的概率密度函数。
+\end{Def}
+
+\begin{Theo}[f(x)为密度函数的充要条件]
+
+    $$
+        f(x)\textrm{是概率密度}\Leftrightarrow\begin{cases}
+            f(x)\geq 0 ;\\
+            \dis \int_{-\infty}^{+\infty} f(x)\mathrm{d}x = 1.
+        \end{cases}
+    $$ 
+\end{Theo}
+
+连续型随机变量 $ X $  具有以下性质。
+\begin{itemize}
+    \item $ X $ 的分布函数是连续函数，因此 $ \forall a\in R, P\{X = a\} = 0 $;
+    \item $ \forall a,b \in R, P\{a<X\leq b\} = \int_a^b f(x)\mathrm{d}x $;
+    \item 在 $ f(x) $ 的连续点处，有 $ F'(x) = f(x) $ .
+\end{itemize}
+
+对连续型随机变量的题目，$ f(x) $ 简单或者具有特殊性质意味着作图解。
+
+\section{常见分布}
+
+\subsection{离散型}
+
+离散型随机变量需要注意其取值(尤其是第一个值)以及其对应的概率。
+
+\sssubsection{0-1分布}
+
+\begin{table}[!htbp]\centering
+    \begin{tabular}{c|cc}
+    $ X $  & $ 0 $  & $ 1 $  \\ \hline
+    $ P $  & $ 1-p $  & $ p $ 
+    \end{tabular}
+\end{table}
+其中 $ 0 < p < 1 $ .
+
+\sssubsection{二项分布}
+
+设事件 $ A $ 在任意一次试验中出现的概率均为 $ 0<p<1 $，而 $ X $ 为$ n $ 重伯努利试验中 $ A $ 发生的次数，则
+$ X $ 所有可能取值为 $ 0,1,\dots,n $ ，对应的概率为
+$ \dis P\{X = k\} = C_n^kp^k(1-p)^{n-k} $ .
+
+\sssubsection{几何分布 $ G(p) $ }
+
+若 $ X $ 的概率分布为 $$ \dis P\{X=k\} = (1-p)^{k-1}p, k = 1,2,\dots, $$ 
+则称 $ X $ 服从参数为 $ p $ 的几何分布，记为 $ X\sim G(p) $ .
+
+\sssubsection{泊松分布 $ P(\lambda) $ }
+
+若随机变量 $ X $ 的概率分布满足 $$ \dis P\{X = k\} \dfrac{\lambda^k}{k!}e^{-\lambda k},\lambda > 0,k=0,1,2,\dots,$$
+则称 $ X $ 服从参数为 $ \lambda $ 的泊松分布，记为 $ X\sim P(\lambda) $ .
+
+\sssubsection{超几何分布 $ H(N,M,n) $ }
+
+若随机变量 $ X $ 的概率分布为
+$$
+    P\{X=k\} = \frac{\dis C_M^kC_{N-M}^{n-k}}{C_N^n},k = 0,1,2,\min(M,n), M,N,n\in Z^+
+$$ 
+
+则称 $ X $ 服从参数为 $ N,M,n $ 的超几何分布，记为 $ X\sim H(N,M,n) $ .
+
+\subsection{连续型}
+
+连续性随机变量的密度函数非零区间即其定义区间。
+
+\sssubsection{均匀分布 $ U(a,b) $ }
+
+$ \dis f(x) = \begin{cases}
+    \dfrac{1}{b-a},&a<x<b,\\0,&\textrm{其他}
+\end{cases} $ 
+
+\sssubsection{指数分布 $ E(\lambda) $ }
+
+$ \dis f(x) = \begin{cases}
+    \lambda e^{-\lambda x},& x>0,\\0,&x\leq 0
+\end{cases}$ 
+
+注意，此处可能应用泊松过程的增量平稳性，即\newline 
+$ \dis \forall s,t\leq0,n\leq0, P\{N(s+t)-N(s) = n\} = P\{N(t) = n\} $.
+
+\sssubsection{正态分布 $ N(\mu,\sigma^2) $ }
+
+$ \dis f(x) = \dfrac{1}{\sqrt{2\pi}\sigma}\exp\left\{-\dfrac{(x-\mu)^2}{2\sigma^2}\right\},x\in R $ 
+
+特别地，$\dis X\sim N(0,1)\Rightarrow \phi(x) = \dfrac{1}{\sqrt{2\pi}}\exp\left\{-\dfrac{x^2}{2}\right\} $，
+此时其分布函数为 $ \Phi(x) $.
+
+对于一般的正态分布 $ X\sim N(\mu,\sigma^2) $，有 $ F(x) = \Phi(\dfrac{x-\mu}{\sigma}) $.
+
+利用正态分布密度函数的规范性，可求泊松积分 $ \dis \int_{-\infty}^{+\infty} e^{-x^2}\mathrm{d}x = \sqrt{\pi}$ 
+
+\section{随机变量函数的分布}
+
+\subsection{离散型随机变量函数的分布}
+
+对离散型随机变量函数，采用列表法。
+
+\subsection{连续型随机变量函数的分布}
+
+对已知概率密度为 $ f_X(x) $ 的随机变量 $ X $ 有 $ Y = g(X) $ ，需要求
+$ Y $ 分布函数 $ F_Y(y) $ 和概率密度函数 $ f_Y(y) $时，有两种办法。
+
+\sssubsection{公式法}
+
+若 $ y = g(x) $ 严格单调，其反函数 $ x = h(y) $ 有一阶连续导数，则
+$ Y = g(X) $ 也是连续型随机变量，其密度函数为\newline 
+$ \dis f_Y(y) = \begin{cases}
+    f_X(h(y))|h'(y)|,& \alpha < y < \beta\\0,&\textrm{其他}
+\end{cases} $ 
+其中 $ (\alpha,\beta) $ 为 $ y = g(x) $ 在 $ X $ 上可能取值的区间上的值域。
+
+\sssubsection{分布函数法}
+
+先按分布函数的定义求得 $ Y $ 的分布函数，再求导得到密度函数。即求 $ \dis F_Y(y) = P(Y\leq y) = P(g(X) 
+\leq y) = \mathop{\int}\limits_{g(x)\leq y}f_X(x)\mathrm{d}x $，再求 $ f_Y(y) = F_Y'(y) $.  
+
+具体而言，连续性随机变量的函数的分布函数法如下。
+\begin{enumerate}
+    \item 由 $ X $ 取值范围$ (a,b) $ 确定 $ y $ 的取值范围$ (c,d) $;
+    \item 由分布函数的定义，确定 $ F_Y $ 的左右两头，即对 $ F_Y(y) = P(Y\leq y) $,\begin{itemize}
+        \item $ y < c, F_Y(y) = 0 $ ;
+        \item $ y > d, F_Y(y) = 1 $ .
+    \end{itemize}
+    \item 定中间，即 $ y \in (c,d) $ .
+    \begin{equation*}
+        \begin{array}{c}
+            F_Y(y) = P(Y\leq y) = P(g(X)\leq y)\\\Downarrow\\
+            P(X\leq h(y)),\textrm{此时若$ g(x) $ 分段则分段处理}\\\Downarrow\\
+            \dis \int_{-\infty}^{h(y)} f_X(x)\mathrm{d}x,\textrm{此处取交集}
+        \end{array}
+    \end{equation*}     
+\end{enumerate}
+
+注意，若连续型随机变量分布函数为 $ F(x) $ ，若 $ Y = F(X) $ ，则 $ Y\sim U(0,1) $ .
+
+
+
