@@ -494,6 +494,37 @@ $$
     \dfrac{\dis \int_a^b f(x)\mathrm{d}x}{b-a}
 $$ 
 
+\subsection{平行截面面积已知的立体体积}
+
+$ \dis V = \int_a^bA(x)\mathrm{d}x,a<b $ ，其中 $ A(x) $ 是待求体积立体截面面积。
+
+\subsection{平面曲线段的弧长}
+
+对曲线段 $ y = f(x),x\in[a,b] $ ，设 $ f(x) $ 有连续导数，则给定平面曲线段弧长元素
+和弧长分别为
+$$ \dis \mathrm{d}s = \dsqrt{1+f'^2(x)}\mathrm{d}x;
+s = \int_a^b \dsqrt{1+f'^2(x)}\mathrm{d}x. $$
+
+若曲线能表示为 $ x = x(t),y=y(t),t\in[\alpha,\beta] $，且其在$ (\alpha,\beta) $ 内
+有连续导数，则给定平面曲线段弧长元素和弧长分别为
+
+$$ \dis \mathrm{d}s = \dsqrt[]{y'^2(t)+x'^2(t)}\mathrm{d}t;
+s = \int_a^b \dsqrt[]{y'^2(t)+x'^2(t)}\mathrm{d}t. $$
+
+若曲线能表示为 $ \rho = \rho(\theta),\theta\in[\theta_1,\theta_2] $，
+则给定平面曲线段弧长元素和弧长分别为
+
+$$ \dis \mathrm{d}s = \dsqrt[]{\rho^2(\theta)+\rho'^2(\theta)}\mathrm{d}\theta ;
+s = \int_a^b \dsqrt[]{\rho^2(\theta)+\rho'^2(\theta)}\mathrm{d}\theta. $$
+
+\subsection{旋转曲面求侧面积}
+
+曲线$ y = f(x),x\in(a,b) $ 弧绕 $ x $ 轴旋转所得曲面表面积为
+$ \dis S = 2\pi\int_a^b|f(x)|\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x $ 
+
+曲线$ y = f(x),x\in(a > 0,b) $ 弧绕 $ y $ 轴旋转所得曲面表面积为
+$ \dis S = 2\pi\int_a^bx\cdot\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x $ 
+
 \section{反常积分}
 
 定积分存在两种限制，由此可以引申出两种反常积分。

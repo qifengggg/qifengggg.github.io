@@ -294,6 +294,23 @@
     因此有 $ a = b = 2e-2 $ .
 \end{answer}
 
+\begin{answer}[660T70]{注意所列式所求体积与待求体积的关系}
+    设将摆线段向下平移 $ 2a $ 格后与$ x $ 轴围成图形绕 $ x $ 轴
+    旋转一周所得立体的体积为 $ V_1 $ ；$ y = 2a,x = 2\pi,x = 0,y = 0 $ 围成的
+    长方形绕 $ x $ 轴转一周得到的体积为 $ V_0 $，则显然有 $ V=V_0-V_1 $ .
+
+    显然 $ V_0 = 8\pi^2a^3 $. 而\begin{equation*}
+        \begin{aligned}
+            V_1 &= \pi\int_0^{2\pi} (2a-y)^2 \mathrm{d}x
+            \\&= \pi\int_0^{2\pi} a^2(2 - 1+\cos t)^2 \cdot a(1-\cos t) \mathrm{d}t
+            \\& = a^3\pi\int_0^{2\pi} (1+\cos t)^2(1-\cos t) \mathrm{d}t
+            \\&= a^3\pi\left[\int_0^{2\pi}\sin^2t\mathrm{d}t+
+            \int_0^{2\pi}\sin^2t\mathrm{d}\sin t\right]
+            \\& = a^3\pi^2
+        \end{aligned}
+    \end{equation*}
+    因此原体积 $ V = V_0-V_1 = 7\pi^2a^3. $ 
+\end{answer}
 
 \section{考试}
 
