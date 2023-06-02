@@ -1,0 +1,179 @@
+\chapter{微分方程}
+
+\section{概念}
+
+微分方程中未知函数的导数的最高阶为该微分方程的阶。
+
+满足微分方程的函数称为微分方程的解。
+
+通解为含有相互独立的方程阶数个任意常数的解。通解称为一般解，其不一定是全部解。
+
+不在通解中的解是奇解。
+
+不含有任意常数或任意常数确定后的解为特解。
+
+\section{一阶微分方程}
+
+\subsection{可分离变量的一阶微分方程}
+
+其形如 $ \dis \dfrac{\mathrm{d} y}{\mathrm{d}x} = f(x)g(y) $ ，其微分形式为
+$ M_1(x)N_1(y)\mathrm{d}x+M_2(x)N_2(y)\mathrm{d}y = 0 $.
+
+可以使用分离变量法，即将含有 $ x,y $ 分离到等式两边，然后取积分 
+$ \dis \int \dfrac{\mathrm{d}y}{g(y)} = \int f(x)\mathrm{d}x $.
+
+\subsection{一阶齐次微分方程}
+
+其形如 $ \dis \dfrac{\mathrm{d}y}{\mathrm{d}x}=f(\dfrac{y}{x}) $ ，此时可
+令 $ \dfrac{y}{x} = u $ ，然后应用分离变量法。
+
+\subsection{一阶线性微分方程}
+
+其形如 $ \dis \dfrac{\mathrm{d}y}{\mathrm{d}x} + P(x)y = Q(x) $ ，其中未知数及其导数次数为1.
+
+其有公式$$
+    y = e^{-\int P(x)\mathrm{d}x}
+    \left(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C\right)
+$$ 
+
+其中包含三个不定积分，其常数 $ C $ 已经事先提出。
+
+\subsection{全微分方程}
+
+一阶微分方程形如 $ \dis P(x,y)\mathrm{d}x + Q(x,y)\mathrm{d}y = 0 $ 满足
+$ \dis \dfrac{\partial Q}{\partial x} = \dfrac{\partial P}{\partial y} $ 时，
+称为全微分方程。
+
+全微分方程的通解为$$
+    \int_{x_0}^xP(x,y_0)\mathrm{d}x + \int_{y_0}^y Q(x,y)\mathrm{d}y = C
+$$ 
+
+\subsection{伯努利方程}
+
+形如 $ y' + P(x)y = Q(x)y^n $ 的方程是伯努利方程。
+此时令 $ z = y^{1-n} $ 将其变为一阶线性方程。
+
+\section{可降阶的高阶微分方程}
+
+\begin{Field}[形如 $ y^{(n)} = f(x) $ 时 ]
+
+    只需要积分 $ n $ 次即可得到方程通解。
+\end{Field}
+
+\begin{Field}[不显含函数$ y $ 的二阶可降阶方程 $ y^\pprime = f(x,y') $ ]
+
+    令 $ y = p'(x) $ ，则有 $ y^\pprime = \dfrac{\mathrm{d} p}{\mathrm{d}x}  =p' $ ，因而
+    可以将原方程降为一阶。
+\end{Field}
+
+\begin{Field}[不显含自变量 $ x $ 的二阶可降阶方程 $  y^\pprime = f(y,y') $ ]
+
+    令 $ y' = p $ ，则有 $ y^\pprime = \dfrac{\mathrm{d}p}{\mathrm{d}y}\cdot \dfrac{\mathrm{d}y}{\mathrm{d}x}
+    =p\dfrac{\mathrm{d}p}{\mathrm{d}y} $ ，因而可将其降为一阶。
+\end{Field}
+
+在解可降阶高阶微分方程时，应当边解边确定常数，常数确定得越早越好。
+
+\section{高阶线性微分方程}
+
+\subsection{高阶线性微分方程概念}
+
+$ n $ 阶的线性微分方程形如$$
+    y^{(n)}+p_{n-1}y^{(n-1)} + \dots + p_1(x)y'+p_0(x)y = f(x)
+$$ 
+
+其中若 $ f(x)\equiv 0 $ ，称方程为齐次的，否则为非齐次的。
+
+\subsection{线性微分方程解的结构}
+
+考虑二阶线性微分方程，其有如下性质。
+
+\begin{itemize}
+    \item 对二阶齐次线性微分方程的两特解 $ y_1,y_2 $ ，其任意一组线性组合都是
+    同一方程的特解；若两特解线性无关，其线性组合为通解；
+    \item 若 $ y_1,y_2 $ 为二阶非齐次线性微分方程的两特解，
+    则 $ y_1-y_2 $ 是对应齐次方程的一特解；
+    \item 若 $ \hat y,y^* $ 分别为一二阶齐次线性微分方程以及与前者
+    对应的非齐次方程的特解，则其和为对应非齐次方程的一特解；
+    \item 若 $ \hat y,y^* $ 分别为一二阶齐次线性微分方程的通解以及与前者
+    对应的非齐次方程的特解，则其和为对应非齐次方程的通解；
+    \item 对方程 $ y^\pprime p_1(x)y'+p_0(x)y = f_1(x),y^\pprime p_1(x)y'+p_0(x)y = f_2(x) $
+    ，若其分别有特解 $ y_1,y_2, $ 则 $ y_1+y_2 $ 为 $ y^\pprime p_1(x)y'+p_0(x)y = f_1(x)+f_2(x) $ 的特解。
+\end{itemize}
+
+\subsection{常系数齐次线性微分方程的求解}
+
+对二阶常系数齐次线性方程 $ y^\pprime py'+qy = 0 $ ，其中 $ p,q $ 为常数，
+其具有特征方程 $ \lambda^2+p\lambda+q = 0 $，根据特征方程的根，可以分为三种情况。
+
+对 $ \Delta = p^2 - 4p $ ,
+\begin{enumerate}
+    \item 若 $ \Delta > 0 $ ，特征方程有二实根 $ \lambda_1,\lambda_2 $ ，此时方程的通解为$$
+        y = C_1e^{\lambda_1x}+C_2e^{\lambda_2x}
+    $$ 其中 $ C_1,C_2 $ 是任意常数；
+    \item 若 $ \Delta = 0 $ ，特征方程有一二重实根 $ \lambda $ ，此时方程的通解为$$
+        y = (C_1+C_2 x)e^{\lambda x}
+    $$ 其中 $ C_1,C_2 $ 是任意常数；
+    \item 若 $ \Delta < 0 $ ，特征方程有一对共轭复根 $ \alpha\pm\beta i $ ，此时方程的通解为$$
+        y = e^{\alpha x}\left(C_1\cos \beta x + C_2 \sin \beta x\right)
+    $$ 其中 $ C_1,C_2 $ 是任意常数。
+\end{enumerate}
+
+事实上，以上是在复数域中对特征方程进行求解。
+
+对$ n $ 阶常系数齐次线性微分方程是类似的。对 $$
+    y^{(n)} + p_1y^{(n-1)} + \dots + p_{n-1}y' + p_ny = 0
+$$ 其中 $ p_i,i=1,2,\dots n  $ 为常数，有特征方程$$
+    \lambda^n + p_1\lambda^{n-1} +\dots + p_n = 0
+$$ 
+
+特征根与方程通解的关系与二阶情形很类似。
+
+\begin{itemize}
+    \item 若 $ \lambda_0 $ 为特征方程的 $ k $ 重实根，则特征方程的通解中含有$$
+        e^{\lambda_0 x}\sum_{i=1}^k C_ix^{i-1}
+    $$ 
+    \item 若 $ \lambda_1 $ 为特征方程的 $ k $ 重共轭复根，则方程通解中含有$$
+        e^{\alpha x}\left[
+            \cos \beta x \sum_{i=1}^k C_ix^{i-1}+
+            \sin \beta x \sum_{i=1}^k D_ix^{i-1}
+        \right]
+    $$ 
+\end{itemize}
+
+\subsection{二阶常系数线性非齐次微分方程的求解}
+
+对形如 $ y^\pprime+py'+qy = f(x) $ 的二阶常系数线性非齐次微分方程，其通解的结构为
+$ y = \hat y  + y^* $ ，其中 $ \hat y $ 为对应齐次方程的通解， $ y^* $ 为本方程的一个特解。
+
+对方程形如$
+    y^\pprime + py'+qy = P_m(x)e^{ax}
+$ ,其中 $ P_m(x) $ 为 $ x $ 的 $ m $ 次多项式，
+则原方程有一个特解形如$$
+    y^* = x^k Q_m(x)e^{ax}
+$$ 其中 $ a $ 为$\overset{\textrm{齐次特征方程}}{ \lambda^2 + p\lambda + q = 0  }$的 $ k $ 重根，
+将其代入原方程求 $ Q_m(x) $ .
+
+对方程形如$
+    y^\pprime + py'+qy = e^{\alpha x}\left[P_l(x)\cos \beta x+P_n(x)\sin \beta x\right]
+$ ,其中 $ P_l(x),P_n(x) $ 为 $ x $ 的 $ l,n $ 次多项式，
+则原方程有一个特解形如$$
+    y^* = x^ke^{ax}\left[Q_m(x)\cos\beta x+R_m(x)\sin \beta x\right]
+$$ 其中 $ m = \max(l,n) $ ，且若 $ \alpha+\beta i $ 是齐次特征方程的一对共轭复根，则 $ k = 1 $ ；否则 $ k = 0 $ .
+
+代入原方程，求 $ Q_m(x),R_m(x) $ 。
+
+事实上，令 $ \beta = 0 $ ，则后者转化为前者。
+
+\subsection{欧拉方程}
+
+形如 $\dis x^ny^{(n)} + \sum_{i=1}^np_ix^{n-i}y^{(n-i)} = f(x) $ 的方程为欧拉方程。
+令 $ x = e^t $ ，将其转化为以 $ t $ 为自变量的常系数线性方程。
+
+具体而言，若设 $ x = e^t $ ，则有
+\begin{equation*}
+    \begin{aligned}
+        \dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{1}{x}y'_{t};\quad{}
+        \dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} = \dfrac{y^\pprime_t - y'_t}{x^2}
+    \end{aligned}
+\end{equation*}

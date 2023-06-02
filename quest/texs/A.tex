@@ -218,8 +218,8 @@
     \begin{equation*}
         \begin{aligned}
             xf'(x) = \dfrac{1}{1+x^2} &\Rightarrow f'(x) = \dfrac{1}{x(1+x^2)}
-            \\&\Rightarrow f(x) + C = \dfrac{1}{2} \int \dfrac{1}{x^2} - \dfrac{1}{1+x^2} \mathrm{d}x^2
-            \\&\Rightarrow f(x) = \ln\dfrac{x^2}{1+x^2} + C
+            \\&\Rightarrow f(x) + C = \dfrac{1}{2} \int \dfrac{1}{x} - \dfrac{x}{1+x^2} \mathrm{d}x^2
+            \\&\Rightarrow f(x) = \dfrac{1}{2}\ln\dfrac{x^2}{1+x^2} + C
         \end{aligned}
     \end{equation*}
 \end{answer}
@@ -478,4 +478,41 @@
 
 \begin{answer}[C2T22]{}
 
+\end{answer}
+
+\begin{answer}[C3T2]{注意存在间断点时不定积分的存在性}
+    对于每一项，
+    \begin{BulletItemize}
+        \item $ f(x) $ 的一个原函数 $ F(x) = C $ ，其中 $ C $ 是常数，那么 $ F'(x) \equiv 0 $ ;
+        \item $ f(x) $ 的一个原函数 $ F(x) = 0 $ ，那么其全部原函数为 $ F(x) = 0 + C = C $ ;
+        \item 若 $ f(x) $ 在区间内有震荡间断点，则其有可能有原函数；
+        \item 由于 $ F(x) $ 为 $ f(x) $ 的原函数，可以知道 $ F(x) $ 可导，而可导必连续。
+    \end{BulletItemize}
+    因此，正确的有3项。
+\end{answer}
+
+\begin{answer}[C3T13]{注意不要将变限积分函数求导公式错误应用}
+    \begin{equation*}
+        \begin{aligned}
+            F'(x) &= \cos \left[\int_0^x\sin\left(\int_0^y\sin t^3 \mathrm{d}t\right)\mathrm{d}y\right] \cdot
+            \left[\int_0^x\sin\left(\int_0^y\sin t^3 \mathrm{d}t\right)\mathrm{d}y\right]'
+            \\&= \cos \left[\int_0^x\sin\left(\int_0^y\sin t^3 \mathrm{d}t\right)\mathrm{d}y\right]
+            \cdot \sin\left(\int_0^x\sin t^3 \mathrm{d}t\right)
+        \end{aligned}
+    \end{equation*}
+    注意，对变限积分函数求导时，不对里面的函数求导，只对积分上下限关于$ x $ 求导。
+\end{answer}
+
+\begin{answer}[C3T21]{构造辅助函数，通过辅助函数的单调性证明结论}
+    令 $$ \dis F(x) = \int_a^{a+\int_a^x g(u)\mathrm{d}u}f(t)\mathrm{d}t - \int_a^x f(t)g(t)\mathrm{d}t,x\in[a,b] $$
+    由于 $ f(x),g(x) $ 在 $ [a,b] $ 连续，有 $ F(x) $ 在 $ [a,b] $ 可导，且
+    $$
+        F'(x) = \left[f(a+\int_a^x g(u)\mathrm{d}u)-f(x)\right]g(x)
+    $$ 
+    又由 $ \dis a+\int_a^x g(u)\mathrm{d}u \leq x $ ，而 $ f(x) $ 单调递增，$ g(x)\leq 0 $ ，
+    有 $ F'(x)\leq 0 $ ，即$ F(x) $ 在区间$ [a,b] $ 上单调不增。
+    又由 $ F(a) = 0 $ ，可以知道 $ F(b)\leq 0 $ ，即
+    $$
+        \int_a^{a+\int_a^bg(t)\mathrm{d}t}f(x)\mathrm{d}x\leq \int_a^b f(x)g(x)\mathrm{d}x
+    $$ 
 \end{answer}

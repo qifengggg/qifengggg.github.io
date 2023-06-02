@@ -36,3 +36,12 @@
 \contentsline {subsection}{\numberline {i.}协方差}{17}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {ii.}相关系数}{17}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {iii.}切比雪夫不等式}{18}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}大数定律和中心极限定理}{19}{chapter.5}%
+\contentsline {section}{\numberline {I.\,}依概率收敛}{19}{section.5.1}%
+\contentsline {section}{\numberline {II.\,}大数定律}{19}{section.5.2}%
+\contentsline {subsection}{\numberline {i.}切比雪夫大数定律}{19}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {ii.}辛钦大数定律}{19}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {iii.}伯努利大数定律}{20}{subsection.5.2.3}%
+\contentsline {section}{\numberline {III.\,}中心极限定理}{20}{section.5.3}%
+\contentsline {subsection}{\numberline {i.}列维—林德伯格中心极限定理}{20}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {ii.}隶莫佛—拉普拉斯中心极限定理}{20}{subsection.5.3.2}%

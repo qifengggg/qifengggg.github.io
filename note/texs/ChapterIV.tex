@@ -103,7 +103,7 @@ $ y $ 的偏导数可以类似地定义。
         \Updownarrow \\
         {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}} 
         \dfrac{\overbrace{f(x,y)-f(x_0,y_0)}^{\dis \Delta z} - 
-        \overbrace{f'_x(x_0,y_0)(x-x_0)+f'_y(x_0,y_0)(y-y_0)}^{\dis \mathrm{d}z}}{\dis \sqrt{(x-x_0)^2+(y-y_0)^2}}
+        \overbrace{f'_x(x_0,y_0)(x-x_0)+f'_y(x_0,y_0)(y-y_0)}^{\dis \mathrm{d}z}}{\dis \sqrt{(x-x_0)^2+(y-y_0)^2}} = 0
     \end{array}
 \end{equation*}
 
@@ -134,3 +134,196 @@ $ y $ 的偏导数可以类似地定义。
         &  &  &  & \begin{tabular}[c]{@{}c@{}}$ f'_x(x,y),f'_y(x,y) $ 在\\  $ (x_0,y_0) $ 处均存在\end{tabular}
     \end{tabular}
 \end{table}
+
+\subsection{复合函数微分法}
+
+求二阶偏导数时，二阶偏导和一阶偏导的偏导结构相同。
+
+\subsection{隐函数求导}
+
+\begin{Theo}[隐函数存在定理]
+
+    若有
+    \begin{itemize}
+        \item 函数 $ F(x,y) $ 在以 $ P_0(x_0,y_0) $ 为内点的某区域 $ D\subset R^2 $ 上连续；
+        \item $ F(x_0,y_0) = 0 $ (称为初始条件);
+        \item 在 $ D $ 内存在连续的偏导数 $ F'_y(x,y) $ ;
+        \item $ F'_y(x_0,y_0)\neq0 $ ,
+    \end{itemize}
+    则在点 $ P_0 $ 的某邻域 $ \bigcup_{P_0}\subset D $ 内，方程 $ F(x,y)=0 $ 唯一地确定一个定义
+    在区间 $ (x_0-\alpha,x_0+\alpha) $ 内的隐函数 $ y = f(x) $ ，使得
+    \begin{enumerate}
+        \item $ f(x_0) = y_0 $ 且 $ x\in (x_0-\alpha,x_0+\alpha) $ 时，$ F(x_0,f(x_)) \equiv 0 $ ;
+        \item 函数 $ f(x) $ 在区间 $ (x_0-\alpha,x_0+\alpha) $ 内连续。
+    \end{enumerate}
+\end{Theo}
+
+对一方程 $ F(x,y,z) = 0 $ 确定隐函数 $ z = z(x,y) $，求导数时，有三种方法。
+
+\begin{enumerate}
+    \item 直接求导 - 对方程两边同时关于自变量求偏导，即\begin{equation*}
+        \begin{aligned}
+            &F'_x \cdot 1 + F'_y \cdot 0 + F'_z \cdot \dfrac{\partial z}{\partial x}\\
+            \Rightarrow & \dfrac{\partial z}{\partial x} = -\dfrac{F'_x}{F'_z}
+        \end{aligned}
+    \end{equation*}
+    对 $ y $ 同理；
+    \item 全微分 - 对方程两边同时取全微分，有 $ \mathrm{d}F(x,y,z) = 0 $ ，而\begin{equation*}
+        \begin{aligned}
+            &\mathrm{d}F(x,y,z) = F'_x \mathrm{d}x + F'_y \mathrm{d}y + F'_z\mathrm{d}z\\ 
+            \Rightarrow & \mathrm{d}z = -\dfrac{F_x'}{F_z'}\mathrm{d}x - \dfrac{F_y'}{F_y'}\mathrm{d}y
+        \end{aligned}
+    \end{equation*}
+    又 $ \mathrm{d}z = \dfrac{\partial z}{\partial x}\mathrm{d}x + \dfrac{\partial z}{\partial y}\mathrm{d}y $ ，
+    故有 $ \dfrac{\partial z}{\partial x} = -\dfrac{F_x'}{F_z'},
+    \dfrac{\partial z}{\partial y} = -\dfrac{F_y'}{F_z'}$;
+    \item 公式法 - 利用上述结论，直接求得 $ F_x',F_y',F_z' $ 代入。
+\end{enumerate}
+
+其中，直接求导法应用广泛。
+
+对方程组 $ \dis \begin{cases}
+    F(x,y,u,v) = 0 \\ G(x,y,u,v) = 0
+\end{cases} $ 确定的隐函数 $ u = u(x,y) $ 及 $ v = v(x,y) $ ，求偏导数
+时，对每个方程求偏导，然后解关于$ \dfrac{\partial u}{\partial x},\dfrac{\partial v}{\partial x} $ 的、新的方程组。
+
+
+\section{多元函数极值}
+
+\subsection{无条件极值}
+
+\begin{Def}[无条件极值]
+    
+    设函数 $ z = f(x,y) $ 在点 $ P_0(x_0,y_0) $ 某邻域内有定义，若对该邻域内除 $ P_0 $ 的任意一点 $ P(x,y) $ 
+    都有 $ f(x,y)\leq f(x_0,y_0) $ ，则称点 $ P_0 $ 为函数 $ z = f(x,y) $ 的极大值点；类似地，可以定义极小值点。
+    前二者统称为极值点，极大值和极小值统称极值。
+\end{Def}
+
+事实上，对 $ (x,y) $ 某去心邻域内的任意 $ (x_0,y_0) $ ，
+若总有 $ \Delta f = f(x,y) - f(x_0,y_0) < 0 $ ，则极值为极大值点；若$ \Delta f > 0 $ 时则为极小值点；
+若任意去心邻域内上述两条都不成立即不保号，则不是极值点。
+    
+\begin{Theo}[二元函数极值存在的必要条件]
+
+    设函数 $ z = f(x,y) $ 在 $ P_0 $ 某邻域有定义，且存在一阶偏导数，若 $ P_0 $ 是极值点，则其
+    必定为驻点。
+\end{Theo}
+
+注意，驻点 $ \nLeftrightarrow $ 极值点，仅当可微时极值点才是驻点。
+
+对二元函数，可能的极值点仅需要注意驻点。
+
+\begin{Theo}[二元函数极值存在的充分条件]
+
+    函数 $ z = f(x,y) $ 在 $ P_0 $ 某邻域内有二阶连续偏导数，且 $ P_0 $ 为驻点，
+    设 $ A = f^\pprime_{xx}(x_0,y_0),B = f^\pprime_{xy}(x_0,y_0),C = f^\pprime_{yy}(x_0,y_0) $ ，则
+    \begin{itemize}
+        \item $ AC - B^2 > 0 $ 时， $ P_0 $ 是极值点，且若 $ A>0 $ ，其为极小值点，
+        $ A<0 $ 时为极大值点；
+        \item $ AC-B^2>0 $ 时其不是极值点；
+        \item $ AC-B^2 = 0 $ 时该判别法失效，此时用定义，即判断 $ \Delta f $ 在
+        $ P_0 $ 去心邻域是否保号。
+    \end{itemize}
+\end{Theo}
+
+事实上，该定义可以理解为$$
+    \mathrm{d}f = \begin{pmatrix}
+        \mathrm{d}x & \mathrm{d}y
+    \end{pmatrix}\begin{pmatrix}
+        A&B\\B&C
+    \end{pmatrix}\begin{pmatrix}
+        \mathrm{d}x\\\mathrm{d}y
+    \end{pmatrix}
+$$ 
+
+当 $ AC-B^2 $ 判别法失效，判定保号性时，若难以正面判定，可以利用
+不同情况下的符号证明保号性不成立。
+
+给定 $ F(x,y,z) $ 求 $ z = z(x,y) $ 极值时，对 $ F $ 关于 $ x,y $ 求偏导，并且
+令 $ \dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y} $ 
+都等于零，将得到的式子反带入 $ f $ 求解得到一组点，利用 $ AC-B^2 $ 判别法确定其
+其是否为极值点。
+
+\subsection{条件极值}
+
+给定 $ z = f(x,y) $ ，约束条件 $ \varphi(x,y) = 0 $ ，求极值，
+解决方法是将其化为无条件极值，具体而言，可以
+\begin{itemize}
+    \item 直接代入；
+    \item 拉格朗日乘数法。
+\end{itemize}
+
+对于后者，令 $ L = f(x,y) + \lambda\varphi(x,y) $ ，前者称为拉格朗日函数，$ \lambda $ 是拉格朗日乘数。
+对 $ L $ 关于 $ x,y,\lambda $ 都求偏导，解得驻点，利用实际意义判别驻点是否为极值。
+
+有多个约束条件时，有拉格朗日函数 $ L = f(x,y) + \lambda_1\varphi_1 + \lambda_2\varphi_2 $ ，后面同理。
+
+给定方程，在闭区域内求极值，则在边界与区域内部都求极值，然后比较。
+
+\section{二重积分}
+
+\subsection{性质}
+
+\begin{itemize}
+    \item $ \dis \iint\limits_{D}kf(x,y)\mathrm{d}\sigma = k \iint\limits_{D}f(x,y)\mathrm{d}\sigma $ ;
+    \item $ \dis \iint\limits_{D}f(x,y)\pm g(x,y)\mathrm{d}\sigma 
+     = \iint\limits_{D}f(x,y)\mathrm{d}\sigma + \iint\limits_{D}g(x,y)\mathrm{d}\sigma$ ;
+    \item $ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma = \iint\limits_{D_1}f(x,y)\mathrm{d}\sigma
+    + \iint\limits_{D_2}f(x,y)\mathrm{d}\sigma $ ，其中 $ D = D_1\cup D_2 $ ，且后者
+    除公共边界不重合；
+    \item 若 $ f(x,y)\leq g(x,y) $ , $ (x,y)\in D $ ，有 $ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma
+    \leq \iint\limits_{D}g(x,y)\mathrm{d}\sigma $ ;
+    \item 对 $ m\leq f(x,y)\leq M,(x,y)\in D $ ，有 $ \dis mS \leq \iint\limits_{D}f(x,y)\mathrm{d}\sigma
+    \leq MS $ ，其中 $ S $ 为区域 $ D $ 的面积。
+    \item $ \dis \left|\iint\limits_{D}f(x,y)\mathrm{d}\sigma\right| \leq \iint\limits_{D}|f(x,y)|\mathrm{d}\sigma $ ;
+    \item 积分中值定理 - 设 $ f(x,y) $ 在有界闭区域 $ D $ 上连续，$ S $ 为 $ D $ 的面积，
+    必定存在 $ (\xi,\eta)\in D $ 使得 $ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma = f(\xi,\eta)\cdot S $ .
+\end{itemize}
+
+注意，$ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma $ 与 $ f(x,y) $ 在 $ D $ 上
+有限条曲线上的值无关。
+
+\subsection{二重积分的计算}
+
+可以将二重积分化为直角坐标下的二次积分计算。
+
+设有界闭区域 $ D = \{(x,y)|a\leq x\leq b,\varphi_1(x)\leq y\leq \varphi_2(x)\} $ ，其中
+$ \varphi_1(x),\varphi_2(x) $ 在 $ [a,b] $ 上连续，$ f(x,y) $ 在 $ D $ 上连续，则有
+$ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma = \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y
+ = \int_a^b\mathrm{d}x\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\mathrm{d}y $ .
+
+在 $ D = \{(x,y)|c\leq y\leq d,\varPsi_1(y)\leq x\leq \varPsi_2(y)\} $ 上同理。
+
+计算时，为了方便计算，可以考虑交换积分次序。
+
+部分二重积分具有如下性质。
+
+\begin{Theo}[对称性]
+
+    若 $ f(x,y) $ 在有界闭区域 $ D $ 上连续，若$ D $ 关于 $ x $ 轴对称，则$$
+        \iint\limits_{D}f(x,y)\mathrm{d}\sigma = \begin{cases}
+            0,& f(x,y)\textrm{对}y\textrm{为奇函数}\\
+            2\iint\limits_{D_1}f(x,y)\mathrm{d}\sigma,& f(x,y)\textrm{对}y\textrm{为偶函数}\\
+        \end{cases}
+    $$ 
+    $ D $ 关于 $ y $ 轴对称，函数关于 $ x $ 轴对称时类似。
+\end{Theo}
+
+\begin{Theo}[轮换对称性]
+
+    若积分域 $ D $ 关于 $ y = x $ 对称，或相对于积分域两坐标轴的相对位置相同，又或者将 $ x,y $ 对调后，
+    积分域的边界方程不变，则二重积分具有轮换对称性，即$$
+        \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y = \iint\limits_{D}f(y,x)\mathrm{d}x\mathrm{d}y
+    $$ 
+\end{Theo}
+
+可以将二重积分化为极坐标下的二次积分计算，此时有 $ \mathrm{d}\sigma = r\mathrm{d}r\mathrm{d}\theta $.
+
+将直角坐标化为极坐标时，有$$
+    \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y = 
+    \iint\limits_{D}f(r\cos\theta,r\sin\theta)r\mathrm{d}r\mathrm{d}\theta
+$$ 
+
+若积分域为圆或圆的一部分时，或被积函数中含有 $ x^2,y^2,xy,x^2+y^2 $ 等$ x,y $ 的二次函数，
+可以考虑应用极坐标。
+

@@ -22,6 +22,7 @@
 \usepackage{comment}
 \usepackage{extarrows}
 \usepackage{inconsolata}
+\usepackage{enumitem}
 
 
 \geometry{a4paper,scale=0.8}
@@ -146,7 +147,8 @@
 {\begin{Field}\textbf{\stepcounter{cntA}答案\thecntA\quad{}{#1}}\vspace{5pt}\noindent\newline}{\end{Field}}
 
 \newenvironment{BulletItemize}
-{\renewcommand{\labelitemi}{\textbullet}\begin{itemize}}{\end{itemize}}
+{\renewcommand{\labelitemi}{\textbullet}\begin{itemize}[topsep = 0pt]
+}{\end{itemize}}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
