@@ -1,0 +1,108 @@
+\chapter{二次型}
+
+\section{定义}
+
+\sssubsection{二次型}
+
+形如 
+\begin{equation*}
+    \begin{aligned}
+        f(x_1,\cdots,x_n) &= 
+        \sum_{i = 1}^n a_{ii}x_i^2 + 
+        \sum_{1\leq i < j \leq n} 2 a_{ij}x_ix_j \\ 
+        &\whichis X^\top AX,\quad X = (x_1,\cdots, x_n)^\top,\\ 
+        & A = A^\top = \begin{pmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\ 
+            a_{12}&a_{22}&\cdots&a_{2n}\\ 
+            \vdots&\vdots&\ddots&\vdots\\ 
+            a_{1n}&a_{2n}&\cdots&a_{nn}\\ 
+        \end{pmatrix}
+    \end{aligned}
+\end{equation*}
+
+的二次齐次函数是二次型。
+
+对称矩阵 $ A $ 称为二次型的矩阵。
+
+二次型 $ f $ 的秩 $ r(f) = r(A) $ .
+
+\sssubsection{标准型}
+
+只含有平方项的二次型$ X^\top AX = \sum d_{i}x_i^2 $ 是标准型。二次型总能化为标准型。
+
+标准型的矩阵是对角矩阵 $ \Lambda $ .
+
+\sssubsection{规范型}
+
+系数为 $ 0,\pm 1 $ 的标准型是规范型。
+
+\sssubsection{惯性指数}
+
+(二次型对应的)标准型中正(负)系数的个数为其正(负)惯性指数。
+
+\section{矩阵合同}
+
+\subsection{定义}
+
+对 $ n $ 阶方阵 $ A,B, $
+若存在可逆矩阵 $ P $ 使得 $ P^\top AP = B, $ 
+则称 $ A,B $ 合同。
+
+\subsection{可逆变换}
+
+设 $ f = X^\top AX, $ 
+令可逆矩阵 $ C: X = CY, $ 
+代回，有 $ f = Y^\top C^\top ACY. $ 
+
+因此，二次型的可逆变换即为合同变换。
+
+\subsection{判定}
+
+矩阵合同的判定方式如下。
+\begin{equation*}
+    \begin{aligned}
+        \lambda_A = \lambda_B\Leftrightarrow A\sim B &\Rightarrow A,B \textrm{合同} \\
+        & \Leftrightarrow X^\top AX, X^\top BX \textrm{的惯性指数相同}\\ 
+        & \Leftrightarrow \lambda_A,\lambda_B  \textrm{正负数的个数相同} \\ 
+    \end{aligned}
+\end{equation*}
+
+\subsection{二次型化为标准型}
+
+\sssubsection{正交变换}
+
+由正交变换将二次型化为标准型，即寻找正交矩阵 $ Q:X = QY $ 以将对称矩阵转化为对角矩阵。
+
+事实上，第五章对称矩阵相似对角化和第六章正交变换很相似，但有些许不同。
+
+\begin{itemize}
+    \item 第五章：已知对称矩阵；
+          
+          第六章：已知二次型 $ \Rightarrow $ 对应的对称矩阵；
+    \item 第五章：\begin{itemize}
+            \item 求解特征值、特征向量；
+            \item 施密特正交单位化；
+        \end{itemize}
+        
+          第六章：同上
+    \item 第五章：令 $ Q = (\gamma_1,\cdots,\gamma_n) $ 时
+        有 $ Q^{-1}AQ = Q^\top AQ = \Lambda; $
+          
+          第六章：令 $ Q = (\gamma_1,\cdots,\gamma_n) $ \Attention{有 $ X = QY $ 时},
+        二次型 $ f = \sum \lambda_iy_i^2, $
+        此时特征值的正负个数为正负惯性指数。
+\end{itemize}
+
+\sssubsection{配方法}
+
+由配方法将二次型化为标准型，即通过配平方将多项式变形至只有平方项。
+
+具体而言，常用的公式有
+$$
+    \begin{cases}
+        (a+b)^2 = a^2 + b^2 + 2ab \\
+        (a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac \\
+        (a+b)(a-b) = a^2 - b^2
+    \end{cases}
+$$ 
+

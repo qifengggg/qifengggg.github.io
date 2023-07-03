@@ -114,6 +114,7 @@
 \newcommand{\bs}{\blacksquare}
 \newcommand{\ws}{\square}
 \newcommand{\nextline}{\vspace{5pt}\newline}
+\newcommand{\whichis}{\mathop=\limits^\Delta}
 
 \title{\includegraphics[scale=0.6]{1.jpg}\\ \textsf{线性代数笔记}}
 \author{奇峰}
@@ -131,6 +132,7 @@
 %							{<环境后定义>}
 
 
+
 \newenvironment{Def}[1][\quad{}]{\begin{def1}\textbf{#1}}{\end{def1}}
 \newenvironment{Theo}[1][\quad{}]{\begin{theo1}\textbf{#1}}{\end{theo1}}
 \newenvironment{Func}[1][\quad{}]{\begin{func1}\textbf{#1}}{\end{func1}}
@@ -138,6 +140,8 @@
 \newenvironment{Field}[1][\quad{}]{\noindent\newline\textbf{#1}}{}
 
 \setlength{\parskip}{3pt}
+
+\renewcommand{\labelitemii}{$ \circ $ }
 
 \frontmatter
 \maketitle
@@ -147,5 +151,10 @@
 \mainmatter
 
 \input{texs/ChapterI.tex}
+\input{texs/ChapterII.tex}
+\input{texs/ChapterIII.tex}
+\input{texs/ChapterIV.tex}
+\input{texs/ChapterV.tex}
+\input{texs/ChapterVI.tex}
 
 \end{document}

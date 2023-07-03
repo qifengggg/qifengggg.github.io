@@ -1,0 +1,211 @@
+\begin{Appendices}
+
+\chapter{补充结论}
+
+\sssubsection{反三角公式}
+
+\begin{itemize}
+    \item $ \arcsin x + \arccos x = \dfrac{\pi}{2}; $ 
+    \item $ \arctan x + \textrm{arccot} x = \dfrac{\pi}{2}; $ 
+    \item $ \arctan x + \arctan \dfrac{1}{x} = \begin{cases}
+        \dfrac{\pi}{2},& x>0\\
+        -\dfrac{\pi}{2},& x<0\\
+    \end{cases} $ 
+\end{itemize}
+
+\sssubsection{$ n $ 次根式的极限}
+
+\begin{itemize}
+    \item $ {\displaystyle\lim_{n\rightarrow \infty}}\dsqrt[n]a = 1\ (a > 0); $ 
+    \item $ {\displaystyle\lim_{n\rightarrow \infty}}\dsqrt[n]n = 1; $ 
+    \item $ {\displaystyle\lim_{n\rightarrow \infty}}\dsqrt[n]{a_1^n+\cdots+a_n^n} = a_m\ (a_m = \max\{a_i\}); $ 
+\end{itemize}
+
+\sssubsection{递推数列求极限}
+
+对数列 $ x_{n+1} = f(x_n) $ 求极限，方法如下。
+\begin{itemize}
+    \item 适当放缩以证明有界性；
+    \item 做差、做商或求导证明单调性；
+    \item 若其单调，由单调有界知$ \lim x_n $ 存在；
+    \item 令 $ \lim x_n = a, $ 对原式两端取极限，有 $ a = f(a), $ 因此可以解得 $ a; $ 
+    \item 若其不单调，则设 $ \lim x_n = a, $ 再利用夹逼定理证明前者确实成立。
+\end{itemize}
+
+\sssubsection{均值不等式}
+
+\begin{equation*}
+    \begin{aligned}
+        \sqrt[n]{a_1\cdots a_n}\leq \dfrac{a_1+\cdots a_n}{n}\leq \dsqrt{\dfrac{a_1^2+\cdots a_n^2}{n}}
+    \end{aligned}
+\end{equation*}
+
+\newpage
+
+\sssubsection{函数不等式}
+
+\begin{itemize}
+    \item $ \sin x < x <\tan x\ ( x \in (0,\dfrac{\pi}{2})); $ 
+    \item $ \sin x < x\ (x > 0),\ \ \sin x > x\ (x < 0); $ 
+    \item $ e^x > 1 + x\ (x \neq 0); $ 
+    \item $ \dfrac{x}{1+x}<\ln(1+x)<x\ (x \in (-1,0)\cup(0,\infty)); $ 
+\end{itemize}
+
+\sssubsection{零点定理应用}
+
+若 $ f(x)\in C[0,1],f(0) = f(1), $ 则对任意 $ n\geq 2,\exists \xi\in [0,1] $ 
+使得 $ f(\xi+\dfrac{1}{n}) = f(\xi). $ 
+\begin{proof}
+    构造 $ F(x) = f(x + \dfrac{1}{n}) - f(x), $ 
+    由于 $ F(\dfrac{0}{n}),\cdots,F(\dfrac{n-1}{n}) $ 的平均值为 $ 0, $ 
+    说明 $ 0 $ 是 $ F(x) $ 的函数值，因此必定有 $ \xi $ 使得
+    $ F(\xi) = f(\xi + \dfrac{1}{n}) - f(\xi) = 0. $ 
+\end{proof}
+
+\sssubsection{比值的极限推导数}
+
+设 $ f(x) $ 在 $ x = 0 $ 处连续，且 $ {\displaystyle\lim_{x\rightarrow 0}}\dfrac{f(x)}{x} = A, $ 则
+$ f(0) = 0,f'(0) = A. $ 
+
+\sssubsection{一类带绝对值函数的可导性}
+
+设 $ f(x) = (x-x_0)^n|x-x_0|, $ 则 $ f(x) $ 在 $ x = x_0 $ 处 $ n $ 阶可导，但 $ n+1 $ 阶不可导。
+
+\sssubsection{和差化积公式与二倍角公式}
+
+\begin{itemize}
+    \item 和差化积公式
+    \begin{itemize}
+        \item $\dis \sin(\alpha\pm\beta) = \sin\alpha\cos\beta+\cos\alpha\sin\beta $
+        \item $\dis \cos(\alpha\pm\beta) = \cos\alpha\cos\beta-\sin\alpha\sin\beta $
+        \item $\dis \tan(\alpha\pm\beta) = \dfrac{\tan\alpha+\tan\beta}{1+\tan\alpha\tan\beta}$
+    \end{itemize}
+    \item 二倍角公式
+    \begin{itemize}
+        \item $\dis \sin 2\alpha = 2\sin\alpha\cos\alpha $
+        \item $\dis \cos 2\alpha = \cos^2\alpha - \sin^2\alpha $
+        \item $\dis \tan 2\alpha = \dfrac{2\tan\alpha}{1+\tan^2\alpha}$
+    \end{itemize}
+    \item 降幂公式
+    \begin{itemize}
+        \item $\dis \sin^2 \alpha = \dfrac{1-\cos 2\alpha}{2} $ 
+        \item $\dis \cos^2 \alpha = \dfrac{1+\cos 2\alpha}{2} $
+    \end{itemize}
+\end{itemize}
+
+\sssubsection{幂指函数求导公式}
+
+若 $ u = u(x),v = v(x) $ 均可导，且 $ u(x)>0, $ 
+则有 $ (u^v)' = (e^{v\ln u})' = u^v(v\ln u)'. $ 
+
+\sssubsection{高阶导数值的求法}
+
+求高阶导数值时， 有如下的求法。
+\begin{enumerate}
+    \item 奇偶性 - 奇函数求偶阶导或偶函数求奇阶导为奇函数。
+    \item 递推公式
+    \begin{itemize}[parsep = 6pt]
+        \item $ [(ax+b)^\alpha]^{(n)} = \dfrac{\alpha !}{(\alpha - n)!}(ax+b)^{\alpha-n}a^n = 
+        \alpha(\alpha - 1)\cdots(a-n+1)(ax+b)^{\alpha-n}a^n, $ 
+        
+        特别地，$ \left(\dfrac{1}{ax+b}\right)^{(n)} = \dfrac{(-1)^nn!a^n}{(ax+b)^{n+1}}; $ 
+        \item $ \dis (e^{ax+b})^{(n)} = a^ne^{ax+b},(a^x)^{(n)} = a^x\ln^n a;$ 
+        \item $ [\ln(ax+b)]^{(n)} = a\left(\dfrac{1}{ax+b}\right)^{(n-1)} = \dfrac{(-1)^{n-1}(n-1)!a^n}{(ax+b)^n}; $ 
+        \item $ [\sin(ax+b)]^{(n)} = a^n\sin(ax+b+\dfrac{n\pi}{2});
+        [\cos(ax+b)]^{(n)} = a^n\cos(ax+b+\dfrac{n\pi}{2}). $ 
+    \end{itemize}
+    \item 莱布尼茨公式 - 乘积的高阶导数
+    
+    若 $ u = u(x),v = v(x) $ 均 $ n $ 阶可导，则有$$
+        (uv)^{(n)} = \sum_{k=0}^n\mathrm{C}_n^k u^{(k)} v^{(n-k)}.
+    $$ 
+    \item 泰勒公式 - 一般而言，应用于 $ x = 0 $ 处。
+\end{enumerate}
+
+\sssubsection{拉格朗日证明包含两点导数的等式}
+
+对区间 $ [a,c],[c,b] $ 分别应用拉格朗日，其中 $ c $ 根据题干结论确定。
+
+\sssubsection{柯西中值定理证明包含两点导数的等式}
+
+\begin{itemize}
+    \item 对 $ f(x) $ 使用拉格朗日；
+    \item 对 $ f(x),g(x) $ 使用柯西。
+\end{itemize}
+
+\sssubsection{导数与单调性的推断}
+
+\begin{itemize}
+    \item 已知一点导数符号 $ \nRightarrow $ 单调区间
+    
+    $ f(x) = \begin{cases}x+2x^2\sin \dfrac{1}{x},& x\neq 0\\ 0,& x = 0\end{cases} $ 
+    \item 若 $ f(x) $ 在 $ x = x_0 $ 有一阶连续函数且 $ f'(x_0) > 0, $ 
+    则在 $ x = x_0 $ 某邻域内有 $ f'(x)>0, f(x) $ 单调递增。
+\end{itemize}
+
+\sssubsection{一个包含 $ e^x, \sin, \cos $ 的积分的结论}
+
+也即上导下抄。
+
+\begin{equation*}
+    \begin{aligned}
+        &\int e^{\alpha x} \sin \beta x \mathrm{d}x 
+        =& \dfrac{ \dis 
+        \left|\begin{matrix}
+            (e^{\alpha x})' & (\sin \beta x)' \\ 
+            e^{\alpha x} & \sin \beta x 
+        \end{matrix}\right|
+        }{\alpha^2 + \beta^2} + C \\ 
+        &\int e^{\alpha x} \cos \beta x \mathrm{d}x 
+        =& \dfrac{ \dis 
+        \left|\begin{matrix}
+            (e^{\alpha x})' & (\cos \beta x)' \\ 
+            e^{\alpha x} & \cos \beta x 
+        \end{matrix}\right|
+        }{\alpha^2 + \beta^2} + C \\ 
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{微分方程中“任意常数”的写法}
+
+\begin{itemize}
+    \item 等式中无 $ \ln \rightarrow C;  $ 
+    \item 等式中有 $ \ln (\square) \rightarrow \ln C; $ 
+    \item 等式中有 $ \ln |\square| \rightarrow \ln |C|; $ 
+\end{itemize}
+
+\sssubsection{$ \Gamma $ 积分}
+
+$$
+    \int_0^{+\infty} x^n e^{-x}\mathrm{d}x = n!
+$$ 
+
+\sssubsection{偏导数逆问题}
+
+对偏导数求积分时，常数项为不含该未知量的函数，如
+\begin{equation*}
+    \begin{aligned}
+        f^\pprime_{yy}(x,y) = 2 \Rightarrow
+        f'_y(x,y) = \int f^\pprime_{yy}(x,y) \mathrm{d}y
+        = 2y + \Attention{c(x)}
+    \end{aligned}
+\end{equation*}
+然后利用其他已知条件求解原函数。
+
+\sssubsection{欧拉积分、泊松积分}
+
+欧拉积分可积，但不可求积，其主要包括
+\begin{itemize}
+    \item $ \dis e^{\pm x^2},e^{1/x},\dfrac{1}{\ln x}; $ 
+    \item $ \sin x^2,\sin \dfrac{1}{x}, \dfrac{\sin x}{x}; $ 
+    \item $ \cos x^2,\cos \dfrac{1}{x}, \dfrac{\cos x}{x} $ 等。
+\end{itemize}
+
+泊松积分为
+$$
+    \int_{-\infty}^\infty e^{-x^2}\mathrm{d}x = \sqrt{\pi}    
+$$ 
+
+
+
+\end{Appendices}

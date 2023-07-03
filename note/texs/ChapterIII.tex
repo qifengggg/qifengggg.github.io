@@ -19,7 +19,16 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
 
 若$ f(x) $ 在区间 $ I $ 上存在第一类间断点或第二类中的无穷间断点，则其在该区间内没有原函数。
 
-注意，函数在区间内有震荡间断点的，可能有原函数。
+注意，函数在区间内有震荡间断点的，可能有原函数；总结如下。
+
+\begin{Theo}[原函数存在定理]
+
+    \begin{itemize}
+        \item 连续函数存在原函数；
+        \item 含有第一类间断点或无穷间断点的函数不存在原函数；
+        \item 含有震荡间断点的函数可能存在原函数。
+    \end{itemize}    
+\end{Theo}
 
 \subsection{不定积分}
 
@@ -32,33 +41,70 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
 
 \begin{Field}[不定积分基本性质]
 
-    设 $ \int f(x)\mathrm{d}x = F(x)+C $ ，其中 $ F(x) $ 为 $ f(x) $ 一原函数，$ C $ 为一常数，
+    设 $\dis \int f(x)\mathrm{d}x = F(x)+C, $ 其中 $ F(x) $ 为 $ f(x) $ 一原函数，$ C $ 为一常数，
     则\begin{itemize}
-        \item $ \int F'(x)\mathrm{d}x=F(x)+C $ 或 $ \int \mathrm{d}F(x)=F(x)+C $ ;
-        \item $ [\int f(x)\mathrm{d}x]'=f(x) $ 或 $ \mathrm{d}[\int f(x)\mathrm{d}x]=f(x)\mathrm{d}x $ ;
-        \item $ \int kf(x)\mathrm{d}x = k\int f(x)\mathrm{d}x $ ;
-        \item $ \int [f(x)\pm g(x)]\mathrm{d}x = \int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x $ ;
+        \item $\dis \int F'(x)\mathrm{d}x=F(x)+C $ 或 $\dis \int \mathrm{d}F(x)=f(x)+C ; $
+        \item $\dis \left[\int f(x)\mathrm{d}x\right]'=f(x) $ 
+        或 $\dis \mathrm{d}\left[\int f(x)\mathrm{d}x\right]=f(x)\mathrm{d}x ; $
+        \item $\dis \int kf(x)\mathrm{d}x = k\int f(x)\mathrm{d}x ; $
+        \item $\dis \int [f(x)\pm g(x)]\mathrm{d}x = \int f(x)\mathrm{d}x \pm \int g(x)\mathrm{d}x ; $
     \end{itemize}
 \end{Field}
 
-\begin{Field}[基本积分公式]
+\sssubsection{基本积分公式}
 
-    C为任意常数，则
-    \begin{enumerate}
-        \item $ \int x^\alpha \mathrm{d}x = \frac{x^{\alpha +1}}{\alpha + 1} + C\ (\alpha \neq -1) $ ;
-        \item $ \int \frac{1}{x} \mathrm{d}x = \ln|x| + C $ ;
-        \item $ \int a^x \mathrm{d}x = \frac{a^x}{\ln a} + C\ (a>0,a\neq 1) $，
-        特别地，$ \int e^x\mathrm{d}x = e^x+C $ ;
-        \item $ \int \cos x \mathrm{d}x = \sin x + C $ ;
-        \item $ \int \sin x \mathrm{d}x = -\cos x + C $ ;
-        \item $ \int \frac{1}{\cos^2 x}\mathrm{d}x = \tan x + C $ ;
-        \item $ \int -\frac{1}{\sin^2 x}\mathrm{d}x = \cot x + C $ ;
-        \item $ \int \frac{\tan x}{\cos x} \mathrm{d}x = \frac{1}{\cos x} + C $ ;
-        \item $ \int \frac{\cot x}{\sin x}\mathrm{d}x = -\frac{1}{\sin x} + C $ ;
-        \item $ \int \frac{1}{1+x^2}\mathrm{d}x = \arctan x + C = -\textrm{arccot} x + C $ ;
-        \item $ \frac{1}{\sqrt{1-x^2}}\mathrm{d}x = \arcsin x + C = -\arccos x + C $ ;
-    \end{enumerate}
-\end{Field}
+$ C $ 为任意常数，则
+\begin{enumerate}
+    \item 幂函数
+    
+    $\dis \int x^\alpha \mathrm{d}x = \frac{x^{\alpha +1}}{\alpha + 1} + C\ (\alpha \neq -1), $
+    
+    特别地， $\dis \int \frac{1}{x} \mathrm{d}x = \ln|x| + C; $ 
+    \item 指数函数
+    
+    $\dis \int a^x \mathrm{d}x = \frac{a^x}{\ln a} + C\ (a>0,a\neq 1) ; $
+    
+    特别地，$\dis \int e^x\mathrm{d}x = e^x+C ; $
+    \item 对数函数
+    
+    $ \dis \int\ln x\mathrm{d}x = x \ln x - x + C; $ 
+    \item 三角函数
+    
+    $ \dis \int \cos x \mathrm{d}x = \sin x + C, \dis \int \sin x \mathrm{d}x = -\cos x + C ; $
+
+    $ \dis \int \tan x\mathrm{d}x = -\ln|\cos x| + C,\int \cot x \mathrm{d}x = \ln|\sin x| + C; $ 
+
+    $ \dis \int \sec x\mathrm{d}x = \ln|\sec + \tan x| + C,\int \csc x= -\ln|\csc x + \cot x| + C
+    = \ln|\csc x - \tan x| + C; $ 
+
+    $\dis \int \frac{1}{\cos^2 x}\mathrm{d}x = \tan x + C, \dis \int -\frac{1}{\sin^2 x}\mathrm{d}x = \cot x + C ; $
+
+    $\dis \int \frac{\tan x}{\cos x} \mathrm{d}x = \frac{1}{\cos x} + C, 
+    \dis \int \frac{\cot x}{\sin x}\mathrm{d}x = -\frac{1}{\sin x} + C ; $
+    \item 平方和
+    
+    $\dis \int \frac{1}{1+x^2}\mathrm{d}x = \arctan x + C = -\textrm{arccot} x + C; $
+
+    $ \dis \int \dfrac{\mathrm{d}x}{a^2 + x^2} = \dfrac{1}{a}\arctan \dfrac{x}{a} + C; $    
+    \item 平方差
+    
+    $ \dis \int \dfrac{\mathrm{d}x}{1-x^2} = \dfrac{1}{2}\ln\left|\dfrac{1+x}{1-x}\right| + C; $ 
+
+    $ \dis \int \dfrac{\mathrm{d}x}{a^2-x^2} = \dfrac{1}{2a}\ln\left|\dfrac{a+x}{a-x}\right| + C; $ 
+    
+    \item 根号下平方差
+    
+    $ \dis \int \dfrac{\mathrm{d}x}{\sqrt{1-x^2}} = \arcsin x + C,$
+
+    $ \dis \int \dfrac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \arcsin \dfrac{x}{a} + C,$
+    \item 根号下平方和
+    
+    $ \dis \int \dfrac{\mathrm{d}x}{\sqrt{a^2+x^2}} = \ln(x + \sqrt{a^2+x^2}) + C,$
+
+    $ \dis \int \dfrac{\mathrm{d}x}{\sqrt{x^2 - a^2}} = \ln\left|x - \sqrt{x^2-a^2}\right| + C;$
+\end{enumerate}    
+
+
 
 \subsection{不定积分法}
 
@@ -77,28 +123,28 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
 常见的凑微分形式如下。
 
 \begin{enumerate}
-    \item $ \int f(ax+b)(ax+b)\mathrm{d}x = \frac{1}{a}\int f(ax+b)\mathrm{d}(ax+b) (a\neq 0) $ ;
-    \item $ \int f(ax^n+b)x^{n-1}\mathrm{d}x = \frac{1}{na}\int f(ax^n+b)\mathrm{d}(ax^n + b) (an\neq0) $ ;
-    \item $ \int \frac{f(\ln x)}{x}\mathrm{d}x = \int f(\ln x)\mathrm{d}(\ln x)$ ;
-    \item $ \int f(\frac{1}{x})\frac{1}{x^2}\mathrm{d}x = -\int f(\frac{1}{x})\mathrm{d}(\frac{1}{x}) $ ;
-    \item $ \int \frac{f(\sqrt x)}{\sqrt x} \mathrm{d}x = 2 \int f(\sqrt x)\mathrm{d}(\sqrt x) $ ;
+    \item $ \int f(ax+b)(ax+b)\mathrm{d}x = \frac{1}{a}\int f(ax+b)\mathrm{d}(ax+b) (a\neq 0) ; $
+    \item $ \int f(ax^n+b)x^{n-1}\mathrm{d}x = \frac{1}{na}\int f(ax^n+b)\mathrm{d}(ax^n + b) (an\neq0) ; $
+    \item $ \int \frac{f(\ln x)}{x}\mathrm{d}x = \int f(\ln x)\mathrm{d}(\ln x); $
+    \item $ \int f(\frac{1}{x})\frac{1}{x^2}\mathrm{d}x = -\int f(\frac{1}{x})\mathrm{d}(\frac{1}{x}) ; $
+    \item $ \int \frac{f(\sqrt x)}{\sqrt x} \mathrm{d}x = 2 \int f(\sqrt x)\mathrm{d}(\sqrt x) ; $
     \item $ \int f(a^x)a^x\mathrm{d}x = \frac{1}{\ln a}\int f(a^x)\mathrm{d}(a^x) $,
-    特别地，$ \int f(e^x)e^x\mathrm{d}x = \int f(e^x)\mathrm{d}(e^x) $ ;
-    \item $ \int f(\sin x)\cos x \mathrm{d}x = \int f(\sin x)\mathrm{d}(\sin x) $ ;
-    \item $ \int f(\cos x)\sin x \mathrm{d}x = -\int f(\cos x)\mathrm{d}(\cos x)$ ;
-    \item $ \int \frac{f(\tan x)}{\cos^2 x}\mathrm{d}x = \int f(\tan x)\mathrm{d}(\tan x) $ ;
-    \item $ \int \frac{f(\cot x)}{\sin^2 x}\mathrm{d}x = -\int f(\cot x)\mathrm{d}(\cot x) $ ;
-    \item $ \int f(\sec x)\sec x \tan x \mathrm{d}x = \int f(\sec x)\mathrm{d}(\sec x) $ ;
-    \item $ \int f(\csc x)\csc x \cot x\mathrm{d}x = -\int f(\csc x)\mathrm{d}(\csc x) $ ;
-    \item $ \int \frac{f(\arcsin x)}{\sqrt{1-x^2}}\mathrm{d}x = \int f(\arcsin x)\mathrm{d}(\arcsin x) $ ;
-    \item $ \int \frac{f(\arccos x)}{\sqrt{1-x^2}}\mathrm{d}x = -\int f(\arccos x)\mathrm{d}(\arccos x) $ ;
-    \item $ \int \frac{f(\arctan x)}{1+x^2}\mathrm{d}x = \int f(\arctan x)\mathrm{d}(\arctan x) $ ;
-    \item $ \int \frac{f(\textrm{arccot} x)}{1+x^2}\mathrm{d}x = -\int f(\textrm{arccot} x)\mathrm{d}(\textrm{arccot} x) $ ;
-    \item $ \int \frac{f(\arctan \frac{1}{x})}{1+x^2}\mathrm{d}x = -\int f(\arctan \frac{1}{x})\mathrm{d}(\arctan \frac{1}{x}) $ ;
+    特别地，$ \int f(e^x)e^x\mathrm{d}x = \int f(e^x)\mathrm{d}(e^x) ; $
+    \item $ \int f(\sin x)\cos x \mathrm{d}x = \int f(\sin x)\mathrm{d}(\sin x) ; $
+    \item $ \int f(\cos x)\sin x \mathrm{d}x = -\int f(\cos x)\mathrm{d}(\cos x); $
+    \item $ \int \frac{f(\tan x)}{\cos^2 x}\mathrm{d}x = \int f(\tan x)\mathrm{d}(\tan x) ; $
+    \item $ \int \frac{f(\cot x)}{\sin^2 x}\mathrm{d}x = -\int f(\cot x)\mathrm{d}(\cot x) ; $
+    \item $ \int f(\sec x)\sec x \tan x \mathrm{d}x = \int f(\sec x)\mathrm{d}(\sec x) ; $
+    \item $ \int f(\csc x)\csc x \cot x\mathrm{d}x = -\int f(\csc x)\mathrm{d}(\csc x) ; $
+    \item $ \int \frac{f(\arcsin x)}{\sqrt{1-x^2}}\mathrm{d}x = \int f(\arcsin x)\mathrm{d}(\arcsin x) ; $
+    \item $ \int \frac{f(\arccos x)}{\sqrt{1-x^2}}\mathrm{d}x = -\int f(\arccos x)\mathrm{d}(\arccos x) ; $
+    \item $ \int \frac{f(\arctan x)}{1+x^2}\mathrm{d}x = \int f(\arctan x)\mathrm{d}(\arctan x) ; $
+    \item $ \int \frac{f(\textrm{arccot} x)}{1+x^2}\mathrm{d}x = -\int f(\textrm{arccot} x)\mathrm{d}(\textrm{arccot} x) ; $
+    \item $ \int \frac{f(\arctan \frac{1}{x})}{1+x^2}\mathrm{d}x = -\int f(\arctan \frac{1}{x})\mathrm{d}(\arctan \frac{1}{x}) ; $
     \item $ \int \frac{f|ln(x+\sqrt{x^2+a^2})|}{\sqrt{x^2+a^2}}\mathrm{d}x = 
-    \int f|ln(x+\sqrt{x^2+a^2})|\mathrm{d}(\ln(x+\sqrt(x^2+a^2))) $ ;
+    \int f|ln(x+\sqrt{x^2+a^2})|\mathrm{d}(\ln(x+\sqrt(x^2+a^2))) ; $
     \item $ \int \frac{f|ln(x+\sqrt{x^2-a^2})|}{\sqrt{x^2-a^2}}\mathrm{d}x = 
-    \int f|ln(x+\sqrt{x^2-a^2})|\mathrm{d}(\ln(x+\sqrt(x^2-a^2))) $ ;
+    \int f|ln(x+\sqrt{x^2-a^2})|\mathrm{d}(\ln(x+\sqrt(x^2-a^2))) ; $
     \item $ \int \frac{f'(x)}{f(x)}\mathrm{d}x = \ln|f(x)|+C\ (f(x)\neq0) $ .
 \end{enumerate}
 
@@ -116,18 +162,31 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
     其中 $ t=\varphi^{-1}(x) $ 为 $ x=\varphi(t) $ 的反函数。
 \end{Field}
 
+\begin{comment}
+被积函数是 $ x $ 与 $ \sqrt[n]{ax+b} $ 或 $ x $ 与 $ \dis\sqrt[n]{\frac{ax+b}{cx+d}} $ 
+    或由 $ e^x $ 构成的代数式的根式，则令 $ \sqrt[n]{g(x)}=t $，使得 $ x=\varphi(t) $ 中不再含有根式，
+    此时做变量代换 $ x = \varphi(t) $ 即可；
+    被积函数含有 $ \dis\sqrt{Ax^2+Bx+C}(A\not=0) $ 时，先根据$ A $ 的符号将其整理为
+    $ \sqrt{A[(x-x_0)^2\pm l^2]} $ 或 $ \sqrt{-A[l^2-(x-x_0)^2]} $ ，然后做三角替换。   
+\end{comment}
+
 第二换元法多用于根式的被积函数，通过换元法去根式，具体而言，可以分为两类。
 \begin{enumerate}
-    \item 被积函数是 $ x $ 与 $ \sqrt[n]{ax+b} $ 或 $ x $ 与 $ \dis\sqrt[n]{\frac{ax+b}{cx+d}} $ 
-    或由 $ e^x $ 构成的代数式的根式，则令 $ \sqrt[n]{g(x)}=t $，使得 $ x=\varphi(t) $ 中不再含有根式，
-    此时做变量代换 $ x = \varphi(t) $ 即可。
-    \item 被积函数含有 $ \dis\sqrt{Ax^2+Bx+C}(A\not=0) $ 时，先根据$ A $ 的符号将其整理为
-    $ \sqrt{A[(x-x_0)^2\pm l^2]} $ 或 $ \sqrt{-A[l^2-(x-x_0)^2]} $ ，然后做三角替换。
-    \begin{enumerate}
-        \item 根式形如 $ \sqrt{a^2-x^2} $ 时，做 $ x=a\sin t $，此时 $ t\in[-\frac{\pi}{2},\frac{\pi}{2}] $ ；
-        \item 根式形如 $ \sqrt{x^2-a^2} $ 时，做 $ x=a\sec t $，此时 $ t\in[0,\frac{\pi}{2})\cup(\frac{pi}{2},\pi] $ 
-        \item 根式形如 $ \sqrt{a^2+x^2} $ 时，做 $ x=a\tan t $，此时 $ t\in (-\frac{pi}{2},\frac{pi}{2}) $ 。
-    \end{enumerate}
+    \item 根号下一次方
+    
+    \begin{itemize}
+        \item $ \dsqrt[n]{ax+b} = t; $ 
+        \item $ \dsqrt[n]{\dfrac{ax+b}{cx+d}} = t; $ 
+        \item 当式中同时存在 $ \dsqrt[n]{ax+b},\dsqrt[m]{ax+b} $ 时，取 $ t = \dsqrt[l]{ax+b}, $ 
+        其中 $ l $ 为 $ m,n $ 的最小公倍数。
+    \end{itemize}
+    \item 根号下二次方
+    
+    \begin{itemize}
+        \item 根式形如 $ \sqrt{a^2-x^2} $ 时，令 $ x=a\sin t, $ 此时 $ t\in[-\frac{\pi}{2},\frac{\pi}{2}]; $ 
+        \item 根式形如 $ \sqrt{x^2-a^2} $ 时，令 $ x=a\sec t, $ 此时 $ t\in[0,\frac{\pi}{2})\cup(\frac{\pi}{2},\pi]; $ 
+        \item 根式形如 $ \sqrt{a^2+x^2} $ 时，令 $ x=a\tan t, $ 此时 $ t\in (-\frac{\pi}{2},\frac{\pi}{2}). $ 
+    \end{itemize}
 \end{enumerate}
 
 \begin{Field}[分部积分法]
@@ -142,9 +201,28 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
     \item 凑微分的优先性：指数 $ > $ 三角函数 $ > $ 幂函数。
 \end{itemize}
 
-注意，不定积分结果中一定包含常数 $ C $ ，\textbf{即使在计算过程中积分号下内容相消干净。}
+注意，不定积分结果中一定包含常数 $ C, $ \textbf{即使在计算过程中积分号下内容相消干净。}
 
-\subsection{特殊类型的不定积分}
+分部积分法可以利用列表法做。具体而言，为上导下积，对角相乘，正负相间。
+以 $ \dis \int x^2e^x \mathrm{d}x $ 为例，则有表格
+
+\begin{center}
+    \begin{tabular}{c|ccc}
+        $ x^2 $ & $ 2x $ & $ 2 $ & $ 0 $ \\\hline 
+        $ e^x $ &$ e^x $ &$ e^x $ &$ e^x $ 
+    \end{tabular}    
+\end{center}
+    
+此时结果为  $ x^2 e^x - 2x e^x + 2 e^x + C. $ 
+
+\subsection{特殊类型的不定积分法}
+
+\subsubsection{通用方法}
+
+\begin{itemize}
+    \item 倒代换 - 分母次数高的，令$ x = \dfrac{1}{t}; $ 
+    \item 整体代换 - 含有复杂函数的，令复杂部分为 $ t; $
+\end{itemize}
 
 \subsubsection{有理分式的不定积分}
 
@@ -161,7 +239,7 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
     则有$$
         \frac{P_m(x)}{Q_n(x)}=\sum_{i=1}^\alpha \frac{A_i}{(x-a)^i}+
         \sum_{i=1}^\beta \frac{C_ix+D_i}{(x^2+px+q)^i}
-    $$ 其中 $ A_i,B_i,C_i,D_i $ 等系数都是实数。
+    $$ 其中 $ A_i\ B_i\ C_i\ D_i $ 等系数都是实数。
 \end{Theo}
 
 具体而言，其步骤为
@@ -176,9 +254,23 @@ $ \int \frac{1}{\ln x} \mathrm{d}x $ , $ \int e^{-x^2} \mathrm{d}x $ 等，称�
     \item 待定系数的个数为分母次数。
 \end{itemize}
 
-分母次数大于4的时候，一般不用裂项法，而是寻求特殊方法。
+分母次数大于$ 4 $ 的时候，一般不用裂项法，而是寻求特殊方法。
 
-待定系数时可以代入特殊值。
+待定系数时可以代入特殊值求解系数。
+
+一个例子是，
+\begin{equation*}
+    \begin{aligned}
+        \dfrac{x^4+2x^3+3x^2+4x+1}{(x-1)(x^2-1)(x^2+1)}=&\dfrac{x^4+2x^3+3x^2+4x+1}{(x+1)(x-1)^2(x^2+1)}\\ 
+        =& \dfrac{A}{x+1} + \dfrac{B}{x-1} + \dfrac{C}{(x-1)^2} + \dfrac{Dx+E}{x^2+1}
+    \end{aligned}
+\end{equation*}
+
+注意，
+\begin{itemize}
+    \item 分母有高次幂的，待定系数时次数从低到高都要有；
+    \item 待定系数时分子次数比分母次数低一次。
+\end{itemize}
 
 \subsubsection{三角有理函数的不定积分}
 
@@ -267,12 +359,12 @@ $$
 
 具体而言，其步骤为
 \begin{itemize}
-    \item 令 $ \Delta x_i $ 为 $ \frac{1}{n} $ 或 $ \frac{k}{n} $ ;
+    \item 令 $ \Delta x_i $ 为 $ \frac{1}{n} $ 或 $ \frac{k}{n} ; $
     \item 取 $ \xi_i $ 的位置，如\begin{itemize}
-        \item $ \xi_i $ 取右端点： $ a+\frac{i}{n}(b-a) $ ;
-        \item $ \xi_i $ 取左端点： $ a+\frac{i-1}{n}(b-a) $ ;
-        \item $ \xi_i $ 取中点： $ a+\frac{2i-1}{2n}(b-a) $ ;
-        \item $ \xi_i $ 取三等分点： $ a+\frac{3i-2}{3n}(b-a) $ ;
+        \item $ \xi_i $ 取右端点： $ a+\frac{i}{n}(b-a) ; $
+        \item $ \xi_i $ 取左端点： $ a+\frac{i-1}{n}(b-a) ; $
+        \item $ \xi_i $ 取中点： $ a+\frac{2i-1}{2n}(b-a) ; $
+        \item $ \xi_i $ 取三等分点： $ a+\frac{3i-2}{3n}(b-a) ; $
         \item $ \xi_i $ 取三分之二等分点： $ a+\frac{3i-1}{3n}(b-a) $ 等等。
     \end{itemize}
     \item 求 $ a={\displaystyle\lim_{n\rightarrow \infty}}\xi_1,b={\displaystyle\lim_{n\rightarrow \infty}}\xi_n $
@@ -280,7 +372,34 @@ $$
     即是否有$ \sum_{i=1}^n \Delta x_i = b-a $ 。
 \end{itemize}
 
-$ n $ 项和的求和方式：
+特别地，有
+$$
+    {\displaystyle\lim_{n\rightarrow \infty}}\sum_{i=1}^n f(\dfrac{i}{n})\dfrac 1n =\int_0^1f(x)\mathrm{d}x
+$$ 
+此即所谓“零到一，$n $ 等分，取端点”的极限。
+
+\sssubsection{利用二重积分定义求极限}
+
+若 $ f(x,y) $ 在 $ [a,b]\times [c,d] $ 上连续，则有$$
+    {\displaystyle\lim_{n\rightarrow \infty}}\sum_{i=1}^n\sum_{j=1}^n f(\xi_i,\eta_j)\dfrac{b-a}{n}
+    \dfrac{d-c}{n} = \int_a^b\mathrm{d}x\int_c^df(x,y)\mathrm{d}y
+$$ 
+其中$$
+    \xi_i\in [a+\dfrac{i-1}{n}(b-a),a+\dfrac{i}{n}(b-a)],
+    \xi_j\in [c+\dfrac{j-1}{n}(d-c),a+\dfrac{j}{n}(d-c)],
+$$ 
+其具体的步骤与一维情况类似。
+
+特别地，有
+$$
+    {\displaystyle\lim_{n\rightarrow \infty}}\sum_{i=1}^n\sum_{j=1}^n f(\dfrac{i}{n},\dfrac{j}{n})
+    \dfrac{1}{n^2} = \int_0^1\mathrm{d}x\int_0^1f(x,y)\mathrm{d}y
+$$ 
+
+
+\sssubsection{$ n $ 项和求法}
+
+$ n $ 项和的求和有如下的方式。
 \begin{itemize}
     \item 直接求和；
     \item 夹逼定理；
@@ -295,18 +414,24 @@ $ n $ 项和的求和方式：
 
 \subsection{定积分的性质}
 
-\begin{enumerate}
-    \item $ \int_a^b f(x)\mathrm{d}x = -\int_b^a f(x)\mathrm{d}x $ ;
-    \item $ \int_a^a f(x)\mathrm{d}x = 0 $ ;
-    \item $ \int_a^b [k_1 f_1(x)]+k_2[f_2(x)]\mathrm{d}x = k_1\int_a^b f_1(x)\mathrm{d}x + k_2\int_a^b f_2(x)\mathrm{d}x $ ;
-    \item $ \int_a^b f(x)\mathrm{d}x = \int_a^c f(x)\mathrm{d}x + \int_c^b f(x)\mathrm{d}x $，即使 $ c\not\in [a,b] $ ;
-    \item 设 $ a\leq b $ ，$ f(x)\leq g(x) $，则$ \int_a^b f(x)\mathrm{d}x \leq \int_a^b g(x)\mathrm{d}x $ ;
-    \item 设 $ a < b $ ， $ m\leq f(x)\leq M $ ，则$ m(b-a)\leq\int_a^b f(x)\mathrm{d}x \leq M(b-a)$ ;
-    \item 设 $ a<b $ ，则$ |\int_a^b f(x) \mathrm{d}x | < \int_a^b|f(x)|\mathrm{d}x $ ;
-    \item \textbf{定积分中值定理} - 设 $ f(x) $在$ [a,b] $ 上连续，则$\exists \xi \in [a,b]  $ 
-    使得 $ \int_a^b f(x)\mathrm{d}x = f(\xi)(b-a) $ ;
-    \item 称 $ \frac{1}{b-a}\int_a^b f(x)\mathrm{d}x $ 为 $ f(x) $在$ [a,b] $ 上的广义平均值。
-\end{enumerate}
+\begin{itemize}
+    \item 线性性 - $\dis \int_a^b [k_1 f_1(x)]+k_2[f_2(x)]\mathrm{d}x = 
+    k_1\int_a^b f_1(x)\mathrm{d}x + k_2\int_a^b f_2(x)\mathrm{d}x ; $
+    \item 区间可加性 - $\dis \int_a^b f(x)\mathrm{d}x = \int_a^c f(x)\mathrm{d}x + \int_c^b f(x)\mathrm{d}x, $
+    即使 $ c\not\in [a,b] ; $
+    \item 比较定理 - 设 $ a\leq b, f(x)\leq g(x), $ 则 $\dis \int_a^b f(x)\mathrm{d}x \leq \int_a^b g(x)\mathrm{d}x ; $
+    
+    推论 - $\dis a<b \Rightarrow |\int_a^b f(x) \mathrm{d}x | < \int_a^b|f(x)|\mathrm{d}x ; $
+    \item 估值定理 - $\dis a < b, m\leq f(x)\leq M \Rightarrow m(b-a)\leq\int_a^b f(x)\mathrm{d}x \leq M(b-a); $
+    \item 积分中值定理 - 设 $ f(x) $在$ [a,b] $ 上连续，则$\exists \xi \in [a,b]  $ 
+    使得 $\dis \int_a^b f(x)\mathrm{d}x = f(\xi)(b-a) ; $
+
+    加强形式 - 设 $ f(x) $在$ [a,b] $ 上连续，则$\exists \xi \in (a,b)  $ 
+    使得 $\dis \int_a^b f(x)\mathrm{d}x = f(\xi)(b-a) ; $
+
+    加强形式 - 设 $ f(x),g(x) $在$ [a,b] $ 上连续，$ g(x) $ 不变号，则$\exists \xi \in (a,b)  $ 
+    使得 $\dis \int_a^b f(x)g(x)\mathrm{d}x = f(\xi)\int_a^bg(x)\mathrm{d}x ; $
+\end{itemize}
 
 注意，\begin{itemize}
     \item 定积分值与被积函数在有限个点上的值无关；
@@ -334,6 +459,8 @@ $ n $ 项和的求和方式：
     $$ 且 $ \varphi_1(x),\varphi_2(x) $ 可导，$ f(x) $ 连续，则有$$
         F'(x) = f(\varphi_2(x))\varphi_2'(x)-f(\varphi_1(x))\varphi_1'(x)
     $$ 
+
+    变限积分求导，被积函数不含 $ x. $ 
     \item 若$ x_0 $ 为 $ f(x) $在$ [a,b] $ 上的一个跳跃间断点，则$ F(x) $在$ x_0 $ 连续，
     但不可导；
     \item 若$ x_0 $ 为 $ f(x) $在$ [a,b] $ 上的一个可去间断点，则$ F(x) $在$ x_0 $ 处可导，
@@ -370,7 +497,7 @@ $$
 \begin{enumerate}
     \item $ \varphi'(t) $ 在 $ [\alpha,\beta] $ (或者$ [\beta,\alpha] $ ) 上连续；
     \item $ \varphi(\alpha) = a , \varphi(\beta) = b $ ，且当 $ \alpha < t < \beta $ 时，
-    有 $ a \leq \varphi(t) < b $ ，
+    有 $ a \leq \varphi(t) < b, $ 
 \end{enumerate}
 则有$$
     \int_a^b f(x)\mathrm{d}x = \int_\alpha^\beta f[\varphi(t)]\varphi'(t)\mathrm{d}t
@@ -402,13 +529,13 @@ $$
 
 设 $ f(x) $ 在 $ (-\infty,+\infty) $ 内是以 $ T $ 为周期的周期函数，则对任意常数 $ a $ 、任意自然数 $ n $ 
 都有\begin{enumerate}
-    \item $ \dis \int_a^{a+T}f(x)\mathrm{d}x = \int_0^T f(x)\mathrm{d}x $ ;
-    \item $ \dis \int_a^{a+nT}f(x)\mathrm{d}x = n\int_0^T f(x)\mathrm{d}x $ ;
+    \item $ \dis \int_a^{a+T}f(x)\mathrm{d}x = \int_0^T f(x)\mathrm{d}x ; $
+    \item $ \dis \int_a^{a+nT}f(x)\mathrm{d}x = n\int_0^T f(x)\mathrm{d}x ; $
 \end{enumerate}
 
 \sssubsection{三角函数的积分公式}
 
-\begin{Theo}[Wallis公式（分部积分推导）]
+\begin{Theo}[Wallis公式 - 分部积分推导]
 
     $$
         \int_0^\frac{\pi}{2} \sin^{2n} x \mathrm{d} x = \int_0^\frac{\pi}{2} \cos^{2n} x \mathrm{d} x = 
@@ -429,8 +556,8 @@ $$
 三角函数的公式还有如下几个。设 $ f(x) $ 在 $ [0,1] $ 连续，则
 \begin{itemize}
     \item $ \dis \int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x=\int_0^\frac{\pi}{2} f(\cos x)\mathrm{d}x $ 
-    \item $\dis \int_0^\frac{\pi}{2} xf(\sin x)\mathrm{d}x = 
-    \dfrac{\pi}{2}\int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x $ 
+    \item $\dis \int_0^\pi xf(\sin x)\mathrm{d}x = \dfrac{\pi}2\int_0^\pi f(\sin x)\mathrm{d}x = 
+    \pi\int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x $ 
     \item $\dis \int_0^{\pi} f(\sin x)\mathrm{d}x = 2\int_0^\frac{\pi}{2} f(\sin x)\mathrm{d}x $ 
 \end{itemize}
 
@@ -442,97 +569,16 @@ $$
     \item 积分区间再现。
 \end{itemize}
 
-\section{定积分应用}
-
-\subsection{平面图形求面积}
-
-\sssubsection{直角坐标系下平面图形求面积}
-
-对于由 $ x = x_1, x = x_2,y = f_1(x), y = f_2(x) (x_1 < x_2,\forall x \in [x_1,x_2]f_1(x) > f_2(x)) $ 
-围成的图形，有 $$
-    S = \int_a^b[f_1(x)-f_2(x)]\mathrm{d}x
-$$ 
-
-对于由 $ y = y_1, y = y_2,x = f_1(y), x = f_2(y) (y_1 < y_2,\forall y \in [y_1,y_2]f_1(y) > f_2(y)) $ 
-围成的图形，有 $$
-    S = \int_a^b[f_1(y)-f_2(y)]\mathrm{d}y
-$$ 
-
-\sssubsection{极坐标下的平面图形求面积}
-
-$$
-    S = \int_{\theta_1}^{\theta_2}\textcolor{red}{\dfrac{1}{2}r^2}\mathrm{d}\theta
-$$ 
-
-需要记住的平面曲线：
-\begin{itemize}
-    \item 心型线 $ r = a(1+\cos\theta) $ ;
-    \item 摆线（旋轮线）；
-    \item 星型线；
-    \item 双扭线；
-    \item 阿基米德螺线 $ r = a\theta $ ;
-    \item 对数螺线；
-    \item 三叶玫瑰线 $ r = \sin(3\theta),(0\leq\theta\leq \dfrac{\pi}{3}) $ ;
-\end{itemize}
-
-\subsection{旋转体求体积}
-
-绕 $ x $ 轴旋转时，有 $ \mathrm{d}V_x = \pi y^2 \mathrm{d}x $ ，则体积为$$
-    V = \int_a^b \pi f(x)^2 \mathrm{d}x
-$$ 
-是为薄片法。
-
-绕 $ y $ 轴旋转时，有 $ \mathrm{d}V_y = 2\pi xy \mathrm{d} x $ ，则体积为$$
-    V = \int_a^b 2\pi xf(x)\mathrm{d}x
-$$ 
-是为柱壳法。
-
-\subsection{平均值}
-
-设 $ f(x) $ 在区间 $ [a,b] $ 连续，则 $ f(x) $ 在 $ [a,b] $ 的平均值为
-$$
-    \dfrac{\dis \int_a^b f(x)\mathrm{d}x}{b-a}
-$$ 
-
-\subsection{平行截面面积已知的立体体积}
-
-$ \dis V = \int_a^bA(x)\mathrm{d}x,a<b $ ，其中 $ A(x) $ 是待求体积立体截面面积。
-
-\subsection{平面曲线段的弧长}
-
-对曲线段 $ y = f(x),x\in[a,b] $ ，设 $ f(x) $ 有连续导数，则给定平面曲线段弧长元素
-和弧长分别为
-$$ \dis \mathrm{d}s = \dsqrt{1+f'^2(x)}\mathrm{d}x;
-s = \int_a^b \dsqrt{1+f'^2(x)}\mathrm{d}x. $$
-
-若曲线能表示为 $ x = x(t),y=y(t),t\in[\alpha,\beta] $，且其在$ (\alpha,\beta) $ 内
-有连续导数，则给定平面曲线段弧长元素和弧长分别为
-
-$$ \dis \mathrm{d}s = \dsqrt[]{y'^2(t)+x'^2(t)}\mathrm{d}t;
-s = \int_a^b \dsqrt[]{y'^2(t)+x'^2(t)}\mathrm{d}t. $$
-
-若曲线能表示为 $ \rho = \rho(\theta),\theta\in[\theta_1,\theta_2] $，
-则给定平面曲线段弧长元素和弧长分别为
-
-$$ \dis \mathrm{d}s = \dsqrt[]{\rho^2(\theta)+\rho'^2(\theta)}\mathrm{d}\theta ;
-s = \int_a^b \dsqrt[]{\rho^2(\theta)+\rho'^2(\theta)}\mathrm{d}\theta. $$
-
-\subsection{旋转曲面求侧面积}
-
-曲线$ y = f(x),x\in(a,b) $ 弧绕 $ x $ 轴旋转所得曲面表面积为
-$ \dis S = 2\pi\int_a^b|f(x)|\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x $ 
-
-曲线$ y = f(x),x\in(a > 0,b) $ 弧绕 $ y $ 轴旋转所得曲面表面积为
-$ \dis S = 2\pi\int_a^bx\cdot\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x $ 
-
 \section{反常积分}
 
 定积分存在两种限制，由此可以引申出两种反常积分。
-对 $ \dis \int_a^b f(x)\mathrm{d}x $ ，
+对 $ \dis \int_a^b f(x)\mathrm{d}x, $ 
 \begin{itemize}
     \item $ [a,b] $ 必须是有限区间 $ \Rightarrow $ 无穷区间上的反常积分；
     \item $ f(x) $ 必须有界 $ \Rightarrow $ 无界函数的反常积分。
 \end{itemize}
+
+反常积分时定积分的极限。
 
 \subsection{无穷区间上的反常积分}
 
@@ -549,7 +595,7 @@ $ \dis \int_a^{+\infty}f(x)\mathrm{d}x = {\displaystyle\lim_{t\rightarrow +\inft
 注意，
 \begin{enumerate}
     \item 计算方法与积分类似，如 $\dis \int_a^{+\infty} = F(x)\Big|^{+\infty}_a = 
-    {\displaystyle\lim_{t\rightarrow +\infty}}F(t) - F(a) $ ；
+    {\displaystyle\lim_{t\rightarrow +\infty}}F(t) - F(a); $ 
     \item 反常积分收敛时，适用对称奇偶性，否则不适用；
     \item $ p $ 积分：对 $ \dis \int_a^{+\infty}\dfrac{1}{x^p}\mathrm{d}x,\ a>0 $ ,
     当 $ p > 1 $ 时积分收敛，$ p\leq 1 $ 时发散；
@@ -630,3 +676,119 @@ $ \dis \int_a^b f(x)\mathrm{d}x = {\displaystyle\lim_{t\rightarrow b^-}}
     若 $ {\displaystyle\lim_{x\rightarrow b^-}}f(x)=\infty $ 且 $ \dis \int_a^{b}|f(x)|\mathrm{d}x $ 收敛，则
     $ \dis \int_a^{b}f(x)\mathrm{d}x $ 收敛。
 \end{Theo}
+
+\section{定积分的几何应用}
+
+主要应用于求面积、体积、弧长、侧面积。
+
+\subsection{平面图形求面积}
+
+\sssubsection{直角坐标系下平面图形求面积}
+
+对于由 $ x = x_1, x = x_2,y = f_1(x), y = f_2(x) (x_1 < x_2,\forall x \in [x_1,x_2]f_1(x) > f_2(x)) $ 
+围成的图形，有 $$
+    S = \int_a^b[f_1(x)-f_2(x)]\mathrm{d}x
+$$ 
+
+对于由 $ y = y_1, y = y_2,x = f_1(y), x = f_2(y) (y_1 < y_2,\forall y \in [y_1,y_2]f_1(y) > f_2(y)) $ 
+围成的图形，有 $$
+    S = \int_a^b[f_1(y)-f_2(y)]\mathrm{d}y
+$$ 
+
+\sssubsection{极坐标下的平面图形求面积}
+
+$$
+    S = \int_{\theta_1}^{\theta_2}\textcolor{red}{\dfrac{1}{2}r^2}\mathrm{d}\theta
+$$ 
+
+\sssubsection{由参数方程表示的平面图形求面积}
+
+对由 $ \begin{cases}
+    x = x(t) \\ y = y(t)
+\end{cases} (\alpha\leq t\leq \beta) $ 表示的平面图形，其面积为$\dis\int_\alpha^\beta |y(t)x'(t)|\mathrm{d}t. $
+
+\sssubsection{重要的平面曲线}
+
+重要的平面曲线如下。
+\begin{itemize}
+    \item 心型线 $ r = a(1+\cos\theta) ; $
+    \item 摆线（旋轮线）；
+    \item 星型线；
+    \item 双扭线；
+    \item 阿基米德螺线 $ r = a\theta ; $
+    \item 对数螺线；
+    \item 三叶玫瑰线 $ r = \sin(3\theta),(0\leq\theta\leq \dfrac{\pi}{3}) ; $
+\end{itemize}
+
+\subsection{旋转体求体积}
+
+\sssubsection{薄片法}
+
+绕 $ x $ 轴旋转时，有 $ \mathrm{d}V_x = \pi y^2 \mathrm{d}x $ ，则体积为$$
+    V = \int_a^b \pi f(x)^2 \mathrm{d}x
+$$ 
+
+\sssubsection{柱壳法}
+
+绕 $ y $ 轴旋转时，有 $ \mathrm{d}V_y = 2\pi xy \mathrm{d} x $ ，则体积为$$
+    V = \int_a^b 2\pi \left|xf(x)\right|\mathrm{d}x
+$$ 
+
+\subsection{平均值}
+
+设 $ f(x) $ 在区间 $ [a,b] $ 连续，则 $ f(x) $ 在 $ [a,b] $ 的平均值为
+$$
+    \dfrac{\dis \int_a^b f(x)\mathrm{d}x}{b-a}
+$$ 
+
+\subsection{平行截面面积已知的立体体积}
+
+$ \dis V = \int_a^bA(x)\mathrm{d}x,a<b $ ，其中 $ A(x) $ 是待求体积立体截面面积。
+
+\subsection{平面曲线段的弧长}
+
+\sssubsection{直角坐标}
+
+对曲线段 $ y = f(x),x\in[a,b] $ ，设 $ f(x) $ 有连续导数，则给定平面曲线段弧长元素
+和弧长分别为
+$$ \dis \mathrm{d}s = \dsqrt{1+f'^2(x)}\mathrm{d}x;
+s = \int_a^b \dsqrt{1+f'^2(x)}\mathrm{d}x. $$
+
+\sssubsection{参数方程}
+
+若曲线能表示为 $ x = x(t),y=y(t),t\in[\alpha,\beta] $，且其在$ (\alpha,\beta) $ 内
+有连续导数，则给定平面曲线段弧长元素和弧长分别为
+
+$$ \dis \mathrm{d}s = \dsqrt[]{y'^2(t)+x'^2(t)}\mathrm{d}t;
+s = \int_a^b \dsqrt[]{[y^2(t)]^2+[x'(t)]^2}\mathrm{d}t. $$
+
+\sssubsection{极坐标}
+
+
+若曲线能表示为 $ \rho = \rho(\theta),\theta\in[\theta_1,\theta_2], $
+则给定平面曲线段弧长元素和弧长分别为
+
+$$ \dis \mathrm{d}s = \dsqrt[]{\rho^2(\theta)+\rho'^2(\theta)}\mathrm{d}\theta ;
+s = \int_a^b \dsqrt[]{\rho^2(\theta)+[\rho'(\theta)]^2}\mathrm{d}\theta. $$
+
+\subsection{旋转曲面求侧面积}
+
+曲线$ y = f(x),x\in(a,b) $ 弧绕 $ x $ 轴旋转所得曲面表面积为
+$ \dis S = 2\pi\int_a^b|f(x)|\overbrace{\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x}^{\mathrm{d}s} $ 
+
+曲线$ y = f(x),x\in(a > 0,b) $ 弧绕 $ y $ 轴旋转所得曲面表面积为
+$ \dis S = 2\pi\int_a^bx\cdot\overbrace{\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x}^{\mathrm{d}s} $ 
+
+当旋转曲面使用极坐标或参数方程表示时，将 $ \mathrm{d}s $ 改为相对应的即可。
+
+\section{定积分的物理应用}
+定积分的物理应用主要有以下几种。
+
+\begin{itemize}
+    \item 做功 $ W = FS; $ 
+    \item 受力 \begin{itemize}
+        \item 万有引力 $ F = \dfrac{GMm}{r^2}; $ 
+        \item 液体压力 $ F = PS = \rho ghS; $ 
+    \end{itemize}
+\end{itemize}
+

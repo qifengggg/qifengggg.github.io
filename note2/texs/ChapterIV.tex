@@ -1,0 +1,216 @@
+\chapter{向量}
+
+\section{定义与性质}
+
+\subsection{定义}
+
+形如 $ \alpha = (a_1,a_2,\cdots,a_n)^\top $ 的称为$ n $ 维列向量，
+形如 $ \alpha = (a_1,a_2,\cdots,a_n) $ 的称为$ n $ 维行向量。
+
+\subsection{模}
+
+$ |\alpha|\whichis \sqrt{a_1^2+\cdots a_n^2} $ 是向量 $ \alpha $ 的模。
+
+注意，
+\begin{itemize}
+    \item 对 $ n $ 维向量 $ \alpha $ ,有
+    $ \forall a_1 \equiv 0 \Leftrightarrow \alpha = \vec 0 \Leftrightarrow |\alpha| = 0 $ ;
+    \item 若一向量 $ \alpha $ 的模为1,则称其为单位向量。非单位向量可以通过单位化变为单位向量，具体而言，
+    只需将原向量的每一个分量除以其模。
+\end{itemize}
+
+\subsection{内积}
+
+对$ n $ 维向量 $ \alpha,\beta $ ，称 $ (\alpha,\beta) \whichis \dis\sum_{i=1}^n a_ib_i $ 为
+$ \alpha,\beta $ 的内积。
+
+注意，若 $ A = \alpha\beta^\top \Leftrightarrow r(A) = 1 $ ,必有
+$ (\alpha,\beta) = \alpha^\top\beta = \beta^\top\alpha = tr(A) $ .
+
+\subsection{正交性}
+
+若有 $ (\alpha,\beta) = 0 $ ,则称 $ \alpha $ 和 $ \beta $ 两向量正交。
+
+\sssubsection{正交矩阵}
+
+对矩阵 $ A $ ,若 $ AA^\top = A^\top A = E $ 则其为正交矩阵。
+
+对正交矩阵，\begin{itemize}
+    \item 每一内部向量都为单位向量；
+    \item 任意两内部向量正交。
+\end{itemize}
+
+\subsection{性质}
+
+对向量 $ \alpha = (a_1,\cdots,a_n)^\top,\beta = (b_1,\cdots,b_n)^\top $ ,
+\begin{itemize}
+    \item $ \alpha\pm\beta = (a_1\pm b_1,\cdots,a_n\pm b_n)^\top $ ;
+    \item $ k\alpha = (ka_1,\cdots,ka_n)^\top $ ;
+    \item 向量乘法没有交换律，没有消去律;
+    \item $\forall \alpha, (\vec 0,\alpha) = 0, $ ;
+    \item $ (\alpha,\beta) = (\beta,\alpha) = \alpha^\top\beta = \beta^\top\alpha = tr(A) $ ;
+    \item $ (\sum k_i\alpha_i,\beta) = \sum k_i(\alpha_i,\beta) $ .
+\end{itemize}
+
+\section{向量组的线性相关与线性无关}
+
+\subsection{定义}
+
+对一组列向量 $ \alpha_1,\alpha_2,\cdots,\alpha_s $ ,对于 $ \sum k_i\alpha_i = 0 $ ,若存在
+不全为零的一组 $ k_i $ 使其成立，则称 $ \alpha_i $ 线性相关，否则称其线性无关。
+
+\subsection{性质}
+
+\begin{itemize}
+    \item 以下五点等价；
+    \begin{itemize}
+        \item 一组列向量 $ \alpha_1,\alpha_2,\cdots,\alpha_s $ 线性无关;
+        \item $ \sum k_i\alpha_i = \vec 0,$当且仅当$ \forall k_i \equiv 0 $ ;
+        \item $ (\alpha_1,\cdots,\alpha_s)(k_1,\cdots,k_s)^\top = 0,$当且仅当$ \forall k_i \equiv 0 $ ;
+        \item 方程组 $ (\alpha_1,\cdots,\alpha_s)(x_1,\cdots,x_s)^\top = 0 $ 只有零解;
+        \item $ r(\alpha_1,\cdots,\alpha_s) = s $ (\textrm{向量个数}) ;
+    \end{itemize}
+    \item 以下三种向量组组线性相关；
+    \begin{itemize}
+        \item 向量组中含有零向量；
+        \item 向量组中含有成比例的向量；
+        \item 向量组中含有向量能被同组向量线性表出；
+    \end{itemize}
+    \item 向量组中向量个数大于维数时，向量组也可线性表出。
+    
+    事实上，若设 $ A_{m\times n} = (\alpha_1,\cdots,\alpha_n) $ ,
+    若 $ n > m $ 则有 $ r(A) \leq min(m,n) = m < n \Rightarrow r(\alpha_1,\cdots,\alpha_n) < n$,
+    故其线性相关；
+    \item 整体无关 $ \Rightarrow $ 部分无关；
+    
+    部分相关 $ \Rightarrow $ 整体相关；
+    
+    整体与部分是指个数。
+    \item 原本无关 $ \Rightarrow $ 延长必无关；
+
+    原本相关 $ \Rightarrow $ 缩短必相关；
+
+    延长与缩短的是维数。
+\end{itemize}
+
+\subsection{向量组线性无关性的证明}
+
+\sssubsection{向量组已知}
+
+\begin{itemize}
+    \item 若向量组可构成方阵，只需证 $ |\alpha_i| \neq 0 $ ;
+    \item 若不能构成方阵，则需证明 $ r(\alpha_i) = s $ .
+\end{itemize}
+
+\sssubsection{向量组抽象未知}
+
+考虑使用定义，即令$$
+    \sum_{i=1}^s k_i\alpha_i = 0
+$$ 
+并证明 $ \forall k_i, k_i = 0 $ .
+
+具体而言，可以
+\begin{itemize}
+    \item 重组法，即套定义，代入已知的无关向量组，并重组系数证明等式成立时系数必全为零；
+    \item 等式乘，即将向量组组成的矩阵转化为多个矩阵的积，
+    并证明其满秩。
+\end{itemize}
+
+\section{线性表示}
+
+\subsection{定义}
+
+设有向量 $ \alpha_1,\cdots,\alpha_s,\beta $ ,若存在一组 $ k_i $ 使得
+$$
+    \beta = \sum_{i = 1}^s k_i\alpha_i
+$$ 
+则称 $ \beta $ 可由 $ \alpha_i $ 线性表出。
+
+\subsection{性质}
+
+\begin{itemize}
+    \item $ \alpha_1,\cdots,\alpha_m $ 线性无关
+        $ \Leftrightarrow \forall \alpha_i $ 不可由剩余向量线性表出；
+    \item 以下五点等价；
+    \begin{itemize}
+        \item $ \beta $ 可由 $ \alpha_1,\cdots,\alpha_s $ 线性表出；
+        \item $ \beta = \sum_{i = 1}^s k_i\alpha_i $ 中任意 $ k_i $ 均存在；
+        \item $ (\alpha_1,\cdots,\alpha_s)(k_1,\cdots,k_s)^\top = \beta $ 中任意 $ k_i $ 均存在；
+        \item $ (\alpha_1,\cdots,\alpha_s)(x_1,\cdots,x_s)^\top = \beta $ 必有解；
+        \item $ r(\alpha_1,\cdots,\alpha_s) = r(\alpha_1,\cdots,\alpha_s,\beta) $ .
+    \end{itemize}
+    \item 以少表多，多必相关。
+    
+    具体而言，若 $ \beta_1,\cdots,\beta_t $ 可由 $ \alpha_1,\cdots,\alpha_s $ 
+    线性表出，且 $ s<t $ ，则 $ \beta_i $ 必线性相关。
+\end{itemize}
+
+\section{向量组等价}
+
+\sssubsection{矩阵等价}
+
+设有矩阵 $ A_{m\times n},B_{m\times n} $ ，若 $ A $ 可经有限次变换得到 $ B $ ，则称
+矩阵 $ A,B $ 等价。
+
+注意，
+\begin{itemize}
+    \item 存在可逆 $ P,Q $ 使得 $ PAQ = B \Leftrightarrow A,B $ 等价；
+    \item $ A,B $ 等价 $ \Leftrightarrow r(A) = r(B) $ ;
+\end{itemize}
+
+\sssubsection{向量组等价}
+
+设有向量组 $ {\rm (I)}: \alpha_1,\cdots,\alpha_s $ 与 $ {\rm (II)}: \beta_1,\cdots,\beta_t $ .
+若
+\begin{itemize}
+    \item $ \rm (I) $ 可由 $ \rm (II) $ 表示，
+    
+    即对任意 $ \alpha_i $ ，其可由 $ \beta_1,\cdots,\beta_t $ 线性表出，
+
+    即对矩阵 $ (\beta_1,\cdots,\beta_t|\alpha_1,\cdots,\alpha_s) $ ,每一列均有解；
+    \item $ \rm (II) $ 可由 $ \rm (I) $ 表示，
+    
+    即对任意 $ \beta_j $ ，其可由 $ \alpha_1,\cdots,\alpha_s $ 线性表出，
+
+    即对矩阵 $ (\alpha_1,\cdots,\alpha_s|\beta_1,\cdots,\beta_t) $ ,每一列均有解；
+\end{itemize}
+
+则称向量组 $ \rm (I),\rm (II) $ 等价，
+此时，有充要条件$$
+    r({\rm I}) = r({\rm II}) = r({\rm I,II})
+$$ 
+
+此时还有向量组 $ \rm (I),\rm (II) $ 等价 $ \Rightarrow $ 
+矩阵 $ \rm (I),\rm (II) $ 等价。
+
+\section{极大无关组}
+
+\sssubsection{定义}
+
+对$ {\rm (I)}: \alpha_1,\cdots,\alpha_s $中的一组向量 $ \alpha_1,\cdots,\alpha_t $ ,
+若其满足
+\begin{itemize}
+    \item $ \alpha_1,\cdots,\alpha_t $ 线性无关；
+    \item $ \rm (I) $ 中任意剩余向量与 $ \alpha_1,\cdots,\alpha_t $ 
+    组成的向量组线性相关；
+\end{itemize}
+则称$ \alpha_1,\cdots,\alpha_t $ 为向量组 $ \rm (I) $ 的极大无关组。
+
+\sssubsection{性质}
+
+若 $ \alpha_1,\cdots,\alpha_t $ 为 $ \rm (I) $ 的极大无关组，则
+\begin{itemize}
+    \item $ \rm (I) $ 中剩余向量可由该组向量线性表出；
+    \item $ r({\rm I}) = t $ .
+\end{itemize}
+
+\sssubsection{求极大无关组}
+
+已知向量组 $ {\rm (I)}: \alpha_1,\cdots,\alpha_s $ 时求其极大无关组的方法如下。
+
+\begin{enumerate}
+    \item 将 $ \rm (I) $ 以列向量的形式构成一矩阵 $ A $ ;
+    \item 通过初等行变换将 $ A $ 转化为阶梯矩阵 $ B $ ;
+    \item 每一阶取一列，构成极大无关组。
+\end{enumerate}
+

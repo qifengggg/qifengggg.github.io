@@ -358,8 +358,8 @@
     \begin{equation*}
         \begin{aligned}
             I &= \exp \left({\displaystyle\lim_{n\rightarrow +\infty}}
-            \dfrac{\ln(\dsqrt[n]{a}+\dsqrt[n]{b})-\ln 2}{n} \right)\\ &=
-            \exp\left(\dfrac{\dsqrt[n]{a}\ln+\dsqrt[n]{b}\ln b}{\dsqrt[n]{a}+\dsqrt[n]{b}}\right)
+            \dfrac{\ln(\dsqrt[n]{a}+\dsqrt[n]{b})-\ln 2}{1/n} \right)\\ &=
+            \exp\left(\dfrac{\dsqrt[n]{a}\ln a+\dsqrt[n]{b}\ln b}{\dsqrt[n]{a}+\dsqrt[n]{b}}\right)
             \\&= \exp(\ln (ab)^\frac{1}{2}) = \dsqrt[]{ab}
         \end{aligned}
     \end{equation*}
@@ -457,7 +457,7 @@
             y^3+x^3-3xy = 0&\Rightarrow {\displaystyle\lim_{x\rightarrow \infty}}
             \dfrac{(x+y)(x^2 - xy + y^2)}{3xy} = 1 \\ &\Rightarrow
             {\displaystyle\lim_{x\rightarrow \infty}}(x+y) = 
-            \dfrac{3\frac{y}{x}}{1 - \frac{y}{x} + (\frac{y}{x})^2}            
+            {\displaystyle\lim_{x\rightarrow \infty}}\dfrac{3\frac{y}{x}}{1 - \frac{y}{x} + (\frac{y}{x})^2}            
         \end{aligned}
     \end{equation*}
     故解得 $ {\displaystyle\lim_{x\rightarrow \infty}}x+y = -1 $ ，

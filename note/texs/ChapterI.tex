@@ -122,23 +122,22 @@ $$
 \subsection{无穷小的性质}
 
 \begin{enumerate}
-    \item 无穷小与有界量之积仍为无穷小;
-    \item 有限个无穷小之和仍为无穷小(但无限个不一定);
-    \item 有限个无穷小之积仍为无穷小(但无限个不一定).
+    \item $ x\rightarrow 0\Rightarrow o(x^m) + o(x^n) = o(x^l), l = \min\{m,n\}; o(x^n)+o(x^n) = o(x^n) $ ;
+    \item $ k\cdot o(x^n) = o(x^n); $ 
+    \item $ o(x^m)x^n = x^mo(x^n) = o(x^m)o(x^n) = o(x^{m+n}) $ ;
+    \item $ \dfrac{o(x^m)}{x^n} = o(x^{m-n})\quad (m>n) $ ;
+    \item 有限个无穷小之和、积仍然是无穷小；
 \end{enumerate}
 
 \subsection{无穷小的比较}
 \begin{enumerate}
-    \item $
-    f(x)=g(x)\Rightarrow f(x)\sim g(x)
-    $;
+    \item $ f(x)=g(x)\Rightarrow f(x)\sim g(x); $
     \item 分子分母上的乘积因式可等价代换;
     \item 分子分母上的代数和一般不能等价代换.
 \end{enumerate}
 
 \begin{Field}[代数和求等价]
 \begin{enumerate}
-    \item 抓大头;
     \item 充分条件：若 $ x\rightarrow x_0 $ 时 $ f(x)\sim f_1(x) $，
     $ g(x)\sim g_1(x) $，且$ f(x)\nsim g(x) $，则 $ f(x)-g(x)\sim f_1(x)-g_1(x) $;
     \item \textbf{泰勒展开}.    
@@ -150,41 +149,46 @@ $$
 当 $ x\rightarrow0 $ 时，有
 
 \begin{itemize}
-    \item $ \sin x\sim x $ ;
-    \item $ \tan x \sim x $ ;
-    \item $ \arcsin x \sim x $ ;
-    \item $ \arctan x \sim x $ ;
-    \item $ 1-\cos x\sim \frac{x^2}{2} $ ;
-    \item $ e^x-1\sim x $ ;
-    \item $ \ln(1+x)\sim x $ ;
-    \item $ (1+x)^{\alpha}-1\sim \alpha x  $ .
+    \item $ \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim e^x - 1 \sim \ln(1+x) \sim x; $ 
+    \item $ e^x - 1 -x \sim x - \ln(1+x) \sim 1 - \cos x \sim \dfrac{x^2}{2}; $ 
+    \item $ (1+x)^{\alpha}-1\sim \alpha x;$
+    \item $ x - \sin x \sim \arcsin x - x \sim \dfrac{x^3}{6};$ 
+    \item $ \tan x - x \sim x - \arctan x \sim \dfrac{x^3}{3};$ 
+    \item $ \tan x - \sin x \sim \arcsin x - \arctan x \sim \dfrac{x^3}{2}; $ 
 \end{itemize}
 
 对于以上等价无穷小，有
 
 \begin{enumerate}
-    \item 可变量代换。如 $ \sin \square \sim \square,\ \tan \square \sim \square,\cdots $ ；
-    \item $ x\rightarrow0 $ 时，$ a^x-1=e^{x\ln a} -1\sim x\ln a,\ \log_a(1+x)=\frac{\ln(x+1)}{\ln a}\sim \frac{x}{\ln a}$；
-    \item 若 $ x\rightarrow a $ ，可以令 $ t = x - a \rightarrow 0 $ 。
+    \item 可变量代换，如 $ \sin \square \sim \square,\ \tan \square \sim \square,\cdots $ 
+    \item $ x\rightarrow0 $ 时，
+    $\dis a^x-1=e^{x\ln a} -1\sim x\ln a,\ \log_a(1+x)=\frac{\ln(x+1)}{\ln a}\sim \frac{x}{\ln a};$
+    \item 若 $ x\rightarrow a $ ，可以令 $ t = x - a \rightarrow 0. $ 
 \end{enumerate}
 
 \begin{Field}[广义等价]
 
-    若有 $ \displaystyle\frac{f(x)}{g(x)}=1 $ ，则称 $ x\rightarrow x_0 $ ， $ f(x)\sim g(x) $ ，
-    如在 $ x\rightarrow0 $时，  $ (1+\cos x)^2 \sim 4,\ e^x+1\sim 2$
+    若有 $ \displaystyle\frac{f(x)}{g(x)}=1 $ ，则称 $ x\rightarrow x_0, f(x)\sim g(x), $ 
+    如在 $ x\rightarrow0 $时，$ (1+\cos x)^2 \sim 4,\ e^x+1\sim 2.$
 \end{Field}
 
 \begin{Def}[广义等价替换定理]
 
-    若 $ x\rightarrow x_0 $ 时， $ f(x)\sim f_1(x),\ g(x)\sim g_1(x) $ ，则$$
+    若 $ x\rightarrow x_0 $ 时， $ f(x)\sim f_1(x),\ g(x)\sim g_1(x), $则$$
         \lim_{x\rightarrow x_0}\frac{f(x)}{g(x)}=\lim_{x\rightarrow x_0}\frac{f_1(x)}{g_1(x)}
     $$ 
 \end{Def}
 
-注：
+注意，
 \begin{enumerate}
     \item 分子分母上的乘积因式可等价代换；
-    \item 分子分母上的代数和一般不能等价代换；
+    \item 分子分母上的代数和仅当加减最简形式不抵消时可以代换；
+    
+    当抵消时，可以
+    \begin{itemize}
+        \item 拆项，添加正负项将原等式化为不抵消的两式；
+        \item 泰勒公式；
+    \end{itemize}
     \item 若 $ x\rightarrow x_0 $ ，总可以令 $ t=x-x_0\rightarrow0 $ 。
 \end{enumerate}
 
@@ -334,10 +338,11 @@ $ f(x) $ 在 $ x_{0} $ 上是否有定义与该极限是否存在没有关系。
 
     若数列 $ \{x_n\},\{y_{n}\},\{z_{n}\} $ 满足
     \begin{enumerate}
-        \item $ y_{n}<x_{n}<z_{n} $ ；
-        \item $ \displaystyle\lim_{n\rightarrow\infty}y_n=\displaystyle\lim_{n\rightarrow\infty}z_n=a $ ，其中 $ a $ 是常数；
+        \item $ y_{n}<x_{n}<z_{n}; $ 
+        \item $ \displaystyle\lim_{n\rightarrow\infty}
+        y_n=\displaystyle\lim_{n\rightarrow\infty}z_n=a, $ 其中 $ a $ 是常数；
     \end{enumerate}
-    则数列 $ \{x_n\} $ 收敛，且 $ \displaystyle\lim_{n\rightarrow\infty}x_n=a $ 。
+    则数列 $ \{x_n\} $ 收敛，且 $ \displaystyle\lim_{n\rightarrow\infty}x_n=a. $ 
 \end{Theo}
 
 对于 $ n $ 项和的极限，常见的求法有
@@ -351,8 +356,8 @@ $ f(x) $ 在 $ x_{0} $ 上是否有定义与该极限是否存在没有关系。
 \begin{Field}[两个常见的极限]
 
     \begin{enumerate}
-        \item $ \forall a>0,\displaystyle\lim_{n\rightarrow\infty}\sqrt[n]{a}=1 $ ；
-        \item $ \displaystyle\lim_{n\rightarrow\infty}\sqrt[n]{n}=1 $ 。
+        \item $ \forall a>0,\displaystyle\lim_{n\rightarrow\infty}\sqrt[n]{a}=1; $ 
+        \item $ \displaystyle\lim_{n\rightarrow\infty}\sqrt[n]{n}=1. $ 
     \end{enumerate}
 \end{Field}
 
@@ -378,12 +383,12 @@ $ f(x) $ 在 $ x_{0} $ 上是否有定义与该极限是否存在没有关系。
 
 以下是部分重要的极限。
 
-$$
-    \lim_{x\rightarrow0}\frac{\sin x}{x}=1
-$$ 
-$$
-    \lim_{x\rightarrow0}(1+x)^{\frac 1x}=e\Leftrightarrow \lim_{t\rightarrow\infty}(1+\frac 1t)^t=e
-$$ 
+\begin{equation*}
+    \begin{aligned}
+        &\lim_{x\rightarrow0}\frac{\sin x}{x}=1 \\     
+        &\lim_{x\rightarrow0}(1+x)^{\frac 1x}=e\Leftrightarrow \lim_{t\rightarrow\infty}(1+\frac 1t)^t=e
+    \end{aligned}
+\end{equation*}
 
 对以上极限，可以应用变量代换。
 
@@ -412,24 +417,24 @@ $$
 
 \begin{Theo}[$ \frac00 $  形式的洛必达法则]
 
-    设
-    \begin{enumerate}
-        \item $ \lim f(x)=0,\lim g(x)=0 $；
-        \item $ x $ 变化过程中，$ f'(x) $ 与 $ g'(x) $ \textbf{都存在}；
-        \item $ \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty) $ ，
-    \end{enumerate}
-    则 $ \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty) $ 。
+    若
+    \begin{itemize}[topsep = 0pt]
+        \item $ \lim f(x)=0,\lim g(x)=0; $
+        \item $ x $ 变化过程中，$ f'(x) $ 与 $ g'(x) $ 都存在；
+        \item $\dis \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty), $ 
+    \end{itemize}
+    则 $\dis \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty) $ 。
 \end{Theo}
 
 \begin{Theo}[$ \frac\infty\infty $  形式的洛必达法则]
 
-    设
-    \begin{enumerate}
-        \item $ \lim f(x)=\infty,\lim g(x)=\infty $；
-        \item $ x $ 变化过程中，$ f'(x) $ 与 $ g'(x) $ \textbf{都存在}；
-        \item $ \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty) $ ，
-    \end{enumerate}
-    则 $ \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty) $ 。
+    若
+    \begin{itemize}[topsep = 0pt]
+        \item $ \lim f(x)=\infty,\lim g(x)=\infty; $
+        \item $ x $ 变化过程中，$ f'(x) $ 与 $ g'(x) $ 都存在；
+        \item $\dis \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty), $ 
+    \end{itemize}
+    则 $\dis \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty) $ 。
 \end{Theo}
 
 注意：
@@ -441,6 +446,12 @@ $$
         \item （有无理数时）有理化；
         \item 倒代换。
     \end{enumerate}
+
+    对 $ 0^0,\infty^{0}, $ 常用$ \lim u^v = \lim \exp(v\ln u) $ .
+
+    对 $ 0^\infty, \lim u = 0, \lim v = \infty \Rightarrow \lim[1+u]^v = \exp(\lim uv).$ 
+
+    对 $ 1^\infty, \lim u = 1, \lim v = \infty \Rightarrow \lim u^v = \exp(\lim [u-1]v).$ 
     \item 优先应用等价代换、四则运算、变量代换以及恒等变换化简后再应用洛必达法则；
     \item 注意要求 $ f'(x) $ 与 $ g'(x) $ 的存在性；
     \item 洛必达法则是充分非必要的；
@@ -451,7 +462,9 @@ $$
 
 \begin{Theo}[海因定理]
 
-    若函数极限 $ \displaystyle\lim_{x\rightarrow+\infty}f(x)=A $ ，则数列极限 $ \displaystyle\lim_{n\rightarrow\infty}f(n)=A $ 。
+    若函数极限 $ \displaystyle\lim_{x\rightarrow x_0}f(x)=A, $ 
+    数列 $ \{x_n\} $ 收敛于 $ x_0, $ 
+    则数列极限 $ \displaystyle\lim_{n\rightarrow\infty}f(x_n)=A $ 。
 \end{Theo}
 
 注意：对数列，必须先应用海因定理才能使用洛必达法则。
@@ -468,11 +481,13 @@ $$
 
 \begin{itemize}
     \item 分段点处求极限；
-    \item $ x\rightarrow x_0 $ 而极限式中含 $ \frac{1}{x-x_0} $；此时，有
-    \begin{eqnarray*}
-        x\rightarrow x_0^+&\frac{1}{x-x_0}\rightarrow\infty\\
-        x\rightarrow x_0^-&\frac{1}{x-x_0}\rightarrow-\infty\\
-    \end{eqnarray*}
+    \item $ x\rightarrow x_0 $ 而极限式中含 $\dis \frac{1}{x-x_0} $；此时，有
+    \begin{equation*}
+        \begin{aligned}
+            x\rightarrow x_0^+,&\quad{}\dfrac{1}{x-x_0}\rightarrow\infty\\
+            x\rightarrow x_0^-,&\quad{}\dfrac{1}{x-x_0}\rightarrow-\infty\\    
+        \end{aligned}
+    \end{equation*}
 \end{itemize}
 
 \begin{Field}[极限命题2]
@@ -639,7 +654,7 @@ $$
 
     设函数 $ f(x) $ 
     \begin{itemize}
-        \item \textbf{在 $ x=a $ 的一去心邻域内有定义 }；
+        \item 在 $ x=a $ 的一\textbf{去心邻域}内有定义；
         \item 在 $ x=a $ 处不连续，
     \end{itemize}
     则称 $ x=a $ 为一个间断点。
@@ -658,13 +673,19 @@ $$
 \begin{enumerate}
     \item 若 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x) $ 与 $ {\displaystyle\lim_{x\rightarrow a^-}}f(x) $ 均存在，
     则称 $ x=a $ 为 $ f(x) $ 的一个第一类间断点，其还能\textbf{且必须要}分为\begin{itemize}
-        \item $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)={\displaystyle\lim_{x\rightarrow a^-}}f(x) $时 - 
-        可去间断点；
-        \item $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)\neq{\displaystyle\lim_{x\rightarrow a^-}}f(x) $时 - 
-        跳跃间断点；
+        \item 可去间断点 - 
+        $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)={\displaystyle\lim_{x\rightarrow a^-}}f(x); $
+        \item 跳跃间断点 - 
+        $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)\neq{\displaystyle\lim_{x\rightarrow a^-}}f(x); $
     \end{itemize}
     \item 若 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x) $ 与 $ {\displaystyle\lim_{x\rightarrow a^-}}f(x) $ 
-    中有至少一个不存在，则称其为第二类间断点。
+    中有至少一个不存在，则称其为第二类间断点。第二类间断点不用强制细分。
+
+    第二类间断点可以分为
+    \begin{itemize}
+        \item 无穷间断点 - 左右极限至少有一个为无穷；
+        \item 震荡间断点 - 左右极限至少有一个不存在，但不是无穷；
+    \end{itemize}
 \end{enumerate}
 
 可能存在间断点的地方：
@@ -672,5 +693,4 @@ $$
     \item 初等函数的无定义点；
     \item 分段函数的分段点。
 \end{itemize}
-
 

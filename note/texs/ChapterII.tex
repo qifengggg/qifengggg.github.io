@@ -32,10 +32,10 @@
         {\displaystyle\lim_{\Delta x\rightarrow 0}\frac{f(x+2\Delta x)-f(x)}{\Delta x}}\neq f'(x)
     $$ 
     \item 在定义式中，分子中两项应当“一动一静”，否则无法推出可导性。注意，$$
-        f(x)\textrm{在}x_0\textrm{处可导}\Rightarrow {\displaystyle\lim_{\Delta x\rightarrow 0}}
+        f(x)\textrm{在}x_0\textrm{处可导}\Rightarrow 
         {\displaystyle\lim_{\Delta x\rightarrow 0}}\frac{f(x+\Delta x)-f(x-\Delta x)}{\Delta x}
     $$ 
-    $ \Leftarrow $ 反例：$ f(x)=|x| $ ， $ x_0 = 0 $ ；
+    $ \Leftarrow $ 反例 - $ f(x)=|x|, x_0 = 0; $ 
     \item 若已知 $ f(x) $ 在 一点 $ x_0 $ 可导，则可能可以利用导数定义。
 \end{itemize}
 
@@ -57,7 +57,6 @@ $$
         \item 若对 $ \forall x\in (a,b) $ 有 $ f(x) $ 在 $ x_0 $ 可导，则称 $ f(x) $ 在 $ (a,b) $ 上可导；
         \item 若对 $ \forall x\in (a,b) $ 有 $ f(x) $ 在 $ x_0 $ 可导，
         且其在 $ a $ 点右可导，在 $ b $ 点左可导，则称 $ f(x) $ 在 $ [a,b] $ 上可导。
-        则称 $ f(x) $ 在 $ (a,b) $ 上可导；
     \end{itemize}
 \end{Field}
 
@@ -67,7 +66,7 @@ $$
 
     可导必连续。
 \end{Theo}
-$ \Leftarrow $ 反例：
+$ \Leftarrow $ 反例如下。
 \begin{itemize}
     \item $ f(x)=|x|,x_0=0 $ ;
     \item $ f(x)=\sqrt[3]x,x_0=0 $ 此时其左右导数均无穷大。
@@ -87,8 +86,8 @@ $ \Leftarrow $ 反例：
 
 若函数 $ y=f(x) $ 在 $ x_0 $ 处导数 $ f'(x_0) $ \textbf{存在}，则在几何上， $ f'(x_0) $ 表示曲线
 $ y=f(x) $ 在点 $ (x_0,f(x_0)) $ 处的切线斜率，即\begin{itemize}
-    \item 切线方程$ y-f(x_0)=f'(x_0)(x-x_0) $ ；
-    \item 法线方程$ y-f(x_0)=-\frac1{f'(x_0)}(x-x_0) $ ；
+    \item 切线方程$ y-f(x_0)=f'(x_0)(x-x_0) $ 
+    \item 法线方程$ y-f(x_0)=-\frac1{f'(x_0)}(x-x_0) $ 
 \end{itemize}
 
 注意：
@@ -101,7 +100,7 @@ $ y=f(x) $ 在点 $ (x_0,f(x_0)) $ 处的切线斜率，即\begin{itemize}
     \item 可用于处理\begin{itemize}
         \item 显函数 $ y=f(x) $ ;
         \item 隐函数 $ F(x,y)=0 $ ;
-        \item 参数方程、极坐标方程，极坐标时可以代$ r $ 入$ \theta $ 。
+        \item 参数方程、极坐标方程，极坐标时可以代$ r $ 入$ \theta. $
     \end{itemize}
 \end{itemize}
 
@@ -115,7 +114,7 @@ $ y=f(x) $ 在点 $ (x_0,f(x_0)) $ 处的切线斜率，即\begin{itemize}
         (\sin x)'=\cos x&(\cos x)'=-\sin x\\ 
         (\tan x)'=\sec^2 x&(\cot x)'=-\csc^2 x\\ 
         (\sec x)'=\tan x\sec x&(\csc x)'=-\cot x\csc x\\ 
-        (\arcsin x)'=\frac{1}{\displaystyle\sqrt{(1-x^2)}}&(\arccos x)'=-\frac{1}{\displaystyle\sqrt{(1-x^2)}}\\
+        (\arcsin x)'=\frac{1}{\sqrt{(1-x^2)}}&(\arccos x)'=-\frac{1}{\sqrt{(1-x^2)}}\\
         (\arctan x)'=\frac1{1+x^2} & (\textrm{arccot} x)'=-\frac1{1+x^2}\\
         (a^x)'=a^x\ln a&(\log_a x)'=\frac1{x\ln a}\\
     \end{array}
@@ -130,11 +129,11 @@ $ y=f(x) $ 在点 $ (x_0,f(x_0)) $ 处的切线斜率，即\begin{itemize}
     \begin{enumerate}
         \item $ \left[f(x)\pm g(x)\right]'=f'(x)\pm g'(x) $ ;
         \item $ \left[f(x)g(x)\right]'=f'(x)g(x)+g'(x)f(x) $ ;
-        \item $ \frac{f(x)}{g(x)}'=\frac{f'(x)g(x)-g'(x)f(x)}{g^2(x)}$，其中要求 $ g(x)\neq 0 $  ;
+        \item $\dis \left[\frac{f(x)}{g(x)}\right]'=\frac{f'(x)g(x)-g'(x)f(x)}{g^2(x)}$，其中要求 $ g(x)\neq 0 $  ;
     \end{enumerate}
 \end{Field}
 
-注意，若 $ f(x) $可导但是 $ g(x) $ 不可导于$ x=x_0 $ ，则$ f(x)\pm g(x) $ 也不可导于 $ x=x_0 $ 。
+注意，若 $ f(x) $ 可导但是 $ g(x) $ 不可导于 $ x=x_0, $ 则$ f(x)\pm g(x) $ 也不可导于 $ x=x_0. $ 
 
 可以将和、差、积的公式推广至有限多个。对乘法，有
 $$
@@ -183,10 +182,37 @@ $$
 \begin{Field}[隐函数求导数]
 
     设 $ y=y(x) $ 由方程 $ F(x,y)=0 $ 确定，则$$
-        \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\frac{\mathrm{d}F}{\mathrm{d}x}}{\frac{\mathrm{d}F}{\mathrm{d}y}}
+        \frac{\mathrm{d}y}{\mathrm{d}x}={\dfrac{\mathrm{d}F}{\mathrm{d}x}}\Big\slash{\dfrac{\mathrm{d}F}{\mathrm{d}y}}
         ,\quad{}\frac{\mathrm{d}^2F}{\mathrm{d}x^2}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\mathrm{d}F}{\mathrm{d}x})
     $$ 
 \end{Field}
+
+\sssubsection{反函数求导数}
+
+设 $ x = f^{-1}(y) $ 由 $ y = f(x) $ 确定，则
+\begin{itemize}
+    \item 若 $ f(x) $ 可导且 $ f'(x)\neq 0, $ 则$ \dis \dfrac{\mathrm{d}x}{\mathrm{d}y} = 
+    \dfrac{1}{\mathrm{d}y/ \mathrm{d}x} = \dfrac{1}{f'(x)}. $ 
+    \item 若 $ f(x) $ 二阶可导且 $ f'(x)\neq 0 $ 则 $ \dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} = 
+    -\dfrac{f^\pprime(x)}{[f'(x)]^3}. $ 
+\end{itemize}
+
+$ f(x) $ 可导且 $ f'(x)\neq 0 $ 说明 $ f(x) $ 单调且存在反函数。
+
+\sssubsection{参数方程求导数}
+
+设 $ y = f(x) $ 由参数方程 $ \begin{cases}
+    x = x(t) \\ y = y(t)
+\end{cases} $ 确定。此时，$ t = t(x),y = y(t(x)). $ 
+
+对于其导数，有
+\begin{itemize}
+    \item 若 $ x(t),y(t) $ 均可导，且$ x'(t)\neq 0, $ 则 $ \dfrac{\mathrm{d}y}{\mathrm{d}x} = 
+    \dfrac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t} = \dfrac{y'(t)}{x'(t)}; $ 
+    \item 若 $ x(t),y(t) $ 均二阶可导，且$ x'(t)\neq 0, $ 则 $ \dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} = 
+    \dfrac{y^\pprime(t)x'(t) - y'(t)x^\pprime(t)}{[x'(t)]^3}. $ 
+\end{itemize}
+
 
 \begin{Field}[常见初等函数的$ n $ 阶导数公式]
 
@@ -199,6 +225,7 @@ $$
         \item $ y=\ln(x+a)\Rightarrow y^{(n)}=(\frac{1}{x+a})^{(n-1)} = \frac{(-1)^{n-1}(n-1)!}{(x+a)^{n}} $ 
     \end{enumerate}
 \end{Field}
+
 
 \section{微分}
 
@@ -223,18 +250,15 @@ $$
     $ \mathrm{d}x|_{x=x_0} =A(x_0)\Delta x=f'(x_0)\mathrm{d}x $ 
 \end{Theo}
 
-一般地，$ y=f(x) $ 则有 $ \mathrm{d}y=f'(x)\mathrm{d}x $ ，故导数 $ f'(x)=\frac{\mathrm{d}y}{\mathrm{d}x} $ 也称微商，即微分之商。
+一般地，$ y=f(x) $ 则有 $ \mathrm{d}y=f'(x)\mathrm{d}x, $ 故导数 $ f'(x)=\frac{\mathrm{d}y}{\mathrm{d}x} $ 也称微商，即微分之商。
 
 \subsection{微分公式与法则}
 
-\begin{Field}[]
-
-    \begin{itemize}
-        \item $ \mathrm{d}[f(x)\pm g(x)]=\mathrm{d}f(x)\pm\mathrm{d}g(x) $ ;
-        \item $ \mathrm{d}[f(x)\cdot g(x)]=g(x)\mathrm{d}f(x)+f(x)\mathrm{d}g(x) $ ;
-        \item $ g(x)\neq0 $ 时，$ \mathrm{d}\frac{f(x)}{g(x)}=\frac{g(x)\mathrm{d}f(x)-f(x)\mathrm{d}g(x)}{g^2(x)} $ .
-    \end{itemize}
-\end{Field}  
+\begin{itemize}
+    \item $ \mathrm{d}[f(x)\pm g(x)]=\mathrm{d}f(x)\pm\mathrm{d}g(x) $ ;
+    \item $ \mathrm{d}[f(x)\cdot g(x)]=g(x)\mathrm{d}f(x)+f(x)\mathrm{d}g(x) $ ;
+    \item $ g(x)\neq0 $ 时，$ \mathrm{d}\frac{f(x)}{g(x)}=\frac{g(x)\mathrm{d}f(x)-f(x)\mathrm{d}g(x)}{g^2(x)} $ .
+\end{itemize}
 
 \section{微分中值定理}
 
@@ -243,14 +267,13 @@ $$
 \begin{Theo}[罗尔定理]
 
     若函数满足
-    \begin{enumerate}
+    \begin{itemize}
         \item 在闭区间 $ [a,b] $ 连续；
         \item 在开区间 $ (a,b) $ 可导；
-        \item $ f(a)=f(b) $ ，
-    \end{enumerate}
-    则至少存在一点 $ \xi\in(a,b) $ 使得 $ f'(\xi)=0 $ 。
+        \item $ f(a)=f(b), $ 
+    \end{itemize}
+    则至少存在一点 $ \xi\in(a,b) $ 使得 $ f'(\xi)=0. $ 
 \end{Theo}
-
 注意：
 \begin{itemize}
     \item 常用于证明\textbf{形如}$ f(x)=g(x) $ 的方程在一开区间上有根；
@@ -269,16 +292,20 @@ $$
             \item 添加能正负相消的两项。
         \end{itemize}
         \item 取不定积分；
-        \item 整理，直到满足其在 $ [a,b] $ 上连续，$ (a,b) $ 上可导为止
+        \item 整理，直到满足其在 $ [a,b] $ 上连续，$ (a,b) $ 上可导为止。
     \end{enumerate}
-    注意，以上方法在草稿纸上，不注重严谨性。
+    注意，以上方法仅用于发掘可能的辅助函数，不注重严谨性。
 \end{Field}
 
 不难发现，\begin{itemize}
+    \item $ xf'(x) + nf(x) = 0 \Rightarrow F(x) = x^n f(x); $ 
     \item $ f(x)g'(x)-f'(x)=0\Rightarrow F(x)=f(x)e^{-g(x)} $ ;
-    \item $ f(x)+f'(x)=0\Rightarrow F(x)=f(x)e^x $ ;
-    \item $ f(x)-f'(x)=0\Rightarrow F(x)=f(x)e^{-x} $ ;
-    \item $ f(x)+\lambda f'(x)=0\Rightarrow F(x)=f(x)e^{\lambda x} $ ;
+    \begin{itemize}
+        \item $ f(x)+f'(x)=0\Rightarrow F(x)=f(x)e^x $ ;
+        \item $ f(x)-f'(x)=0\Rightarrow F(x)=f(x)e^{-x} $ ;
+        \item $ f(x)+\lambda f'(x)=0\Rightarrow F(x)=f(x)e^{\lambda x} $ ;
+    \end{itemize}
+
 \end{itemize}
 
 \subsection{拉格朗日中值定理}
@@ -290,29 +317,31 @@ $$
         \item 在 $ [a,b] $ 上连续；
         \item 在 $ (a,b) $ 上可导， 
     \end{enumerate}
-    则至少存在一点 $ \xi \in (a,b) $ 使得 $ f'(\xi)=\frac{f(b)-f(a)}{b-a} 
-    \Rightarrow f'(\xi)(b-a)=f(b)-f(a)$ ;
+    则至少存在一点 $ \xi \in (a,b) $ 使得 $ f'(\xi)=\dfrac{f(b)-f(a)}{b-a} 
+    \Rightarrow f'(\xi)(b-a)=f(b)-f(a).$
 \end{Theo}
 
 注意：\begin{enumerate}
-    \item 证明：令 $ F(x)=f(x)-\frac{f(b)-f(a)}{b-a}x $ 并且利用罗尔定理；
+    \item 证明：令 $\dis F(x)=f(x)-\frac{f(b)-f(a)}{b-a}x $ 并且利用罗尔定理；
     \item 可证方程在开区间 $ (a,b) $ 上有根；
     \item 可证不等式；
     \item 出现一函数增量 $ \Rightarrow $ 利用拉格朗日中值定理；
     \item 联系 $ f(x) $ 与 $ f'(x) $ 的桥梁；
+    \item 求极限时，若出现 $ f(b) - f(a), $ 可能应用拉格朗日得
+    $ f'(\xi)(b-a), $ 再利用夹逼定理处理 $ \xi; $ 
     \item 与割线有关。
 \end{enumerate}
 
 \begin{Infer}[拉格朗日中值定理推论]
 
     \begin{itemize}
-        \item 若 $ f(x) $ 在 $ (a,b) $ 内可导，且 $ f'(x)\equiv0 $ ，则 $ f(x) $ 在 $ (a,b) $ 内为常数；
-        \item 若 $ f(x) $ 在 $ (a,b) $ 内可导，且 $ f'(x)\equiv k $ ，则在 $ (a,b) $ 上 $ f(x)=kx+c $ ，
+        \item 若 $ f(x) $ 在 $ (a,b) $ 内可导，且 $ f'(x)\equiv0, $ 则 $ f(x) $ 在 $ (a,b) $ 内为常数；
+        \item 若 $ f(x) $ 在 $ (a,b) $ 内可导，且 $ f'(x)\equiv k, $ 则在 $ (a,b) $ 上 $ f(x)=kx+c, $ 
         其中 $ c $ 为常数。
     \end{itemize}
 \end{Infer}
 
-\section{柯西中值定理}
+\subsection{柯西中值定理}
 
 \begin{Theo}[柯西中值定理]
 
@@ -320,27 +349,27 @@ $$
     \begin{enumerate}
         \item 在闭区间 $ [a,b] $ 上皆连续；
         \item 在开区间 $ (a,b) $ 内皆可导；
-        \item 且 $ g'(x)\neq 0 $ ；
+        \item $ g'(x)\neq 0, $ 
     \end{enumerate}
-    则存在 $ \xi\in (a,b) $ 使得 $ \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}(a<\xi<b) $ 。
+    则存在 $ \xi\in (a,b) $ 使得 $ \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}(a<\xi<b). $ 
 \end{Theo}
 
 注意：\begin{enumerate}
-    \item 证明：令 $ F(x)=\frac{f(b)-f(a)}{g(b)-g(a)}g(x)-f(x) $，利用罗尔定理可证；
+    \item 证明：令 $ F(x)=\frac{f(b)-f(a)}{g(b)-g(a)}g(x)-f(x), $ 利用罗尔定理可证；
     \item 可证方程有根；
     \item 出现两个函数增量 $ \Rightarrow $ 使用柯西中值定理证明；
     \item 若要求两个不同的中值，则寻求一特殊点 $ c $ 将 $ a,b $ 分为两子区间，并分别运用中值定理，如罗尔定理。
 \end{enumerate}
 
-\section{泰勒中值定理}
+\subsection{泰勒中值定理}
 
 \begin{Theo}[带拉格朗日余项的泰勒中值定理]
 
-    设 $ f(x) $ 在包含$ x_0 $ 的一邻域$ U_\delta(x_0) $ 内有 $ n+1 $ 阶导数，则对 $ x\in U_\delta $ ，
+    设 $ f(x) $ 在包含$ x_0 $ 的一邻域$ U_\delta(x_0) $ 内有 $ n+1 $ 阶导数，则对 $ x\in U_\delta, $ 
     有$$
         f(x) = \sum_{i=0}^n \frac{f^{(i)}(x_0)}{n!}(x-x_0)^n + R_n(x)
     $$ 
-    其中，$ R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1} $， $ \xi $ 介于 $ x $ 与 $ x_0 $ ，
+    其中，$\dis R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}, \xi $ 介于 $ x $ 与 $ x_0, $ 
     $ R_n(x) $ 称为拉格朗日余项。
 \end{Theo}
 
@@ -354,19 +383,32 @@ $$
 以下是一些常用函数的带皮亚诺余项的马克劳林展开式。
 
 \begin{itemize}
-    \item $\displaystyle e^x = \sum_{i=0}^n \dfrac{x^n}{n!}+ o(x^n)$;
-    \item $\displaystyle \sin x = x - \frac{x^3}{6} + \dots + \frac{(-1)^{n}x^{2n+1}}{(2n+1)!} + o(x^{2n+1}) $ ;
-    \item $\displaystyle \cos x = 1 - \frac{x^2}{2} + \dots + \frac{(-1)^{n}x^{2n}}{(2n)!} + o(2n)$ ;
-    \item $\displaystyle \tan x = x + \frac{x^3}{3} + o(x^3)$ ;
-    \item $\displaystyle \arcsin x = x + \frac{x^3}{6} +o(x^3)$ ;
-    \item $\displaystyle \arctan x = x - \frac{x^3}{3} + o(x^3)$ ;
-    \item $\displaystyle \ln (x+1) = x - \frac{x^2}{2} + \frac{x^3}{3} + \dots + \frac{(-1)^{n-1}x^n}{n} + o(x^n) $;
-    \item $\displaystyle \ln(1-x) = -(x+\frac{x^2}{2} + \frac{x^3}{3}) + o(x^3)$;
-    \item $\displaystyle (1+x)^\alpha = \sum_{k=1}^n C_\alpha^kx^k + o(x^n) $ ,
-    其中 $\displaystyle C_\alpha^k=\frac{\prod_{i = 0}^{k-1}(\alpha - i)}{k!} $ 
-    \item $\displaystyle \frac{1}{1-x} = \sum_{i=0}^n x^i + o(x^n) $ ;
-    \item $\displaystyle \frac{1}{1+x} = \sum_{i=0}^n (-1)^i x^i + o(x^n) $;
+    \item $\dis e^x = \sum_{i=0}^n \dfrac{x^n}{n!}+ o(x^n)$;
+    \item $\dis \cos x = 1 - \frac{x^2}{2} + \dfrac{x^4}{24} +\dots + \frac{(-1)^{n}x^{2n}}{(2n)!} + o(x^{2n})$ ;
+    \item $\dis \sin x = x - \frac{x^3}{6} + \dots + \frac{(-1)^{n}x^{2n+1}}{(2n+1)!} + o(x^{2n+1}) $ ;
+    \item $\dis \arcsin x = x + \frac{x^3}{6} +o(x^3)$ ;
+    \item $\dis \tan x = x + \frac{x^3}{3} + o(x^3)$ ;
+    \item $\dis \arctan x = x - \frac{x^3}{3} + o(x^3)$ ;
+    \item $\dis \ln (1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + \dots + \frac{(-1)^{n-1}x^n}{n} + o(x^n) $;
+    \item $\dis \ln(1-x) = -(x+\frac{x^2}{2} + \frac{x^3}{3}) + o(x^3)$;
+    \item $\dis (1+x)^\alpha = 1+\sum_{k=1}^n C_\alpha^kx^k + o(x^n) $ ,
+    其中 $\dis C_\alpha^k=\frac{\prod_{i = 0}^{k-1}(\alpha - i)}{k!} $ 
+
+    如，$ \dis \sqrt{1+x} = 1 + \dfrac{1}{2}x - \dfrac{1}{8}x^2 + o(x^2); $ 
+    \item $\dis \frac{1}{1-x} = \sum_{i=0}^n x^i + o(x^n) $ ;
+    \item $\dis \frac{1}{1+x} = \sum_{i=0}^n (-1)^i x^i + o(x^n) $;
 \end{itemize}
+
+注意到泰勒展开时，对展开式的第二项，有
+\begin{equation*}
+    \begin{aligned}
+        \sin x \xLongrightarrow{\textrm{正负变换}}
+        \arcsin x \xLongrightarrow{\textrm{去掉阶乘}}
+        \tan x \xLongrightarrow{\textrm{正负变换}}
+        \arctan x \xLongrightarrow{\textrm{增加阶乘}}
+        \sin x .
+    \end{aligned}
+\end{equation*}
 
 注意，对于泰勒公式，
 \begin{enumerate}
@@ -376,18 +418,12 @@ $$
         \item 可求等价函数；
         \item 可求极限；
         \item 可求高阶导数值；
-        \item 可近似计算。
+        \item 可近似计算；
     \end{enumerate}
-    \item 在不等式证明、方程有根题目中应用拉格朗日余项，否则应用皮亚诺余项。
-    \item 题目出现高阶(至少2阶)导数 $ \Rightarrow $ 可能应用泰勒中值定理。
-    \item 一般在导数已知的点展开。
-\end{enumerate}
-
-求高阶导数值时， 
-\begin{enumerate}
-    \item 求高阶导函数并代入 $ x=x_0 $ (不推荐) ；
-    \item 泰勒公式；
-    \item \Attention{奇偶性}。
+    \item 在不等式证明、方程有根题目中应用拉格朗日余项，否则应用皮亚诺余项；
+    \item 题目出现高阶(至少2阶)导数 $ \Rightarrow $ 可能应用泰勒中值定理；
+    \item 一般在导数已知的点展开；
+    \item 使用泰勒公式时，$ x\rightarrow 0 $ 可以推广为 $ \square \rightarrow 0. $ 
 \end{enumerate}
 
 \section{导数应用}
@@ -429,12 +465,13 @@ $$
     函数的极大值和极小值统称极值。极大值点与极小值点统称极值点。
 \end{Def}
 
-\subsection{极值的必要条件}
+\subsection{极值的性质}
 
 \begin{itemize}
     \item 若 $ f'(x_0)=0 $ ，则称 $ x_0 $ 为一个驻点；
-    \item 若 $ f(x) $ 在 $ x=x_0 $ 处可导，而$ f(x_0) $ 为极值，则 $ f(x_0)=0 $；
-    \item 极值点 $ \nLeftrightarrow $ 驻点，如 $ f(x)=|x|, x=0 $ ；
+    \item 若 $ f(x) $ 在 $ x=x_0 $ 处可导，而$ f(x_0) $ 为极值，则 $ f'(x_0)=0, $
+    即可导的极值点导数为零；
+    \item 极值点 $ \nLeftrightarrow $ 驻点，如 $ f(x)=|x|, x=0; $ 
     \item 可能的极值点：\begin{itemize}
         \item $ f'(x)=0 $ 处；
         \item $ f'(x) $ 不存在处。
@@ -531,30 +568,35 @@ $$
 
 \subsection{渐近线定义及其求法}
 
-\textbf{水平渐近线}
+\sssubsection{水平渐近线}
 
-若 $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)=b $ ，则称 $ y=b $ 是 $ f(x) $ 的一条水平渐近线。
+若 $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)=b $
+或 $ {\displaystyle\lim_{x\rightarrow -\infty}}f(x) = b, $ 
+则称 $ y=b $ 是 $ f(x) $ 的一条水平渐近线。
 
-$ x\rightarrow-\infty $ 时同理。
-
-
-\textbf{垂直渐近线}
+\sssubsection{垂直渐近线}
 
 若 $ {\displaystyle\lim_{x\rightarrow x_0^+}}f(x)=\infty $ 
-或 $ {\displaystyle\lim_{x\rightarrow x_0^-}}f(x)=\infty $，则称 $ x=x_0 $ 是 $ f(x) $ 的一条垂直渐近线，也叫铅直渐近线。
+或 $ {\displaystyle\lim_{x\rightarrow x_0^-}}f(x)=\infty, $ 则称 $ x=x_0 $ 是 $ f(x) $ 的一条垂直渐近线，也叫铅直渐近线。
 
-\textbf{斜渐近线} 
+垂直渐近线只需要讨论分母为零的点或者函数无定义的端点。
 
-若 $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)-(kx+b)=0 $ $ (x\rightarrow-\infty) $ ，则称
+\sssubsection{斜渐近线} 
+
+若 $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)-(kx+b)=0 $ $ (x\rightarrow-\infty), $ 则称
 $ y=kx+b $ 为斜渐近线。
 
 具体而言，若\begin{enumerate}
-    \item $ {\displaystyle\lim_{x\rightarrow +\infty}}\frac{f(x)}{x}=k $ ；
-    \item $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)-kx = b $ ，
+    \item $ {\displaystyle\lim_{x\rightarrow +\infty}}\frac{f(x)}{x}=k; $ 
+    \item $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x)-kx = b, $ 
 \end{enumerate}
 则有斜渐近线 $ y=kx+b $ 。$ x\rightarrow-\infty $ 时同理。
 
-注意，一侧不会同时存在水平渐近线和斜渐近线。
+注意，
+\begin{itemize}
+    \item 即使 $ {\displaystyle\lim_{x\rightarrow \infty}} \frac{y}{x} $ 存在，斜渐近线也不一定存在；
+    \item 一侧不会同时存在水平渐近线和斜渐近线。
+\end{itemize}
 
 \section{曲率及曲率半径}
 

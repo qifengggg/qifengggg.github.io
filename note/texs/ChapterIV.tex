@@ -6,12 +6,13 @@
 
 \begin{Def}[二元函数极限]
 
-    设 $ f(x,y) $ 在点 $ (x_0,y_0) $ 某去心邻域有定义，若 $ \forall \varepsilon > 0, \exists \delta > 0 $ 
-    使得只要 $ 0 < \dsqrt{}{(x-x_0)^2+(y-y_0)^2}<\delta $ 就有 $ |f(x,y)-A|<\varepsilon $ ，则称
-    当 $ (x,y) $ 趋近于 $ (x_0,y_0) $ 时，$ f(x,y) $ 的极限存在，值为 $ A $ ，记为
+    设 $ f(x,y) $ 在点 $ (x_0,y_0) $ 某去心邻域有定义，\newline 若 $ \forall \varepsilon > 0,\ \exists \delta > 0 $ 
+    使得只要 $ 0 < \dsqrt{(x-x_0)^2+(y-y_0)^2}<\delta $ 就有 $ |f(x,y)-A|<\varepsilon, $ \newline 则称
+    当 $ (x,y) $ 趋近于 $ (x_0,y_0) $ 时，$ f(x,y) $ 的极限存在，其值为 $ A; $ 
+    \newline 将其记为
     $ {\displaystyle\lim_{\begin{subarray}{c}
         x\rightarrow x_0\\y\rightarrow y_0
-    \end{subarray}}}f(x,y) = A $ 或者 $ {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = A $ ；
+    \end{subarray}}}f(x,y) = A $ 或者 $ {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = A. $ 
     否则，称为极限不存在。
 \end{Def}
 
@@ -30,25 +31,44 @@
         {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = A \Leftrightarrow
         \textrm{当} (x,y) \textrm{以任意形式趋近于} (x_0,y_0) \textrm{时都有} f(x,y)\rightarrow A
     $$ 
-    其逆否命题常用。
+    \item 当证明二重积分不存在时，常用的方法如下。
+    \begin{itemize}
+        \item 二重积分存在条件的逆否命题，即取不同路径；
+        \item 利用极坐标，将极限变为 $ {\displaystyle\lim_{\rho\rightarrow 0^+}}; $ 
+    \end{itemize}
 \end{enumerate}
+
+使用极坐标变换求重极限 
+$ {\displaystyle\lim_{\begin{subarray}{c}x\rightarrow x_0\\y\rightarrow y_0\end{subarray}}} 
+\dfrac{x^\alpha y^\beta}{x^2+y^2} 
+$ 时，极限
+$ \begin{cases}
+    \textrm{为}0.& \alpha+\beta > 2 \\
+    \textrm{不存在}.& \alpha+\beta\leq 2
+\end{cases} $ 
+
+当上式中分母含有奇数次时，极限必然不存在，因为分母总会在某曲线上等于零，使得原式在该处无定义。
+    
 
 \begin{Def}[二元函数连续]
 
-    若 $ {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}}f(x,y) = f(x_0,y_0) $ 
-    或者$ {\displaystyle\lim_{(\Delta x,\Delta y)\rightarrow (0,0)}}
-    f(x+\Delta x,y + \Delta y) - f(x,y) = 0 $ ，
+    若 $ {\displaystyle\lim_{\begin{subarray}{c}x\rightarrow x_0\\y\rightarrow y_0\end{subarray}}} 
+    f(x,y) = f(x_0,y_0) $ 
+    或者$ {\displaystyle\lim_{\begin{subarray}{c}\Delta x\rightarrow 0\\\Delta y\rightarrow 0\end{subarray}}} 
+    f(x+\Delta x,y + \Delta y) - f(x,y) = 0, $ 
     则称 $ f(x,y) $ 在 $ (x_0,y_0) $ 连续。
     若 $ f(x,y) $ 在区域 $ D $ 中每一点均连续，则称 $ f(x,y) $ 在 $ D $ 内连续。
 \end{Def}
+
+闭区域连续函数也有最值定理、介值定理、零点定理。
 
 \subsection{偏导数}
 
 \begin{Def}[偏导数]
 
-    设二元函数 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 某邻域内有定义，令 $ y = y_0 $ ，
-    给 $ x $ 以增量 $ \Delta x $ ，\nextline 若 $ {\displaystyle\lim_{\Delta x\rightarrow 0}}
-    \dfrac{(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x} $ 存在，则称其为 $ z = f(x,y) $ 
+    设二元函数 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 某邻域内有定义，令 $ y = y_0, $ 
+    给 $ x $ 以增量 $ \Delta x, $ \nextline 若 $ {\displaystyle\lim_{\Delta x\rightarrow 0}}
+    \dfrac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x} $ 存在，则称其为 $ z = f(x,y) $ 
     在 $ (x_0,y_0) $ 处关于 $ x $ 的偏导数，\nextline 记为 $ f_x'(x_0,y_0) $ 
     或者 $ \dfrac{\partial z}{\partial x}\Big|_{(x_0,y_0)} $ 
     或者 $ z'_x\Big|_{(x_0,y_0)} $ 。此外，$$
@@ -60,6 +80,9 @@
 $ y $ 的偏导数可以类似地定义。
 
 注意，两偏导数在 $ (x_0,y_0) $ 处存在 $ \not\Leftrightarrow f(x,y) $ 在 $ (x_0,y_0) $ 连续。
+
+事实上，$ f_x'(x_0,y_0) $ 就是一元函数 $ f(x,y_0) $ 在 $ x = x_0 $ 的导数，
+$ f_y'(x_0,y_0) $ 就是一元函数 $ f(x_0,y) $ 在 $ y = y_0 $ 的导数。
 
 \begin{Def}[高阶偏导数]
 
@@ -88,7 +111,7 @@ $ y $ 的偏导数可以类似地定义。
 \begin{Def}[全微分]
 
     设 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 处有全增量 
-    $ \Delta z = f(x_0+\Delta x,y_0 + \Delta y) - f(x_0,y_0) $ ，
+    $ \Delta z = f(x_0+\Delta x,y_0 + \Delta y) - f(x_0,y_0), $ 
     若 $ \Delta z = A\Delta x + B\Delta y + o(\rho),\rho = \dsqrt{(\Delta x)^2+(\Delta y)^2}\rightarrow0 $ 
     其中 $ A,B $ 不依赖于 $ \Delta x,\Delta y $ ，仅与 $ x_0,y_0 $ 有关，则称 $ z = f(x,y) $ 
     在 $ (x_0,y_0) $ 处可微，而 $ A\Delta x+B\Delta y $ 称为 $ z = f(x,y) $ 在 $ (x_0,y_0) $ 处的
@@ -101,7 +124,7 @@ $ y $ 的偏导数可以类似地定义。
     \begin{array}{c}
         z = f(x,y) \textrm{在} (x_0,y_0) \textrm{可微} \\
         \Updownarrow \\
-        {\displaystyle\lim_{(x,y)\rightarrow (x_0,y_0)}} 
+        {\displaystyle\lim_{\begin{subarray}{c}x\rightarrow x_0\\y\rightarrow y_0\end{subarray}}} 
         \dfrac{\overbrace{f(x,y)-f(x_0,y_0)}^{\dis \Delta z} - 
         \overbrace{f'_x(x_0,y_0)(x-x_0)+f'_y(x_0,y_0)(y-y_0)}^{\dis \mathrm{d}z}}{\dis \sqrt{(x-x_0)^2+(y-y_0)^2}} = 0
     \end{array}
@@ -111,7 +134,9 @@ $ y $ 的偏导数可以类似地定义。
 
     若 $ f(x,y) $ 在 $ (x_0,y_0) $ 可微，则\begin{itemize}
         \item $ f(x,y) $ 在 $ (x_0,y_0) $ 连续；
-        \item $ f'_x(x,y),f'_y(x,y) $ 在 $ (x_0,y_0) $ 处均存在。
+        \item $ f'_x(x,y),f'_y(x,y) $ 在 $ (x_0,y_0) $ 处均存在；
+        
+        事实上， $ \mathrm{d}z = f'_x(x_0,y_0)\mathrm{d}x + f'_y(x_0,y_0)\mathrm{d}y. $ 
     \end{itemize}
 \end{Theo}
 
@@ -137,7 +162,24 @@ $ y $ 的偏导数可以类似地定义。
 
 \subsection{复合函数微分法}
 
-求二阶偏导数时，二阶偏导和一阶偏导的偏导结构相同。
+存在至少两个中间变量或自变量时考虑复合函数。  
+
+若 $ f(u,v) $ 可微，$ u = u(x,y),v = v(x,y), $ 偏导数存在，则$ z = f(x,y) $ 偏导数存在，且
+$$
+    \dfrac{\partial z}{\partial x} = \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial x}
+    +\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial x};\quad{}
+    \dfrac{\partial z}{\partial y} = \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial y}
+    +\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial y};
+$$ 
+
+求二阶偏导数时，二阶偏导和一阶偏导的偏导结构相同，也即
+
+$$
+    \dfrac{\partial^2 z}{\partial x^2}  = \dfrac{\partial \frac{\partial z}{\partial x}}{\partial u}\dfrac{\partial u}{\partial x}
+    +\dfrac{\partial \frac{\partial z}{\partial x}}{\partial v}\dfrac{\partial v}{\partial x};\quad{}
+    \dfrac{\partial z^2}{\partial y^2} = \dfrac{\partial \frac{\partial z}{\partial y}}{\partial u}\dfrac{\partial u}{\partial y}
+    +\dfrac{\partial \frac{\partial z}{\partial y}}{\partial v}\dfrac{\partial v}{\partial y};
+$$ 
 
 \subsection{隐函数求导}
 
@@ -146,14 +188,14 @@ $ y $ 的偏导数可以类似地定义。
     若有
     \begin{itemize}
         \item 函数 $ F(x,y) $ 在以 $ P_0(x_0,y_0) $ 为内点的某区域 $ D\subset R^2 $ 上连续；
-        \item $ F(x_0,y_0) = 0 $ (称为初始条件);
-        \item 在 $ D $ 内存在连续的偏导数 $ F'_y(x,y) $ ;
-        \item $ F'_y(x_0,y_0)\neq0 $ ,
+        \item $ F(x_0,y_0) = 0 (\textrm{称为初始条件}); $ 
+        \item 在 $ D $ 内存在连续的偏导数 $ F'_y(x,y); $ 
+        \item $ F'_y(x_0,y_0)\neq0, $ 
     \end{itemize}
     则在点 $ P_0 $ 的某邻域 $ \bigcup_{P_0}\subset D $ 内，方程 $ F(x,y)=0 $ 唯一地确定一个定义
     在区间 $ (x_0-\alpha,x_0+\alpha) $ 内的隐函数 $ y = f(x) $ ，使得
     \begin{enumerate}
-        \item $ f(x_0) = y_0 $ 且 $ x\in (x_0-\alpha,x_0+\alpha) $ 时，$ F(x_0,f(x_)) \equiv 0 $ ;
+        \item $ f(x_0) = y_0 $ 且 $ x\in (x_0-\alpha,x_0+\alpha) $ 时，$ F(x_0,f(x_0)) \equiv 0 $ ;
         \item 函数 $ f(x) $ 在区间 $ (x_0-\alpha,x_0+\alpha) $ 内连续。
     \end{enumerate}
 \end{Theo}
@@ -174,13 +216,15 @@ $ y $ 的偏导数可以类似地定义。
             \Rightarrow & \mathrm{d}z = -\dfrac{F_x'}{F_z'}\mathrm{d}x - \dfrac{F_y'}{F_y'}\mathrm{d}y
         \end{aligned}
     \end{equation*}
-    又 $ \mathrm{d}z = \dfrac{\partial z}{\partial x}\mathrm{d}x + \dfrac{\partial z}{\partial y}\mathrm{d}y $ ，
+    又 $ \mathrm{d}z = \dfrac{\partial z}{\partial x}\mathrm{d}x + \dfrac{\partial z}{\partial y}\mathrm{d}y, $ 
     故有 $ \dfrac{\partial z}{\partial x} = -\dfrac{F_x'}{F_z'},
     \dfrac{\partial z}{\partial y} = -\dfrac{F_y'}{F_z'}$;
     \item 公式法 - 利用上述结论，直接求得 $ F_x',F_y',F_z' $ 代入。
 \end{enumerate}
 
 其中，直接求导法应用广泛。
+
+注意，$ F_x' = \dfrac{\partial F}{\partial x}, $ 其中 $ z $ 视为常数。
 
 对方程组 $ \dis \begin{cases}
     F(x,y,u,v) = 0 \\ G(x,y,u,v) = 0
@@ -199,14 +243,14 @@ $ y $ 的偏导数可以类似地定义。
     前二者统称为极值点，极大值和极小值统称极值。
 \end{Def}
 
-事实上，对 $ (x,y) $ 某去心邻域内的任意 $ (x_0,y_0) $ ，
+事实上，对 $ (x,y) $ 某去心邻域内的任意 $ (x_0,y_0), $ 
 若总有 $ \Delta f = f(x,y) - f(x_0,y_0) < 0 $ ，则极值为极大值点；若$ \Delta f > 0 $ 时则为极小值点；
 若任意去心邻域内上述两条都不成立即不保号，则不是极值点。
     
 \begin{Theo}[二元函数极值存在的必要条件]
 
     设函数 $ z = f(x,y) $ 在 $ P_0 $ 某邻域有定义，且存在一阶偏导数，若 $ P_0 $ 是极值点，则其
-    必定为驻点。
+    必定为驻点，也即偏导数存在的极值点偏导数为零。
 \end{Theo}
 
 注意，驻点 $ \nLeftrightarrow $ 极值点，仅当可微时极值点才是驻点。
@@ -246,7 +290,7 @@ $$
 
 \subsection{条件极值}
 
-给定 $ z = f(x,y) $ ，约束条件 $ \varphi(x,y) = 0 $ ，求极值，
+给定 $ z = f(x,y) $ ，约束条件 $ \varphi(x,y) = 0 $ ，求极值。此时求的是边界最值。
 解决方法是将其化为无条件极值，具体而言，可以
 \begin{itemize}
     \item 直接代入；
@@ -254,11 +298,22 @@ $$
 \end{itemize}
 
 对于后者，令 $ L = f(x,y) + \lambda\varphi(x,y) $ ，前者称为拉格朗日函数，$ \lambda $ 是拉格朗日乘数。
-对 $ L $ 关于 $ x,y,\lambda $ 都求偏导，解得驻点，利用实际意义判别驻点是否为极值。
+对 $ L $ 关于 $ x,y,\lambda $ 都求偏导，得到
+$$
+    \begin{cases}
+        f'_x(x,y) + \lambda\varphi'_x(x,y) = 0\\ 
+        f'_y(x,y) + \lambda\varphi'_y(x,y) = 0\\ 
+        \varphi(x,y) = 0
+    \end{cases}
+$$ 
+
+此时消去 $ \lambda, $ 得到驻点。比较各处驻点处的函数值，得到最值。
 
 有多个约束条件时，有拉格朗日函数 $ L = f(x,y) + \lambda_1\varphi_1 + \lambda_2\varphi_2 $ ，后面同理。
 
 给定方程，在闭区域内求极值，则在边界与区域内部都求极值，然后比较。
+
+求边界极值时，可以将闭区域边界代入原方程，代入时可以使用极坐标，将其转化为一元极值。
 
 \section{二重积分}
 
@@ -285,6 +340,8 @@ $$
 
 \subsection{二重积分的计算}
 
+\sssubsection{直角坐标化累次积分}
+
 可以将二重积分化为直角坐标下的二次积分计算。
 
 设有界闭区域 $ D = \{(x,y)|a\leq x\leq b,\varphi_1(x)\leq y\leq \varphi_2(x)\} $ ，其中
@@ -292,9 +349,26 @@ $ \varphi_1(x),\varphi_2(x) $ 在 $ [a,b] $ 上连续，$ f(x,y) $ 在 $ D $ 上
 $ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma = \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y
  = \int_a^b\mathrm{d}x\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\mathrm{d}y $ .
 
+确定上下限时，先确定 $ x $ 的范围，然后沿 $ y $ 正方向穿针确定 $ y $ 的范围，穿入为下限，穿出为上限。
+
 在 $ D = \{(x,y)|c\leq y\leq d,\varPsi_1(y)\leq x\leq \varPsi_2(y)\} $ 上同理。
 
+\sssubsection{极坐标变换}
+
+当被积函数为 $ f(x^2+y^2) $ 或者 $ D $ 为圆域，考虑极坐标变换 $ \begin{cases}
+    x = \rho\cos\theta\\ y = \rho\sin\theta
+\end{cases} $ 使得 $ \mathrm{d}x\mathrm{d}y = \rho\mathrm{d}\rho\mathrm{d}\theta $ .
+
+先确定 $ \theta $ 的范围，从原点引射线确定 $ \rho $ 范围，穿入为下限，穿出为上限，此时有$$
+    \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y = \int_\alpha^\beta \mathrm{d}\theta
+    \int_{\rho_1(\theta)}^{r_2(\theta)}f(\rho\cos\theta,\rho\sin\theta)\rho\mathrm{d}\rho
+$$ 
+
+\sssubsection{交换积分次序}
+
 计算时，为了方便计算，可以考虑交换积分次序。
+
+\subsection{二重积分的性质}
 
 部分二重积分具有如下性质。
 
@@ -327,3 +401,13 @@ $$
 若积分域为圆或圆的一部分时，或被积函数中含有 $ x^2,y^2,xy,x^2+y^2 $ 等$ x,y $ 的二次函数，
 可以考虑应用极坐标。
 
+\begin{Theo}[形心公式]
+
+    若区域 $ D $ 的形心或几何中心坐标为 $ (\bar x,\bar y), $ 则
+    \begin{equation*}
+        \begin{aligned}
+            \iint\limits_{D}x\mathrm{d}x\mathrm{d}y = \bar xS_D\\ 
+            \iint\limits_{D}y\mathrm{d}x\mathrm{d}y = \bar yS_D
+        \end{aligned}
+    \end{equation*}
+\end{Theo}

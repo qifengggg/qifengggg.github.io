@@ -1,0 +1,272 @@
+\chapter{特征值与特征向量}
+
+\section{定义与性质}
+
+\begin{Def}[特征值与特征向量]
+
+    对 $ n $ 阶方阵 $ A $ ,若其满足 $ A\vec\alpha = \lambda\vec\alpha $ ,
+则称 $ \lambda $ 为 $ A $ 的特征值，$ \vec\alpha $ 为对应 $ \lambda $ 的
+特征向量。
+\end{Def}
+
+\sssubsection{性质}
+
+注意，对$ n $ 阶方阵 $ A $ ，有如下性质。
+\begin{itemize}
+    \item 其有 $ n $ 个特征值(包括重数);
+    \item 特征向量 $ \alpha \neq \vec 0 $ ;
+    \item 任意特征值 $ \lambda $ 对应无数个特征向量;
+    
+    若 $ \lambda $ 为单根，其对应的特征向量都线性相关；
+
+    若其为 $ k $ 重根，其最多有 $ k $ 个相互无关的特征向量；
+    \item 不同特征值对应的特征向量必定线性无关；
+\end{itemize}
+
+\section{特征值与特征向量的求解}
+
+\sssubsection{未知矩阵}
+
+当 $ A $ 未知的时候，可以凑定义，即强行构造 $ A\alpha = \lambda \alpha $ .
+
+\sssubsection{已知矩阵}
+
+当 $ A $ 元素已知时，可以使用公式法。
+
+具体而言，
+\begin{itemize}
+    \item 通过特征多项式 $ |\lambda E-A| = 0 $ 解出所有$ n $ 个 $ \lambda $ ;
+    \begin{itemize}
+        \item 加减·消零·得公因式
+    \end{itemize}
+    \item 对解得的每一个 $ \lambda_0 $ ,求解 $ (\lambda_0 E-A)X = 0 $ 
+    以得到\begin{itemize}
+        \item 基解 - 其对应的$ k $ 个相互无关的特征向量，此处尽量将
+        特征向量整数化；
+        \item 通解 - 其对应的全部特征向量，此处 $ k_i \neq 0 $ ;
+    \end{itemize}
+\end{itemize}
+
+求特征向量时，若未明示求无关的特征向量，则需要求出特征值对应的全部特征向量。
+
+\sssubsection{秩为1的矩阵}
+
+特别地，对 $ A_n:r(A) = 1 $ ，有 $ A = \alpha\beta^\top = \beta\alpha^\top $ ，
+此时其特征值必定为 $ \lambda_1 = tr(A),\lambda_i = 0(i\neq 1) $ .
+
+事实上，假设 $ n = 3 $ ，则有
+\begin{itemize}
+    \item 多项式 - $ |\lambda E - A | = \sum (\lambda - \lambda_i) $ ;
+    \item 行列式拆分 - 
+    
+    $ |\lambda E - A| = \lambda^3 - (a_{11}+a_{22}+a_{33})\lambda^2 + S_2\lambda - |A| = 0 $,
+    $ S_2 $ 是某些二阶子式，
+    故有
+    \begin{itemize}
+        \item $ \sum \lambda = tr(A) $ ;
+        \item $ \prod \lambda = |A| $ ;
+    \end{itemize}
+    又因 $ r(A) = 1 \Rightarrow S_2 = 0, |A| = 0 $ ,故 $ \lambda_1 = tr(A), \lambda_2 = \lambda_3 = 0$ .
+\end{itemize} 
+
+\sssubsection{表格法}
+
+给定矩阵 $ A $ 及其特征值、特征向量 $ A\alpha = \lambda\alpha $ ，推断其他矩阵的特征值和特征向量时，适用表格法。此时注意，
+$ \lambda_A $ 与 $ A $ 具有相同形式。
+
+如，若求 $ A^2 $ 的特征值，有
+$$
+    A^2\alpha = AA\alpha = \lambda A\alpha = \lambda^2\alpha
+$$ 
+
+因此，有表格
+
+\begin{table}[!htbp]\centering
+    \begin{tabular}{ccc}
+    \toprule
+    $A        $&$ \lambda      $& $\alpha                  $ \\ \midrule
+    $A^k      $&$ \lambda^k    $& $\alpha                  $ \\
+    $A^m+kE   $&$ \lambda^m+kE $& $\alpha                  $ \\
+    $A^{-1}   $&$ 1 /\lambda   $& $\alpha                  $ \\
+    $A^*      $&$ |A|/\lambda  $& $\alpha                  $ \\
+    $A^\top   $&$ \lambda      $&  无法断定                   \\
+    $P^{-1}AP $&$ \lambda      $& $\Attention{P^{-1}\alpha}$ \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{矩阵相似}
+
+\begin{Def}[矩阵相似]
+
+    对方阵 $ A_n,B_n $ ,若有可逆矩阵 $ P $ 使得 $ P^{-1}AP = B $ ，称 $ A,B $ 相似。    
+\end{Def}
+
+若矩阵$ A,B $ 相似，以下几个性质成立。
+
+\begin{itemize}
+    \item $ |A| = |B| $ ;
+    \item $ r(A) = r(B) $ ;
+    \item $ \lambda_A = \lambda_B $ ;
+
+    事实上，$ |\lambda E - B| = |\lambda P^{-1}P - P^{-1}AP| = |P^{-1}(\lambda E - A)P| $. 
+    \item $ tr(A) = tr(B) $ ;
+    \item $ A + kE \sim B + kE $ ;
+    \item $ P^{-1}A^nP = B^n, $ 注意此时 $ P $ 没有变化；
+    \item $ A\sim B, B\sim C \Rightarrow A\sim C $ .
+\end{itemize}
+
+\section{相似对角化}
+
+\begin{Def}[对角化]
+
+    若存在可逆矩阵 $ P $ 使得 $ P^{-1}AP = \Lambda $ ,
+    则称 $ A $ 可相似对角化。
+\end{Def}
+
+考虑三阶方阵 $ A_{3\times 3} $ ，由 $ P^{-1}AP = \Lambda \Rightarrow AP = P\Lambda $ ,
+若设 
+$$ 
+P = (\alpha_1,\alpha_2,\alpha_3), \Lambda = \begin{pmatrix}
+    k_1&&\\&k_2&\\&&k_3
+\end{pmatrix} 
+$$ 
+则有
+$$
+    (A\alpha_1,A\alpha_2,A\alpha_3) = (k\alpha_1,k\alpha_2,k\alpha_3)
+$$ 
+
+由此，$ k_i $ 为 $ A $ 的特征值，$ \alpha_i $ 为其对应的特征向量。
+
+推广至 $ n $ 阶，
+\begin{itemize}
+    \item $ \Lambda \xlongequal{\textrm{必定存在}} \begin{pmatrix}
+        \lambda_1 &&& \\ &\lambda_2 &&\\ &&\ddots&\\ &&&\lambda_n
+    \end{pmatrix}$ ;
+    \item $ P = (\alpha_1,\cdots,\alpha_n) $ , $ \alpha_i $ 有$ n $ 个，是线性无关的特征向量；
+
+    没有 $ n $ 个线性无关的特征向量时不能相似对角化。
+\end{itemize}
+
+
+\sssubsection{相似对角化的判定}
+
+\begin{equation*}
+    \begin{array}{rl}
+        \left.\begin{matrix}
+            \textrm{$ A $ 是对称矩阵}  \\
+            \textrm{$ A $ 有 $ n $ 个互异特征值}
+        \end{matrix}\right\}&\Rightarrow A\sim \Lambda \\
+        &\Leftrightarrow
+        \textrm{可逆矩阵 $ P $ 存在} \\ 
+        &\Leftrightarrow
+        \textrm{$ A $ 有 $ n $ 个无关特征向量}  \\
+        &\Leftrightarrow
+        \textrm{对 $ k $ 重根 $ \lambda_0, $ } 
+        \textrm{$ \Attention{r(\lambda_0 E - A) = n - k} $ }
+    \end{array}
+\end{equation*}
+
+\section{相似对角化的求解}
+
+\subsection{普通方阵}
+
+\begin{enumerate}
+    \item 化简矩阵 $ A $ (抽象，含参)的具体元素，注意此时不适用初等变换；
+    \item 求解特征值、特征向量；
+    \item 令 $ P = (\alpha_1,\cdots,\alpha_n) $ ，此时有
+    $$
+        P^{-1}AP = \Lambda = \begin{pmatrix}
+            \lambda_1&&&\\&\lambda_2&&\\&&\ddots&\\&&&\lambda_n
+        \end{pmatrix}
+    $$ 
+    此处可以通过 $ \Lambda $ 反推 $ A $ 进行验证。
+\end{enumerate}
+
+\subsection{对称矩阵}
+
+\sssubsection{对称矩阵的性质}
+
+对称矩阵 $ A^\top = A $ 有如下的性质。
+
+\begin{itemize}
+    \item 不同特征值对应的特征向量必定正交；
+        \begin{itemize}
+            \item 事实上，若设 $ \lambda_1\neq\lambda_2, A\alpha_i = \lambda_i\alpha_i, i = 1,2, $
+            则有 
+            \begin{equation*}
+                \begin{aligned}
+                    A\alpha_1 = \lambda_1\alpha_1  &\Rightarrow
+                    \alpha_1^\top A^\top = \alpha_1^\top A = \lambda_1 \alpha_1^\top \\ 
+                    &\Rightarrow \alpha_1^\top A\alpha_2 = \lambda_2\alpha_1^\top\alpha_2 
+                    = \lambda_1\alpha_1^\top\alpha_2 \\ 
+                    &\Rightarrow (\lambda_2 - \lambda_1) \alpha_1^\top\alpha_2 = 0\\ 
+                    &\because \lambda_1 \neq \lambda_2, \quad
+                    \therefore \alpha_1^\top \alpha_2 = 0.
+                \end{aligned}
+            \end{equation*}
+        \end{itemize}
+    \item 必定存在可逆矩阵 $ P $ 使得 $ P^{-1}AP = \Lambda $ ;
+    \item $ k $ 重特征值 $ \lambda_0 $ 必定对应 $ k $ 个线性无关的特征向量；
+\end{itemize}
+
+\sssubsection{施密特正交法}
+
+对一组线性无关向量 $ \alpha_i,i = 1,2,3, $ 通过施密特正交法将其化为一组正交向量 $ \beta_i $ 的方法如下。
+
+\begin{itemize}
+    \item 令 $ \beta_1 = \alpha_1 $ ;
+    \item 令 $ \beta_2 = \alpha_2 - \dfrac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1 $ ;
+    \item 令 $ \beta_3 = \alpha_3 - \dfrac{(\alpha_3,\beta_1)}{(\beta_1,\beta_1)}\beta_1
+    - \dfrac{(\alpha_3,\beta_2)}{(\beta_2,\beta_2)}\beta_2 $ ;
+\end{itemize}
+
+$ \beta_i $ 应当尽量整数化。此时得到的 $ \beta_i $ 两两正交。
+
+当知道一组正交的 $ \alpha_1,\alpha_2 $ 时，则
+\begin{equation*}
+    \begin{aligned}
+        \alpha_3 &\whichis \begin{pmatrix}
+            \vec i&\vec j&\vec k\\ 
+            a_1&a_2&a_3\\ 
+            b_1&b_2&b_3
+        \end{pmatrix}
+        \begin{matrix}
+            \\ \leftarrow \alpha_1 \\ \leftarrow\alpha_2
+        \end{matrix}
+        \\ &= c_i\vec i + c_j\vec j + c_k\vec k
+    \end{aligned}
+\end{equation*}
+
+此时有 $ \alpha_3 = (c_1,c_2,c_3) $ 与 $ \alpha_1,\alpha_2 $
+两两正交。
+
+\sssubsection{对称矩阵的相似对角化}
+
+对对称矩阵 $ A $ ,
+\begin{itemize}
+    \item 必定存在可逆 $ P $ 使得 $ P^{-1}AP = \Lambda $ ,其求解方法同普通方阵；
+    \item 必定存在正交矩阵 $ Q $ 使得 $ Q^{-1}AQ = Q^\top AQ = \Lambda $ ;
+    \begin{itemize}
+        \item 化简矩阵 $ A $ ;
+        \item 通过 $ |\lambda E - A| = 0, (\lambda_0E-A)X = 0 $ 得到特征值与特征向量；
+        \item 处理得到的特征值和特征向量；
+        \begin{itemize}
+            \item 若特征值都互异，将特征向量单位化;
+            
+            $\dis \forall \alpha_i,\gamma_i = \dfrac{\alpha_i}{|\alpha_i|}$ 
+            \item 对 $ k $ 重根 $ \lambda_0 $ 及其对应的 $ \alpha_1,\cdots,\alpha_k $ ,
+            \begin{itemize}
+                \item 若其全部正交，将全部单位化；
+                \item 若其不正交，先对 $ \alpha_1,\cdots,\alpha_k $ 做施密特正交化，
+                再将\textbf{全部}向量单位化为 $ \gamma_i $ .
+            \end{itemize}
+        \end{itemize}
+        \item 令 $ Q = (\gamma_1,\cdots,\gamma_n) $ ,其中 $ \gamma_i $ 必定
+        单位且正交，
+        
+        则必有 $ Q^{-1}AQ = Q^\top AQ = \Lambda = \begin{pmatrix}
+            \lambda_1&&&\\&\lambda_2&&\\&&\ddots&\\&&&\lambda_n
+        \end{pmatrix} $ 
+    \end{itemize}
+\end{itemize}
+

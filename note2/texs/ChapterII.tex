@@ -1,0 +1,291 @@
+\chapter{矩阵}
+
+\section{矩阵定义及特殊矩阵}
+
+\subsection{矩阵}
+
+由 $ m\times n $ 个元素组成的$ m $ 行 $ n $ 列数表 $ (a_{ij})_{m\times n}$ 称为一个 $ m\times n $ 阶矩阵。
+
+若矩阵 $ A,B $ 的行列数相等，则称其为同型矩阵。若对任意 $ i=1,2,\dots,m, j = 1,2,\dots,n $ 都有
+$ a_{ij} = b_{ij} $ ，则称矩阵 $ A,B $ 相等，记为 $ A = B $ .
+
+\subsection{特殊矩阵}
+
+设矩阵 $ A = (a_{ij})_{m\times n} $，此时一部分特殊矩阵如下。
+
+\begin{itemize}
+    \item \textbf{零阵$ O $ }\quad 对任意 $ i,j $ 有 $ a_{ij} = 0 $ ;
+    \item \textbf{单位矩阵$ E_n $ }\quad 主对角元素 $ a_{ii} = 1 $ ，其余元素等于零;
+    \item \textbf{对称矩阵}\quad $\forall i,j $ 有 $ a_{ij} = a_{ji} $ ;
+    \item \textbf{反对称矩阵}\quad $\forall i,j $ 有 $ a_{ij} = -a_{ji} $ ;
+    \item \textbf{转置矩阵 $ A^\top $ }\quad $ A^\top = (a_{ji})_{n\times m} $ ;
+    \item \textbf{正交矩阵}\quad 对方阵 $ A , AA^\top = A^\top A = E $ ;
+\end{itemize}
+
+其中，转置矩阵有如下性质。
+
+\begin{itemize}
+    \item $ (A^\top)^\top = A $ ;
+    \item $ |A^\top|= |A| $ ;
+    \item $ (kA)^\top = kA^\top$ ;
+    \item $ (AB)^\top = B^\top A^\top $ ;
+    \item $ \begin{pmatrix}
+        A&0\\0&B
+    \end{pmatrix}^\top = \begin{pmatrix}
+        A^\top&0\\0&B^\top
+    \end{pmatrix} $ ;
+\end{itemize}
+
+\subsection{伴随矩阵}
+
+对方阵 $ A $ ,有
+$$
+    A^* \whichis \begin{pmatrix}
+        A_{11} & A_{21} & \cdots & A_{n1}\\
+        A_{12} & A_{22} & \cdots & A_{n2}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        A_{1n} & A_{2n} & \cdots & A_{nn}\\
+    \end{pmatrix} \whichis (A_{ij})^\top
+$$ 
+
+其中 $ A_{ij} $ 是 $ a_{ij} $ 的代数余子式。
+
+对于二阶矩阵，有$$
+    A = \begin{pmatrix}
+        a&b\\c&d
+    \end{pmatrix}
+    \Rightarrow
+    A^* = \begin{pmatrix}
+        d & -b \\ -c & a
+    \end{pmatrix}
+$$ 
+
+伴随矩阵有一重要性质，即
+$$
+    AA^* = A^*A = \det(A)E 
+$$ 
+
+其还有推论$$
+    \Delta\Delta^* = \Delta^*\Delta = \det(\Delta)E 
+$$ 
+其中$ \Delta $ 是含有矩阵的运算式整体。
+
+由上述结论，伴随矩阵还有如下的运算结论。
+\begin{itemize}
+    \item $ |A^*| = |A|^{n-1} $ ;
+    \item $ (kA)^* = k^{n-1}A^*$ ;
+    \item $ (A^*)^* = \Attention{\det(A)^{n-2}A} $ ;
+    \item $ \begin{pmatrix}
+        A&O\\O&B
+    \end{pmatrix}^* = \begin{pmatrix}
+        |B|A^*&\\&|A|B^*
+    \end{pmatrix} $ 
+\end{itemize}
+
+\section{矩阵运算}
+
+对矩阵 $ A = (a_{ij})_{m\times n},B = (b_{ij})_{m\times n},D = (d_{ij})_{n\times s} $ ,有
+
+\begin{itemize}
+    \item $ kA = (ka_{ij})_{m\times n} $ ;
+    \item $ A\pm B = (a_{ij}\pm b_{ij})_{m\times n} $ ;
+    \item $ AD = (c_{ij})_{m\times s} $ ,其中 $ \dis c_{ij} = \sum_{t = 1}^n a_{it}d_{tj} $ ;
+\end{itemize}
+
+对于两向量 $ \vec \alpha = (a_1,\dots,a_n)^\top, \vec \beta = (b_1,\dots, b_n)^\top, $ 
+有如下表格。
+
+\newpage
+
+\begin{table}[!htbp]\centering
+    \begin{tabular}{|cc|c}
+    \hline
+    \multicolumn{1}{|c|}{$\alpha^\top \beta$} & $\beta^\top \alpha$ & 相等的数   \\ \hline
+    \multicolumn{1}{|c|}{$\alpha\beta^\top$}  & $\beta\alpha^\top$  & 互为转置矩阵，秩$  = 1 $  \\ \hline
+    \multicolumn{2}{|c|}{上为下的迹}                   &       
+    \end{tabular}
+\end{table}
+
+其中，矩阵 $ A $ 的迹是 $ \dis tr(A)\whichis \sum_{i=1}^n a_{ii} $ .
+
+注意，对矩阵 $ A,B $,有
+\begin{itemize}
+    \item $ A\neq B \nRightarrow |A|\neq |B| $ ;
+    \item $ A\neq O,B\neq O \nRightarrow AB \neq O $ ;
+    \item 一般地，$ AB\neq BA $ ，此时 $ (AB)^k \neq A^kB^k $ ;
+    \item $ AB = AC \Rightarrow B=C $ 仅当 $ A^{-1} $ 存在。
+\end{itemize}
+
+\section{逆矩阵}
+
+对方阵 $ A,B $ ,若有 $ AB = BA = E $ ，
+则$ A,B $ 都是可逆矩阵，且有  $ A^{-1} = B, B^{-1} = A $ .
+
+\begin{Theo}[可逆的充要条件]
+
+    $ A $ 是可逆矩阵 $ \Leftrightarrow |A| \neq 0 $ .
+\end{Theo}
+
+$ AB = BA = kE $ 时 $ A,B $ 也有可逆性。因此，
+$$
+    AA^* = |A|E \Rightarrow 
+    A^{-1} = \dfrac{1}{|A|} A^*
+$$ 
+
+求解逆矩阵时，
+\begin{itemize}
+    \item 若 $ A $ 抽象未知，则由定义求解，即凑出 $ AB = kE $,其中
+    $ A $ 也可以是一个矩阵的运算式;
+    \item 若已知 $ A $ ，则有
+    \begin{itemize}
+        \item $ A^{-1} = \dfrac{1}{|A|} A^* $ ;
+        \item $ (A:E)\xrightarrow{\textrm{行变换}}(E:A^{-1}) $ .
+    \end{itemize}
+\end{itemize}
+
+可逆矩阵还有以下性质。
+\begin{itemize}
+    \item $ (kA)^{-1} = \dfrac{1}{k}A^{-1} $ ;
+    \item $ (A^{-1})^{-1} A $ ;
+    \item $ (AB)^{-1} = B^{-1}A^{-1} $;
+    \item $ \begin{pmatrix}
+        A&O\\O&B
+    \end{pmatrix}^{-1} = \begin{pmatrix}
+        A^{-1}&O\\O&B^{-1}
+    \end{pmatrix} $;
+    \item $ \begin{pmatrix}
+        O&A\\B&O
+    \end{pmatrix}^{-1} = \begin{pmatrix}
+        O&B^{-1}\\A^{-1}&O
+    \end{pmatrix} $.
+\end{itemize}
+
+显然，对正交矩阵 $ A $ 有 $ A^{-1} = A^\top $ .
+
+\section{初等变换与初等矩阵}
+
+初等矩阵是将 $ E $ 经一次初等变换所得到的矩阵。
+
+初等变换有三种，即
+\begin{itemize}
+    \item 倍乘；
+    \item 倍加；
+    \item 交换，
+\end{itemize}
+
+因此初等矩阵也有三种，即
+\begin{itemize}
+    \item $ E_{ij} $ - 将$ E $的$ i,j $ 两排交换;
+    \item $ E_{i}(k) $ - 将 $ E $ 的第 $ i $ 排乘$ k $ ;
+    \item $ E_{ij}(k) $ - 将$ E $ 的第 $ i $ 行的$ k $ 倍加到第$ j $ 行，
+    同时也是将$ E $ 的第 $ j $ 列的$ k $ 倍加到第$ i $ 列。
+\end{itemize}
+
+初等矩阵有如下的性质。
+\begin{itemize}
+    \item 对于一$ m\times n $ 矩阵 $ A $ ，对 $ A $ 进行一次初等$ \begin{matrix}
+        \textrm{行}\\\textrm{列}
+    \end{matrix} $ 变换相当于$ \begin{matrix}
+        \textrm{左}\\\textrm{右}
+    \end{matrix} $ 乘对应的初等矩阵；
+    \item 有重要结论
+        \begin{table}[!htbp]\centering
+            \begin{tabular}{|c|c|c|}
+            \hline
+                        & 行列式 & 逆                   \\ \hline
+            $ E_{ij} $    & $ -1 $   & $ E_{ij}(k) $       \\ \hline
+            $ E_{i}(k) $  & $ k  $   & $ E_{i}(1/k) $ \\ \hline
+            $ E_{ij}(k) $ & $ 1  $   & $ E_{ij}(-k) $      \\ \hline
+            \end{tabular}
+        \end{table}
+\end{itemize}
+
+\section{矩阵的秩}
+
+\begin{Def}[$ r $ 阶子式]
+
+    对一矩阵 $ A_{m\times n} $ ，从其中任取 $ r $ 行和 $ r $ 列，
+    按照原顺序构成的行列式是其 $ r $ 阶子式。    
+\end{Def}
+
+\begin{Def}[矩阵的秩]
+
+    对一矩阵 $ A $ ，若其有至少一个 $ r $ 阶子式不为零，而全部 $ r+1 $ 阶子式
+    均为零，则称 $ r $ 为矩阵 $ A $ 的秩，记为 $ r(A) = r $.
+\end{Def}
+
+注意，\begin{itemize}
+    \item $ r(A) = 0 \Leftrightarrow A = O $ ;
+    \item $ r(A_n) = n \Leftrightarrow |A|\neq 0 $ ;
+    \item $ r(A)<k \Leftrightarrow $ 所有 $ r $ 阶子式全为零. 
+\end{itemize}
+
+矩阵的秩有如下性质。
+\begin{itemize}
+    \item $ r(A_{m\times n}) \leq min\{m,n\} $ ;
+    \item $ r(kA) = r(A) $ ;
+    \item $ r(A+B)\leq r(A)+r(B) $ ;
+    \item $ r(A:B) \geq r(A) $ ;
+    \item 若 $ AB = 0 $ , $ r(A) + r(B) \leq n $ ;
+    \item 对 $ n $ 阶方阵 $ A $ ，有$$
+        r(A^*)  = \begin{cases}
+            n,&r(A) = n\\ 
+            1,& r(A) = n-1\\ 
+            0,&r(A)< n-1
+        \end{cases}
+    $$ 
+\end{itemize}
+
+求解秩时，将矩阵 $ A $ 通过初等行变换变为阶梯矩阵 $ B $ ，其非零行数即为秩，
+以矩阵表示方程组，则秩也等于约束变量的方程数。
+
+设 $ P,Q $ 为可逆矩阵，若有 $ PAQ = B $ ,则称 $ A $ 与$ B $ 相似。
+
+有性质 $ r(PA) = r(AQ) = r(PAQ) = r(A) $ . 因此，$ A $ 与 $ B $ 等价
+$ \Leftrightarrow r(A) = r(B) $.
+
+\section{求解 $ A^n $ 的三种情况}
+
+其一，当 $ r(A) = 1 $ 时，必定能将 $ A $ 表示为一列向量$ \alpha $ 乘一行向量$ \beta^\top $ ，且
+\begin{equation*}
+    \begin{aligned}
+        A^n &= \alpha\beta^\top\cdot\alpha\beta^\top\cdots\alpha\beta^\top
+        \\&= \alpha(\beta^\top\cdot\alpha)(\beta^\top\cdots\alpha)\beta^\top
+        \\&= \alpha\cdot tr(A)^{n-1}\cdot \beta^\top 
+        \\&= tr(A)^{n-1}A
+    \end{aligned}
+\end{equation*}
+
+其二，若$$
+    A = \begin{pmatrix}
+        0&a&b\\ 
+        0&0&c\\ 
+        0&0&0
+    \end{pmatrix}
+$$ 
+则有$$
+    A^2 = \begin{pmatrix}
+        0&0&ac\\ 
+        0&0&0\\ 
+        0&0&0
+    \end{pmatrix},
+    A^i = O (i > 2)
+$$ 
+
+其三，对两相似矩阵 $ A\sim B $ ，有
+$ B^n = P^{-1}A^nP $ ，即相似矩阵的 $ n $ 次方仍相似。
+
+对第二种类型，可以引申得到对矩阵
+
+$$
+    A=\begin{pmatrix}
+        0&1&\cdots&\cdots&1\\ 
+        &0&\ddots&\ddots&\vdots\\ 
+        &&\ddots&\ddots&\vdots\\ 
+        &&&0&1\\ 
+        &&&&0\\ 
+    \end{pmatrix}
+$$ 
+
+每对其乘一个 $ A $ ,其结果中的 $ 1 $ 斜列就向右上平移一列，直到成为零阵。
+

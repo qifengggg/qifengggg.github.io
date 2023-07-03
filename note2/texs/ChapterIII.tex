@@ -1,0 +1,113 @@
+\chapter{线性方程组}
+
+\section{齐次线性方程组}
+
+形如
+\begin{equation*}
+    \left\{
+    \begin{array}{c}
+        a_{11}x_1 + \cdots +a_{1n}x_n = 0\\ 
+        \cdots\\ 
+        a_{m1}x_1 + \cdots +a_{mn}x_n = 0
+    \end{array}
+    \right.
+\end{equation*}
+的方程组是齐次线性方程组，其还有
+\begin{itemize}
+    \item 向量表示形式
+    $ \vec \alpha_1x_1+\cdots \vec\alpha_n x_n = 0 $ ;
+    \item 矩阵表示形式
+    $ AX = 0 $,其中 $ A = (a_{ij})_{m\times n}, X = (x_1,\cdots, x_n)^\top $ .
+\end{itemize}
+
+\sssubsection{解的性质}
+
+齐次线性方程组的解有如下性质。
+
+\begin{itemize}
+    \item 方程组 $ AX = 0 $ 必定有解，其为 $ \begin{cases}
+        \textrm{只有唯一零解},&r(A) = n(|A|\neq 0)\\ 
+        \textrm{有无穷个解},&r(A)<n(|A| = 0)
+    \end{cases} $ 
+    \item 若 $ \xi_1,\xi_2 $ 均为 $ AX = 0 $ 的解，则其线性组合
+    $ k_1\xi_1+k_2\xi_2 $ 也是其解.
+\end{itemize}
+
+\sssubsection{高斯消元法}
+
+求解齐次线性方程组适用高斯消元法。高斯消元法将系数矩阵 $ A $ 经行变换
+化为最简阶梯矩阵 $ B $,其中 $ B $ 满足
+\begin{itemize}
+    \item 每行首项非零元素为1;
+    \item 其所在列其余元素均为0.
+\end{itemize}
+
+此时只需求解 $ BX = 0 $ ,并令每行首项非零元
+对应变量为固定变量，剩余变量为自由变量，并用自由变量表达固定变量。
+
+\sssubsection{基础解系和解的结构}
+
+设 $ \xi_i,i=1,2,\dots,n-r $ 是方程组 $ AX = 0 $ 的解，
+其中 $ n - r $ 为自由变量的个数，
+若有
+\begin{itemize}
+    \item $ \xi_i $ 线性无关；
+    \item $ AX=0 $ 的任意解均可由 $ \xi_i $ 线性表出，
+\end{itemize}
+则这组向量 $ \xi_i $ 是$ AX = 0 $ 的基础解系。
+同时，称 $ \sum_{i=1}^{n-r}k_i\xi_{i} $ 称为方程组的通解，
+其中 $ k_i $ 为任意常数。
+
+\section{非齐次线性方程组}
+
+形如
+\begin{equation*}
+    \left\{
+    \begin{array}{c}
+        a_{11}x_1 + \cdots +a_{1n}x_n = b_1\\ 
+        \cdots\\ 
+        a_{m1}x_1 + \cdots +a_{mn}x_n = b_n
+    \end{array}
+    \right.
+\end{equation*}
+的方程组是非齐次线性方程组，其中 $ b_i,i=1,2,\dots $ 不全为零。其还有
+\begin{itemize}
+    \item 向量表示形式
+    $ \vec \alpha_1x_1+\cdots \vec\alpha_n x_n = \vec \beta $ ;
+    \item 矩阵表示形式
+    $ AX = \vec b$,其中 $ A = (a_{ij})_{m\times n}, X = (x_1,\cdots, x_n)^\top ,\vec b = (b_1,\cdots,b_n)^\top$ .
+\end{itemize}
+
+\sssubsection{解的性质}
+
+将矩阵 $ \bar A\whichis (A:b) $ 称为增广矩阵，非齐次线性方程组的解有如下性质。
+
+\begin{itemize}
+    \item 方程组 $ AX = b $ 的解有三种情况，即
+    \begin{equation*}
+        \left\{
+        \begin{array}{l}
+            \textrm{有解},r(A) = r(\bar A) 
+            \left\{
+            \begin{array}{l}
+                \textrm{唯一解},r(A) = n \\
+                \textrm{无穷解},r(A) < n 
+            \end{array}
+            \right.
+            \\
+            \textrm{无解}, r(A)\neq r(\bar A)
+        \end{array}
+        \right.
+    \end{equation*}
+    \item 设 $ \xi $ 为 $ AX = 0 $ 的解，$ \eta $ 为 $ AX = b $ 的解，则
+    $ k\xi + \eta $ 也为 $ AX = b $ 的解;
+    \item 若 $ \xi_1,\xi_2 $ 均为 $ AX = b $ 的解，则有
+    $$
+        k_1\xi_1+k_2\xi_2 
+        \begin{cases}
+            \textrm{为} \overset{\textrm{齐次方程组}}{AX = 0}\textrm{的解},& k_1+k_2 = 0\\ 
+            \textrm{为} \overset{\textrm{非齐次方程组}}{AX = b}\textrm{的解},& k_1+k_2 = 1
+        \end{cases}
+    $$ 
+\end{itemize}
+
