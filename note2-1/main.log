@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  13 JUL 2023 22:35
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  14 JUL 2023 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -999,10 +999,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[9])
-\tf@thm=\write6
-\openout6 = `main.thm'.
-
+[9]
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
 
@@ -1013,24 +1010,80 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[10] (./main.aux)
+[10]
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[11]
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <22.08249> not available
+(Font)              size <20.74> substituted on input line 316.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16.06> not available
+(Font)              size <17.28> substituted on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 316.
+
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[12]) (./texs/ChapterIII.tex
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[13]
+第三章
+)
+\tf@thm=\write6
+\openout6 = `main.thm'.
+
+ [14
+
+] (./main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.41063pt have occurred.
+(Font)              up to 1.34248pt have occurred.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0C0B7E90C504F89189ADCA5EAA740305;810.
+(rerunfilecheck)             Checksum: F7084007BF48D9FA1F810313724D90FC;1390.
  ) 
 Here is how much of TeX's memory you used:
- 21751 strings out of 476179
- 449952 string characters out of 5813073
+ 21810 strings out of 476179
+ 451179 string characters out of 5813073
  777260 words of memory out of 5000000
- 42082 multiletter control sequences out of 15000+600000
- 537529 words of font info for 151 fonts, out of 8000000 for 9000
+ 42129 multiletter control sequences out of 15000+600000
+ 546659 words of font info for 190 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,31n,97p,1190b,698s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (12 pages).
+Output written on main.pdf (16 pages).

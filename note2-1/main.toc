@@ -6,3 +6,8 @@
 \contentsline {chapter}{\numberline {第二章\hspace {.3em}}矩阵}{8}{chapter.2}%
 \contentsline {section}{\numberline {VI.\,}求解与伴随矩阵相关的问题}{8}{section.2.1}%
 \contentsline {section}{\numberline {VII.\,}可逆矩阵的应用}{9}{section.2.2}%
+\contentsline {section}{\numberline {VIII.\,}初等变换与初等矩阵之间的关系}{10}{section.2.3}%
+\contentsline {section}{\numberline {IX.\,}求矩阵的秩}{11}{section.2.4}%
+\contentsline {section}{\numberline {X.\,}求解矩阵方程}{12}{section.2.5}%
+\contentsline {section}{\numberline {XI.\,}计算 $ n $ 阶矩阵高次幂}{12}{section.2.6}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}向量}{14}{chapter.3}%

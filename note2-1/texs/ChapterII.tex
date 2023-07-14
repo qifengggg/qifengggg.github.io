@@ -102,49 +102,59 @@ $$
 
 \begin{itemize}
     \item 主对角分块
-    $ \begin{pmatrix}
-    B&O\\O&C
-    \end{pmatrix}^{-1} = \begin{pmatrix}
-        B^{-1}&O\\O&C^{-1}
-    \end{pmatrix} $ 
-    \item 副对角分块
-    $ \begin{pmatrix}
-        O&B\\C&O
-    \end{pmatrix}^{-1} = 
-    \begin{pmatrix}
-        O & C^{-1} \\ B^{-1} & O
-    \end{pmatrix} $ 
-    \item “仅缺一块的”分块
-    
-    方法为“左乘同行，右乘同列”。先写逆矩阵的对角部分，同行同列根据逆矩阵寻找。
     \begin{itemize}
-        \item $ 
-        \begin{pmatrix}
+        \item 仅在主对角上非零的分块
+        
+        $ \begin{pmatrix}
+            B&O\\O&C
+            \end{pmatrix}^{-1} = \begin{pmatrix}
+                B^{-1}&O\\O&C^{-1}
+            \end{pmatrix} $ 
+        \item 仅“缺一块”的分块
+        
+        方法为“左乘同行，右乘同列”。先写逆矩阵的对角部分，同行同列根据逆矩阵寻找。
+
+        $ \begin{pmatrix}
         B & D  \\ O & C   
         \end{pmatrix}^{-1} = 
         \begin{pmatrix}
         B^{-1} & -B^{-1}DC^{-1} \\ O & C^{-1}
         \end{pmatrix} $ 
-        \item $ 
-        \begin{pmatrix}
+        
+        $\begin{pmatrix}
         B & O \\ D & C   
         \end{pmatrix}^{-1} = 
         \begin{pmatrix}
         B^{-1} & O \\ -C^{-1}DB^{-1} & C^{-1}
         \end{pmatrix} $ 
-        \item $ 
+    \end{itemize}
+
+    \item 副对角分块
+    
+    副对角分块取逆时，要交换对角的元素。
+    \begin{itemize}
+        \item 仅在副对角上非零的分块
+        
+        $ \begin{pmatrix}
+            O&B\\C&O
+        \end{pmatrix}^{-1} = 
         \begin{pmatrix}
+            O & C^{-1} \\ B^{-1} & O
+        \end{pmatrix} $ 
+        \item 仅“缺一块”的分块
+        
+        $ \begin{pmatrix}
         O & B \\ C & D
         \end{pmatrix}^{-1} = 
         \begin{pmatrix}
-        O & C^{-1} \\ B^{-1} & -B^{-1}DC^{-1}
+        -B^{-1}DC^{-1} & C^{-1} \\ B^{-1} & O
         \end{pmatrix} $ 
-        \item $ 
-        \begin{pmatrix}
+        
+        $ \begin{pmatrix}
         D & B \\ C & O
         \end{pmatrix}^{-1} = 
         \begin{pmatrix}
-        -C^{-1}DB^{-1} & C^{-1} \\ B^{-1} & O
+        O & C^{-1} \\ B^{-1} & -C^{-1}DB^{-1}
         \end{pmatrix} $ 
     \end{itemize}
 \end{itemize}
@@ -168,3 +178,152 @@ $$
     \end{aligned}
 \end{equation*}
 展开，可以证明结论。
+
+\section{初等变换与初等矩阵之间的关系}
+
+初等矩阵左乘做行变换，右乘做列变换。其有三种，为
+
+\begin{table}[!htbp]\centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+            &  符号  & 行列式 & 逆                \\ \hline
+    交换&$ E_{ij} $    & $ -1 $   & $ E_{ij}(k) $       \\ \hline
+    倍乘&$ E_{i}(k) $  & $ k  $   & $ E_{i}(1/k) $ \\ \hline
+    倍加&$ E_{ij}(k) $ & $ 1  $   & $ E_{ij}(-k) $      \\ \hline
+    \end{tabular}
+\end{table}
+
+\sssubsection{利用性质计算矩阵}
+
+有例子
+\begin{equation*}
+    \begin{aligned}
+        E_{12}A = B &\Rightarrow \left\{\begin{matrix}
+            -|A| = |B| \\ A^{-1}E_{12} = B^{-1}
+        \end{matrix}\right. \\ 
+        &\Rightarrow -|A|A^{-1}E_{12} = |B|B^{-1} \\ 
+        &\Rightarrow -A^*E_{12} = B^*
+    \end{aligned}
+\end{equation*}
+
+\section{求矩阵的秩}
+
+\sssubsection{秩的求解}
+
+$$
+    \begin{cases}
+        \textrm{定义}\begin{cases}
+            r\textrm{阶至少一非零}\\
+            r+1\textrm{阶全为零}
+        \end{cases}\\
+        \textrm{初等变换法（行列均可）- } A\xlongrightarrow{\textrm{行变换}}\textrm{阶梯矩阵}B,
+        \textrm{非零行数即为秩}\\ 
+        \textrm{非零特征根的个数是秩}
+    \end{cases}
+$$ 
+
+\sssubsection{性质}
+
+\begin{itemize}
+    \item 对 $ A_{m\times n}, $ 有 $ r(A) = r(A\top A) = r(AA^\top) = r(A^\top) = r(kA). $
+    \begin{itemize}
+        \item 证明 $ r(A^\top A) = r(A) $ 
+        
+        利用同解方程组。
+        \begin{equation*}
+            \begin{aligned}
+                A^\top AX = O &\Rightarrow X^\top A^\top AX = O \\ 
+                &\Rightarrow (AX)^\top AX = O \\ &\Rightarrow |AX| = 0
+                \\ &\Rightarrow AX = O \\ 
+                AX = O \Rightarrow A^\top AX = O
+            \end{aligned}
+        \end{equation*}
+        因此 $ A $ 与 $ A^\top A $ 同解，故其秩相等。
+    \end{itemize} 
+    \item $ r(A_{m\times n})\leq \min(m,n). $ 
+    \item $ r(AB) \leq r(A); r(AB) \leq r(B). $ 对前者，$ B $ 可逆时等号成立。
+    \item $ r(A:B)\leq r(A) + r(B); $ 
+    
+    $ r(\begin{matrix}
+        A \\ B 
+    \end{matrix}) \leq r(A) + r(B)$ 
+    \item 对矩阵 $ A_{m\times \Attention{n}},B_{\Attention{n}\times s}, AB=O, $
+    有 $ r(A) + r(B) \leq \Attention{n}, $ 此即所谓“前看行，后看列”。
+
+    $AB = O \Rightarrow B $ 的列向量 $ \beta_i $ 是 $ AX=O $ 的一组解，
+    此时 $ r(\beta_i) = r(B) \leq n - r(A) \Rightarrow r(A) + r(B) \leq n. $ 
+    \item 对 $ A_n, $ 其伴随矩阵的秩
+    $ r(A^*)=\begin{cases}
+        n,& r(A) = n\\ 1,&r(A) = n-1(n\geq 2)\\ 0,& r(A)< n-1
+    \end{cases} $
+    \item $ r\begin{pmatrix}
+        A & O \\ O & B
+    \end{pmatrix} = r(A) + r(B)$ 
+    \item 若 $ P,Q $ 可逆，则有
+    $ r(PA) = r(AQ) = \overbrace{r(PAQ) = r(A)}^{\textrm{矩阵等价}} $ 
+    
+    若 $ B = PAQ $ 或 $ r(B) = r(A), $ 称 $ A,B $ 等价。
+    \item 对 $ A_{m\times n}, $ 若其行满秩，则 $ r(A) = m, A\sim (E_m,O). $ 
+    \item 对 $ A_{m\times n}, r(A) = n \Rightarrow r(AB); $ 
+
+    $ r(A) = m, r(BA) = r(B). $ 
+    \begin{itemize}
+        \item 证明前者成立
+        
+        $ r(B)\leq r(AB) \leq r(A^{-1} AB) = r(B), $ 故 $ r(AB) = r(B). $ 
+    \end{itemize}
+\end{itemize}
+
+\sssubsection{关于矩阵可因式分解的一元二次式的结论}
+
+\begin{itemize}
+    \item $ A^2 = A \Rightarrow r(A) + r(A-E) = n. $ 
+    \item $ A^2 = E \Rightarrow r(A - E) + r(A + E) = n. $ 
+    \begin{itemize}
+        \item 证明后者成立
+        
+        \begin{equation*}
+            \begin{aligned}
+                (A-E)(A+E)= 0 &\Rightarrow  n \geq r(A-E) + r(A+E) = r(A-E) + r(\Attention{-(A-E)}) \geq r(2E) = n
+                \\ &\Rightarrow r(A-E) + r(A+E) = n
+            \end{aligned}
+        \end{equation*}
+    \end{itemize}
+\end{itemize}
+
+事实上，对于 $ A $ 的一元二次式，若其可因式分解，则分解后的因式都满秩。
+
+\section{求解矩阵方程}
+
+\sssubsection{可逆矩阵}
+
+\begin{itemize}
+    \item $ AX = C\Rightarrow X = A^{-1}C $ 
+    \item $ XA = C\Rightarrow X = CA^{-1} $ 
+    \item $ AXB = C\Rightarrow X = A^{-1}CB^{-1} $ 
+\end{itemize}
+
+\sssubsection{不可逆矩阵}
+
+此时需要将其转化为方程组。
+
+\begin{itemize}
+    \item $ AX = C \Rightarrow A(X_i) = (C_i), $ 其中 $ X_i,C_i $ 是对应矩阵的列向量，
+    解得到的 $ n $ 个非齐次方程组即可。
+    \item $ XA = C \Rightarrow A^\top X^\top = C^\top, $ 然后同上。
+\end{itemize}
+
+\section{计算 $ n $ 阶矩阵高次幂}
+
+\begin{itemize}
+    \item 归纳运算。
+    \item $ r(A) = 1 $ 时，有 $ A^n = tr(A)^{n-1}A. $ 
+    \item $ A = \begin{pmatrix}
+        0 & a & b \\ & 0 & c\\ && 0
+    \end{pmatrix} \Rightarrow A^2 = \begin{pmatrix}
+        &&ac\\ && \\&&
+    \end{pmatrix}, A^{n\geq 3} = O.$ 
+    \item 相似性
+    
+    若 $ P^{-1}AP = B, $ 则有 $ P^{-1}A^nP = B^n, $ 其中 $ P $ 不变，
+\end{itemize}
