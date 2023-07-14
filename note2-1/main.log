@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  14 JUL 2023 13:27
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  14 JUL 2023 15:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1024,19 +1024,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [11]
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <22.08249> not available
-(Font)              size <20.74> substituted on input line 316.
+(Font)              size <20.74> substituted on input line 317.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 316.
+(Font)              size <17.28> substituted on input line 317.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 317.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 317.
 
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
