@@ -55,8 +55,8 @@
     \item $ f(x),g(x) $ 在 $ x_0 $ 某去心邻域内可导，且 $ g'(x)\neq 0 $ ;
     
     此处注意， $ \begin{cases}
-        n\textrm{阶可导}&\Rightarrow \textrm{导}n-1\textrm{次}+\textrm{导数定义}\\
-        n\textrm{阶连续导数}&\Rightarrow \textrm{导}n\textrm{次}
+        n\textrm{阶可导}&\Rightarrow \textrm{洛}n-1\textrm{次}+\textrm{导数定义}\\
+        n\textrm{阶连续导数}&\Rightarrow \textrm{洛}n\textrm{次}
     \end{cases} $ 
     \item $\dis \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty), $ 
 \end{itemize}
@@ -84,6 +84,7 @@
     \item $ x\rightarrow0 $ 时，
     $\dis a^x-1=e^{x\ln a} -1\sim x\ln a,\ \log_a(1+x)=\frac{\ln(x+1)}{\ln a}\sim \frac{x}{\ln a};$
     \item 若 $ x\rightarrow a $ ，可以令 $ t = x - a \rightarrow 0. $ 
+    \item 不能在复合函数的自变量处做等价代换，如 $ x\rightarrow 0\nRightarrow f(x)\sim f(\sin x). $ 
 \end{enumerate}
 
 \sssubsection{泰勒公式}
@@ -129,3 +130,125 @@
     \item 倒代换，即令 $ t = \dfrac{1}{x}. $ 
 \end{itemize}
 
+\subsection{$ 0^0 $ 与 $ \infty^0 $ 形}
+
+若 $ {\displaystyle\lim_{x\rightarrow x_0}}u(x) = 0(\infty),{\displaystyle\lim_{x\rightarrow x_0}}v(x) = 0, $ 则
+$ {\displaystyle\lim_{x\rightarrow x_0}}u(x)^{v(x)} = \exp\left({\displaystyle\lim_{x\rightarrow x_0}}v(x)\ln u(x)\right). $ 
+
+\subsection{$ 1^\infty $ 形}
+
+\begin{itemize}
+    \item 若 $ {\displaystyle\lim_{x\rightarrow x_0}}u(x) = 0,{\displaystyle\lim_{x\rightarrow x_0}}v(x) = \infty, $ 则
+    $ {\displaystyle\lim_{x\rightarrow x_0}}[1+u(x)]^{v(x)} = 
+    \exp\left({\displaystyle\lim_{x\rightarrow x_0}}v(x)u(x)\right). $ 
+    \item 若 $ {\displaystyle\lim_{x\rightarrow x_0}}u(x) = 1,{\displaystyle\lim_{x\rightarrow x_0}}v(x) = \infty, $ 则
+    $ {\displaystyle\lim_{x\rightarrow x_0}}u(x)^{v(x)} = 
+    \exp\left({\displaystyle\lim_{x\rightarrow x_0}}v(x)[u(x)-1]\right). $ 
+\end{itemize}
+
+事实上，有
+\begin{equation*}
+    \begin{aligned}
+        {\displaystyle\lim_{x\rightarrow 0}}
+        \left(\dfrac{\sum_{i=0}^n a_i^x}{n}\right)^\frac{1}{x}
+        = \sqrt{\prod a_i}
+    \end{aligned}
+\end{equation*}
+
+\section{已知极限反求参数}
+
+若 $ {\displaystyle\lim_{x\rightarrow x_0}}\dfrac{f(x)}{g(x)} $ 存在且
+$ g{\displaystyle\lim_{x\rightarrow x_0}}g(x) = 0, $ 则 $ {\displaystyle\lim_{x\rightarrow x_0}}f(x) = 0. $ 
+
+若 $ {\displaystyle\lim_{x\rightarrow x_0}}\dfrac{f(x)}{g(x)} = A \Attention{\neq 0} $ 且
+$ g{\displaystyle\lim_{x\rightarrow x_0}}f(x) = 0, $ 则 $ {\displaystyle\lim_{x\rightarrow x_0}}g(x) = 0. $ 
+
+\sssubsection{例}
+
+$ {\displaystyle\lim_{x\rightarrow 0}}
+\dis \int_b^x \dfrac{\ln(1+t^3)}{t}\mathrm{d}t = 0 \Leftrightarrow b = 0. $
+
+\begin{itemize}
+    \item 证明
+    
+    $ b = 0 $ 时原式显然成立。
+
+    $ \dfrac{\ln(1+t^3)}{t} > 0 (t\neq 0)\Rightarrow b \neq 0 $ 时原式不成立。
+    
+    因此，$ b $ 只能为零。
+\end{itemize}
+
+\section{无穷小阶的比较}
+
+\sssubsection{例}
+
+设函数 $ f(x) $ 在 $ x = 0 $ 的某邻域内具有二阶连续导数，且 $ f(0)\neq 0,f'(0)\neq 0,f\pprime(0)
+\neq 0, $ 则存在一组唯一的 $ \lambda_i,i=1,2,3 $ 使得 $ h\rightarrow 0 $ 时，有
+$ \sum \lambda_if(ih) - f(0) $ 是 $ h^2 $ 的高阶无穷小。
+
+\begin{itemize}
+    \item 一般证明
+    
+    $ \sum \lambda_if(ih) - f(0) $ 是 $ h^2 $ 的高阶无穷小 $ \Rightarrow \sum \lambda_if(ih) - f(0) = 0; $ 
+
+    对上式两边求导，有 $ \sum \lambda_i if'(ih) = 0; $ 
+
+    对上式两边求导，有 $ \sum \lambda_i^2 if^\pprime(ih) = 0; $ 
+
+    因此，有 $ \begin{pmatrix}
+        1&1&1\\ 1&2&3\\ 1&4&9
+    \end{pmatrix}\begin{pmatrix}
+        \lambda_1 \\
+        \lambda_2 \\
+        \lambda_3 \\
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        1 \\
+        2 \\
+        3 \\
+    \end{pmatrix}, $ 由于系数矩阵满秩，其有唯一解，因而得证。
+    \item 泰勒法
+    
+    将 $ f(h),f(2h),f(3h) $ 展开至二阶，代入
+    $ {\displaystyle\lim_{h\rightarrow 0}}\dfrac{\sum \lambda_i f(ih) - f(0)}{h^2}, $ 
+    然后和前述做法一致。
+\end{itemize}
+
+\section{重点 - 数列极限的计算}
+
+\subsection{夹逼定理}
+
+左边缩，右边放，两边极限相等。
+
+放缩时，有不等式
+
+\begin{itemize}
+    \item $ 0<x<\pi/2, $ 则 $ \sin x<x<\tan x;
+    \sin x < x < \pi/2 \sin x; 2/\pi x < \sin x < x; $ 
+    
+    利用 $ f(x) = \dfrac{\sin x}{x} $ 的性质证明。
+    \item $ x > 0, x > \sin x; x < 0, x < \sin x; $ 
+    \item $ e^x > 1 + x, x\neq 0; $ 
+    \item $ \dfrac{x}{1+x}< \ln (x+1)< x, x > -1, x \neq 0. $ 
+\end{itemize}
+
+\subsection{单调有界定理}
+
+对数列 $ x_{n+1} = f(x_n) $ 求极限，方法如下。
+\begin{itemize}
+    \item 适当放缩以证明有界性；
+    \item 做差、做商或求导证明单调性；
+    \item 若其单调，由单调有界知$ \lim x_n $ 存在；
+    \item 令 $ \lim x_n = a, $ 对原式两端取极限，有 $ a = f(a), $ 因此可以解得 $ a; $ 
+    \item 若其不单调，则设 $ \lim x_n = a, $ 再利用夹逼定理证明前者确实成立。
+\end{itemize}
+
+\subsection{定积分}
+
+\begin{equation*}
+    \begin{aligned}
+        \int_a^b f(x)\mathrm{d}x&={\displaystyle\lim_{d\rightarrow 0}}\sum_{i=i}^nf(\xi_i)\dfrac{b-a}{n}
+    \end{aligned}
+\end{equation*}
+
+其中，$ \xi_i\in\left[a+\dfrac{i-1}{n}(b-a),a+\dfrac{i}{n}(b-a)\right]. $ 

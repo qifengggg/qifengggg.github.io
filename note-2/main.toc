@@ -7,4 +7,12 @@
 \contentsline {subsection}{\numberline {i.\nobreakspace {}}$ 0/0 $ 形}{2}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {ii.\nobreakspace {}}$ \infty /\infty $ 形}{3}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {iii.\nobreakspace {}}$ \infty - \infty $ 形}{4}{subsection.1.3.3}%
-\contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{5}{chapter.2}%
+\contentsline {subsection}{\numberline {iv.\nobreakspace {}}$ 0^0 $ 与 $ \infty ^0 $ 形}{4}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {v.\nobreakspace {}}$ 1^\infty $ 形}{4}{subsection.1.3.5}%
+\contentsline {section}{\numberline {IV.\,}已知极限反求参数}{4}{section.1.4}%
+\contentsline {section}{\numberline {V.\,}无穷小阶的比较}{5}{section.1.5}%
+\contentsline {section}{\numberline {VI.\,}重点 - 数列极限的计算}{5}{section.1.6}%
+\contentsline {subsection}{\numberline {i.\nobreakspace {}}夹逼定理}{5}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {ii.\nobreakspace {}}单调有界定理}{5}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {iii.\nobreakspace {}}定积分}{6}{subsection.1.6.3}%
+\contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{7}{chapter.2}%

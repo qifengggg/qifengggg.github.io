@@ -175,7 +175,7 @@
 \renewcommand{\labelenumi}{\roman{enumi}.}
 \renewcommand{\labelitemii}{$ \circ $ }
 \newcommand{\dis}{\displaystyle}
-\newcommand{\Attention}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\Attention}[1]{\textcolor{red}{\bf{#1}}}
 \newcommand{\sssubsection}[1]{\noindent\textbf{#1}}
 \newcommand{\nextline}{\vspace{5pt}\newline}
 \newcommand{\dsqrt}{\dis\sqrt}
@@ -209,6 +209,21 @@
 \setlength{\parskip}{3pt}
 \setenumerate[1]{topsep=2pt}
 \setitemize[1]{topsep=2pt}
+
+\newcommand{\from}[1]{\hypertarget{#1}{}}
+\newcommand{\goto}[1]{\quad{}\hyperlink{#1}{$ \diamondsuit $ }\hypertarget{K#1}{}}
+%\newcommand{\getback}[1]{\begin{flushright}\hyperlink{K#1}{$ \blacksquare $ }\end{flushright}}
+
+\newcommand{\getback}[1]{\quad{}\hyperlink{K#1}{$ \blacksquare $ }}
+\newcommand{\qline}{\underline{~~~~~~~~}}
+
+\newenvironment{quest}[1][\quad{}]
+{\begin{Field}\textbf{
+	\stepcounter{cntQ}例题\thecntQ\quad{}{\rm #1}}\goto{#1}\vspace{5pt}\noindent\newline}{\end{Field}}
+
+\newenvironment{answer}[2][\quad{}]
+{\from{#1}\begin{Field}\textbf{
+	\stepcounter{cntA}注解\thecntA\quad{}{#2}}\vspace{5pt}\getback{#1}\noindent\newline}{\end{Field}}
 
 \frontmatter
 \maketitle
