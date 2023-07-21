@@ -1,0 +1,131 @@
+\chapter{函数~~极限~~连续}
+
+\section{函数的性态}
+
+\subsection{有界性的判定}
+
+\begin{itemize}
+    \item 若 $ {\displaystyle\lim_{x\rightarrow x_0}}f(x)=A, $ 则存在 $ \delta>0, $ 当
+    $ 0<|x-x_0|<\delta $ 时，$ f(x) $ 有界；
+    \item  若 $ f(x) $ 在 $ [a,b] $ 连续，则其在 $ [a,b] $ 有界；
+    \item[\important]  若 $ f(x) $ 在 $ (a,b) $ 连续，且 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x),
+    {\displaystyle\lim_{x\rightarrow b^-}}f(x) $ 均存在，则其在 $ (a,b) $ 有界；
+    \item $ f'(x) $ 在\underline{有限区间}有界 $ \Rightarrow f(x) $ 在该区间有界。
+\end{itemize}
+
+\subsection{导函数、原函数的奇偶性与周期性}
+
+\sssubsection{导函数的奇偶性与周期性}
+
+\begin{itemize}
+    \item 可导奇函数的导函数为偶函数；
+    \item 可导偶函数的导函数为奇函数；
+    \item 可导周期函数的导函数为周期函数；
+\end{itemize}
+
+\sssubsection{原函数的奇偶性与周期性}
+
+\begin{itemize}
+    \item 连续奇函数的原函数均为偶函数；
+    \item 连续偶函数的原函数仅有一个为奇函数，即 $ C = 0 $ 时；
+    \item 周期函数的原函数为周期函数 $ \Rightarrow \dis \int_0^T f(t)\mathrm{d}t = 0. $ 
+\end{itemize}
+
+\section{极限的概念}
+
+讨论数列最值，将其拆分为前 $ N $ 个与后无穷个，前者求最值，后者利用极限定义
+可知其接近极限值。
+
+讨论同时包含 $ \sin(x_n),\cos(x_n) $ 的抽象数列时，可以考虑
+令 $ x_n = \begin{cases}
+    \pi/2,& 2i + 1\\ -\pi/2,& 2i
+\end{cases}, $ 利用 $ \sin,\cos $ 奇偶性的不同。
+
+\section{重点 - 函数极限的计算}
+
+\subsection{$ 0/0 $ 形}
+
+\sssubsection{洛必达法则}
+
+若 $ f(x),g(x) $ 
+\begin{itemize}[topsep = 0pt]
+    \item $ \lim f(x)=\lim g(x)=0/\infty; $
+    
+    可以推广为 $ \dfrac{\blacksquare}{\infty}; $
+    \item $ f(x),g(x) $ 在 $ x_0 $ 某去心邻域内可导，且 $ g'(x)\neq 0 $ ;
+    
+    此处注意， $ \begin{cases}
+        n\textrm{阶可导}&\Rightarrow \textrm{导}n-1\textrm{次}+\textrm{导数定义}\\
+        n\textrm{阶连续导数}&\Rightarrow \textrm{导}n\textrm{次}
+    \end{cases} $ 
+    \item $\dis \frac{\lim f'(x)}{\lim g'(x)}=A(\textrm{或}\infty), $ 
+\end{itemize}
+则 $\dis \frac{\lim f(x)}{\lim g(x)}=A(\textrm{或}\infty). $ 
+
+~
+
+\sssubsection{等价代换}
+
+当 $ x\rightarrow0 $ 时，有
+
+\begin{itemize}
+    \item $ \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim e^x - 1 \sim \ln(1+x) \sim x; $ 
+    \item $ e^x - 1 -x \sim x - \ln(1+x) \sim 1 - \cos x \sim \dfrac{x^2}{2}; $ 
+    \item $ (1+x)^{\alpha}-1\sim \alpha x;$
+    \item $ x - \sin x \sim \arcsin x - x \sim \dfrac{x^3}{6};$ 
+    \item $ \tan x - x \sim x - \arctan x \sim \dfrac{x^3}{3};$ 
+    \item $ \tan x - \sin x \sim \arcsin x - \arctan x \sim \dfrac{x^3}{2}; $ 
+\end{itemize}
+
+对于以上等价无穷小，有
+
+\begin{enumerate}
+    \item 可变量代换，如 $ \sin \square \sim \square,\ \tan \square \sim \square,\cdots $ 
+    \item $ x\rightarrow0 $ 时，
+    $\dis a^x-1=e^{x\ln a} -1\sim x\ln a,\ \log_a(1+x)=\frac{\ln(x+1)}{\ln a}\sim \frac{x}{\ln a};$
+    \item 若 $ x\rightarrow a $ ，可以令 $ t = x - a \rightarrow 0. $ 
+\end{enumerate}
+
+\sssubsection{泰勒公式}
+
+\begin{itemize}
+    \item $\dis e^x = \sum_{i=0}^n \dfrac{x^n}{n!}+ o(x^n)$;
+    \item $\dis \cos x = 1 - \frac{x^2}{2} + \dfrac{x^4}{24} +\dots + \frac{(-1)^{n}x^{2n}}{(2n)!} + o(x^{2n})$ ;
+    \item $\dis \sin x = x - \frac{x^3}{6} + \dots + \frac{(-1)^{n}x^{2n+1}}{(2n+1)!} + o(x^{2n+1}) $ ;
+    \item $\dis \arcsin x = x + \frac{x^3}{6} +o(x^3)$ ;
+    \item $\dis \tan x = x + \frac{x^3}{3} + o(x^3)$ ;
+    \item $\dis \arctan x = x - \frac{x^3}{3} + o(x^3)$ ;
+    \item $\dis \ln (1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + \dots + \frac{(-1)^{n-1}x^n}{n} + o(x^n) $;
+    \item $\dis \ln(1-x) = -(x+\frac{x^2}{2} + \frac{x^3}{3}) + o(x^3)$;
+    \item $\dis (1+x)^\alpha = 1+\sum_{k=1}^n C_\alpha^kx^k + o(x^n) $ ,
+    其中 $\dis C_\alpha^k=\frac{\prod_{i = 0}^{k-1}(\alpha - i)}{k!} $ 
+
+    如，$ \dis \sqrt{1+x} = 1 + \dfrac{1}{2}x - \dfrac{1}{8}x^2 + o(x^2); $ 
+    \item $\dis \frac{1}{1-x} = \sum_{i=0}^n x^i + o(x^n) $ ;
+    \item $\dis \frac{1}{1+x} = \sum_{i=0}^n (-1)^i x^i + o(x^n) $;
+\end{itemize}
+
+泰勒公式求极限时，\begin{itemize}
+    \item 分子阶数不小于分母阶数；
+    \item 加减不抵消，“齐头并进”；
+    \item 可推广为 $ \square\rightarrow 0. $
+\end{itemize}
+
+\subsection{$ \infty/\infty $ 形}
+
+主要方法有\begin{itemize}
+    \item 洛必达；
+    \item 抓大头，即每个因式保留高阶无穷大；
+    
+    $\dis x\rightarrow 0 \Rightarrow \ln^\alpha(x)\ll x^\beta \ll a^x \ll x^x, $ 
+    其中 $ \alpha,\beta > 0, a > 1. $ 
+\end{itemize}
+
+\subsection{$ \infty - \infty $ 形}
+
+主要方法有\begin{itemize}
+    \item 通分（有分式时）；
+    \item 有理化（有根号时）；
+    \item 倒代换，即令 $ t = \dfrac{1}{x}. $ 
+\end{itemize}
+

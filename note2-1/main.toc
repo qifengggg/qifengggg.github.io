@@ -11,3 +11,4 @@
 \contentsline {section}{\numberline {X.\,}求解矩阵方程}{12}{section.2.5}%
 \contentsline {section}{\numberline {XI.\,}计算 $ n $ 阶矩阵高次幂}{12}{section.2.6}%
 \contentsline {chapter}{\numberline {第三章\hspace {.3em}}向量}{14}{chapter.3}%
+\contentsline {section}{\numberline {XII.\,}相关性}{14}{section.3.1}%

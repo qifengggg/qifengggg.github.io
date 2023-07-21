@@ -781,6 +781,21 @@ $ \dis S = 2\pi\int_a^bx\cdot\overbrace{\dsqrt[]{1+[f'(x)^2]}\mathrm{d}x}^{\math
 
 当旋转曲面使用极坐标或参数方程表示时，将 $ \mathrm{d}s $ 改为相对应的即可。
 
+\subsection{曲线的形心公式}
+
+对于由 $ \left\{\begin{matrix}
+    x = x(t)\\ y = y(t)
+\end{matrix}\right. $ 给出的曲线，其在$ [\alpha,\beta] $ 的形心为
+
+\begin{equation*}
+    \begin{aligned}
+        \bar x = \dfrac{\dis \int_\alpha^\beta x(t)\dsqrt{x'^2(t)+y'^2(t)}\mathrm{d}t}
+        {\dis \int_\alpha^\beta \dsqrt{x'^2(t)+y'^2(t)}\mathrm{d}t}\\
+        \bar y = \dfrac{\dis \int_\alpha^\beta y(t)\dsqrt{x'^2(t)+y'^2(t)}\mathrm{d}t}
+        {\dis \int_\alpha^\beta \dsqrt{x'^2(t)+y'^2(t)}\mathrm{d}t}\\
+    \end{aligned}
+\end{equation*}  
+
 \section{定积分的物理应用}
 定积分的物理应用主要有以下几种。
 

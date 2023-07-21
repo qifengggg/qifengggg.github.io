@@ -75,7 +75,7 @@
 		format+ = \zihao{-2} \kaishu  \raggedright,
 		%仅输出subsection编号且为中文
 		number = \roman{subsection},
-		name = {,.},
+		name = {,.~},
 		beforeskip = 1.0ex plus 0.2ex minus .2ex,
 		afterskip = 1.0ex plus 0.2ex minus .2ex,
 		aftername = \hspace{0pt}
@@ -92,12 +92,12 @@
 	}
 }
 
-\newenvironment{Appendices}
+\newenvironment{Appendices}[1][]
 {
 
 	\ctexset{
 		chapter = {
-			name = {附录},
+			name = {#1},
 			format = \linespread{1.0}\zihao{1}\bfseries\sffamily\centering,
 			nameformat = {\fontsize{30pt}{0pt}\centering\vspace{15pt}},
 			titleformat = {\centering},
@@ -164,7 +164,7 @@
 	\end{minipage}}
 \fancyhead[R]{
     \begin{minipage}[r]{0.1\textwidth}
-    \href{https://qifengggg.github.io/}{奇峰}
+	\href{https://qifengggg.github.io/}{奇峰}
     \end{minipage}
 }
 \cfoot{\thepage}
@@ -180,6 +180,7 @@
 \newcommand{\nextline}{\vspace{5pt}\newline}
 \newcommand{\dsqrt}{\dis\sqrt}
 \newcommand{\pprime}{{\prime\prime}}
+\newcommand{\important}{\textcolor{red}{\textbullet}}
 
 \title{\includegraphics[scale=0.6]{1.jpg}\\ \textsf{高等数学笔记}}
 \author{奇峰}
@@ -217,12 +218,6 @@
 \mainmatter
 
 \input{texs/ChapterI.tex}
-\input{texs/ChapterII.tex}
-\input{texs/ChapterIII.tex}
-\input{texs/ChapterIV.tex}
-\input{texs/ChapterV.tex}
-%\input{texs/ChapterVI.tex}
-%\input{texs/ChapterVII.tex}
 \input{texs/ChapterEX.tex}
 
 \end{document}
