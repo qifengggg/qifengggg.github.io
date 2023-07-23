@@ -1,0 +1,56 @@
+\chapter{一元函数积分学}
+
+\section{定积分的概念}
+
+判定含有变限积分函数的不等式时，常可以将非变限积分函数放入积分号；
+此时，可以比较被积函数。
+
+可以使用凹凸性判定含有变限积分函数的不等式。利用曲线割线与凹凸性的关系，可以
+很容易地比较一函数 $ f(x) $ 与 $ x $ 之间的几何上的关系，或者说 $ \dfrac{f(x)}{x} $ 与 $ 1 $ 的关系。
+
+\section{不定积分的计算}
+
+不定积分常见的计算方式如下。
+
+\begin{itemize}
+    \item 不定积分凑微分
+    
+    对 $ f(u) $ 及其原函数 $ F(u), $ 若 $ u = u(x) $ 可导，则有
+    
+    $ \dis \int f(u(x))u'(x)\mathrm{d}x = \int f(u(x))\mathrm{d}u(x) = F(u(x)) + C $ 
+    \item 分布积分法
+    
+    设 $ u = u(x), v = v(x) $ 可导，则 $ \dis \int u\mathrm{d}v = uv - \int v\mathrm{d}u $ 
+    \item 换元法
+    
+    设 $ x = \varphi(t) $ 可导，且 $ \phi'(t) \neq 0, $ 
+    若 $ \dis \int f(\varphi(t))\mathrm{d}t = F(t) + C, $
+
+    则 $ \dis \int f(x)\mathrm{d}x = \int f(\varphi(t))\mathrm{d}t = F(t) + C = F(\varphi^{-1}(x)) + C $ 
+    \item 三角代换
+    \begin{itemize}
+        \item 对 $ \dsqrt{a^2 - x^2}, $ 令 $ x = a\sin t; $ 
+        \item 对 $ \dsqrt{x^2 - a^2}, $ 令 $ x = a\sec t; $ 
+        \item 对 $ \dsqrt{a^2 + x^2}, $ 令 $ x = a\tan t; $ 
+    \end{itemize}
+    \item 根式代换
+    \begin{itemize}
+        \item 令 $ \dsqrt[n]{ax+b} = t; $ 
+        \item 令 $ \dsqrt[n]{\dfrac{ax+b}{cx+d}} = t; $ 
+        \item 对同时有 $ \dsqrt[n]{ax+b} $ 和 $ \dsqrt[m]{ax+b} $ 的，令
+        $ \dsqrt[l]{ax+b} = t, $ 其中 $ l $ 为 $ m,n $ 的最小公倍数；
+    \end{itemize}
+    \item 倒代换
+    
+    令 $ x = \dfrac{1}{t}, $ 仅在系数 $ \geq 2 $ 时予以考虑。
+    \item 万能代换 - 三角有理式
+    
+    令 $ t = \tan \dfrac{x}{2}, $ 则 $ x = 2\arctan t, \sin x = \dfrac{2t}{1+t^2}, 
+    \cos x = \dfrac{1-t^2}{1+t^2}; $
+    \item 整体代换
+    
+    令复杂函数整体 $  = t. $ 
+\end{itemize}
+
+
+

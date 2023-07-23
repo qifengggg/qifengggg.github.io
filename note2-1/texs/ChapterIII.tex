@@ -53,9 +53,44 @@ $$
     \item $ \alpha_i $ 线性无关 $ \Leftrightarrow (\alpha_i)\begin{pmatrix}
         x_1\\ \vdots \\ x_s
     \end{pmatrix} = 0 $ 仅有零解。
-    \item $$
-        \left.\begin{matrix}
-            
-        \end{matrix}\right\} 
-    $$ 
+    \item $
+        \begin{matrix}
+        \textrm{内含零向量}\\ \textrm{内含等比例向量}\\\textrm{内含可表示向量}
+        \end{matrix}\quad \textrm{中满足任一} \Leftrightarrow \textrm{线性相关}
+    $
+    \item 向量个数大于维数必相关（利用秩证明）。
+    \item 全部无关，一部无关；一部相关，全部相关。
+    \item 原本相关，缩短相关，原本无关，加长无关。（改变的是维数）
+    \item 以少表多，多必相关。
 \end{itemize}
+
+对于一组能组成方阵的 $ (\alpha_i), $ 若其方阵 $ P $ 满足 $ AP = PB, $ 则
+这组向量无关。此处运用了相似的性质。
+
+\section{线性表示}
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{cases}
+            \textrm{一个 -} \beta = \sum_{i = 1}^s k_i\alpha_i \Leftrightarrow (\alpha_i)X = \beta\\ 
+            \textrm{一组 -} \beta_i = \sum_{j = 1}^s x_{ij}\alpha_j; i = 1,2,\cdots, t\\ 
+            \textrm{两组 - 互相表示}\\ \textrm{向量组等价}\Leftrightarrow
+            \begin{cases}
+                \forall i, \beta_i = \sum_j x_{ij}\alpha_j \\ 
+                \forall j, \alpha_j = \sum_i x_{ij}\beta_i \\ 
+            \end{cases}
+        \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{判定}
+
+\begin{itemize}
+    \item $ \beta $ 可由 $ \alpha_1,\cdots,\alpha_s $ 线性表出 $ \Leftrightarrow r(\alpha_i) = r(\alpha_i,\beta), $ 
+    注意此时不一定满秩；
+    \item $ \forall i, \beta_i $ 均可由 $ \alpha_1,\cdots,\alpha_s $ 表出
+    $\forall i, \Leftrightarrow r(\alpha_i) = r(\alpha_i,\beta_i); $ 
+    \item 向量组 $ \textrm{(I),(II)} $ 等价
+    $ \Rightarrow r\textrm{(I)}=r\textrm{(II)}=r\textrm{(I,II)} $ 
+\end{itemize}
+

@@ -252,3 +252,31 @@ $ \sum \lambda_if(ih) - f(0) $ 是 $ h^2 $ 的高阶无穷小。
 \end{equation*}
 
 其中，$ \xi_i\in\left[a+\dfrac{i-1}{n}(b-a),a+\dfrac{i}{n}(b-a)\right]. $ 
+
+\section{间断点的判定}
+
+设 $ x=a $ 为 $ f(x) $ 的一间断点，
+\begin{enumerate}
+    \item 若 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x) $ 与 $ {\displaystyle\lim_{x\rightarrow a^-}}f(x) $ 均存在，
+    则称 $ x=a $ 为 $ f(x) $ 的一个第一类间断点，其还能\textbf{且必须要}分为\begin{itemize}
+        \item 可去间断点 - 
+        $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)={\displaystyle\lim_{x\rightarrow a^-}}f(x); $
+        \item 跳跃间断点 - 
+        $ {\displaystyle\lim_{x\rightarrow a^+}}f(x)\neq{\displaystyle\lim_{x\rightarrow a^-}}f(x); $
+    \end{itemize}
+    \item 若 $ {\displaystyle\lim_{x\rightarrow a^+}}f(x) $ 与 $ {\displaystyle\lim_{x\rightarrow a^-}}f(x) $ 
+    中有至少一个不存在，则称其为第二类间断点。第二类间断点不用强制细分。
+
+    第二类间断点可以分为
+    \begin{itemize}
+        \item 无穷间断点 - 左右极限至少有一个为无穷；
+        \item 震荡间断点 - 左右极限至少有一个不存在，但不是无穷；
+    \end{itemize}
+\end{enumerate}
+
+可能存在间断点的地方：
+\begin{itemize}
+    \item 初等函数的无定义点；
+    \item 分段函数的分段点。
+\end{itemize}
+

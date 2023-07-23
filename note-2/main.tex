@@ -179,6 +179,7 @@
 \newcommand{\sssubsection}[1]{\noindent\textbf{#1}}
 \newcommand{\nextline}{\vspace{5pt}\newline}
 \newcommand{\dsqrt}{\dis\sqrt}
+\newcommand{\whichis}{\mathop=\limits^{\exists}}
 \newcommand{\pprime}{{\prime\prime}}
 \newcommand{\important}{\textcolor{red}{\textbullet}}
 
@@ -217,14 +218,6 @@
 \newcommand{\getback}[1]{\quad{}\hyperlink{K#1}{$ \blacksquare $ }}
 \newcommand{\qline}{\underline{~~~~~~~~}}
 
-\newenvironment{quest}[1][\quad{}]
-{\begin{Field}\textbf{
-	\stepcounter{cntQ}例题\thecntQ\quad{}{\rm #1}}\goto{#1}\vspace{5pt}\noindent\newline}{\end{Field}}
-
-\newenvironment{answer}[2][\quad{}]
-{\from{#1}\begin{Field}\textbf{
-	\stepcounter{cntA}注解\thecntA\quad{}{#2}}\vspace{5pt}\getback{#1}\noindent\newline}{\end{Field}}
-
 \frontmatter
 \maketitle
 \hypertarget{Index}{}
@@ -233,6 +226,8 @@
 \mainmatter
 
 \input{texs/ChapterI.tex}
+\input{texs/ChapterII.tex}
+\input{texs/ChapterIII.tex}
 \input{texs/ChapterEX.tex}
 
 \end{document}
