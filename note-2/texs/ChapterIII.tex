@@ -52,5 +52,220 @@
     令复杂函数整体 $  = t. $ 
 \end{itemize}
 
+\section{定积分的计算}
+
+\begin{itemize}
+    \item 定积分凑微分
+    
+    对 $ f(u) $ 及其原函数 $ F(u), $ 若 $ u = u(x) $ 在 $ [a,b] $ 可导，则有
+    
+    $ \dis \int_a^b f(u(x))u'(x)\mathrm{d}x = \int_a^b f(u(x))\mathrm{d}u(x) = F(u(x))\big|_a^b + C $ 
+    \item 分布积分法
+    
+    设 $ u = u(x), v = v(x) $ 在 $ [a,b] $ 可导，
+    则 $ \dis \int_a^b u\mathrm{d}v = uv - \int_a^b v\mathrm{d}u $ 
+    \item 换元法
+    
+    设 $ x = \varphi(t) $ 在 $ [a,b] $ 连续，$ x = \varphi(t) $ 在 $ [\alpha,\beta] $ 上有一阶连续导数，
+    且 $ \varphi(\alpha) = a,\varphi(\beta) = b,\varphi $ 的值域为 $ [a,b], $ 则
+
+    $ \dis \int_a^b f(x)\mathrm{d}x = \int_\alpha^\beta f(\varphi(t))\varphi'(t)\mathrm{d}t. $ 
+    \item 奇偶性
+    
+    若  $ f(x) $ 在 $ [-a,a] $ 连续，则 $ \dis \int_{-a}^af(x)\mathrm{d}x = 
+    \begin{cases}
+        2\int_0^a f(x)\mathrm{d}x, & f(x)\textrm{是偶函数}\\ 
+        0, & f(x)\textrm{是奇函数}
+    \end{cases} $ 
+    \item 周期性
+    
+    对周期为 $ T $ 的连续函数 $ f(x), $ 对任意常数 $ a, $ 有 $ \dis \int_a^{a+T}f(x)\mathrm{d}x = 
+    \int_0^{T}f(x)\mathrm{d}x $ 
+    \item Wallis公式
+    
+    \begin{equation*}
+        \begin{aligned}
+            \int_0^{\dfrac{\pi}{2}} \sin^n x\mathrm{d}x = 
+            \int_0^{\dfrac{\pi}{2}} \cos^n x\mathrm{d}x = 
+            \dfrac{(n-1)!!}{n!!}\left(\dfrac{\pi}{2}\right)^{\texttt{(int)!(n\%2)}}
+        \end{aligned}
+    \end{equation*}
+
+    设 $ f(x) $ 在 $ [0,1] $ 连续，则 $ \dis \int_0^\pi xf(\sin x)\mathrm{d}x = \dfrac{\pi}{2}
+    \int_0^\pi f(\sin x)\mathrm{d}x = \pi\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x.$
+    \item 区间再现公式
+    
+    在分子为分母的其中一项时，常用区间再现公式。进退维谷时，也可以考虑应用区间再现公式。
+    
+    $ \dis \int_a^b f(x)\mathrm{d}x \xlongequal{t = a + b - x} \int_a^b f(a + b - t)\mathrm{d}t
+    = \dfrac{1}{2} \int_a^b \left(f(x)+f(a + b - t)\right)\mathrm{d}x $ 
+    \item 平移变换
+    
+    令 $ x = t + b. $ 题目给出（类）周期函数条件，待求式积分上下限是周期整数倍但不重合，
+    可以考虑平移变换。
+\end{itemize}
+
+\section{反常积分的计算}
+
+反常积分实质上是定积分的极限，其可能不存在。
+
+对于瑕点在上下限区间内的，利用区间可加性拆开。如此做时，必须满足极限的
+四则运算法则，否则需要考虑规避未定式的化简方法。
+
+\section{反常积分敛散性的判断}
+
+\begin{enumerate}
+    \item 反常积分定义
+    \item 比较判别法
+    \begin{itemize}
+        \item 无穷积分，如 $ \dis \int_1^\infty f(x)\mathrm{d}x $ 
+        
+        此时比较 $ p $ 积分 $ \dis \int_1^\infty \dfrac{1}{x^p}\mathrm{d}x
+        \begin{cases}
+            p > 1, \textrm{收敛}\\p \leq 1, \textrm{发散}
+        \end{cases} $ 
+        对$ \dis {\displaystyle\lim_{x\rightarrow +\infty}} \dfrac{f(x)}{1/x^p} = 
+        {\displaystyle\lim_{x\rightarrow +\infty}}x^pf(x) = l, $
+        \begin{itemize}
+            \item $ 0 < l < +\infty $ 时二者同阶同收敛；
+            \item $ l = 0 $ 时 $ p $ 积分收敛则原积分收敛（大收则小收）
+            \item $ l = +\infty $ 时 $ p $ 积分发散则原积分发散（小发则大发）
+        \end{itemize} 
+        \item 瑕积分，如 $ \dis \int_0^1 f(x)\mathrm{d}x, x = 0 $ 为瑕点
+        
+        此时比较 $ p $ 积分 $ \dis \int_0^1 \dfrac{1}{x^p}\mathrm{d}x
+        \begin{cases}
+            (0 < ) p < 1, \textrm{收敛}\\p \geq 1, \textrm{发散}
+        \end{cases} $
+        
+        注意，若题目中明示原积分为瑕积分，则收敛的范围为 $ 0 < p < 1, $ 因为
+        $ p \leq 0 $ 时原积分不是瑕积分；
+
+        若题目中未明示原积分为瑕积分，则其范围为 $ p < 1. $ 
+        \item 使用比较判别法时，找比较对象的方法是，被积因式无穷小则等价，无穷大则放缩。
+    \end{itemize}
+\end{enumerate}
+
+\section{变限积分函数}
+
+\sssubsection{变限积分函数的性质}
+
+\begin{itemize}
+    \item 若 $ f(x) $ 在 $ [a,b] $ 可积，则 $ F(x) $ 在 $ [a,b] $ 连续。注意，
+    变限积分函数不一定可导，如 $ f(x) $ 有跳跃间断点时。
+    \item 变限积分函数求导
+    
+    设 $$
+        F(x)=\int_{\varphi_1(x)}^{\varphi_2(x)} f(t)\mathrm{d}t
+    $$ 且 $ \varphi_1(x),\varphi_2(x) $ 可导，$ f(x) $ 连续，则有$$
+        F'(x) = f(\varphi_2(x))\varphi_2'(x)-f(\varphi_1(x))\varphi_1'(x)
+    $$ 
+
+    变限积分求导，被积函数不含 $ x. $ 
+    \item 若$ x_0 $ 为 $ f(x) $在$ [a,b] $ 上的一个跳跃间断点，则$ F(x) $在$ x_0 $ 连续，
+    但不可导；
+    
+    若$ x_0 $ 为 $ f(x) $在$ [a,b] $ 上的一个可去间断点，则$ F(x) $在$ x_0 $ 处可导，
+    但 $ F(x) $ 不是$ f(x) $ 的原函数。
+\end{itemize}
+
+\section{定积分应用求面积}
+
+注意，面积一定是正数，至少不是负数。
+
+\begin{itemize}
+    \item 直角坐标
+    
+    $ \dis S = \int_a^b |y| \mathrm{d}x $
+    \item 极坐标 $ \rho = \rho(\theta) $
+    
+    $ \dis S = \int_{\theta_1}^{\theta_2} \dfrac{\rho^2}{2}\mathrm{d}\theta $ 
+    \item 参数方程 $ \dis \begin{cases}
+        x = x(t) \\ y = y(t)
+    \end{cases} $ 
+
+    $ \dis S = \int_\alpha^\beta |y(t)x'(t)|\mathrm{d}t $ 
+\end{itemize}
+
+\section{定积分应用求体积}
+
+\begin{itemize}
+    \item 绕 $ x $ 轴旋转
+    
+    $ \dis V = \pi\int_0^{2\pi}y^2\mathrm{d}x $ 
+    \item 绕 $ y $ 轴旋转
+    
+    $ \dis V = 2\pi\int_0^{2\pi}|xy|\mathrm{d}x $ 
+    \item 平移 不绕坐标轴旋转
+    
+    此时可以\begin{enumerate}
+        \item 微元法
+        \item 二重积分（冲刺）
+    \end{enumerate}
+\end{itemize}
+
+求面积、体积时，对单调函数，可以转而利用其反函数。
+
+\section{定积分应用求弧长}
+
+\sssubsection{直角坐标}
+
+对曲线段 $ y = f(x),x\in[a,b] $ ，设 $ f(x) $ 有连续导数，则给定平面曲线段弧长元素
+和弧长分别为
+$$ \dis \mathrm{d}s = \dsqrt{1+f'^2(x)}\mathrm{d}x;
+s = \int_a^b \dsqrt{1+f'^2(x)}\mathrm{d}x. $$
+
+\sssubsection{参数方程}
+
+若曲线能表示为 $ x = x(t),y=y(t),t\in[\alpha,\beta] $，且其在$ (\alpha,\beta) $ 内
+有连续导数，则给定平面曲线段弧长元素和弧长分别为
+
+$$ \dis \mathrm{d}s = \dsqrt[]{y'^2(t)+x'^2(t)}\mathrm{d}t;
+s = \int_a^b \dsqrt[]{[y^2(t)]^2+[x'(t)]^2}\mathrm{d}t. $$
+
+\sssubsection{极坐标}
 
 
+若曲线能表示为 $ \rho = \rho(\theta),\theta\in[\theta_1,\theta_2], $
+则给定平面曲线段弧长元素和弧长分别为
+
+$$ \dis \mathrm{d}s = \dsqrt[]{\rho^2(\theta)+\rho'^2(\theta)}\mathrm{d}\theta ;
+s = \int_a^b \dsqrt[]{\rho^2(\theta)+[\rho'(\theta)]^2}\mathrm{d}\theta. $$
+
+
+\section{定积分应用求侧面积}
+
+求侧面积的公式为
+\begin{equation*}
+    \begin{aligned}
+        S = 2\pi \int_a^b \overbrace{|y(x)|}^\textrm{离轴距离} 
+        \overbrace{\dsqrt{1+(y'(x))^2}\mathrm{d}x}^{\mathrm{d}s}&\textrm{绕}x\textrm{轴}\\ 
+        S = 2\pi \int_a^b \overbrace{|x|}^\textrm{离轴距离} 
+        \overbrace{\dsqrt{1+(y'(x))^2}\mathrm{d}x}^{\mathrm{d}s}&\textrm{绕}y\textrm{轴}\\ 
+    \end{aligned}
+\end{equation*}
+
+在不同的坐标系下，只需要将离轴距离和 $ \mathrm{d}s $ 替换为对应的即可。
+
+\section{定积分的物理应用}
+
+\begin{enumerate}
+    \item 做功
+    
+    变力沿直线，即 $ W = FS= \int_a^b f(s)\mathrm{d}s. $ 
+    \item 受力
+    \begin{itemize}
+        \item 液体压力 $ F = \rho ghS $ 
+        \item 万有引力 $ F = \dfrac{GMm}{r^2}, G $ 引力常数，$ M,m $ 质量，$ r $ 距离。
+    \end{itemize}
+\end{enumerate}
+
+\section{证明含有积分的等式或不等式}
+
+\begin{itemize}
+    \item 单调性；
+    \item 凹凸性；
+    \item 微分中值定理；
+    \item 定积分概念和六大积分法；
+    \item 二重积分（冲刺）。
+\end{itemize}

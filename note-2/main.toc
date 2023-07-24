@@ -30,4 +30,14 @@
 \contentsline {chapter}{\numberline {第三章\hspace {.3em}}一元函数积分学}{13}{chapter.3}%
 \contentsline {section}{\numberline {I.\,}定积分的概念}{13}{section.3.1}%
 \contentsline {section}{\numberline {II.\,}不定积分的计算}{13}{section.3.2}%
-\contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{15}{chapter.4}%
+\contentsline {section}{\numberline {III.\,}定积分的计算}{14}{section.3.3}%
+\contentsline {section}{\numberline {IV.\,}反常积分的计算}{15}{section.3.4}%
+\contentsline {section}{\numberline {V.\,}反常积分敛散性的判断}{15}{section.3.5}%
+\contentsline {section}{\numberline {VI.\,}变限积分函数}{16}{section.3.6}%
+\contentsline {section}{\numberline {VII.\,}定积分应用求面积}{16}{section.3.7}%
+\contentsline {section}{\numberline {VIII.\,}定积分应用求体积}{16}{section.3.8}%
+\contentsline {section}{\numberline {IX.\,}定积分应用求弧长}{17}{section.3.9}%
+\contentsline {section}{\numberline {X.\,}定积分应用求侧面积}{17}{section.3.10}%
+\contentsline {section}{\numberline {XI.\,}定积分的物理应用}{18}{section.3.11}%
+\contentsline {section}{\numberline {XII.\,}证明含有积分的等式或不等式}{18}{section.3.12}%
+\contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{19}{chapter.4}%
