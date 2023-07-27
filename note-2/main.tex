@@ -169,6 +169,13 @@
 }
 \cfoot{\thepage}
 
+\usepackage{titletoc}
+\titlecontents{section}[6em]{\bfseries \zihao{5} \vspace{2pt}}
+{\contentslabel{2.5em}}{\hspace*{-4em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{subsection}[7em]{\zihao{5}}{\contentslabel{2em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{subsubsection}[8em]{\zihao{5}}{\contentslabel{3em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{paragraph}[11em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+
 \pagestyle{fancy}
 %\renewcommand{\qedsymbol}{$\blacksquare$}
 
@@ -176,6 +183,7 @@
 \renewcommand{\labelitemii}{$ \circ $ }
 \newcommand{\dis}{\displaystyle}
 \newcommand{\Attention}[1]{\textcolor{red}{\bf{#1}}}
+\newcommand{\red}[1]{\textcolor{red}{{#1}}}
 \newcommand{\sssubsection}[1]{\noindent\textbf{#1}}
 \newcommand{\nextline}{\vspace{5pt}\newline}
 \newcommand{\dsqrt}{\dis\sqrt}
@@ -228,6 +236,9 @@
 \input{texs/ChapterI.tex}
 \input{texs/ChapterII.tex}
 \input{texs/ChapterIII.tex}
+\input{texs/ChapterIV.tex}
+\input{texs/ChapterV.tex}
+\input{texs/ChapterVI.tex}
 \input{texs/ChapterEX.tex}
 
 \end{document}

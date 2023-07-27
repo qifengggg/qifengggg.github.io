@@ -1,0 +1,122 @@
+\chapter{常微分方程}
+
+\section{一阶微分方程}
+
+\sssubsection{可分离变量}
+
+对形如 $ g(y)\mathrm{d}y = f(x)\mathrm{d}x $ 的，
+对两边求积分，得到 $ \dis \int g(y) \mathrm{d}y = \int f(x)\mathrm{d}x. $ 
+
+\sssubsection{一阶齐次方程}
+
+对形如 $ \dis \dfrac{\mathrm{d}y}{\mathrm{d}x} = f(\dfrac{y}{x}) $ 的方程，取
+$ \dis u = \dfrac{y}{x}, $ 则有 $ y = xu \Rightarrow \dfrac{\mathrm{d}y}{\mathrm{d}x}
+= ux + \dfrac{\mathrm{d}u}{\mathrm{d}x}, $ 代回原式，得
+$ \dis \int \dfrac{\mathrm{d}u}{f(u) - u} = \int \dfrac{\mathrm{d}x}{x}, $ 
+积分求得 $ u = \dfrac{y}{x} $ 后化简得到原方程的通解。
+
+\subsection{一阶线性微分方程}
+
+其形如 $ \dis \dfrac{\mathrm{d}y}{\mathrm{d}x} + P(x)y = Q(x), $ 其中未知数及其导数次数均为1.
+
+其有公式$$
+    y = e^{-\int P(x)\mathrm{d}x}
+    \left(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x+C\right)
+$$ 
+
+其中包含三个不定积分，其常数 $ C $ 已经事先提出。
+
+括号中的不定积分事实上表示其被积函数的一个原函数。事实上，由于后面有任意常数 $ C, $ 
+可以将括号中内容改写为变限积分函数 $ \dis \int_b^x f(x)\mathrm{d}x + C, $ 
+此时可以进行需要代入具体值的操作；其中 $ b $ 可以为任意常数。
+
+对于非常见类型的一阶微分方程，或者$ x $ 少 $ y $ 很多的方程，考虑转化为反函数求解。
+
+\begin{itemize}
+    \item[\textbf{例题} ] 对微分方程 $ y' + y = f(x), $ 其中 $ f(x) $ 是 $ R $ 上的连续周期函数，其周期为 $ T, $ 
+    
+    则方程存在唯一的以 $ T $ 为周期的解。
+    \item[\textbf{证明}] 
+    方程的通解是 $ \dis y = e^{-x}\left(\int e^xf(x)\mathrm{d}x + C\right), $ 注意到其
+    可以写为 $ \dis e^{-x}\left(\int_0^x e^tf(t)\mathrm{d}t + C\right). $ 
+    
+    那么，当且仅当 $ y(T-x) - y(x) = 0 $ 
+    时，$ y $ 以 $ T $ 为周期。
+    
+    \begin{equation*}
+        \begin{aligned}
+            y(T+x) - y(x) &= e^{-x-T}\left(\int_0^{x+T} e^tf(t)\mathrm{d}t + C\right)
+            -e^{-x}\left(\int_0^{x} e^tf(t)\mathrm{d}t + C\right)
+            \\&= e^{-x}\left[e^{-T}\left(\int_0^{T} + \int_{T}^{x+T}\right) e^tf(t)\mathrm{d}t + 
+            \dfrac{C}{e^T} - C - \int_0^x e^tf(t)\mathrm{d}t \right]
+            \\&= e^{-x}\left[e^{-T}\left(\int_0^{T} + e^T\int_{0}^{x}\right) e^tf(t)\mathrm{d}t + 
+            \dfrac{C}{e^T} - C - \int_0^x e^tf(t)\mathrm{d}t \right]
+            \\&= e^{-x}\left[e^{-T}\int_0^{T} e^tf(t)\mathrm{d}t + 
+            (\dfrac{1}{e^T}-1)C\right] = 0
+            \\&\Rightarrow C = \dfrac{\dis \int_0^T e^tf(t)\mathrm{d}t}{1-e^T}
+        \end{aligned}
+    \end{equation*}
+    
+    因此存在且仅存在一个 $ C $ 使得方程以 $ T $ 为周期。
+\end{itemize}
+
+
+
+
+\section{二阶线性常微分方程}
+
+\sssubsection{齐次}
+
+对形如 $ y^\pprime + py' + qy = 0 $ 的方程，解特征方程
+$ r^2 + pr + q = 0, $ 得到特征根 $ r_1,r_2. $ 
+根据特征根性质得到通解。具体而言，若 $ r_1,r_2 $ 为
+\begin{itemize}
+    \item 两互异实根 - 通解 $ C_1e^{r_1x} + C_2e^{r_2x}; $ 
+    \item 两相等实根 - 通解 $ (C_1 + C_2x)e^{r_x}; $ 
+    \item 一组共轭复根 $ \alpha\pm\beta i $ - 通解 $ e^{\alpha x}\left(C_1\cos \beta x + C_2\sin \beta x\right). $ 
+\end{itemize}
+
+\sssubsection{非齐次}
+
+对形如 $ y^\pprime + py' + qy = f(x) $ 的方程，解特征方程得到齐次方程的通解；
+根据 $ f(x) $ 性质确定一特解形状，“指数照抄，次数最高”。
+
+对方程形如$
+    y^\pprime + py'+qy = P_m(x)e^{ax},
+$ 
+则有一特解形如$$
+    y^* = x^k Q_m(x) e^{ax}.
+$$ 
+
+对方程形如$
+    y^\pprime + py'+qy = e^{\alpha x}\left[P_l(x)\cos \beta x+P_n(x)\sin \beta x\right],
+$ 
+则有一特解形如$$
+    y^* = x^ke^{ax}\left[Q_m(x)\cos\beta x+R_m(x)\sin \beta x\right].
+$$ 
+
+代入原式求待定系数。
+
+\sssubsection{高阶常系数线性齐次微分方程}
+
+对方程形如 $ y^{(n)} +p_1y^{(n-1)} + \cdots + p_n y = 0, $ 
+解对应特征方程 $ r^n + p_1r^{n-1}+ \cdots + p_n = 0, $ 一般 $ n \leq 4. $ 
+
+对特征方程的根，若其
+\begin{itemize}
+    \item 有 $ S $ 个互异实根，则通解包含
+    
+    $ \dis \sum_{i = 1}^S C_ie^{r_ix} $ 
+    \item 有 $ S $ 重实根，则通解包含
+    
+    $ \dis \sum_{i=1}^S (C_i x^{i-1})e^{rx} $ 
+    \item 有共轭复根 $ \alpha \pm \beta i, $ 则通解包含
+    
+    $ \dis e^{\alpha x}\left(A\cos \beta x + B\sin \beta x\right) $ 
+\end{itemize}
+
+变限积分函数结合微分方程时，
+\begin{itemize}
+    \item 其被积函数 $ f(x) $ 无穷阶可导；
+    \item 其有初始条件 $ \dis \int_a^a f(x)\mathrm{d}x = 0. $ 
+\end{itemize}

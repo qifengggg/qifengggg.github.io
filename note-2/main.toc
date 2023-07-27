@@ -40,4 +40,20 @@
 \contentsline {section}{\numberline {X.\,}定积分应用求侧面积}{17}{section.3.10}%
 \contentsline {section}{\numberline {XI.\,}定积分的物理应用}{18}{section.3.11}%
 \contentsline {section}{\numberline {XII.\,}证明含有积分的等式或不等式}{18}{section.3.12}%
-\contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{19}{chapter.4}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}常微分方程}{19}{chapter.4}%
+\contentsline {section}{\numberline {I.\,}一阶微分方程}{19}{section.4.1}%
+\contentsline {subsection}{\numberline {i.\nobreakspace {}}一阶线性微分方程}{19}{subsection.4.1.1}%
+\contentsline {section}{\numberline {II.\,}二阶线性常微分方程}{20}{section.4.2}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}多元函数微分学}{22}{chapter.5}%
+\contentsline {section}{\numberline {I.\,}多元函数概念}{22}{section.5.1}%
+\contentsline {section}{\numberline {II.\,}多元复合函数求偏导数与全微分}{22}{section.5.2}%
+\contentsline {section}{\numberline {III.\,}多元隐函数求偏导数与全微分}{22}{section.5.3}%
+\contentsline {section}{\numberline {IV.\,}变量代换化简偏微分方程}{23}{section.5.4}%
+\contentsline {section}{\numberline {V.\,}求无条件极值}{24}{section.5.5}%
+\contentsline {section}{\numberline {VI.\,}求条件极值（边界条件）}{24}{section.5.6}%
+\contentsline {section}{\numberline {VII.\,}求闭区域最值}{25}{section.5.7}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}二重积分}{26}{chapter.6}%
+\contentsline {section}{\numberline {I.\,}交换积分次序}{26}{section.6.1}%
+\contentsline {section}{\numberline {II.\,}二重积分的计算}{26}{section.6.2}%
+\contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{28}{chapter.7}%
+\contentsfinish 

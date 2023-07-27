@@ -13,3 +13,7 @@
 \contentsline {chapter}{\numberline {第三章\hspace {.3em}}向量}{14}{chapter.3}%
 \contentsline {section}{\numberline {XII.\,}相关性}{14}{section.3.1}%
 \contentsline {section}{\numberline {XIII.\,}线性表示}{15}{section.3.2}%
+\contentsline {section}{\numberline {XIV.\,}秩与极大线性无关组}{15}{section.3.3}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}线性方程组}{17}{chapter.4}%
+\contentsline {section}{\numberline {XV.\,}解的判定}{17}{section.4.1}%
+\contentsline {section}{\numberline {XVI.\,}求通解}{18}{section.4.2}%

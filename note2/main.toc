@@ -52,3 +52,4 @@
 \contentsline {subsection}{\numberline {ii.}可逆变换}{24}{subsection.6.2.2}%
 \contentsline {subsection}{\numberline {iii.}判定}{24}{subsection.6.2.3}%
 \contentsline {subsection}{\numberline {iv.}二次型化为标准型}{24}{subsection.6.2.4}%
+\contentsfinish 

@@ -72,9 +72,9 @@ $$
 \begin{equation*}
     \begin{aligned}
         \begin{cases}
-            \textrm{一个 -} \beta = \sum_{i = 1}^s k_i\alpha_i \Leftrightarrow (\alpha_i)X = \beta\\ 
-            \textrm{一组 -} \beta_i = \sum_{j = 1}^s x_{ij}\alpha_j; i = 1,2,\cdots, t\\ 
-            \textrm{两组 - 互相表示}\\ \textrm{向量组等价}\Leftrightarrow
+            \textrm{一个向量，} \beta = \sum_{i = 1}^s k_i\alpha_i \Leftrightarrow (\alpha_i)X = \beta\\ 
+            \textrm{一组向量，} \beta_i = \sum_{j = 1}^s x_{ij}\alpha_j; i = 1,2,\cdots, t\\ 
+            \textrm{两组互相表示，即}\\ \textrm{向量组等价}\Leftrightarrow
             \begin{cases}
                 \forall i, \beta_i = \sum_j x_{ij}\alpha_j \\ 
                 \forall j, \alpha_j = \sum_i x_{ij}\beta_i \\ 
@@ -93,4 +93,30 @@ $$
     \item 向量组 $ \textrm{(I),(II)} $ 等价
     $ \Rightarrow r\textrm{(I)}=r\textrm{(II)}=r\textrm{(I,II)} $ 
 \end{itemize}
+
+\section{秩与极大线性无关组}
+
+\sssubsection{定义}
+
+对 $ \alpha_1,\cdots,\alpha_s $ 中有部分向量 $ \alpha_{i1},\cdots, \alpha_{it}, $ 
+其\begin{itemize}
+    \item 线性无关；
+    \item 任意剩余向量都可由这组向量表示，
+\end{itemize}
+
+则称 $ \alpha_{i1},\cdots, \alpha_{it} $ 为极大线性无关组。
+
+\sssubsection{性质}
+
+\begin{itemize}
+    \item 无关组不唯一，但是其个数唯一；
+    \item 只有 $ \vec 0 $ 的向量组无极大无关组；
+    \item 向量组的秩为极大无关组向量个数；
+    \item 向量组与其极大无关组等价；极大无关组之间也等价。
+\end{itemize}
+
+\sssubsection{求解 - 列写行消}
+
+$ A = (\alpha_1,\cdots,\alpha_s) \xlongrightarrow{\textrm{行变换}} B_{\textrm{阶梯}}, $ 
+从每个台阶中选一列组成极大无关组。
 

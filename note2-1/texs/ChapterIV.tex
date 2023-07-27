@@ -1,0 +1,62 @@
+\chapter{线性方程组}
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{cases}
+            \textrm{齐次方程组} AX = 0\begin{cases}
+                \textrm{表示形式}\begin{cases}
+                    \textrm{矩阵}\\ \textrm{向量}
+                \end{cases}\\ 
+                \textrm{有解的判定}\\ 
+                \textrm{解的性质}\begin{cases}
+                    \textrm{通解}\\ \textrm{基解}\\ \textrm{组合}
+                \end{cases}\\ 
+                \textrm{求解方法}
+            \end{cases}\\ 
+            \textrm{非齐次方程组} AX = b\begin{cases}
+                \textrm{有解判定} \\ \textrm{解的性质} \\ \textrm{解的结构 - 齐通+非齐特}
+            \end{cases}\\ 
+            \textrm{同解与公共解}\begin{cases}
+                \textrm{通解 - 解集相同}\\ \textrm{公共解 - 解集有交集}
+            \end{cases}
+        \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\section{解的判定}
+
+对于齐次方程 $ AX = 0, \begin{cases}
+    \textrm{只有零解}\Rightarrow r(A) = n\\ 
+    \textrm{有非零解}\Rightarrow r(A) < n
+\end{cases}. $ 
+
+其基础解系
+\begin{itemize}
+    \item 为 $ AX = 0 $ 的解；
+    \item 线性无关；
+    \item 数量为 $ n - r(A) $ 个。
+\end{itemize}
+
+对于非齐次方程 $ AX = b,\begin{cases}
+    \textrm{无解}\Rightarrow r(A) \neq r(\bar A)\\ 
+    \textrm{有解}\Rightarrow r(A) = r(\bar A)
+    \begin{cases}
+         = n \Rightarrow \textrm{解唯一}\\ 
+         < n \Rightarrow \textrm{解不唯一（无穷）}
+    \end{cases}
+\end{cases} $ 
+
+\section{求通解}
+
+对于具体的数字矩阵，通过行变换或高斯消元做。
+
+对抽象矩阵，
+\begin{itemize}
+    \item 通解为齐通 + 非齐特；
+    \item 齐解任意组合仍然为齐解；
+    \item 若 $ \xi_1,\cdots,\xi_t $ 均为 $ AX = b $ 的解，则
+    $ \dis \sum k_i\xi_i $ 为 $ \begin{cases}
+        \textrm{齐解，} \sum k = 0 \\
+        \textrm{非齐解，} \sum k = 1 \\
+    \end{cases} $ 
+\end{itemize}

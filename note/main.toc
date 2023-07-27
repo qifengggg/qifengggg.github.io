@@ -103,7 +103,7 @@
 \contentsline {subsection}{\numberline {v.}隐函数求导}{46}{subsection.4.1.5}%
 \contentsline {section}{\numberline {II.\,}多元函数极值}{47}{section.4.2}%
 \contentsline {subsection}{\numberline {i.}无条件极值}{47}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {ii.}条件极值}{47}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {ii.}条件极值}{48}{subsection.4.2.2}%
 \contentsline {section}{\numberline {III.\,}二重积分}{48}{section.4.3}%
 \contentsline {subsection}{\numberline {i.}性质}{48}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {ii.}二重积分的计算}{49}{subsection.4.3.2}%
@@ -121,3 +121,4 @@
 \contentsline {subsection}{\numberline {iii.}常系数齐次线性微分方程的求解}{53}{subsection.5.4.3}%
 \contentsline {subsection}{\numberline {iv.}二阶常系数线性非齐次微分方程的求解}{54}{subsection.5.4.4}%
 \contentsline {chapter}{\numberline {附录\hspace {.3em}}补充结论}{55}{chapter.6}%
+\contentsfinish 

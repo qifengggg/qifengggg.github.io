@@ -174,12 +174,40 @@ $$
 
 求二阶偏导数时，二阶偏导和一阶偏导的偏导结构相同，也即
 
+\begin{equation*}
+    \begin{aligned}
+        &\dfrac{\partial^2 z}{\partial x^2} = \dfrac{\partial }{\partial x}
+        \left(
+            \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial x}
+        +\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial x}
+        \right);&
+        &\dfrac{\partial^2 z}{\partial y^2} = \dfrac{\partial }{\partial y}
+        \left(
+            \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial y}
+        +\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial y}
+        \right)\\ 
+        &\dfrac{\partial^2 z}{\partial x\partial y} = \dfrac{\partial }{\partial y}
+        \left(
+            \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial x}
+        +\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial x}
+        \right);&
+        &\dfrac{\partial^2 z}{\partial y\partial x} = \dfrac{\partial }{\partial x}
+        \left(
+            \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial y}
+        +\dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial y}
+        \right)\\ 
+    \end{aligned}
+\end{equation*}
+
+\begin{comment}
 $$
     \dfrac{\partial^2 z}{\partial x^2}  = \dfrac{\partial \frac{\partial z}{\partial x}}{\partial u}\dfrac{\partial u}{\partial x}
     +\dfrac{\partial \frac{\partial z}{\partial x}}{\partial v}\dfrac{\partial v}{\partial x};\quad{}
     \dfrac{\partial z^2}{\partial y^2} = \dfrac{\partial \frac{\partial z}{\partial y}}{\partial u}\dfrac{\partial u}{\partial y}
     +\dfrac{\partial \frac{\partial z}{\partial y}}{\partial v}\dfrac{\partial v}{\partial y};
-$$ 
+$$     
+\end{comment}
+
 
 \subsection{隐函数求导}
 
@@ -260,7 +288,8 @@ $$
 \begin{Theo}[二元函数极值存在的充分条件]
 
     函数 $ z = f(x,y) $ 在 $ P_0 $ 某邻域内有二阶连续偏导数，且 $ P_0 $ 为驻点，
-    设 $ A = f^\pprime_{xx}(x_0,y_0),B = f^\pprime_{xy}(x_0,y_0),C = f^\pprime_{yy}(x_0,y_0) $ ，则
+
+    设 $ A = f^\pprime_{xx}(x_0,y_0),B = f^\pprime_{xy}(x_0,y_0),C = f^\pprime_{yy}(x_0,y_0), $ 则
     \begin{itemize}
         \item $ AC - B^2 > 0 $ 时， $ P_0 $ 是极值点，且若 $ A>0 $ ，其为极小值点，
         $ A<0 $ 时为极大值点；
@@ -297,7 +326,7 @@ $$
     \item 拉格朗日乘数法。
 \end{itemize}
 
-对于后者，令 $ L = f(x,y) + \lambda\varphi(x,y) $ ，前者称为拉格朗日函数，$ \lambda $ 是拉格朗日乘数。
+对于后者，令 $ L = f(x,y) + \lambda\varphi(x,y), $ 前者称为拉格朗日函数，$ \lambda $ 是拉格朗日乘数。
 对 $ L $ 关于 $ x,y,\lambda $ 都求偏导，得到
 $$
     \begin{cases}
@@ -355,9 +384,9 @@ $ \dis \iint\limits_{D}f(x,y)\mathrm{d}\sigma = \iint\limits_{D}f(x,y)\mathrm{d}
 
 \sssubsection{极坐标变换}
 
-当被积函数为 $ f(x^2+y^2) $ 或者 $ D $ 为圆域，考虑极坐标变换 $ \begin{cases}
+当被积函数为 $ f(x^2+y^2) $ 或者 $ D $ 为圆域，考虑极坐标变换 $ \left\{\begin{matrix}
     x = \rho\cos\theta\\ y = \rho\sin\theta
-\end{cases} $ 使得 $ \mathrm{d}x\mathrm{d}y = \rho\mathrm{d}\rho\mathrm{d}\theta $ .
+\end{matrix}\right. $ 使得 $ \mathrm{d}x\mathrm{d}y = \rho\mathrm{d}\rho\mathrm{d}\theta $ .
 
 先确定 $ \theta $ 的范围，从原点引射线确定 $ \rho $ 范围，穿入为下限，穿出为上限，此时有$$
     \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y = \int_\alpha^\beta \mathrm{d}\theta
@@ -377,7 +406,7 @@ $$
     若 $ f(x,y) $ 在有界闭区域 $ D $ 上连续，若$ D $ 关于 $ x $ 轴对称，则$$
         \iint\limits_{D}f(x,y)\mathrm{d}\sigma = \begin{cases}
             0,& f(x,y)\textrm{对}y\textrm{为奇函数}\\
-            2\iint\limits_{D_1}f(x,y)\mathrm{d}\sigma,& f(x,y)\textrm{对}y\textrm{为偶函数}\\
+            \dis 2\iint\limits_{D_1}f(x,y)\mathrm{d}\sigma,& f(x,y)\textrm{对}y\textrm{为偶函数}\\
         \end{cases}
     $$ 
     $ D $ 关于 $ y $ 轴对称，函数关于 $ x $ 轴对称时类似。
