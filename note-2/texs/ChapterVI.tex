@@ -97,3 +97,120 @@ $$
         \end{aligned}
     \end{equation*}
 \end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 包含参数方程的二重积分求解
+    
+    设平面区域 $ D $ 由 $ \left\{\begin{matrix}
+        x = t - \sin t \\ y = 1 - \cos t
+    \end{matrix}\right. (0 \leq t \leq 2\pi)  $ 与 $ x $ 轴围成，
+
+    计算二重积分 $ \iint\limits_{D}(x+2y)\mathrm{d}x\mathrm{d}y. $ 
+    \item[\textbf{解}] 
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{原式}&= \iint\limits_{D}x\mathrm{d}x\mathrm{d}y + \iint\limits_{D}2y\mathrm{d}x\mathrm{d}y
+            \\&= \iint\limits_{D}(\pi+2y)\mathrm{d}x\mathrm{d}y\quad{}\textrm{（利用了形心公式）}
+            \\ &= \int_0^{2\pi}\mathrm{d}x\int_{0}^{y(x)}(\pi+2y)\mathrm{d}y \quad
+            \textrm{（此处}y\textrm{是哑变量，}y(x)\textrm{是}x\textrm{的函数）}
+            \\ &= \int_0^{2\pi} \left(\pi y+2y^2\right) \mathrm{d}x\quad{} \textrm{令} x = \sin t 
+            \\ &= \int_0^{2\pi}\left[\pi(1-\cos t) + (1-\cos t)^2\right](1-\cos t)\mathrm{d}t 
+            \\ &= 3\pi^2 + 5\pi 
+        \end{aligned}
+    \end{equation*}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设平面区域 $ D = \left\{ (x,y)||x|<y, (x^2+y^2)^3\leq y^4 \right\}, $ 
+    
+    计算二重积分 $ \dis \iint\limits_{D}\dfrac{x+y}{\dsqrt{x^2+y^2}}\mathrm{d}x\mathrm{d}y $ 
+    \item[\textbf{解}] 注意到 $ D $ 关于 $ y $ 轴对称，故有
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{原式} &= \iint\limits_{D} \dfrac{y}{\dsqrt{x^2+y^2}}\mathrm{d}y\mathrm{d}x
+            \\ &= \int_\dfrac{\pi}{4}^\dfrac{\pi}{2}\mathrm{d}\theta \int_0^{\sin^2 \theta} \sin \theta 
+            \rho\mathrm{d}\rho 
+            \\ &= \int_\dfrac{\pi}{4}^\dfrac{\pi}{2} \sin^5 \theta\mathrm{d}\theta
+        \end{aligned}
+    \end{equation*}
+\end{itemize}
+
+\begin{itemize}
+    \item[例题] 计算 $ \dis \iint\limits_{D}\dsqrt{|y-x^2|} \mathrm{d}x\mathrm{d}y, $ 其中
+    $ D = \{(x,y)| -1\leq x\leq 1, 0\leq y\leq 2\}. $ 
+    \item[\textbf{解}] 注意到 $ D $ 关于 $ y $ 轴对称，且 $ y - x^2 $ 在
+    曲线 $ y = x^2 $ 上方大于零，下方小于零。设在第一象限的 $ D $ 中，在曲线下方的部分为 $ D_1, $ 其他的为 $ D_2, $ 
+    则
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{原式} = 2(\iint\limits_{D_1}\dsqrt{x^2-y}\mathrm{d}x\mathrm{d}y
+            +\iint\limits_{D_2}\dsqrt{y-x^2}\mathrm{d}x\mathrm{d}y)
+        \end{aligned}
+    \end{equation*}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ J_i = \iint_{D_i}\dsqrt[3]{x-y}\mathrm{d}x\mathrm{d}y, $ 
+    其中 $ D_1 = \{(x,y)|0\leq x\leq 1,0\leq y\leq 1\},$
+
+    $D_2 = \{(x,y)|0\leq x\leq 1,0\leq y\leq \dsqrt{x}\},
+    D_3 = \{(x,y)|0\leq x\leq 1,x^2\leq y\leq 1\}, $ 
+    比较 $ J_i $ 的大小。
+    \item[\textbf{解}] 由轮换对称性知 $ J_1 = 0. $ 根据 $ J_i $ 被积函数，$ D_1 - D_2 $ 区域内部分
+    的积分 $ <0, $ 因此 $ J_2  > 0, $ 同理 $ J_3 < 0. $ 
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设平面区域 $ D = \{(x,y)|1\leq x^2+y^2\leq 4, x\geq 0,y\geq 0\}, $ 
+    
+    求 $\dis \iint\limits_{D}\dfrac{x\sin (\pi \dsqrt{x^2+y^2})}{x+y}\mathrm{d}x\mathrm{d}y. $ 
+    \item[\textbf{解}] 由于轮换对称性，利用极坐标，有
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{原式} &= \dfrac{1}{2}\iint\limits_{D}\rho\sin(\pi\rho)\rho \mathrm{d}\rho\mathrm{d}\theta \\
+            &= \int_0^\dfrac{\pi}{2} \mathrm{d}\theta \int_1^2 \rho\sin(\pi\rho)\mathrm{d}\rho = -\dfrac{3}{4}
+        \end{aligned}
+    \end{equation*}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 极坐标下的二重积分转化回直角坐标
+    
+    计算二重积分 $ \dis \iint\limits_{D}\rho^2\sin \theta \dsqrt{1-r^2\cos 2\theta}\mathrm{d}r\mathrm{d}\theta, $ 
+    
+    其中 $ D = \left\{(x,y)|0\leq r\leq \sec\theta, 0\leq \theta\leq \dfrac{\pi}{4}\right\}. $ 
+    \item[\textbf{解}] 当题给极坐标式不好化简时，考虑将其化回直角坐标。
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{原式} &= \iint\limits_{D}y\dsqrt{1+y^2-x^2}\mathrm{d}x\mathrm{d}y \\ 
+            &=\dfrac{1}{3}-\dfrac{\pi}{16}
+        \end{aligned}
+    \end{equation*}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 计算二重积分 
+    $\dis \iint\limits_{D}(x-y)\mathrm{d}x\mathrm{d}y, $ 
+
+    其中 $ D = \left\{(x,y)|(x-1)^2+(y-1)^2 \leq 2, y\geq x\right\}.$ 
+    \item[\textbf{法一}] 正常求解（利用极坐标）
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{原式} &= \int_\frac{\pi}{4}^\frac{3\pi}{4} (\cos \theta -\sin \theta) \mathrm{d}\theta 
+            \int_0^{2(\sin \theta + \cos \theta)} \rho^2\mathrm{d}\rho \\ &= 
+            \dfrac{8}{3}\int_\frac{\pi}{4}^\frac{3\pi}{4} 
+            (\cos \theta -\sin \theta)(\cos \theta + \sin \theta)^3 \mathrm{d}\theta 
+            \\&= \dfrac{8}{3}\int_\frac{\pi}{4}^\frac{3\pi}{4} 
+            (\cos \theta + \sin \theta)^3 \red{\mathrm{d} (\cos \theta + \sin \theta)}
+        \end{aligned}
+    \end{equation*}
+    \item[\textbf{法二}] \textbf{平移变换}
+    
+    圆心不在原点时，考虑做平移变换将其移动至原点。
+
+    令 $ u = x - 1, v = y - 1, $ 则题设变为
+
+    $\dis \iint\limits_{D}(u-v)\mathrm{d}u\mathrm{d}v, $ 
+    其中 $ D = \left\{(u,v)|u^2+v^2 \leq 2, v\geq u\right\}, $ 易得原式 $= -\dfrac{8}{3}. $ 
+\end{itemize}
+
