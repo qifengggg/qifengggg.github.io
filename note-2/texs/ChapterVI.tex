@@ -127,9 +127,9 @@ $$
     \begin{equation*}
         \begin{aligned}
             \textrm{原式} &= \iint\limits_{D} \dfrac{y}{\dsqrt{x^2+y^2}}\mathrm{d}y\mathrm{d}x
-            \\ &= \int_\dfrac{\pi}{4}^\dfrac{\pi}{2}\mathrm{d}\theta \int_0^{\sin^2 \theta} \sin \theta 
+            \\ &= \int_\frac{\pi}{4}^\frac{\pi}{2}\mathrm{d}\theta \int_0^{\sin^2 \theta} \sin \theta 
             \rho\mathrm{d}\rho 
-            \\ &= \int_\dfrac{\pi}{4}^\dfrac{\pi}{2} \sin^5 \theta\mathrm{d}\theta
+            \\ &= \int_\frac{\pi}{4}^\frac{\pi}{2} \sin^5 \theta\mathrm{d}\theta
         \end{aligned}
     \end{equation*}
 \end{itemize}
@@ -161,23 +161,21 @@ $$
 
 \begin{itemize}
     \item[\textbf{例题}] 设平面区域 $ D = \{(x,y)|1\leq x^2+y^2\leq 4, x\geq 0,y\geq 0\}, $ 
-    
     求 $\dis \iint\limits_{D}\dfrac{x\sin (\pi \dsqrt{x^2+y^2})}{x+y}\mathrm{d}x\mathrm{d}y. $ 
     \item[\textbf{方法}] 由于轮换对称性，利用极坐标，有
     \begin{equation*}
         \begin{aligned}
             \textrm{原式} &= \dfrac{1}{2}\iint\limits_{D}\rho\sin(\pi\rho)\rho \mathrm{d}\rho\mathrm{d}\theta \\
-            &= \int_0^\dfrac{\pi}{2} \mathrm{d}\theta \int_1^2 \rho\sin(\pi\rho)\mathrm{d}\rho = -\dfrac{3}{4}
+            &= \int_0^\frac{\pi}{2} \mathrm{d}\theta \int_1^2 \rho\sin(\pi\rho)\mathrm{d}\rho = -\dfrac{3}{4}
         \end{aligned}
     \end{equation*}
 \end{itemize}
 
 \begin{itemize}
-    \item[\textbf{例题}] 极坐标下的二重积分转化回直角坐标
+    \item[\textbf{例题}] \textbf{极坐标下的二重积分转化回直角坐标}
     
-    计算二重积分 $ \dis \iint\limits_{D}\rho^2\sin \theta \dsqrt{1-r^2\cos 2\theta}\mathrm{d}r\mathrm{d}\theta, $ 
-    
-    其中 $ D = \left\{(x,y)|0\leq r\leq \sec\theta, 0\leq \theta\leq \dfrac{\pi}{4}\right\}. $ 
+    计算二重积分 $ \dis \iint\limits_{D}\rho^2\sin \theta \dsqrt{1-\rho^2\cos 2\theta}\mathrm{d}r\mathrm{d}\theta, $ 
+    其中 $ D = \left\{(\rho,\theta)|0\leq \rho \leq \sec\theta, 0\leq \theta\leq \dfrac{\pi}{4}\right\}. $ 
     \item[\textbf{方法}] 当题给极坐标式不好化简时，考虑将其化回直角坐标。
     \begin{equation*}
         \begin{aligned}

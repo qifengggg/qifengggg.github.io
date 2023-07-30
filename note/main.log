@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  27 JUL 2023 21:49
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  29 JUL 2023 08:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1399,16 +1399,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
 [36]
-LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 550.
+LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 553.
  (e:/texlive/2022/texmf-dist/tex/latex/inconsolata/ot1zi4.fd
 File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
 )
 
 LaTeX Font Warning: Font shape `OT1/zi4/m/it' undefined
-(Font)              using `OT1/zi4/m/n' instead on input line 550.
+(Font)              using `OT1/zi4/m/n' instead on input line 553.
 
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 550.
+(Font)              scaled to size 10.53937pt on input line 553.
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
 

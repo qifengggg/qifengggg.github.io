@@ -42,7 +42,7 @@ $ \dis {\displaystyle\lim_{\begin{subarray}{c}x\rightarrow x_0\\y\rightarrow y_0
 
 \sssubsection{多元隐函数求导公式}
 
-设 $ F(x,y,z) $ 在点 $ (x_0,y_0,z_0) $ 一邻域内有一阶连续偏导数，且 $ F(x_0,y_0,z_) = 0, F_z'(x_0,y_0,z_0) \neq 0, $ 
+设 $ F(x,y,z) $ 在点 $ (x_0,y_0,z_0) $ 一邻域内有一阶连续偏导数，且 $ F(x_0,y_0,z_0) = 0, F_z'(x_0,y_0,z_0) \neq 0, $ 
 则方程 $ F(x,y,z) = 0 $ 的某邻域内确定唯一的有一阶连续偏导数的函数 
 
 $ z = f(x,y), z_0 = f(x_0,y_0),
@@ -68,7 +68,7 @@ $ z = f(x,y), z_0 = f(x_0,y_0),
     题目给出两题设，关于 $ x, $ 对前者求导数，对后者求偏导数。此时，
     \begin{equation*}
         \begin{aligned}
-            &\dfrac{\mathrm{d}z}{\mathrm{d}x} = f(x+y)+xf'(x+y)(1+\dfrac{y}{x}) \\ 
+            &\dfrac{\mathrm{d}z}{\mathrm{d}x} = f(x+y)+xf'(x+y)(1+\dfrac{\mathrm{d}y}{\mathrm{d}x}) \\ 
             &\dfrac{\partial F}{\partial x}+\dfrac{\partial F}{\partial y}\dfrac{\mathrm{d}y}{\mathrm{d}x}
             + \dfrac{\partial F}{\partial z}\dfrac{\mathrm{d}z}{\mathrm{d}x} = 0
         \end{aligned}

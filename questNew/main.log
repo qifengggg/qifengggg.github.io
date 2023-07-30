@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  30 JUL 2023 10:06
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  29 JUL 2023 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -634,39 +634,6 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 \zifour@ocount=\count362
-) (e:/texlive/2022/texmf-dist/tex/latex/yhmath/yhmath.sty
-Package: yhmath 2020/03/17 v1.6
-\symyhlargesymbols=\mathgroup10
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 29.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 30.
-LaTeX Font Info:    Redeclaring math symbol \braceld on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 50.
-LaTeX Font Info:    Redeclaring math symbol \braceru on input line 51.
-LaTeX Font Info:    Redeclaring math delimiter \lmoustache on input line 53.
-LaTeX Font Info:    Redeclaring math delimiter \rmoustache on input line 55.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 57.
-LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 59.
-LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 61.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 63.
-LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 65.
-LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 67.
-LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 69.
-LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 71.
-LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 73.
-LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 75.
-LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 79.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 81.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 83.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 85.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 87.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 89.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 91.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 93.
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 95.
-LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 97.
-LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 99.
-LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 101.
 ) (e:/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip81
@@ -675,102 +642,94 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box60
 \enit@count@id=\count363
 \enitdp@description=\count364
-) (e:/texlive/2022/texmf-dist/tex/latex/appendix/appendix.sty
-Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count365
-\c@@ppsavesec=\count366
-\c@@ppsaveapp=\count367
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 36.
-Package hyperref Info: Option `breaklinks' set `true' on input line 36.
- (e:/texlive/2022/texmf-dist/tex/latex/titlesec/titletoc.sty
-Package: titletoc 2021/07/05 v2.14 TOC entries
-\ttl@leftsep=\dimen296
-) (./main.aux)
+Package hyperref Info: Option `colorlinks' set `true' on input line 35.
+Package hyperref Info: Option `breaklinks' set `true' on input line 35.
+ (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
-\symlegacymaths=\mathgroup11
+\symlegacymaths=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 198.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 198.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 198.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 198.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 198.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 198.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 198.
-LaTeX Font Info:    Redeclaring math accent \check on input line 198.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 198.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 198.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 198.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 198.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 198.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 124.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 124.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 124.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 124.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 124.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 124.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 124.
+LaTeX Font Info:    Redeclaring math accent \check on input line 124.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 124.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 124.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 124.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 124.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 198.
+(Font)              `operators' in the math version `normal' on input line 124.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 198.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 124.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 198.
+(Font)              `operators' in the math version `bold' on input line 124.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 198.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 124.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 198.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 198.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 198.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 198.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/zi4/m/n on input line 198.
+(Font)                  OT1/cmtt/m/n --> TU/zi4/m/n on input line 124.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 198.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 198.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 198.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 124.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/zi4/b/n on input line 198.
+(Font)                  OT1/cmtt/m/n --> TU/zi4/b/n on input line 124.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count368
-Package hyperref Info: Link coloring ON on input line 198.
+\c@lstlisting=\count365
+Package hyperref Info: Link coloring ON on input line 124.
  (e:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -778,11 +737,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (e:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count369
+\c@section@level=\count366
 )
-LaTeX Info: Redefining \ref on input line 198.
-LaTeX Info: Redefining \pageref on input line 198.
-LaTeX Info: Redefining \nameref on input line 198.
+LaTeX Info: Redefining \ref on input line 124.
+LaTeX Info: Redefining \pageref on input line 124.
+LaTeX Info: Redefining \nameref on input line 124.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -824,11 +783,37 @@ LaTeX Info: Redefining \nameref on input line 198.
 
 (e:/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) Excluding 'comment' comment.
+\c@cntQ=\count367
+\c@cntA=\count368
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 176.
+ (e:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-\c@def1=\count370
-\c@theo1=\count371
-\c@func1=\count372
-\c@infer1=\count373
+LaTeX Font Info:    Trying to load font information for U+msb on input line 176.
+ (e:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 176.
+ (e:/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 176.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[1
+
+]
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
 
@@ -839,7 +824,7 @@ Package fontspec Info: Could not resolve font "Microsoft YaHei Bold/I" (it
 Package fontspec Info: Could not resolve font "Microsoft YaHei/I" (it probably
 (fontspec)             doesn't exist).
 
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 231.
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 178.
  (e:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -861,125 +846,24 @@ Package fontspec Info: Font family 'MicrosoftYaHei(0)' created for font
 (fontspec)             YaHei/BI/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 231.
- (e:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 231.
- (e:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 231.
- (e:/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 231.
- (e:/texlive/2022/texmf-dist/tex/latex/yhmath/OMXyhex.fd
-File: OMXyhex.fd 
-File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
-) [1
+ [1
 
 
-
-] (./main.toc
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 2.
-
-[1
-
-])
+] (./main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
+ [1
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[2] (./texs/ChapterI.tex
-第一章
-
-Package fontspec Info: Could not resolve font "SimHei/BI" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: Could not resolve font "SimHei/B" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: Could not resolve font "SimHei/I" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
-(fontspec)             options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"SimHei/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
-(Font)              using `TU/SimHei(0)/m/n' instead on input line 3.
-
-
-Package fontspec Info: Could not resolve font "KaiTi/BI" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: Could not resolve font "KaiTi/B" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: Could not resolve font "KaiTi/I" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: Font family 'KaiTi(0)' created for font 'KaiTi' with
-(fontspec)             options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"KaiTi/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
-(Font)              using `TU/KaiTi(0)/m/n' instead on input line 5.
-
+] (./texs/Q.tex
+第一部分
 [1
 
 
-]
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18.06749> not available
-(Font)              size <17.28> substituted on input line 46.
-
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 46.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 46.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 46.
-
+]) (./texs/A.tex
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 21.33955pt, for example:
@@ -988,126 +872,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
 [2]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 125.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 125.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 125.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 125.
-
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[3]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 133.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 138.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 138.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 138.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 138.
-
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[4]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[5]) (./texs/ChapterII.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[6]
-第二章
-[7
+第二部分
+[3
 
 ]
 File: 1.jpg Graphic file (type bmp)
@@ -1120,264 +886,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[8]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[9]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[10]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[11]) (./texs/ChapterIII.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[12]
-第三章
-[13
-
-]
-
-Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/I" (it probably
-(fontspec)             doesn't exist).
-
-LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 90.
- (e:/texlive/2022/texmf-dist/tex/latex/inconsolata/ot1zi4.fd
-File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
-)
-LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 90.
-
-Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
-(fontspec)             with options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[14]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[15]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[16]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[17]) (./texs/ChapterIV.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[18]
-第四章
-[19
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[20]) (./texs/ChapterV.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[21]
-第五章
-[22
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[23]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[24]) (./texs/ChapterVI.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[25]
-第六章
-[26
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[27]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[28]) (./texs/ChapterEX.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[29]
-附录
-)
+[4])
 \tf@thm=\write6
 \openout6 = `main.thm'.
 
- [30
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
 
-] (./main.aux)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[5] (./main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.78749pt have occurred.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+(Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 63E61B336C10C8AD674F8C635C8B3562;6813.
+(rerunfilecheck)             Checksum: 48D2E1A226B908B2B014EAF2FDF953A2;118.
  ) 
 Here is how much of TeX's memory you used:
- 21991 strings out of 476179
- 456593 string characters out of 5813073
- 781215 words of memory out of 5000000
- 42290 multiletter control sequences out of 15000+600000
- 544285 words of font info for 185 fonts, out of 8000000 for 9000
+ 21231 strings out of 476179
+ 431902 string characters out of 5813073
+ 769256 words of memory out of 5000000
+ 41595 multiletter control sequences out of 15000+600000
+ 519972 words of font info for 129 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,16n,97p,1190b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,14n,97p,1190b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (33 pages).
+Output written on main.pdf (8 pages).

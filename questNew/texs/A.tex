@@ -1,0 +1,187 @@
+\chapter{答案}
+
+\begin{answer}[2009T5]{}
+
+    对曲率圆两边关于 $ x $ 求导数，得 $ 2x + 2y\cdot y'=0 \Rightarrow y' = -\dfrac{x}{y} \Rightarrow y'(1) = -1; $ 
+    
+    再求一次，有 $ 2 + 2 (y')^2 + 2yy^\pprime = 0 \Rightarrow y^\pprime = -2, $ 而其不变号，故 $ y'(x) < 0, $ 
+    因此 $ (1,2) $ 中无极值点；
+    
+    还能知道 $ y'(x) < -1 (x\in(1,2)), $ 因此 $ y(2) $ 必 $ < 0, $ 
+    此时由零点定理，$ (1,2) $ 内至少有一零点。因此是 $ B. $ 
+\end{answer}
+
+\begin{answer}[2009T7]{}
+
+    $ \begin{bmatrix}
+        O&A\\B&O
+    \end{bmatrix}^* = 
+    |A||B|\begin{bmatrix}
+        O&A\\B&O
+    \end{bmatrix}^{-1} = \begin{bmatrix}
+        O&|A||B|B^{-1}\\|A||B|A^{-1}&O
+    \end{bmatrix} = \begin{bmatrix}
+        O&|A|B^{*}\\|B|A^{*}&O
+    \end{bmatrix}, $ 也即是 $ B. $ 
+\end{answer}
+
+\begin{answer}[2009T9]{}
+
+    该曲线在 $ (0,0) $ 点处的切线方程为 $ y - 0 = \dfrac{\mathrm{d}y}{\mathrm{d}x}(x - 0). $ 
+
+    显然当 $ (x,y) = (0,0) $ 时有 $ t = 1. $ 
+
+    此时有 $ \dfrac{\mathrm{d}x}{\mathrm{d}t} = -e^{(1-t)^2},\quad{}
+            \dfrac{\mathrm{d}y}{\mathrm{d}t} = 2t\ln(2-t^2) + \dfrac{2t^3}{t^2 - 2}, $ 
+    故 $ \dfrac{\mathrm{d}y}{\mathrm{d}x}\Big|_{t = 0}
+    = \dfrac{-2}{-1} = 2. $ 
+
+    故切线方程 $  y = 2x. $ 
+\end{answer}
+
+\begin{answer}[2009T16]{}
+
+令 $ t = \dsqrt{\dfrac{1+x}{x}}, $ 则 $ x = \dfrac{1}{t^2-1}. $ 
+
+\begin{equation*}
+    \begin{aligned}
+        \textrm{原式}&= \int \ln(1+t)\mathrm{d}\dfrac{1}{t^2 - 1} \\ 
+        &= \dfrac{\ln(1+t)}{t^2-1} - \int\dfrac{1}{(t-1)(t+1)^2}\mathrm{d}t \quad{}(*) \\
+        \textrm{其中}\int\dfrac{1}{(t-1)(t+1)^2}\mathrm{d}t &= 
+        \dfrac{1}{2}\int\dfrac{1+t+1-t}{(t-1)(t+1)^2}\mathrm{d}t\\ 
+        &= \dfrac{1}{4}\int \dfrac{1}{t - 1} \mathrm{d}t + \dfrac{1}{4}\int \dfrac{1}{t + 1} \mathrm{d}t -
+         \dfrac{1}{2}\int \dfrac{1}{(t+1)^2}\mathrm{d}t \\
+         &= \dfrac{1}{4}\ln(t-1) - \dfrac{1}{4}\ln(t+1) + 
+         \dfrac{1}{2(t+1)} + C \\
+        \xLongrightarrow{x = 1 /( t^2 - 1)} \textrm{原式}&=
+        x\ln(1+\dsqrt{\dfrac{1+x}{x}})+\dfrac{1}{2}\ln(\dsqrt{1+x}+\dsqrt{x})
+        +\dfrac{x}{2}-\dfrac{1}{2}\dsqrt{x+x^2}+C
+    \end{aligned}
+\end{equation*}
+
+\begin{itemize}
+    \item[*] 当利用因式分解处理含有有理分式的被积函数时，注意被积函数的因子是否能
+    凑出是常数的线性组合；若可以，则在分子中凑因子化简。
+\end{itemize}
+
+\end{answer}
+
+\begin{answer}[2009T7]{}
+
+    令 $ x+y = u, x-y=v,xy = w, $ 则有
+    \begin{equation*}
+        \begin{aligned}
+            \dfrac{\partial z}{\partial x} &= \dfrac{\partial z}{\partial u}+
+            \dfrac{\partial z}{\partial v}+y\dfrac{\partial z}{\partial w}\\
+            \dfrac{\partial z}{\partial y} &= \dfrac{\partial z}{\partial u}-
+            \dfrac{\partial z}{\partial v}+x\dfrac{\partial z}{\partial w}\\
+            \dfrac{\partial^2 z}{\partial x\partial y} &= 
+            \dfrac{\partial^2 z}{\partial u^2}-
+            \dfrac{\partial^2 z}{\partial v^2}+
+            xy\dfrac{\partial^2 z}{\partial w^2}+
+            (x+y)\dfrac{\partial^2 z}{\partial u\partial w}+
+            (x-y)\dfrac{\partial^2 z}{\partial v\partial w}\\
+            \mathrm{d}z &= \dfrac{\partial z}{\partial x}\mathrm{d}z+\dfrac{\partial z}{\partial y}\mathrm{d}y
+            = \left(\dfrac{\partial z}{\partial u}+
+            \dfrac{\partial z}{\partial v}+y\dfrac{\partial z}{\partial w}\right)\mathrm{d}x +
+            \left(\dfrac{\partial z}{\partial u}-
+            \dfrac{\partial z}{\partial v}+x\dfrac{\partial z}{\partial w}\right)\mathrm{d}y\\
+        \end{aligned}
+    \end{equation*}
+\end{answer}
+
+\begin{answer}[2009T19]{}
+    
+\sssubsection{利用极坐标正常求解}
+\begin{equation*}
+    \begin{aligned}
+        \textrm{原式} &= \int_\frac{\pi}{4}^\frac{3\pi}{4} (\cos \theta -\sin \theta) \mathrm{d}\theta 
+        \int_0^{2(\sin \theta + \cos \theta)} \rho^2\mathrm{d}\rho \\ &= 
+        \dfrac{8}{3}\int_\frac{\pi}{4}^\frac{3\pi}{4} 
+        (\cos \theta -\sin \theta)(\cos \theta + \sin \theta)^3 \mathrm{d}\theta 
+        \\&= \dfrac{8}{3}\int_\frac{\pi}{4}^\frac{3\pi}{4} 
+        (\cos \theta + \sin \theta)^3 \red{\mathrm{d} (\cos \theta + \sin \theta)}
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{利用平移变换求解}
+
+圆心不在原点时，考虑做平移变换将其移动至原点。
+
+令 $ u = x - 1, v = y - 1, $ 则题设变为
+
+$\dis \iint\limits_{D}(u-v)\mathrm{d}u\mathrm{d}v, $ 
+其中 $ D = \left\{(u,v)|u^2+v^2 \leq 2, v\geq u\right\}, $ 易得原式 $= -\dfrac{8}{3}. $ 
+
+\end{answer}
+
+\begin{answer}[2009T20]{}
+
+    对 $ 0 \leq x < \pi, $ 注意到题设方程的特征方程 $ r^2 + 1 = 0 $ 的根
+    为一对共轭复数 $ 0\pm i, $ 结合题设方程知其通解形如 $ C_1\cos x + C_2\sin x + x(ax+b), $ 
+    其中 $ a,b $ 为待定系数。
+    代回原方程，得其通解为 $ y = C_1\cos x + C_2 \sin x - x.$ 
+
+    对 $ -\pi < x < 0, $ 题设方程满足 $ y = \dfrac{x}{-y'}, $
+    解得 $ x^2+y^2 = C. $ 
+
+    由于是光滑曲线，$ y_-(0) = y_+(0), y_-'(0) = y_+'(0), $ 
+
+    此外 $ y(x) $ 过 $ (-\frac{\pi}{\sqrt2},\frac{\pi}{\sqrt2}), $
+    因此解得 $ C = \pi^2, C_1 = \pi, C_2 = 1. $ 
+    
+    故待求方程为 $ y = \begin{cases}
+        \dsqrt{\pi^2 - x^2},& -\pi < x < 0, \\ 
+        \pi \cos x + \sin x - x,& 0\leq x < \pi.
+    \end{cases} $ 
+\end{answer}
+
+\begin{answer}[2009T22]{}
+    \begin{enumerate}[label=(\Roman*)]
+        \item 利用 $ A,A^2 $ 和 $ \xi_1 $ 的增广矩阵，求得
+        $$
+            \xi_2 = \begin{bmatrix}
+                \frac{1}{2}k_1 - \frac{1}{2}\\
+                -\frac{1}{2}k_1 + \frac{1}{2}\\
+                k_1
+            \end{bmatrix},
+            \xi_3 = \begin{bmatrix}
+                -k_2-\frac{1}{2}\\k_2\\k_3
+            \end{bmatrix}
+        $$
+        其中 $ k_1,k_2,k_3 $ 为任意实数。
+        \item 对任意 $ \xi_1,\xi_2,\xi_3, $ 都有
+        \begin{equation*}
+            \begin{aligned}
+                |\xi_1,\xi_2,\xi_3| = \begin{vmatrix}
+                    -1&\frac{1}{2}k_1 - \frac{1}{2}&-k_2-\frac{1}{2}\\
+                    1&-\frac{1}{2}k_1 + \frac{1}{2}&k_2\\
+                    -2&k_1&k_3\\
+                \end{vmatrix}
+                &= \begin{vmatrix}
+                    0&0&-\frac{1}{2}\\
+                    1&-\frac{1}{2}k_1 + \frac{1}{2}&k_2\\
+                    -2&k_1&k_3\\
+                \end{vmatrix} = -\dfrac{1}{2}\neq 0
+            \end{aligned}
+        \end{equation*}
+        故其一定线性无关。
+    \end{enumerate}
+\end{answer}
+
+\begin{answer}[2009T23]{}
+    \begin{enumerate}[label=(\Roman*),topsep = 0pt]
+        \item 该二次型有矩阵 $ A = \begin{pmatrix}
+            a&0&1\\0&a&1\\ 1&-1&a-1
+        \end{pmatrix}. $ 
+        
+        解得 $ |\lambda E-A| = \begin{vmatrix}
+            \lambda-a&0&-1\\0&\lambda-a&1\\-1&1&\lambda-a+1
+        \end{vmatrix} = (\lambda-a)(\lambda-(a+1))(\lambda - (a-2)) = 0, $ 
+        
+        因此有特征值 $ \lambda_1 = a,\lambda_2 = a+1,\lambda_3 = a-2. $ 
+        \item 由 $ f $ 的规范形知其正惯性指数为$ 2, $ 
+        负惯性指数为 $ 0, $ 因此三特征值有两个为正，一个为零，
+        再由其大小知道 $ a - 2 = 0, $ 即 $ a = 2. $ 
+    \end{enumerate}
+\end{answer}
