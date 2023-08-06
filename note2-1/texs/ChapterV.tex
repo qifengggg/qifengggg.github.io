@@ -1,0 +1,450 @@
+\chapter{矩阵的特征值与特征向量}
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{cases}
+        \textrm{求}\lambda_A\textrm{与}\alpha_A\,\begin{cases}
+            \textrm{抽象}\\\textrm{具体}\\\textrm{性质}
+        \end{cases}\\
+        \textrm{相似}\,\begin{cases}
+            A\sim B\\ A\sim \Lambda(\textrm{判定与求解})\\ 
+            \textrm{求} A^n,A,\textrm{相似矩阵}B
+        \end{cases}\\
+        \textrm{对角化}\,\begin{cases}
+            \textrm{方阵}A_n(\textrm{重根})\\ 
+            \textrm{对称矩阵}A(\textrm{结论})
+        \end{cases}
+    \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\Section{矩阵的特征值与特征向量}
+
+\sssubsection{可能的情况}
+
+对抽象矩阵 $ A, $ \begin{itemize}
+    \item 凑 $ A\alpha = \lambda \alpha; $ 
+    \item $ A + kE $ 不可逆(求 $ \lambda_A $ );
+\end{itemize}
+
+对具体矩阵 $ A, $ \begin{itemize}
+    \item $ |\lambda E - A| = 0 \Rightarrow \lambda_A; \forall \lambda_0, (\lambda_0 E - A)X = 0\Rightarrow \alpha; $ 
+    \item $ A = B + kE, r(B) = 1; $ 
+\end{itemize}
+
+\sssubsection{列表法}
+
+可以列表表示对 $ A $ 做变换时，特征值特征向量的变化。
+
+\begin{table}[!htbp]\centering
+    \begin{tabular}{ccc}
+    \toprule
+    $A        $&$ \lambda      $& $\alpha                  $ \\ \midrule
+    $A^k      $&$ \lambda^k    $& $\alpha                  $ \\
+    $A^m+kE   $&$ \lambda^m+kE $& $\alpha                  $ \\
+    $A^{-1}   $&$ 1 /\lambda   $& $\alpha                  $ \\
+    $A^*      $&$ |A|/\lambda  $& $\alpha                  $ \\
+    $A^\top   $&$ \lambda      $&  无法断定                   \\
+    $P^{-1}AP $&$ \lambda      $& $\Attention{P^{-1}\alpha}$ \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+注意，可以手动将待求矩阵拆为便于运算的形式，如 $ A = B + kE $ 等。
+
+\sssubsection{秩为一的矩阵}
+
+对秩为一的矩阵，$ r(A) = 1\Leftrightarrow A = \alpha\beta^\top; $ 
+\begin{itemize}
+    \item $ \lambda_1 = tr(A) = \alpha^\top\beta = \beta^\top\alpha, \lambda_2 = \cdots,\lambda_n = 0; $ 
+    \item \begin{itemize}
+        \item 若 $ tr(A)\neq 0, $ 对 $ \lambda_1 = tr(A), $ 
+        $ A = \alpha\beta^\top \Rightarrow A\alpha = \alpha\beta^\top\alpha = tr(A)\alpha, $ 
+        故 $ \lambda_1 = tr(A) $ 对应的无关特征向量为 $ \alpha. $ 
+
+        对其余的特征值 $ \lambda_i = 0, $ 即解 $ AX = 0 \Rightarrow \alpha\beta^\top X = 0, $ 发现
+        其与 $ \beta^\top X = 0 $ 同解。由于这里有 $ n - 1 $ 个无关特征向量，
+        加上$ \lambda_1 $ 的一个后共计 $ n $ 个无关特征向量，注意到矩阵 $ A $ 可以相似对角化。
+
+        \item 若 $ tr(A) = 0, $ 则所有特征值都为 $ 0. $ 此时仍求解 $ AX = 0, $ 
+        仍能解得 $ n - 1 $ 个无关特征向量；因为不够$ n $ 个，矩阵 $ A $ 无法相似对角化。
+    \end{itemize}
+    故 $ A $ 能否相似对角化取决于其迹是否为零。
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设矩阵 $ A = \begin{pmatrix}
+        3&2&2\\2&3&2\\2&2&3\\
+    \end{pmatrix}, P = \begin{pmatrix}
+        0&1&0\\1&0&1\\0&0&1\\
+    \end{pmatrix}, B = P^{-1}A^*P,$ 求 $ B + 2E $ 特征值特征向量。
+    \item[\textbf{方法}] 通过表格法，发现 $ A^* $ 的特征值为 $ \dfrac{|A|}{\lambda_A}, $ 
+    特征向量仍为 $ \alpha_A; $ 而 $ P^{-1}A^*P $ 特征值仍为$ \dfrac{|A|}{\lambda_A}, $ 
+    特征向量为为 $ P^{-1}\alpha_A. $
+    只需求解 $ A $ 特征向量、特征值、行列式并按上述式计算即可。
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 
+    设 $ A_{3\times 3} = \alpha\beta^\top + \beta\alpha^\top,
+    \alpha,\beta $ 为单位列向量，$ \alpha^\top\beta = \dfrac{1}{3}, $ 则
+    \begin{enumerate}[label = \Roman*.]
+        \item $ 0 $ 是 $ A $ 的特征值；
+        \item $ \alpha+\beta,\alpha-\beta $ 都是 $ A $ 的特征向量；
+        \item $ A $ 可以相似对角化。
+    \end{enumerate}
+    \item[\textbf{证明}]
+    \begin{enumerate}[label = \Roman*.]
+        \item $ r(A) = r(\alpha\beta^\top+\beta\alpha^\top)
+        \leq r(\alpha\beta^\top) + r(\beta\alpha^\top) = 2, $ 
+        因而 $ A $ 不满秩，故其必有 $ \lambda_i = 0. $ 
+        \item 由于
+        \begin{equation*}
+            \begin{aligned}
+                A(\alpha+\beta) &= \alpha\beta^\top\alpha + \alpha\beta^\top\beta
+                + \beta\alpha^\top\alpha + \beta\alpha^\top\beta 
+                \\&= [tr(A) + |\alpha|](\alpha+\beta) = \dfrac{4}{3}(\alpha+\beta)
+            \end{aligned}
+        \end{equation*}
+        因而为特征向量；$ \alpha-\beta $ 同理。
+        \item 可以算出其有特征值 $ \lambda = 0,\dfrac43,-\dfrac{2}{3} $ 互异，故
+        可以相似对角化。
+    \end{enumerate}
+\end{itemize}
+
+\Section{相似性的判定}
+
+若存在可逆矩阵 $ P $ 使得 $ P^{-1}AP = B, $ 或者 $ AP = PB, $ 则称 $ A,B $ 相似。
+
+\sssubsection{性质}
+
+对相似的 $ A,B, $ 
+
+\begin{itemize}
+    \item $ |A| = |B|; tr(A) = tr(B); $ 
+    
+    $ r(A) = r(B); \lambda_A = \lambda_B; $ 
+    \item $ P^{-1}A^nP = B^{n}; P^{-1}(A+kE)P = B+kE; $ 
+    \item 若 $ A\sim C, C\sim B, $ 则 $ A\sim B. $ 
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 对相似的 $ A = \begin{pmatrix}
+        1&a1\\1&5&1\\4&12&6\\
+    \end{pmatrix},B = \begin{pmatrix}
+        b&&\\&b&\\&&c
+    \end{pmatrix}, $ 求 $ a,b,c. $ 
+    \item[\textbf{方法}] 由相似性质，$ tr(A) = 12 = tr(B) = 2b + c; $
+    
+    $ |\lambda E-A| = (\lambda-2)(\lambda^2 - 10\lambda +13 - a)=0 $ 
+    有解 $ \lambda = b,b,c. $ 
+    
+    分别假设 $ b = 2,c = 2, $ 得
+    $ \begin{pmatrix}
+        a\\b\\c
+    \end{pmatrix} = \begin{pmatrix}
+        -3 \\ 2 \\ -8
+    \end{pmatrix} $ 或
+    $ \begin{pmatrix}
+        -12\\5\\2
+    \end{pmatrix}. $ 
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ A_{3\times 3} $ 的互异的特征值为 $ \lambda_i,i\in\{1,2,3\}; $ 
+    对应的特征向量为 $ \alpha_i,i\in\{1,2,3\}. $ 令 $ \beta = \sum \alpha, $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 证明 $ \beta,A\beta,A^2\beta $ 线性无关；
+        \item 若 $ A^3\beta = A\beta, $ 求 $ r(A - E) $ 与 $ |A+2E|. $ 
+    \end{enumerate}
+    \item[\textbf{方法}] \begin{enumerate}[label = \Roman*.]
+        \item 由于特征值互异，其对应的特征向量线性无关。
+        设有
+        \begin{equation*}
+            \begin{aligned}
+                k_1\beta_1 + k_2A\beta_2 + k_3A^2\beta_3
+                = \sum(k_1 + k_2\lambda_i + k_3\lambda_i^2)\alpha_i = 0;
+            \end{aligned}
+        \end{equation*}
+        由于 $ \alpha_i $ 无关，知 $ \forall i, k_1 + k_2\lambda_i + k_3\lambda_i^2 = 0, $ 
+        而 $ \lambda $ 互异，故对 $ Ak = 0, |A|\neq 0, $ 故该方程只有零解，
+        故原向量组无关。
+        \item 当第一问中构造了一组无关向量时，一般在第二问用到其列矩阵，
+        应用\begin{itemize}
+            \item 相似；
+            \item 矩阵乘法；
+        \end{itemize}联系已知矩阵以构建方便计算待求结论的新矩阵。
+
+        令 $ P = (\beta,A\beta,A^2\beta), $ 则
+        \begin{equation*}
+            \begin{aligned}
+                AP &= (A\beta,A^2\beta,A^3\beta) = (A\beta,A^2\beta,A\beta) \\ 
+                &= (\beta,A\beta,A^2\beta)\begin{pmatrix}
+                    0&0&0\\1&0&1\\0&1&0\\
+                \end{pmatrix} = PB
+            \end{aligned}
+        \end{equation*}
+        故 $ A,B $ 相似，有 $ r(A-E) = r(B-E)=2,|A+2E| = |B+2E| = 6. $ 
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 已知矩阵 $ A = \begin{pmatrix}
+        -2&-2&1\\2&x&-2\\0&0&-2\\
+    \end{pmatrix},B = \begin{pmatrix}
+        2&1&0\\0&-1&0\\0&0&y\\
+    \end{pmatrix}, $ 相似，
+    \begin{enumerate}[label = \Roman*.]
+        \item 求 $ x,y; $ 
+        \item 求可逆矩阵 $ P $ 使得 $ P^{-1}AP = B. $ 
+    \end{enumerate}
+    \item[\textbf{方法}] 
+    \begin{enumerate}[label = \Roman*.]
+        \item 由题，$ |A| = 4(x-2) = |B| = -2y, tr(A) = x - 4 = tr(B) = y + 1, $ 
+        故解得 $ x = 3,y = -2. $ 
+        \item 可以知道 $ \lambda_A = \lambda_B = 2,-1,-2. $ 故 $ A,B $ 都
+        相似于 $ \Lambda = \begin{pmatrix}
+            2&&\\&-1&\\&&-2\\
+        \end{pmatrix}. $ 
+        
+        此时可以求 $ P_1^{-1}AP_1 = \Lambda,P_2^{-1}BP_2 = \Lambda; P_1,P_2$  
+        各列是对应矩阵的特征向量；
+
+        发现 $ B = P_2P_1^{-1}AP_1P_2^{-1} = \Lambda, $ 
+        因此 $ P = P_1P_2^{-1}. $ 
+    \end{enumerate}
+\end{itemize}
+
+\Section{相似对角化的判定与运算}
+
+\sssubsection{定义}
+
+若存在可逆矩阵 $ P $ 使得 $ P^{-1}AP = \Lambda \Leftrightarrow AP = P\Lambda, $ 
+则称方阵 $ A $ 可以相似对角化。
+
+\sssubsection{求解}
+
+\begin{itemize}
+    \item 可逆 $ P $ 阵
+    
+    $ A $ 的 $ n $ 个线性无关的特征向量 $ \alpha_A $ 构成；
+    
+    若特征向量的数目不够，则其不可相似对角化。
+    \item 对角矩阵 $ \Lambda $
+    
+    其由 $ n $ 个特征值对应，特征值与特征向量的位置是对应的。
+\end{itemize}
+
+\sssubsection{判定}
+
+\begin{itemize}
+    \item \textbf{充分条件}
+    
+    实对称矩阵 $ \Rightarrow $ 可相似对角化；
+
+    有 $ n $ 个互异特征值的矩阵 $ \Rightarrow $ 可相似对角化；
+    \item \textbf{充要条件}
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{可相似对角化}&\Leftrightarrow \textrm{有}n\textrm{个无关特征向量}\\
+            &\Leftrightarrow k\textrm{重特征值对应}k\textrm{个无关特征向量}\\ 
+            &\Leftrightarrow k = n - r(\lambda_0E - A) \\
+            &\Leftrightarrow \red{r(\lambda_0E - A) = n - k} \\
+        \end{aligned}
+    \end{equation*}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设三阶矩阵 $ A $ 的特征值为 $ 1,3,-2, $ 其对应的特征向量为
+    $ \alpha_1,\alpha_2,\alpha_3, $ 
+    
+    若 $ P = (\alpha_1,2\alpha_3,-\alpha_2), $ 
+    则 $ P^{-1}A^*P = \qline. $ 
+    \item[\textbf{方法}] 
+    由于三阶矩阵 $ A $ 的特征值为 $ 1,3,-2, $ 其对应的特征向量为
+    $ \alpha_1,\alpha_2,\alpha_3, $ 
+    对 $ P = (\alpha_1,2\alpha_3,-\alpha_2), $ 其列分别对应的特征值为 $ 1,-2,3. $  
+    注意，此处 $ -\alpha_2 $ 的系数 $ -1 $ \textbf{不影响特征值的正负性}。
+
+    对 $ A^*, $ 其特征值为 $ \dfrac{|A|}{\lambda} = -6,-2,3, $ 
+    因此 $ P^{-1}A^*P $ 对应的特征值的次序改变，为 $ -6,3,-2, $ 
+    因而有 $ \Lambda = \begin{pmatrix}
+        -6&&\\&3&\\&&-2\\
+    \end{pmatrix}. $ 
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ A $ 为二阶矩阵，$ P = (\alpha,A\alpha), $ 其中 $ \alpha $ 为非零向量且
+    不是 $ A $ 的特征值，
+    \begin{enumerate}[label = \Roman*.]
+        \item 证明 $ P $ 为可逆矩阵；
+        \item 若 $ A^2\alpha+A\alpha-6\alpha = 0, $ 求 $ P^{-1}AP $ 并判断其是否
+        与对角矩阵相似。
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}[label = \Roman*.]
+        \item 假设 $ A $ 不是可逆矩阵，则其不满秩，因而 $ \alpha $ 与 $ A\alpha $ 成比例。
+        此时有 $ A\alpha = k\alpha, $ 也即 $ \alpha $ 为 $ A $ 的特征值，与题设矛盾，
+        因而 $ A $ 是可逆矩阵。
+        \item 由于\begin{equation*}
+            \begin{aligned}
+                P^{-1}AP &= P^{-1}A(\alpha,A\alpha) = P^{-1}(A\alpha,A^2\alpha) \\ 
+                &= P^{-1}(A\alpha,-A\alpha+6\alpha) \\&= P^{-1}(\alpha,A\alpha)\begin{pmatrix}
+                    0&6\\1&-1
+                \end{pmatrix}_{B} = P^{-1}PB = B,
+            \end{aligned}
+        \end{equation*}
+        而 $ \lambda_B = 2,-3 $ 互异，因而可以相似对角化，故 $ A $ 也可以相似对角化。
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ A,B,C $ 为三阶矩阵，有 $ AB = -B, CA^\top 2C, $ 
+    
+    其中 $ B = \begin{pmatrix}
+        1&2&3\\-1&1&0\\2&-1&1\\
+    \end{pmatrix},C = \begin{pmatrix}
+        1&-2&1\\-2&4&-2\\-1&2&-1\\
+    \end{pmatrix},\xi = \begin{pmatrix}
+        1\\2\\a
+    \end{pmatrix}, $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 求矩阵 $ A; $ 
+        \item 求当 $ a $ 为何值时有 $ A^{100}\xi = \xi. $ 
+    \end{enumerate}
+    \item[\textbf{方法}] \begin{enumerate}[label = \Roman*.]
+        \item 不妨设 $ B = (\beta_i),C^\top = (\gamma_i), $ 注意到有 $ (CA^\top)^\top = 2C^\top\Rightarrow
+        AC^\top = 2C^\top. $ 
+        
+        由于 $ A\beta_1 = -\beta_1,A\beta_2 = -\beta_2, A\gamma_1 = 2\gamma_1, $ 
+        知 $ \lambda_A = -1,-1,2,\alpha_A = \beta_1,\beta_2,\gamma_1. $ 
+        
+        因此，$ A = P^{-1}\Lambda P, P = (\beta_1,\beta_2,\gamma_1), \Lambda = 
+        \begin{pmatrix}
+            -1&&\\&-1&\\&&2\\
+        \end{pmatrix}. $ 
+
+        可以解得 $ A = P\Lambda P^{-1} = \dfrac{1}{8}\begin{pmatrix}
+            -5&-15&-9\\-6&22&18\\3&-15&-17\\
+        \end{pmatrix} $ 
+        \item 由于 $ \beta_1,\beta_2 $ 为 $ A $ 的无关特征向量，必有
+        $ A^{100}(k_1\beta_1+k_2\beta_2) = (-1)^{100}(k_1\beta_1+k_2\beta_2), $ 
+        而 $ A^{100}\xi = \xi, $ 可以知道 $ \xi $ 可被 $ \beta_1,\beta_2 $ 线性表出，因此
+        $ \xi = x_1\beta_1+x_2\beta_2 $ 必有解，即
+        \begin{equation*}
+            \begin{aligned}
+                (\beta_1,\beta_2,\xi)\rightarrow\begin{pmatrix}
+                    1&2&1\\-1&1&2\\2&-1&a\\
+                \end{pmatrix}\rightarrow\begin{pmatrix}
+                    1&2&1\\0&1&1\\0&0&a+3\\
+                \end{pmatrix}
+            \end{aligned}
+        \end{equation*}
+        有解，因此 $ a = -3. $ 
+    \end{enumerate}
+\end{itemize}
+
+ \Section{实对称矩阵}
+
+\sssubsection{对角化}
+
+\begin{itemize}
+    \item 可逆矩阵 $ P $ 
+    
+    必定存在可逆矩阵 $ P $ 使得 $ P^{-1}AP = \Lambda, $ 其中 $ P $ 由
+    特征向量组成；
+    \item 正交矩阵 $ Q $ 
+    
+    必定存在正交矩阵 $ Q $ 使得 $ Q^\top AQ =  Q^{-1}AQ = \Lambda, $ 
+    其中 $ Q $ 经过了施密特正交单位化。
+\end{itemize}
+
+施密特正交化时，对无关的一组 $ \alpha_i, $ 有
+\begin{itemize}
+    \item $ \beta_1 = \alpha_1; $ 
+    \item $ \beta_2 = \alpha_2 - \dfrac{(\alpha_2,\beta_2)}{(\beta_2,\beta_2)}\beta_2 $ 
+    \item $ \beta_3 = \alpha_3 - 
+    \dfrac{(\alpha_3,\beta_2)}{(\beta_2,\beta_2)}\beta_2-
+    \dfrac{(\alpha_3,\beta_1)}{(\beta_1,\beta_1)}\beta_1 $ 
+\end{itemize}
+
+\sssubsection{求原矩阵}
+
+\begin{itemize}
+    \item 对 $ P $ 有 $ A = P\Lambda P^{-1}; $ 
+    \item 对 $ Q = (\gamma_i) $ 有 $ A = Q\Lambda Q^{\top}; $ 
+\end{itemize}
+
+特别地，若 $ r(A) = 1, A = tr(A)\gamma_1\gamma_1^\top. $ 
+
+\begin{itemize}
+    \item[\textbf{例题}] 已知 $ A $ 为三阶实对称矩阵，各行元素和均为$ 3, $ 且
+    $ \alpha_1 = (-1,2,-1)^\top,(0,-1,1)^\top $ 是 $ AX = 0 $ 的解。
+    \begin{enumerate}[label = \Roman*.]
+        \item 求 $ A $ 特征值与特征向量；
+        \item 求正交矩阵 $ Q $ 使得 $ Q^\top AQ = \Lambda; $ 
+        \item 求 $ A $ 以及 $ (A-\dfrac{3}{2}E)^6. $ 
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}[label = \Roman*.]
+        \item 求特征向量时，\textbf{若未明示求无关特征向量，则需给出全部特征向量。}
+        
+        由各行和均为$ 3 $ 知 $ A(1,1,1)^\top = (3,3,3)^\top = 3(1,1,1)^\top, $ 
+        故 $ A $ 有特征值 $ 3, $ 其对应无关特征向量为 $ \alpha_3 = (1,1,1)^\top; $ 
+        
+        由题设，$ \alpha_1,\alpha_2 $ 是 $ \lambda = 0 $ 对应的无关特征向量。
+
+        因此，$ \lambda = 0 $ 对应的特征向量为 $ k_1\alpha_1+k_2\alpha_2, k_1,k_2\in \R\backslash\{0\}; $ 
+        
+        $ \lambda = 3 $ 对应的特征向量为 $ k_3\alpha_3, k_3\in \R\backslash\{0\}. $ 
+        \item 可以知道 $ \lambda_A = 0,0,3, $ 对应的无关特征向量为 $ \alpha_1,\alpha_2,\alpha_3. $ 
+        
+        因为 $ \alpha_3 $ 与另外二者正交，对 $ \alpha_1,\alpha_2 $ 做施密特正交化。
+        故有\begin{itemize}
+            \item $ \beta_1 = \alpha_1 = (-1,2,-1)^\top; $ 
+            \item $ \beta_2 = \alpha_2 - \dfrac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1
+            = \dfrac{1}{2}(-1,0,1)^\top; $ 
+        \end{itemize}
+        对全体做单位化，故有
+        $ \gamma_1 = \dfrac{1}{\sqrt 6}\beta_1;  \gamma_2 = \dfrac{1}{\sqrt 2}\beta_2; 
+        \gamma_3 = \dfrac{1}{\sqrt 3}\beta_3; $ 
+
+        此时，有 $ Q = (\gamma_i) $ 使得 $ Q^{-1}AQ = Q^\top AQ = \Lambda = \begin{pmatrix}
+            0&&\\&0&\\&&3
+        \end{pmatrix}. $ 
+        \item 显然 $ A = Q\Lambda Q^\top. $ 而 $ r(A) = 1, \lambda = 0,0,3, $ 
+        
+        故有 $ A = tr(A)\alpha_1\alpha_1^\top = \begin{pmatrix}
+        1&1&1\\1&1&1\\1&1&1\\    
+        \end{pmatrix}; $ 
+
+        $ (A - \dfrac{3}{2}E)^6 = Q^\top(\Lambda-\dfrac{3}{2})Q $ 
+
+        \begin{equation*}
+            \begin{aligned}
+                (A - \dfrac{3}{2}E)^6 &= Q^\top(\Lambda-\dfrac{3}{2})^6Q \\ 
+                &= Q^\top\begin{pmatrix}
+                    -\dfrac{3}{2}&&\\&-\dfrac{3}{2}&\\&&\dfrac{3}{2}\\
+                \end{pmatrix}^6 Q
+                \\&= (\dfrac{3}{2})^6Q^\top Q = (\dfrac{3}{2})^6 E.
+            \end{aligned}
+        \end{equation*}
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ A = \begin{pmatrix}
+        0&-1&4\\-1&3&a\\4&a&0\\
+    \end{pmatrix}, $ 有正交矩阵 $ Q $ 使得 $ Q^\top AQ = \Lambda, $ 若 $ Q $ 的
+    第一列为 $ \dfrac{1}{\sqrt 6}(1,2,1)^\top, $ 求 $ a,Q. $ 
+    \item[\textbf{方法}] 由于存在特征值 $ \lambda_1 $ 使得 $ A\lambda_1 = \lambda_2(1,2,1)^\top, $ 
+    可以解得 $ a = -1,\lambda_1 = 2. $ 
+
+    代入 $ a = -1, $ 求 $ |\lambda E - A| = 0, $ 解得 $ \lambda_2 = -4,\lambda_3 = 5. $ 
+    通过 $ A\alpha_2 = \lambda_2\alpha_2 $ 求 $ \alpha_2, $ 显然 $ \alpha_1,\alpha_2,\alpha_3 $ 正交。
+    因此由正交性，$$
+        \alpha_3 = \begin{pmatrix}
+            i&j&k\\ a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\
+        \end{pmatrix} = 2i-2j+2k
+    $$
+    此时 $ Q = \left(\dfrac{\alpha_i}{|\alpha_i|}\right). $ 
+\end{itemize}

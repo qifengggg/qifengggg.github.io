@@ -121,22 +121,23 @@
 \author{奇峰}
 \date{之前}
 
-\begin{document}
 \begin{comment}
-\newtheorem{def1}{定义}[chapter]
-\newtheorem{theo1}{定理}[chapter]
-\newtheorem{func1}{方法}[chapter]
-\newenvironment{proof}[1][证明]{\noindent\newline\textbf{#1}\quad{}}{\hfill $\blacksquare$\par}
-%\newenvironment{<环境名称>}[<参数个数>][<首参数默认值>]{<环境前定义>}
-%							{<环境后定义>}
+	\newtheorem{def1}{定义}[chapter]
+	\newtheorem{theo1}{定理}[chapter]
+	\newtheorem{func1}{方法}[chapter]
+	\newenvironment{proof}[1][证明]{\noindent\newline\textbf{#1}\quad{}}{\hfill $\blacksquare$\par}
+	%\newenvironment{<环境名称>}[<参数个数>][<首参数默认值>]{<环境前定义>}
+	%							{<环境后定义>}
+	
+	
+	\newenvironment{Def}[1][\quad{}]{\begin{def1}\textbf{#1}}{\end{def1}}
+	\newenvironment{Theo}[1][\quad{}]{\begin{theo1}\textbf{#1}}{\end{theo1}}
+	\newenvironment{Func}[1][\quad{}]{\begin{func1}\textbf{#1}}{\end{func1}}
+	\end{comment}
 
+\begin{document}
 
-\newenvironment{Def}[1][\quad{}]{\begin{def1}\textbf{#1}}{\end{def1}}
-\newenvironment{Theo}[1][\quad{}]{\begin{theo1}\textbf{#1}}{\end{theo1}}
-\newenvironment{Func}[1][\quad{}]{\begin{func1}\textbf{#1}}{\end{func1}}
-\end{comment}
-
-\allowdisplaybreaks[4]. 
+\allowdisplaybreaks[4]
 
 \theoremseparator{}
 \newenvironment{Field}[1][\quad{}]{\noindent\newline\textbf{#1}\hfill}{}
@@ -175,6 +176,7 @@
 
 \frontmatter
 \maketitle
+
 \hypertarget{Index}{}
 \tableofcontents
 

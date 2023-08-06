@@ -1,0 +1,411 @@
+\chapter{二次型}
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{cases}
+            \textrm{二次型与性质}\begin{cases}
+                X^\top AT\\ \textrm{二次型与标准形}\\ p+q = n
+            \end{cases}\\ 
+            \textrm{二次型化为标准形}\begin{cases}
+                \textrm{配方法}\\\textrm{正交变换}
+            \end{cases}\\ 
+            \textrm{合同关系} P^\top AP = B (P\textrm{可逆})\\ 
+            \textrm{正定判定}\begin{cases}
+                \textrm{定义}\,\, X^\top AX > 0\\ 
+                \textrm{充要条件}\\ 
+                \textrm{必要条件} \begin{cases}
+                    a_{ii} > 0\\ |A|>0
+                \end{cases}
+            \end{cases}
+        \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\Section{二次型化为标准形}
+
+\sssubsection{可逆变换}
+
+若村咋可逆 $ C $ 使得对 $ X = CY, f = X^\top AX = (CY)^\top ACY = Y^\top C^\top ACY. $
+
+若有 $ C^\top AC = \Lambda, $ 则将 $ f $ 标准化了。
+
+\sssubsection{正交变换}
+
+存在正交矩阵 $ Q $ 使得 $ X = QY, $ 
+则 $ f = X^\top AX = Y^\top \Lambda Y = \sum\lambda_i y^2_i, $ 
+
+\sssubsection{配方法}
+
+利用完全平方式凑平方和，进行变换。
+
+\begin{itemize}
+    \item[\textbf{例题}] 设有可逆矩阵 $ P $ 使得 $ P^\top\begin{pmatrix}
+        1&0&0\\0&2&0\\0&0&3\\
+    \end{pmatrix} P = \begin{pmatrix}
+        2&0&0\\0&3&0\\0&0&1\\
+    \end{pmatrix}, $ 求 $ P. $ 
+    \item[\textbf{方法}] 要将 $ f = x^2_1+2x^2_2+3x^2_3 $ 
+    变为 $ f = 2y^2_1 + 3y^2_2+y^2_3, $ 
+
+    只需令 $ X = \begin{pmatrix}
+        x_1\\x_2\\x_3
+    \end{pmatrix} = \begin{pmatrix}
+        0&0&1\\1&0&0\\0&1&0\\
+    \end{pmatrix}\begin{pmatrix}
+        y_1\\y_2\\y_3
+    \end{pmatrix} = PY $ 即可。此时的 $ P $ 即为所求。
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设实二次型 $ f(x_1,x_2) = x^2_1 + 4x_1x_2 + 4x_2^2 $ 经
+    正交变换 $ X = QY $ 可化为二次型 $ g(y_1,y_2) = ay_1^2 + 4y_1y_2 + by_2^2, a \geq b, $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 求 $ a,b $ 的值；
+        \item 求 $ Q. $ 
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}[label = \Roman*.]
+        \item 可以发现，对 $ f $ 的矩阵 $ A, g $ 的矩阵 $ B, $ 有 
+        $ Q^{\top}_1AQ_1 = \Lambda = Q^{\top}_2BQ_2, $ 
+        
+        因此必有 $ Q_2Q^{\top}_1AQ_1Q_2^\top = Q^\top AQ = B, $ 而
+        $ Q $ 是实对称矩阵，因此 $ A,B $ 相似；
+        
+        其中，$ Q $ 是
+        第二问中的待求正交矩阵。
+        
+        由于 $ tr(A) = tr(B), |A| = |B|, a \geq b, $ 
+        解得 $ a = 4, b = 1. $
+        \item 对 $ A $ 的两个特征值 $ 5, 0, $ 对应的无关特征向量为
+        $ (1,2)^\top, (2,-1)^\top, $ 
+        
+        对其单位化后得到 
+        $ Q_1 = \dfrac{1}{\sqrt 5}\begin{pmatrix}
+            1&2\\2&-1
+        \end{pmatrix}; $ 
+        
+        对 $ B $ 的两个特征值 $ 5, 0, $ 对应的无关特征向量为
+        $ (2,1)^\top, (1,-2)^\top, $ 
+        
+        对其单位化后得到 
+        $ Q_2 = \dfrac{1}{\sqrt 5}\begin{pmatrix}
+            2&1\\1&-2
+        \end{pmatrix}; $ 
+
+        前面已经指出，$ Q = Q_1Q_2^\top. $ 
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 已知二次型 $ \dis f(x_1,x_2,x_3) = \sum_{i = 1}^3\sum_{j}^3 ijx_ix_j, $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 写出 $ f $ 对应的矩阵；
+        \item 求正交变换 $ x = Qy $ 对应的矩阵；
+        \item 求 $ f(x_1,x_2,x_3) = 0 $ 的解。
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}[label = \Roman*.]
+        \item 显然 $ A = \begin{pmatrix}
+            1&2&3\\2&4&6\\3&6&9\\
+        \end{pmatrix}. $ 
+        \item 由于 $ A = \beta\beta^\top, \beta = (1,2,3)^\top, $ 有 
+        $ r(A) = 1,\lambda_A = 14,0,0;$ 
+        
+        其中， $  \lambda = 14 $ 对应的无关特征向量为
+        $ \alpha_1 = (1,2,3)^\top; $ 
+        $ \lambda = 0 $ 对应的无关特征向量为 $ \alpha_2 = (2,-1,0)^\top,\alpha_3 = (3,0,-1)^\top. $ 
+
+        对 $ P = (\alpha_i) $ 做施密特正交单位化，得到 
+        \begin{itemize}
+            \item $ \gamma_1 = \dfrac{1}{\sqrt 6}(1,2,3); $ 
+            \item $ \gamma_2 = \dfrac{1}{\sqrt 3}(-2,1,0); $ 
+            \item $ \gamma_3 = \dfrac{1}{\sqrt 70}(3,6,-5); $ 
+        \end{itemize}
+
+        此时有 $ Q = (\gamma_i) $ 使得 $ X = QY $ 时有 $ f(y_1,y_2,y_3) = 14y^2_1. $ 
+        \item 配方，发现 $ f = (x_1+2x_2 + 3x_3)^2, $ 因此
+        $ f = 0 \Rightarrow x_1 + 2x_2 +3x_3 = 0. $ 
+
+        显然该方程的所有解为 $ k_1\alpha_2 + k_2\alpha_3, k_1,k_2\in \R. $ 
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设二次型 $ f(x_1,x_2) = x_1^2 + ax_2^2 + 4x_1x_2 $ 经
+    正交变换 $ x = QY $ 化为 $ 3y^2_1 + by^2_2, $ 若 $ B = Q_2^{-1}A^*Q, $ 
+    其中 $ Q = \begin{pmatrix}
+        0&1\\1&1
+    \end{pmatrix}, $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 求 $ a,b $ 及正交矩阵 $ Q; $ 
+        \item 求可逆矩阵 $ P $ 使得 $ P^{-1}BP = \Lambda, $ 并写出该 $ \Lambda. $ 
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}[label = \Roman*.]
+        \item 题设两个二次型中，前者的矩阵为 $ A = \begin{pmatrix}
+            1&2\\2&a
+        \end{pmatrix}, $ 后者的矩阵为 $ A_1 = \begin{pmatrix}
+            3&0\\0&b
+        \end{pmatrix}. $ 
+        可以知道，$ |A| = |B| $ 且 $ tr(A) = tr(B), $ 因此
+        $ a = 1,b = -1, $ 因此二者有特征值 $ 3,-1. $ 
+
+        对 $ A, \lambda = 3 $ 对应的无关特征向量为 $ \alpha_1 = (1,1)^\top, $ 
+        $\lambda = -1 $ 对应的无关特征向量为 $ \alpha_2 = (-1,1)^\top. $ 
+
+        对 $ (\alpha_1,\alpha_2) $ 做施密特正交单位化，得到 $ Q = \dfrac{1}{\sqrt 2}\begin{pmatrix}
+            1&-1\\1&1
+        \end{pmatrix}. $ 
+
+        故存在上述 $ Q $ 使得 $ X = QY $ 时有 $ f = 3y_1^2 - y_2^2. $
+        \item 由上问知 $ \exists P_1 = (\alpha_1,\alpha_2) $ 使得 $ P_1^{-1}AP = \Lambda_1. $ 
+        故 $ P^{-1}A^*P = \begin{pmatrix}
+            \dfrac{|A|}{\lambda_1}&\\&\dfrac{|A|}{\lambda_2}\\
+        \end{pmatrix}. $ 
+
+        $ A^* = P_1\Lambda_1P_1^{-1}, B = Q_2^{-1}A^*Q_2, $ 
+        故有 $ B = Q_2^{-1}A^*Q_2 = Q_2^{-1}P_1\Lambda_1P_1^{-1}Q_2, $ 
+        即 $ P_1^{-1}Q_2\Lambda_1Q_2^{-1}P_1 = (Q_2^{-1}P_1)^{-1}\Lambda_1(Q_2^{-1}P_1) = \Lambda_1. $ 
+        此时 $ P = Q_2^{-1}P_1. $ 
+
+        因此上述 $ P $ 可使得 $ P^{-1}BP = \Lambda = \begin{pmatrix}
+            -1&\\&3
+        \end{pmatrix}. $ 
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设实二次型 $ f(x_1,x_2,x_3) = (x_1 - x_2 + x_3)^2+(x_2 + x_3)^2+(x_1 + ax_3)^2, $ 
+    其中 $ a $ 是参数，
+    \begin{enumerate}[label = \Roman*.]
+        \item 求 $ f = 0 $ 的解；
+        \item 求 $ f $ 的规范型。
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}[label = \Roman*.]
+        \item 令 $ f = 0, $ 由 $ f $ 的半正定性，有
+        \begin{equation*}
+            \begin{aligned}
+                \begin{cases}
+                    x_1-x_2+x_3 &= 0\\
+                    x_2+x_3 &= 0\\
+                    x_1+ax_3 &= 0\\
+                \end{cases} \xlongrightarrow{~~~~}
+                A = \begin{pmatrix}
+                    1&-1&1\\0&1&1\\1&0&a\\
+                \end{pmatrix}
+                = \begin{pmatrix}
+                    1&0&2\\0&1&1\\0&0&a-2\\
+                \end{pmatrix}
+            \end{aligned}
+        \end{equation*}
+        当 $ a \neq 2 $ 时，方程仅有零解；
+        
+        当 $ a = 2 $ 时，方程的解为 $ k(-2,-1,1)^\top, k\in \R. $ 
+        \item 当 $ a \neq 2 $ 时，$ A $ 可逆，因此令
+        \begin{equation*}
+            \begin{aligned}
+                \begin{cases}
+                    y_1 &= x_1-x_2+x_3\\
+                    y_2 &= x_2+x_3\\
+                    y_3 &= x_1+ax_3
+                \end{cases}
+            \end{aligned}
+        \end{equation*}
+        此时有 $ f = y_1^2 + y^2_2 + y^2_3; $  
+
+        当 $ a = 2 $ 时，$ A $ 不可逆。注意到 $ f = 2(x_1 - \dfrac{x_2}{2} + \dfrac{3}{2}x_3)^2 +  \dfrac{3}{2}
+        (x_2+x_3)^2, $ 
+        
+        故令
+        $\begin{cases}
+            y_1 = x_1 - \dfrac{x_2}{2} + \dfrac{3}{2}x_3\\ 
+            y_2 = x_2 + x_3\\ y_3 = x_3
+        \end{cases}$
+        则有 $ f = 2y_1^2 + \dfrac{3}{2}y_2^2; $ 
+
+        令
+        $\begin{cases}
+            z_1 = \dsqrt{2}y_1\\ z_2 = \dsqrt{\dfrac{3}{2}}y_2\\ z_3 = y_3
+        \end{cases}$
+        则有 $ f = z_1^2+z_2^2. $ 
+    \end{enumerate}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设二次型 $ f(x_1,x_2,x_3) = 2x_1x_2 + 3x_2x_3 + 4x_1x_3, $ 
+    利用可逆线性变换 $ X = PZ $ 使得 $ f $ 化为标准形，并求二次型的正负惯性指数。
+    \item[\textbf{方法}] 
+    令 $ \begin{cases}
+        x_1 = y_1 + y_2\\ x_2 = y_1 - y_2 \\ x_3 = y_3
+    \end{cases}, $ 则有 $ X=\begin{pmatrix}
+        1&1&0\\1&-1&0\\0&0&1\\
+    \end{pmatrix}Y = P_1Y. $ 
+    
+    此时有 $ f = 2y_1^2 - 2y_2^2 + 7y_1y_2 + y_2y_3. $ 
+
+    此时又有 $ f = 2(y_1+\dfrac{7}{4}y_3)^2 -2(y_2 - \dfrac{y_3}{4})^2 - 6y_3^2, $ 
+    
+    故令 $ \begin{cases}
+        z_1 = y_1+\dfrac{7}{4}y_3\\ z_2 = y_2 - \dfrac{y_3}{4}\\ z_3 = 6y_3
+    \end{cases}, $ 则有 $ X=\begin{pmatrix}
+        1&0&\dfrac{7}{4}\\0&1&-\dfrac{1}{4}\\0&0&1\\
+    \end{pmatrix}Y = P_1Y. $ 
+    
+    此时有 $ f = 2z_1^2 + 2z_2^2 - 6z_3^2. $ 
+    
+    因此正惯性指数为$ 2, $ 负惯性指数为 $ 1. $ 
+\end{itemize}
+
+\Section{合同判定}
+
+\sssubsection{定义}
+
+若存在可逆矩阵使得 $ P^\top AP = B, $ 则称 $ A,B $ 合同。
+
+二次型变化的矩阵是合同的，因为
+\begin{equation*}
+    \begin{aligned}
+        f\xlongequal{X = PY}X^\top AX &\Rightarrow (PY)^\top A(PY)
+        \\ &= X^\top(P^\top AP)Y \whichis Y^\top BY
+    \end{aligned}
+\end{equation*} 
+
+\sssubsection{判定}
+
+\begin{itemize}
+    \item 惯性指数相同 $ \Leftrightarrow $ 合同；
+    \item 特征值正负个数相同 $ \Leftrightarrow $ 合同；
+    
+    相似 $ \Rightarrow $ 特征值相等 $ \Rightarrow $ 合同，故相似必合同。
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ A,B $ 均为 $ n $ 阶实对称矩阵可逆矩阵，则在
+    \begin{enumerate}[label = \Alph*)]
+        \item $ PA = B; $ 
+        \item $ P^{-1}ABP=BA; $ 
+        \item $ P^{-1}AP = B; $ 
+        \item $ P^\top A^2P = B^2. $ 
+    \end{enumerate}
+    中，正确的是 $ \qline. $ 
+    \item[\textbf{方法}] 
+    \begin{enumerate}[label = \Alph*)]
+        \item 由于 $ PA = B, $ 有 $ r(A) = r(B), $ 而 $ r(A) = r(B) = n, $ 故
+        $ P $ 必定存在。
+        \item 当 $ P = A $ 时显然成立。
+        \item 可以知道 $ A,B $ 分别与一对角矩阵相似，但两对角矩阵不一定相同。
+        \item 由于 $ A,B $ 可逆，其必定满秩，所有特征值都不为零，故
+        $ A^2,B^2 $ 特征值均大于零，故二者正惯性指数均为 $ n, $ 负惯性指数均为 $ 0,
+         $ 因而合同。
+    \end{enumerate}
+\end{itemize}
+
+\Section{正定判定}
+
+\sssubsection{定义}
+
+若对任意非零 $ X $ 都有 $ f = X^\top AX >0, $ 则称 $ f(x) $ 为正定二次型。
+
+\sssubsection{判定}
+
+二次型 $ A $ 正定与以下任意一点等价。
+\begin{itemize}
+    \item $ A $ 的所有顺序主子式大于零。
+    
+    \begin{equation*}
+        \begin{aligned}
+            \textrm{三阶方阵的顺序主子式形如}\quad{}\left|
+            \begin{array}{cc}
+                \begin{array}{|c|}
+                    \begin{array}{|c|c}
+                        \cdot&\cdot
+                    \end{array}\\
+                    \begin{array}{cc}
+                        \cdot&\cdot
+                    \end{array}
+                \end{array}&
+                \begin{array}{c}
+                    \cdot\\\cdot
+                \end{array}\\ 
+                \begin{array}{cc}
+                    \cdot&\cdot
+                \end{array}&\cdot
+            \end{array}\right|
+        \end{aligned}
+    \end{equation*}
+    \item 所有特征值大于零；
+    \item 正惯性指数为 $ n; $ 
+    \item $ A $ 与 $ E $ 合同，即 $ \exists P, A = P^\top P. $ 
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 设 $ A $ 为 $ m\times n $ 阶矩阵，$ r(A) = m, $ 
+    则在命题
+    \begin{enumerate}[label = \Alph*)]
+        \item $ AA^\top $ 与单位矩阵等价；
+        \item $ AA^\top $ 与对角矩阵相似；
+        \item $ AA^\top $ 与单位矩阵合同；
+        \item $ AA^\top $ 是正定矩阵；
+    \end{enumerate}
+    中，正确的是 $ \qline. $ 
+    \item[\textbf{方法}] 
+    \begin{equation*}
+        \begin{aligned}
+            r(AA^\top) = r(A) = m &\Leftrightarrow |AA^\top|\neq 0 \Leftrightarrow AA^\top \textrm{可逆}\\ 
+            &\Leftrightarrow AA^\top\textrm{与}E_m\textrm{等价}\Leftrightarrow AA^\top \textrm{行/列向量无关}\\ 
+            &\Leftrightarrow (AA^\top )X = 0 \textrm{仅有零解}\Leftrightarrow (AA^\top)X = b\textrm{仅有唯一解}\\
+            &\Leftrightarrow AA^\top\textrm{任意特征值不为零}
+        \end{aligned}
+    \end{equation*}
+    由于 $ (AA^\top)^\top = AA^\top, $ 其必能相似对角化，因而正定，与 $ E $ 合同。
+\end{itemize}
+
+\Section{总结 - 矩阵的三大关系}
+
+\begin{itemize}
+    \item \textbf{等价}\begin{itemize}
+        \item 对 $ m\times n $ 的 $ A,B,  A\xlongrightarrow{\textrm{变换}}B $ 成立；
+        \item $ PAQ = B $ 或 $ r(A) = r(B) \Leftrightarrow A,B $ 等价；
+    \end{itemize}
+    \item \textbf{相似}\begin{itemize}
+        \item 对 $ A_n,B_n,  P^{-1}AP = B $ 成立；
+        \item $ \lambda_A = \lambda_B $ 且 $ A,B $ 均可相似对角化 $ \Leftarrow $ 相似；
+    \end{itemize}
+    \item \textbf{合同}\begin{itemize}
+        \item 对 $ A_n,B_n, P^\top AP = B $ 成立；
+        \item 惯性指数相同 $ \Leftrightarrow $ 合同。
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item[\textbf{例题}] 已知 $ A = \begin{pmatrix}
+        2&1&0\\1&2&0\\0&0&t\\
+    \end{pmatrix},
+    B = \begin{pmatrix}
+        1&2&3\\4&5&6\\3&3&3\\
+    \end{pmatrix},
+    C = \begin{pmatrix}
+        1&2&3\\0&3&5\\0&0&5\\
+    \end{pmatrix},
+    D = \begin{pmatrix}
+        2&0&0\\0&2&1\\0&1&0\\
+    \end{pmatrix}, $ 则 $ t $ 为何值时，
+    \begin{enumerate}[label = \Roman*.]
+        \item $ A $ 是正定矩阵；
+        \item $ A,B $ 等价；
+        \item $ A,C $ 相似；
+        \item $ A,D $ 合同。
+    \end{enumerate}
+    \item[\textbf{方法}] 
+    \begin{enumerate}[label = \Roman*.]
+        \item 由于 $ A $ 的一、二阶顺序主子式大于零，
+        只需让其三阶主子式也即行列式大于零，此时 $ t > 0; $ 
+        \item 可以知道 $ r(B) = 2, $ 因此 $ r(A) = 2 $ 时
+        二者等价，此时 $ t = 0. $ 
+        \item 显然 $ C $ 的特征值为 $ 1,3,5, $ 且其显然可以相似对角化，
+        因此只需令 $ A $ 特征值也为 $ 1,3,5 $ 时就有二者相似，此时 $ t = 5; $ 
+        \item 由于 $ f = X^\top DX $ 的正负惯性指数分别为 $ 2,1, $ 因此
+        只需让 $ f = X^\top AX $ 正负惯性指数与其相同即可，此时 $ t<0. $  
+    \end{enumerate}
+\end{itemize}

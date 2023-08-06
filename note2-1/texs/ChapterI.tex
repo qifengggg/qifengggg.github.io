@@ -30,7 +30,7 @@ $$
     \end{cases}
 $$ 
 
-\section{求行列式的值}
+\Section{求行列式的值}
 
 \begin{itemize}
     \item 用性质消零（展开定义）
@@ -42,7 +42,7 @@ $$
     \item 特殊形状的行列式
 \end{itemize}
 
-\section{代数余子式}
+\Section{代数余子式}
 
 代数余子式 $ A_{ij} = (-1)^{i+j}M_{ij}. $ 
 
@@ -59,7 +59,7 @@ $$
 (E\, \vdots\, A^{-1}) $ 
 求 $ A^{-1}, $ 再利用公式 $ A^* = |A|A^{-1} $ 求伴随矩阵。
 
-\section{抽象矩阵行列式}
+\Section{抽象矩阵行列式}
 
 \sssubsection{性质}
 
@@ -72,7 +72,7 @@ $$
     \end{cases} $ 
     \item $ |kA| = k^n|A|, $ 其中 $ k $ 可以是行列式；
     
-    $ |A^\top|=A,|AB|=|A||B|=|B||A|=|BA|; $ 
+    $ |A^\top|=|A|,|AB|=|A||B|=|B||A|=|BA|; $ 
     \item 设 $ A $ 可逆，则 $ A^* $ 可逆，且有
 
     $ |A^*| = |A|^{n-1};(A^*)^* = |A|^{n-2}A; $ 
@@ -82,9 +82,9 @@ $$
     \item $ P^{-1}AP = B \Rightarrow |A| = |B|; $ 
     \item $ aA + bE $ 不可逆 $ \Leftrightarrow |aA + bE| = 0 \Rightarrow \exists \lambda_0 = \dfrac{-b}{a}; $ 
     \item $ AA^\top = A^\top A = E \Rightarrow |A| = \pm 1; $ 
-    \item 对可逆矩阵 $ A, |A + \alpha\beta^T| = |A|(1+\beta^TA^{-1}\alpha); $ 
+    \item 对可逆矩阵 $ A, |A + \alpha\beta^\top | = |A|(1+\beta^\top A^{-1}\alpha); $ 
     
-    对 $ B = \alpha\beta^T, |\lambda E + \alpha\beta^T| = \lambda^{n-1}(\lambda + \beta^\top\alpha); $ 
+    对 $ B = \alpha\beta^\top , |\lambda E + \alpha\beta^\top | = \lambda^{n-1}(\lambda + \beta^\top\alpha); $ 
     \item 对 $ A_n, $ 若 $ A^2 = A,A\neq E, $ 则有 $ |A| = 0. $ \begin{itemize}
         \item 反证
         
@@ -118,7 +118,7 @@ $$
                 A&\alpha\\-\beta^\top&1
             \end{pmatrix} = 
             \begin{pmatrix}
-                A+\alpha\beta^\top & 0 \\ -\beta^T & 1
+                A+\alpha\beta^\top & 0 \\ -\beta^\top  & 1
             \end{pmatrix}&(i)\\
             &\begin{pmatrix}
                 E&0\\\beta^\top A^{-1} & 1
@@ -127,12 +127,12 @@ $$
                 A&\alpha\\-\beta^\top&1
             \end{pmatrix} = 
             \begin{pmatrix}
-                A & \alpha \\ 0 & 1+\beta^TA^{-1}\alpha
+                A & \alpha \\ 0 & 1+\beta^\top A^{-1}\alpha
             \end{pmatrix}&(ii)\\
         \end{aligned}
     \end{equation*}
     显然 $ (i),(ii) $ 的两边也相等。此时对二者右边取得行列式，得到$$
-    |A + \alpha\beta^T| = |A|(1+\beta^TA^{-1}\alpha)
+    |A + \alpha\beta^\top | = |A|(1+\beta^\top A^{-1}\alpha)
     $$ 
 
     考虑一个例子 $ D = \begin{pmatrix}
@@ -156,7 +156,7 @@ $$
     此时视 $ A = \lambda E, $ 
     
     套用前述方法有 $ |\lambda E + \alpha\beta^\top| = 
-    |\lambda E|(1+\beta^T(\lambda E)^{-1}\alpha) = \lambda^{n}(1+\frac{\beta^\top\alpha}{\lambda})
+    |\lambda E|(1+\beta^\top (\lambda E)^{-1}\alpha) = \lambda^{n}(1+\frac{\beta^\top\alpha}{\lambda})
     = \lambda^{n-1}(\lambda + \beta^\top\alpha). $ 
 \end{enumerate}
 
@@ -203,7 +203,7 @@ $$
 
 此时可以从第一列提出系数 $ \lambda - 2. $ 
 
-\section{求行列式方程的根}
+\Section{求行列式方程的根}
 
 考察的方式可能为
 \begin{itemize}

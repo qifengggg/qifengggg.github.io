@@ -21,7 +21,7 @@ $$
     \end{cases}
 $$ 
 
-\section{求解与伴随矩阵相关的问题}
+\Section{求解与伴随矩阵相关的问题}
 
 $$
     \begin{cases}
@@ -61,7 +61,7 @@ $$
 
 也可以使用矩阵表达式替代 $ A. $
 
-\section{可逆矩阵的应用}
+\Section{可逆矩阵的应用}
 
 \begin{equation*}
     \begin{aligned}
@@ -174,12 +174,13 @@ $$
         AB = aA + bB &\Rightarrow A(B-aE) - bB = O \\ 
         &\Rightarrow A(B-aE) - b(B\Attention{-aE+aE}) = O \\ 
         &\Rightarrow (A-bE)(B-aE) = abE \\
-        &\Rightarrow (B-aE)(A-bE) = abE
+        &= (B-aE)(A-bE) = abE\\ 
+        &\Rightarrow (A-bE)(B-aE) = (B-aE)(A-bE)\\
     \end{aligned}
 \end{equation*}
 展开，可以证明结论。
 
-\section{初等变换与初等矩阵之间的关系}
+\Section{初等变换与初等矩阵之间的关系}
 
 初等矩阵左乘做行变换，右乘做列变换。其有三种，为
 
@@ -198,15 +199,16 @@ $$
 有例子
 \begin{equation*}
     \begin{aligned}
-        E_{12}A = B &\Rightarrow \left\{\begin{matrix}
+        E_{12}A = B &\Rightarrow 
+        \begin{cases}
             -|A| = |B| \\ A^{-1}E_{12} = B^{-1}
-        \end{matrix}\right. \\ 
+        \end{cases}\\ 
         &\Rightarrow -|A|A^{-1}E_{12} = |B|B^{-1} \\ 
         &\Rightarrow -A^*E_{12} = B^*
     \end{aligned}
 \end{equation*}
 
-\section{求矩阵的秩}
+\Section{求矩阵的秩}
 
 \sssubsection{秩的求解}
 
@@ -225,7 +227,7 @@ $$
 \sssubsection{性质}
 
 \begin{itemize}
-    \item 对 $ A_{m\times n}, $ 有 $ r(A) = r(A\top A) = r(AA^\top) = r(A^\top) = r(kA). $
+    \item 对 $ A_{m\times n}, $ 有 $ r(A) = r(A^\top A) = r(AA^\top) = r(A^\top) = r(kA). $
     \begin{itemize}
         \item 证明 $ r(A^\top A) = r(A) $ 
         
@@ -299,7 +301,7 @@ $$
 
 事实上，对于 $ A $ 的一元二次式，若其可因式分解，则分解后的因式都满秩。
 
-\section{求解矩阵方程}
+\Section{求解矩阵方程}
 
 \sssubsection{可逆矩阵}
 
@@ -319,7 +321,7 @@ $$
     \item $ XA = C \Rightarrow A^\top X^\top = C^\top, $ 然后同上。
 \end{itemize}
 
-\section{计算 $ n $ 阶矩阵高次幂}
+\Section{计算 $ n $ 阶矩阵高次幂}
 
 \begin{itemize}
     \item 归纳运算。
