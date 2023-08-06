@@ -27,4 +27,4 @@
 \contentsline {section}{\numberline {二十一.\,}二次型化为标准形}{28}{section.6.1}%
 \contentsline {section}{\numberline {二十二.\,}合同判定}{31}{section.6.2}%
 \contentsline {section}{\numberline {二十三.\,}正定判定}{32}{section.6.3}%
-\contentsline {section}{\numberline {二十四.\,}总结 - 矩阵的三大关系}{33}{section.6.4}%
+\contentsline {section}{\numberline {二十四.\,}两点总结}{33}{section.6.4}%

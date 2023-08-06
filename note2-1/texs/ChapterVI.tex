@@ -361,7 +361,9 @@
     由于 $ (AA^\top)^\top = AA^\top, $ 其必能相似对角化，因而正定，与 $ E $ 合同。
 \end{itemize}
 
-\Section{总结 - 矩阵的三大关系}
+\Section{两点总结}
+
+\sssubsection{矩阵的三大关系}
 
 \begin{itemize}
     \item \textbf{等价}\begin{itemize}
@@ -408,4 +410,32 @@
         \item 由于 $ f = X^\top DX $ 的正负惯性指数分别为 $ 2,1, $ 因此
         只需让 $ f = X^\top AX $ 正负惯性指数与其相同即可，此时 $ t<0. $  
     \end{enumerate}
+\end{itemize}
+
+\sssubsection{变换}
+
+仅可用行变换的有\begin{itemize}
+    \item 求逆矩阵 $ (A : E) \rightarrow (E:A^{-1}); $ 
+    \item 极大无关组；
+    \item 求解线性方程组（齐次/非齐次）；
+    \item 求特征向量；
+\end{itemize}
+
+仅可用列变换的有列求逆矩阵 $ \begin{pmatrix}
+    A\\E
+\end{pmatrix}\rightarrow \begin{pmatrix}
+    E\\ A^{-1}
+\end{pmatrix}; $ 
+
+行列均可的有\begin{itemize}
+    \item 求行列式 $ |A|; $ 
+    \item 求秩 $ r(A); $ 
+    \item 初等矩阵的理解
+    
+    在不知道初等矩阵放在左边还是右边时，按行或按列理解都可以。
+\end{itemize}
+
+不能应用行列变换的有\begin{itemize}
+    \item 求特征值；
+    \item 化简矩阵等式。
 \end{itemize}
