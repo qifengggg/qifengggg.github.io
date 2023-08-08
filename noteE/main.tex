@@ -1,4 +1,4 @@
-\documentclass[oneside]{ctexbook}
+\documentclass[oneside]{book}
 \usepackage{ctex}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -23,70 +23,16 @@
 \usepackage{extarrows}
 \usepackage{inconsolata}
 
-\geometry{a4paper,scale=0.8}
+\geometry{
+	a4paper,
+	total={5in, 9in}
+	}
 
 \hypersetup{hidelinks,
 	colorlinks=true,
 	allcolors=black,
 	pdfstartview=Fit,
 	breaklinks=true
-}
-
-\ctexset{
-	 chapter = {
-		name = {第,章},
-		format = \linespread{1.0}\zihao{1}\bfseries\sffamily\centering,
-		nameformat = {\fontsize{30pt}{0pt}\centering\vspace{15pt}},
-		titleformat = {\centering},
-		number = \chinese{chapter},
-		numberformat = \sffamily,
-		aftername = ,
-		beforeskip = {7pt},
-		afterskip = {18pt},
-		aftername = {\\},
-		pagestyle = plain,
-	},
-	section={
-		%format用于设置章节标题全局格式，作用域为标题和编号
-		%字号为小三，字体为黑体，左对齐
-		%+号表示在原有格式下附加格式命令
-		format+ = \zihao{-1} \heiti \raggedright\centering,
-		%name用于设置章节编号前后的词语
-		%前、后词语用英文状态下,分开
-		%如果没有前或后词语可以不填
-		name = {,.\,},
-		%number用于设置章节编号数字输出格式
-		%\chinese输出section编号为中文，\arabic输出为阿拉伯数字
-		number = \Roman{section},
-		%beforeskip用于设置章节标题前的垂直间距
-		%ex为当前字号下字母x的高度
-		%基础高度为1.0ex，可以伸展到1.2ex，也可以收缩到0.8ex
-		beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		%afterskip用于设置章节标题后的垂直间距
-		afterskip = 1.0ex plus 0.2ex minus .2ex,
-		%aftername用于控制编号和标题之间的格式
-		%\hspace用于增加水平间距
-		aftername = \hspace{0pt}
-	},
-	subsection={
-		format+ = \zihao{-2} \kaishu  \raggedright,
-		%仅输出subsection编号且为中文
-		number = \roman{subsection},
-		name = {,.},
-		beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		afterskip = 1.0ex plus 0.2ex minus .2ex,
-		aftername = \hspace{0pt}
-	},
-	subsubsection={
-		%设置对齐方式为居中对齐
-		format+ = \zihao{-3} \fangsong,
-		%仅输出subsubsection编号，格式为阿拉伯数字，打字机字体
-		number = \ttfamily\arabic{subsubsection},
-		name = {,.},
-		%beforeskip = 1.0ex plus 0.2ex minus .2ex,
-		afterskip = 1.0ex plus 0.2ex minus .2ex,
-		aftername = \hspace{0pt}
-	}
 }
 
 \fancyhf{}
@@ -102,7 +48,10 @@
     \href{https://qifengggg.github.io/}{奇峰}
     \end{minipage}
 }
-\cfoot{\thepage}
+
+%\cfoot{\thepage}
+\cfoot{\hyperlink{Index}{\thepage}}
+%\lfoot{\hyperlink{Index}{\includegraphics[height=7.5mm]{1.jpg}}}
 
 
 \usepackage{titletoc}
@@ -113,6 +62,11 @@
 \titlecontents{paragraph}[11em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
 
 \pagestyle{fancy}
+
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
+}
 %\renewcommand{\qedsymbol}{$\blacksquare$}
 
 \renewcommand{\labelenumi}{\roman{enumi}.}
@@ -123,9 +77,21 @@
 \newcommand{\ws}{\square}
 \newcommand{\nextline}{\vspace{5pt}\newline}
 \newcommand{\whichis}{\mathop=\limits^\Delta}
+\newcommand{\atRight}[1]{\makebox[0.94\linewidth][r]{#1}}
+\newcommand{\YS}{\makebox[0.94\linewidth][r]{Yours Sincerely,}}
+\newcommand{\LM}{\makebox[0.94\linewidth][r]{Li Ming}}
+\newcommand{\Chapter}[1]{\chapter{\hyperlink{Index}{#1}}}
+\newcommand{\YSLM}{
+	\YS
+	
+	\LM
+}
+
+
+\titleformat{\chapter}{\centering\Huge\bfseries\vspace{-2em}}{类型\,\thechapter}{1em}{}
 
 \title{\includegraphics[scale=0.6]{1.jpg}\\ \textsf{英语小作文笔记}}
-\author{奇峰}
+\author{\href{https://qifengggg.github.io/}{奇峰}}
 \date{之前}
 
 \begin{document}
@@ -158,6 +124,7 @@
 
 \mainmatter
 
+\input{texs/ChapterO.tex}
 \input{texs/ChapterI.tex}
 
 \end{document}

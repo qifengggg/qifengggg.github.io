@@ -172,9 +172,14 @@
 	\href{https://qifengggg.github.io/}{奇峰}
     \end{minipage}
 }
-\cfoot{\thepage}
+\cfoot{\hyperlink{Index}{\thepage}}
 
 \pagestyle{fancy}
+
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
+}
 %\renewcommand{\qedsymbol}{$\blacksquare$}
 
 \renewcommand{\labelenumi}{\roman{enumi}.}

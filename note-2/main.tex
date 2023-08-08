@@ -167,7 +167,12 @@
 	\href{https://qifengggg.github.io/}{奇峰}
     \end{minipage}
 }
-\cfoot{\thepage}
+\cfoot{\hyperlink{Index}{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
+}
 
 \usepackage{titletoc}
 \titlecontents{section}[6em]{\bfseries \zihao{5} \vspace{2pt}}

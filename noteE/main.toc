@@ -1,1 +1,33 @@
+\contentsline {chapter}{\numberline {1}建议信}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}2012英I}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}2021英I}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}2011英II}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}2016英II}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}2014英I}{3}{section.1.5}%
+\contentsline {chapter}{\numberline {2}邀请信}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}2022英II}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}2021英II}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}2013英II}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}2013英I}{5}{section.2.4}%
+\contentsline {chapter}{\numberline {3}推荐信}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}2011英I}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}2015英I}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}2017英I}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}2023英II}{7}{section.3.4}%
+\contentsline {chapter}{\numberline {4}介绍信}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}2017英II}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.2}2019英I}{8}{section.4.2}%
+\contentsline {chapter}{\numberline {5}低频类型}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}感谢信 - 2010英II}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}投诉信 - 2012英II}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}道歉信 - 2018英II}{10}{section.5.3}%
+\contentsline {section}{\numberline {5.4}辞职信 - 2005英I}{10}{section.5.4}%
+\contentsline {section}{\numberline {5.5}请求信 - 2006英I}{10}{section.5.5}%
+\contentsline {chapter}{\numberline {6}通知}{12}{chapter.6}%
+\contentsline {section}{\numberline {6.1}2010英I}{12}{section.6.1}%
+\contentsline {section}{\numberline {6.2}2023英I}{12}{section.6.2}%
+\contentsline {section}{\numberline {6.3}2016英I}{13}{section.6.3}%
+\contentsline {section}{\numberline {6.4}2020英I}{13}{section.6.4}%
+\contentsline {chapter}{\numberline {7}(较难的)建议信}{14}{chapter.7}%
+\contentsline {section}{\numberline {7.1}2019英II}{14}{section.7.1}%
 \contentsfinish 
