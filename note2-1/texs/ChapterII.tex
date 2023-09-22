@@ -258,7 +258,7 @@ $$
         \item 证明
         
         $AB = O \Rightarrow B $ 的列向量 $ \beta_i $ 是 $ AX=O $ 的一组解，
-        此时 $ r(\beta_i) = r(B) \leq n - r(A) \Rightarrow r(A) + r(B) \leq n. $ 
+        此时 $ r(\beta_1,\cdots,\beta_s) = r(B) \leq n - r(A) \Rightarrow r(A) + r(B) \leq n. $ 
     \end{itemize}
     \item 对 $ A_n, $ 其伴随矩阵的秩
     $ r(A^*)=\begin{cases}
@@ -278,7 +278,7 @@ $$
     \begin{itemize}
         \item 证明前者成立
         
-        $ r(B)\leq r(AB) \leq r(A^{-1} AB) = r(B), $ 故 $ r(AB) = r(B). $ 
+        $ r(B)\geq r(AB) \geq r(A^{-1} AB) = r(B), $ 故 $ r(AB) = r(B). $ 
     \end{itemize}
 \end{itemize}
 
@@ -292,7 +292,7 @@ $$
         
         \begin{equation*}
             \begin{aligned}
-                (A-E)(A+E)= 0 &\Rightarrow  n \geq r(A-E) + r(A+E) = r(A-E) + r(\Attention{-(A-E)}) \geq r(2E) = n
+                (A-E)(A+E)= 0 &\Rightarrow  n \geq r(A-E) + r(A+E) = r(A+E) + r(\Attention{-(A-E)}) \geq r(2E) = n
                 \\ &\Rightarrow r(A-E) + r(A+E) = n
             \end{aligned}
         \end{equation*}
