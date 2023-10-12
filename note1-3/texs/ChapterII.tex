@@ -1,0 +1,243 @@
+\chapter{一元函数微分学}
+
+\section{导数应用求极值最值}
+
+求极值最值时，考虑$ \begin{cases}
+    \textrm{定义}\\\textrm{充分条件(三个)}
+\end{cases} $ 
+
+\sssubsection{极值与最值、驻点、拐点的关系}
+
+可导极值点一定是驻点，一定不是拐点。
+
+\sssubsection{极值必要条件}
+
+\begin{itemize}
+    \item $ f(x) $ 在 $ x = x_0 $ 可导，$ x = x_0 $ 为 $ f(x) $ 极值点，
+    则 $ f'(x_0) = 0; $ 
+    \item $ f(x) $ 在 $ x = x_0 $ 二阶可导，$ x = x_0 $ 为 $ f(x) $ 极小值点，
+    则 $ f'(x)=0,f^\pprime(x) \geq 0. $ 
+\end{itemize}
+
+\sssubsection{最值必要条件}
+
+设 $ f(x) $ 在 $ [a,b] $ 可导，$ f(x_0) = \max_{[a,b]}f(x), $ 
+\begin{itemize}
+    \item $ x_0\in (a,b) \Rightarrow f'(x_0) = 0; $ 
+    \item $ x_0 = a \Rightarrow f'_+(a) \leq 0; $ 
+    \item $ x_0 = b \Rightarrow f'_-(b) \geq 0. $ 
+\end{itemize}
+
+\sssubsection{$ f(x) $ 与 $ x^k $ 商的极限}
+
+设 $ f(x) $ 在 $ x = 0 $ 处连续，
+$ {\displaystyle\lim_{x\rightarrow 0}}\dfrac{f(x)}{x^k},\, k > 1 $ 存在，
+则 $ f(0) = f'(0) = 0. $ 
+
+\section{导数求凹凸性与拐点}
+
+求凹凸性与拐点时，考虑充分条件（三个）。
+
+\sssubsection{平方积函数极拐点个数 - T2.22}
+
+\begin{enumerate}
+    \item[例题] 求 $ f(x) = x^2(x-1)^2(x-3)^2 $ 拐点个数。
+    \item[方法] 令 $ g(x) = x(x-1)(x-3), $ 则有 $ f(x) = g^2(x), f'(x) = 2g(x)g'(x). $  
+    
+    由罗尔定理得 $ g'(x) $ 两零点 $ \xi_1,\xi_2, $ 由其与 $ x = 0, x = 1, x = 3 $ 
+    得 $ f^\pprime(x) $ 四个零点，由四个零点得 $ f^{\pprime\prime} $ 三个零点，
+    由前二者多项式次数，知道 $ f^\pprime(x) $ 四个零点导数值都不为零，因此其均为 $ f(x) $ 的
+    拐点横坐标。
+\end{enumerate}
+
+事实上，曲线 $ f(x) = \dis\prod^n (x-x_i)^2 $ 极值点个数为 $ 2n-1, $ 拐点个数为 $ 2n-2. $ 
+
+\section{导数应用证明不等式}
+
+证明不等式时，考虑 $ \begin{cases}
+    \textrm{单调性}\\\textrm{凹凸性}\\\textrm{中值定理}
+    \begin{cases}
+        \textrm{拉格朗日}\\\textrm{柯西}\\\textrm{泰勒}
+    \end{cases}
+\end{cases} $ 
+
+\sssubsection{Hadamard 不等式}
+
+设 $ f(x) $ 在 $ [a,b] $ 二阶可导，且 $ f^\pprime(x)>0, $ 则
+\begin{itemize}
+    \item \textbf{凹凸性充分条件}
+    
+    $ \forall x_1<x_2\in [a,b], f(\dfrac{x_1+x_2}{2}) < \dfrac{f(x_1)+f(x_2)}{2}; $ 
+
+    拉格朗日 $ \xi_1\in (x_1,\textrm{mid}), \xi_2\in (\textrm{mid},x_2); $ 
+    泰勒 $ x=x_1,x=x_2 $ 处展开证明。
+
+    也即曲线在切线上方，在割线下方。
+    \item \textbf{Hadamard 不等式}
+    
+    $ f\left(\dfrac{a+b}{2}\right)<\dfrac{1}{b-a}\dis\int_a^bf(x)\mathrm{d}x<\dfrac{f(a)+f(b)}{2}. $ 
+\end{itemize}
+
+\sssubsection{凹凸性的充要条件}
+
+设 $ f(x) $ 可导，则
+\begin{itemize}
+    \item $ f(x) $ 为凹函数；
+    \item $ f'(x) $ 单调递增；
+    \item $ f(x) > f(x_0) + f'(x_0)(x-x_0), x\neq x_0; $ 
+    \item $ f(x) < f(a) + \dfrac{f(b) - f(a)}{b-a}(x-a),x\in(a,b); $ 
+\end{itemize}
+
+互为充要条件。
+
+\section{导数定义求方程的根}
+
+考虑 $ \begin{cases}
+    \textrm{单调性结合零点定理}\\\textrm{罗尔定理}
+\end{cases} $ 
+
+\begin{enumerate}
+    \item[\textbf{补例}] 设 $ f_n(x) = \dis \sum_{i=1}^n \sin^i(x), $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 证明方程 $ f_n(x) = 1 $ 在 $ (\frac{\pi}{6},\frac\pi 2) $ 内有一实根；
+        \item 证明 $ {\displaystyle\lim_{n\rightarrow \infty}}x_n $ 存在并求该极限值。
+    \end{enumerate}
+    \item[\textbf{方法}] 令 $ \sin x = t $ 即可。
+\end{enumerate}
+
+\section{罗尔中值定理证明题}
+
+考虑 $ \begin{cases}
+    \textrm{观察法 - } f'(\xi) + g'(\xi)f(\xi) = 0\\\textrm{原函数法 - 将题给条件作为微分方程求解}
+\end{cases} $ 
+
+\sssubsection{罗尔定理推论}
+
+若 $ f^{(n)}(x) \neq 0, $ 则 $ f(x) $ 至多有 $ n $ 个零点。
+
+\sssubsection{总结}
+
+设 $ g(x) $ 在 $ [a,b] $ 有一阶连续导数，$ \forall x\in (a,b), g'(x)\neq 0. $ 
+若 $ f(x) $ 在 $ [a,b] $ 连续，
+
+且 $ \dis \int_a^b f(x)\mathrm{d}x = \int_a^bf(x)g(x) = 0, $ 
+则 $ f(x) $ 在 $ (a,b) $ 至少有两个零点。
+
+\vspace{10pt}
+
+$ f^\pprime(x) - f(x) = f^\pprime(x) - f'(x) + f'(x) - f(x). $ 
+
+\section{拉格朗日中值定理证明}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 满足 $ {\displaystyle\lim_{x\rightarrow +\infty}}f'(x) $ 存在，
+    且 $ {\displaystyle\lim_{x\rightarrow +\infty}}[f(x)+f'(x)] = l, $ 求 
+    $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x). $ 
+    \item[\textbf{方法}] 显然 $ {\displaystyle\lim_{x\rightarrow +\infty}}f'(x) $ 与
+    $ {\displaystyle\lim_{x\rightarrow +\infty}}f(x) $ 存在，
+    由拉格朗日定理，$\forall x, \exists\, \xi \in (x,x+1) $ 使得 $ f(x+1) - f(x) = f'(\xi), $ 
+    那么 $ {\displaystyle\lim_{x\rightarrow +\infty}}[f(x+1)-f(x)] = 0 =
+    {\displaystyle\lim_{x\rightarrow +\infty}}f'(\xi) = {\displaystyle\lim_{x\rightarrow +\infty}}f'(x), $ 
+    
+    因此 $ {\displaystyle\lim_{x\rightarrow +\infty}}[f(x) + f'(x)] 
+    = {\displaystyle\lim_{x\rightarrow +\infty}}f(x) = l. $ 
+    \item[\textbf{方法}] 由题设，
+    $$
+        {\displaystyle\lim_{x\rightarrow +\infty}}f(x) = 
+        {\displaystyle\lim_{x\rightarrow +\infty}}\dfrac{e^xf(x)}{e^x}
+        \xlongequal{\textrm{洛必达:}\frac{\square}{\infty}}
+        {\displaystyle\lim_{x\rightarrow +\infty}}\dfrac{e^x[f(x) + f'(x)]}{e^x}=
+        {\displaystyle\lim_{x\rightarrow +\infty}}[f(x) + f'(x)] = l.
+    $$
+\end{enumerate}
+
+\section{泰勒中值定理}
+
+$ x_0 $ 可取$  
+\begin{cases}
+    \textrm{端点}\\\textrm{中点}\\\Attention{极值/最值点 - 导数为零}
+\end{cases} $
+
+\sssubsection{积分结合泰勒中值定理}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ [a,b] $ 上有二阶导数，则
+    存在 $ \xi\in (a,b) $ 使得 $ \dis \int_a^b f(x)\mathrm{d}x = f\left(\dfrac{a+b}{2}\right)
+    (b-a)+\dfrac{f^\pprime(x)}{24}(b-a)^3. $ 
+    \item[\textbf{方法}]
+    由泰勒公式，存在 $ \eta $ 介于 $ x $ 与 $ \dfrac{a+b}{2}, $ 使得
+
+    $$
+        f(x) = f\left(\dfrac{a+b}{2}\right) + \left(x - \dfrac{a+b}{2}\right)f'\left(\dfrac{a+b}{2}\right) +
+        \dfrac{(x-\frac{a+b}{2})^2}{2}f^\pprime(\eta)
+    $$
+    那么
+    $$
+        \int_a^b f(x)\mathrm{d}x = f\left(\dfrac{a+b}{2}\right)(b-a)
+        + \dfrac{1}{2}\int_a^b\overbrace{(x-\frac{a+b}{2})^2}^{\textrm{不变号}}f^\pprime(\eta)\mathrm{d}x
+    $$
+    由\textbf{广义积分中值定理}，有 $ \xi\in (a,b) $ 使得
+    \begin{equation*}
+        \begin{aligned}
+            & \int_a^b f(x)\mathrm{d}x = f\left(\dfrac{a+b}{2}\right)(b-a)
+            + \dfrac{f^\pprime(\xi)}{2}\int_a^b{(x-\frac{a+b}{2})^2}\mathrm{d}x \\ 
+            \Rightarrow & \int_a^b f(x)\mathrm{d}x = f\left(\dfrac{a+b}{2}\right)(b-a)
+            + \dfrac{f^\pprime(\xi)}{24}(b-a)^3. \\ 
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\sssubsection{泰勒公式 $ x $ 在 $ x_0 $ 处展开 - T2.44-45}
+
+不对特定点，而是对函数定义域上任意一点展开。
+
+$$
+    f(x_0) = f(x) + f'(x)(x_0 - x) + \dfrac{f^\pprime(\xi)}{2}(x_0-x)^2
+$$
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ [0,2] $ 上二阶可导，且 
+    $ |f(x)|\leq 1, |f^\pprime(x)|\leq 1, $ 则 $ |f'(x)|\leq 2. $ 
+    \item[\textbf{方法}] 
+    
+    对任意 $ x\in (0,2), $ 有 $ \xi_1\in(0,x),\xi_2\in(x,2) $ 使得
+    \begin{equation*}
+        \begin{aligned}
+            &f(0) = f(x) + (0-x)f'(x) + \dfrac{(0-x)^2}{2}f^\pprime(\xi_1)\\ 
+            &f(2) = f(x) + (2-x)f'(x) + \dfrac{(2-x)^2}{2}f^\pprime(\xi_2)    
+        \end{aligned}
+    \end{equation*}
+    由上式减去下式，有
+    \begin{equation*}
+        \begin{aligned}
+            f'(x) = -\dfrac{1}{2}[f(0)-f(2)]+\dfrac{1}{4}[f^\pprime(\xi_1)x^2-f^\pprime(\xi_2)(2-x)^2]
+        \end{aligned}
+    \end{equation*}
+    由 $ |f(x)|\leq 1, |f^\pprime(x)|\leq 1, $ 有
+    \begin{equation*}
+        \begin{aligned}
+            |f'(x)|&\leq \dfrac{1}{2}[|f(0)|+|f(2)|]+\dfrac14 
+            [|f^\pprime(\xi_1)|x^2+|f^\pprime(\xi_2)|(2-x)^2]\\ 
+            &\leq 1 + \dfrac{1}{4}[x^2 + (2-x)^2]\leq 1+\dfrac{1}{4}\cdot 4 = 2.
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+事实上，若 $ f(x) $ 在 $ [a,a+2] $ 上二阶可导，且 $ |f(x)|\leq 1, |f^\pprime(x)|\leq 1, $ 
+则 $ |f'(x)|\leq 2. $ 
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 满足 $ {\displaystyle\lim_{x\rightarrow \infty}}f(x) = A,
+    {\displaystyle\lim_{x\rightarrow \infty}}f^{\ppprime}(x) = 0, $ 
+    则 $ {\displaystyle\lim_{x\rightarrow \infty}}f'(x) = 
+    {\displaystyle\lim_{x\rightarrow \infty}}f^\pprime(x) = 0. $ 
+    \item[\textbf{方法}] 由泰勒公式，存在 $ \xi_1 \in (x-1,x),\xi_2 \in (x,x+1) $ 使得
+    \begin{equation*}
+        \begin{aligned}
+            &f(x + 1) = f(x) + f'(x) + \dfrac{1}{2}f^\pprime(x) + \dfrac{1}{6}f^\ppprime(\xi_1) \\ 
+            &f(x - 1) = f(x) - f'(x) + \dfrac{1}{2}f^\pprime(x) - \dfrac{1}{6}f^\ppprime(\xi_1) \\ 
+        \end{aligned}
+    \end{equation*}
+    通过加减上下式构造 $ f'(x),f^\pprime(x), $ 
+    由 $ f(x),f^\ppprime(x) $ 极限求待求极限。
+\end{enumerate}

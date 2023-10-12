@@ -1,0 +1,262 @@
+\chapter{一元函数积分学}
+
+\section{定积分的计算}
+
+计算定积分时，考虑
+
+$$
+\begin{cases}
+    \textrm{不定积分}\begin{cases}
+        \textrm{凑微分}\\ 
+        \textrm{分部}\\ 
+        \textrm{换元}\\     
+    \end{cases}\\
+    \textrm{定积分}\begin{cases}
+        \textrm{奇偶性}\\
+        \textrm{周期性}\\ 
+        \textrm{Wallis公式} \\    
+    \end{cases}    
+\end{cases}
+\textrm{其中，换元包括}
+\begin{cases}
+    \textrm{不定积分}
+    \begin{cases}
+        \textrm{三角代换}\\\textrm{根式代换}\\\textrm{倒代换}\\\textrm{万能代换}\\\textrm{整体代换}    
+    \end{cases}\\\textrm{定积分}    
+    \begin{cases}
+        \textrm{区间再现公式}\\\textrm{平移变换}
+    \end{cases}
+\end{cases}
+$$
+
+\sssubsection{反函数的积分 T3.15}
+
+$$
+    \int_a^b g(y)\mathrm{d}y \xlongequal{y = f(x)}
+    \int_\alpha^\beta \overbrace{g(f(x))}^{x}f'(x)\mathrm{d}x
+$$
+
+事实上，设 $ y = f(x) $ 在 $ [a,b] $ 上单调连续，反函数为 $ x = f^{-1}(y) = g(y), $ 
+且 $ f(a) = c, f(b) = d, $ 
+则有
+$$
+    \int_a^bf(x)\mathrm{d}x + \int_c^d g(y)\mathrm{d}y = bd - ac.
+$$
+
+反函数的二重积分，本质上是变限积分函数的积分。
+
+\sssubsection{平移变换结合奇偶性 T3.16}
+
+令 $ x = \dfrac{a+b}{2} + t, $ 使得区间变为对称区间，以便使用奇偶性。
+
+\sssubsection{区间再现公式}
+
+\Attention{山穷水尽}时，使用区间再现公式。
+
+令 $ x = a + b - t, $ 则
+
+$$
+    \int_a^bf(x)\mathrm{d}x = \int_a^bf(a+b-x)\mathrm{d}x = 
+    \dfrac{1}{2}\int_a^b\textcolor{red}{[f(x)+f(a+b-x)]}\mathrm{d}x
+$$
+
+\begin{enumerate}
+    \item[\textbf{例题}] 求 $ \dis \dis \int_0^\frac{\pi}{2} \ln \sin x \mathrm{d}x = 
+    \dis \int_0^\frac{\pi}{2} \ln \cos x \mathrm{d}x. $ 
+    \item[\textbf{方法}] 可以知道 \begin{equation*}
+        \begin{aligned}
+            \int_0^\frac{\pi}{2}\ln\sin x \mathrm{d}x &= 
+            \dfrac{1}{2}\int_0^\frac{\pi}{2}[\ln \cos x + \ln\sin x] \mathrm{d}x 
+            = \dfrac{1}{2}\int_0^\frac{\pi}{2}\ln \left(\sin x\cos x\right) \mathrm{d}x \\ 
+            &= \dfrac{1}{2}\int_0^\frac{\pi}{2}\ln \left(\dfrac{1}{2}\sin 2x\right)\mathrm{d}x 
+            = \dfrac{1}{2}\int_0^\frac{\pi}{2}\ln \sin 2x\mathrm{d}x - \dfrac{\pi}{4}\ln 2 \\ 
+            (\textrm{令}t = 2x)&= \dfrac{1}{4}\int_0^\pi\ln \sin t\mathrm{d}t - \dfrac{\pi}{4}\ln 2 
+            = \dfrac{1}{2}\int_0^\frac{\pi}{2}\ln \sin t\mathrm{d}t - \dfrac{\pi}{4}\ln 2 \\ 
+        \end{aligned}
+    \end{equation*}
+    故 $ \dis \int_0^\frac{\pi}{2}\ln\sin x \mathrm{d}x = -\dfrac{\pi}{2}\ln 2. $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 求 $ \dis \int_0^1 \dfrac{\ln (1+x)}{1+x^2}\mathrm{d}x. $ 
+    \item[\textbf{方法}] 可以知道
+    \begin{equation*}
+        \begin{aligned}
+            \int_0^1 \dfrac{\ln (1+x)}{1+x^2}\mathrm{d}x &= 
+            \int_0^\frac{\pi}{4} \dfrac{\ln (1+\tan x)}{\sec^2 x}\mathrm{d}\tan x 
+            = \int_0^\frac{\pi}{4} \ln (1+\tan x)\mathrm{d}x \\ 
+            &= \dfrac{1}{2}\int_0^\frac{\pi}{4} \left[\ln (1+\tan x) + \ln(1+\tan(\dfrac{\pi}{4}-x))\right]\mathrm{d}x 
+            \\ &= \int_0^\frac{\pi}{4} \left[\ln (1+\tan x) + 
+            \ln\left(1+\dfrac{1-\tan x}{1+\tan x}\right)\right]\mathrm{d}x \\ 
+            &= \dfrac{1}{2}\int_0^\frac{\pi}{4} \left[\ln (1+\tan x) + 
+            \ln\left(\dfrac{2}{1+\tan x}\right)\right]\mathrm{d}x \\ 
+            &= \dfrac{1}{2}\int_0^\frac{\pi}{4}\ln 2\mathrm{d}x = \dfrac{1}{2}\cdot \dfrac{\pi}{4}\ln 2
+            = \dfrac{\pi}{8}\ln 2.
+        \end{aligned}
+    \end{equation*}
+    此外，$$
+    \int_0^\frac{\pi}{4} \ln (1+\tan x)\mathrm{d}x = 
+    \int_0^\frac{\pi}{4} \ln \dfrac{\sin x+\cos x}{\cos x}\mathrm{d}x
+    = \int_0^\frac{\pi}{4} \ln \sqrt{2}+\ln \left[\sin (x+\dfrac{\pi}{4})\right]
+    -\ln \cos x\mathrm{d}x 
+    $$
+    而后二项在积分完毕后正好相等。
+\end{enumerate}
+
+\sssubsection{Wallis公式}
+
+$ \dis I_n = \int_0^\frac{\pi}{2}\sin^n x \mathrm{d}x = \int_0^\frac{\pi}{2}\cos^n x \mathrm{d}x. $ 
+
+证明：递推公式 $ I_n = \dfrac{n-1}{n}I_{n-2}, $ 递推至 $ n = 1 $ 或 $ n = 0 $ 即可。
+
+$$
+    {\displaystyle\lim_{n\rightarrow \infty}}\dfrac{1}{2n+1}\left[\dfrac{(2n)!!}{(2n-1)!!} \right]^2
+    = \dfrac{\pi}{2}.
+$$
+
+证明：由 $ {\displaystyle\lim_{n\rightarrow \infty}}\dfrac{I_{2n+1}}{I_{2n}} = 1 $ 
+推出，右边由夹逼准则得到。
+
+\section{变限积分函数的计算}
+
+考虑 $ \begin{cases}
+    \textrm{分部积分法}\\\textrm{交换积分次序}
+\end{cases} $ 
+
+\sssubsection{经典错误：变限积分求导结合微分方程 - T3.22}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ (-1,+\infty) $ 内连续，
+    且有 $ \dis f(x)\left[\int_0^xf(t)\mathrm{d}t+1\right]=\dfrac{xe^x}{2(x+1)^2}, $
+    求 $ f(x). $ 
+    \item[\textbf{方法}] 此题不能求导，因为求导无法消出有效的微分方程。
+    
+    令 $ \dis F(x) = \int_0^xf(t)\mathrm{d}t + 1, $ 
+    则有 $ \dis 2F'(x)F(x) = \left(F(x)^2\right)' = \dfrac{xe^x}{(1+x)^2}, $ 
+    积分计算 $ F^2(x)\Rightarrow F(x)\Rightarrow f(x). $ 
+\end{enumerate}
+
+对于 $ \dis f(x)\int_0^x f(t)\mathrm{d}t, $ 令 $\dis F(x) = \int_0^xf(t)\mathrm{d}t, $ 
+则有 $ \dis f(x)\int_0^x f(t)\mathrm{d}t = \dfrac{1}{2}[F(x)^2]'. $ 
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ [0,1] $ 连续，且 $ \dis \int_0^1 f(x)=A, $ 
+    求 $ \dis \int_0^1 \mathrm{d}x\int_x^1 f(x)f(y)\mathrm{d}y. $ 
+    \item[\textbf{方法}] 可以知道
+    \begin{equation*}
+        \begin{aligned}
+            \int_0^1 \mathrm{d}x\int_x^1 f(x)f(y)\mathrm{d}y &= 
+            \int_0^1 f(x)\int_x^1f(y)\mathrm{d}y\mathrm{d}x \\ 
+            (\textrm{令}F(x) = \int_x^1f(y)\mathrm{d}y)&= 
+            -\int_0^1 \dfrac{1}{2}\left[F(x)^2\right]'\mathrm{d}x \\ 
+            &= -\dfrac{1}{2}\left[F(x)^2\right]\Big|_0^1 = \dfrac{A^2}{2}.
+        \end{aligned}
+    \end{equation*}
+    \item[\textbf{方法}] 可以知道
+    $$
+        \iint\limits_{D_1} = \iint\limits_{D_2} = \dfrac{1}{2}\iint\limits_{D}
+        = \dfrac{1}{2}\int_0^1f(x)\mathrm{d}x\int_0^1f(y)\mathrm{d}y = \dfrac{A^2}{2}.
+    $$
+    此处利用轮换对称性的推广，即对 $ D:(x,y) $ 与 $ D':(y,x), $ 
+    $$
+        \iint\limits_{D}f(x,y)\mathrm{d}x\mathrm{d}y = 
+        \iint\limits_{D'}f(y,x)\mathrm{d}y\mathrm{d}x
+    $$
+\end{enumerate}
+
+\section{反常积分的计算}
+
+\sssubsection{迪利克雷积分}
+
+\begin{equation*}
+    \begin{aligned}
+        \int_0^{+\infty}\dfrac{\sin x}{x}\mathrm{d}x &= 
+        \int_0^{+\infty}\mathrm{d}x\int_0^{+\infty}e^{-xy}\sin x \mathrm{d}y \\ 
+        &= \int_0^{+\infty}\mathrm{d}y\int_0^{+\infty}e^{-xy}\sin x \mathrm{d}x \\ 
+        &= -\int_0^{+\infty}\dfrac{e^{-xy}(y\sin x +\cos x)}{1+y^2}\Big|_0^{+\infty}
+        \mathrm{d}y\\ &= \int_0^{+\infty}\dfrac{\mathrm{d}y}{1+y^2} = \arctan y\Big|_0^{+\infty}
+        = \dfrac{\pi}{2}.
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+        \int_0^{+\infty}\dfrac{\sin^2 x}{x^2}\mathrm{d}x &= 
+        -\int_0^{+\infty}\sin^2 x\mathrm{d}\dfrac{1}{x} =
+        -\dfrac{\sin^2 x}{x}\Big|_0^{+\infty} + \int_0^{+\infty}
+        \dfrac{2\sin x\cos x}{x}\mathrm{d}x
+        \\&= \int_0^{+\infty}\dfrac{\sin 2x}{2x}\mathrm{d}2x
+        = \dfrac{\pi}{2}.
+    \end{aligned}
+\end{equation*}
+
+\section{定积分的几何应用}
+
+$$ \begin{cases}
+    \textrm{面积}\begin{cases}
+        \textrm{直角坐标}\\\textrm{极坐标}\\\textrm{参数方程}
+    \end{cases}\\
+    \textrm{体积}\begin{cases}
+        \textrm{x轴}\\\textrm{y轴}\\\textrm{平移}
+    \end{cases}\\
+    \textrm{弧长}\begin{cases}
+        \textrm{直角坐标}\\\textrm{极坐标}\\\textrm{参数方程}
+    \end{cases}\\
+    \textrm{侧面积}
+\end{cases} $$ 
+
+\sssubsection{区域绕直线旋转的体积}
+
+区域 $ D $ 绕直线 $ L:Ax+By+C=0 $ 旋转一周所得旋转体的体积为
+$$
+    V = 2\pi \iint\limits_{D}r(x,y)\mathrm{d}\sigma
+$$
+
+其中 $ r(x,y) $ 为 $ D $ 中点到 $ L $ 距离 $ \dfrac{|Ax+By+C|}{\dsqrt{A^2+B^2}}. $ 
+要求 $ D $ 与 $ L $ 无公共点。
+
+特别地，若 $ L: y-C = 0, $ 则有
+$$
+    V = 2\pi\iint\limits_D (y-c)\mathrm{d}\sigma = |2\pi(\bar y - C)S_D|
+$$
+
+其中 $ \bar y $ 是 $ D $ 的形心，$ S_D $ 是其面积。
+注意，体积是非负的。
+
+\section{定积分物理应用}
+
+微元法考虑
+$ 
+\begin{cases}
+    \textrm{功}\quad{} W = Fs \\ 
+    \textrm{力}\begin{cases}
+        \textrm{万有引力} F = \dfrac{GMm}{r^2}\\ 
+        \textrm{液体压力} F = PS = \overbrace{\rho gh}^{\textrm{液体压力}} S 
+    \end{cases}
+\end{cases} 
+$ 
+
+\section{切比雪夫不等式和柯西不等式}
+
+\sssubsection{切比雪夫不等式}
+
+设 $ f(x),g(x),p(x) $ 在 $ [a,b] $ 上连续，且 $ p(x) $ 不变号，
+\begin{itemize}
+    \item 若 $ f(x),g(x) $ 单调性相同，则有
+    $$
+        \int_a^bf(x)p(x)\mathrm{d}x\int_a^bg(x)p(x)\mathrm{d}x\leq
+        \int_a^bp(x)\mathrm{d}x\int_a^bf(x)g(x)p(x)\mathrm{d}x
+    $$
+    \item 若 $ f(x),g(x) $ 单调性不同，则有
+    $$
+        \int_a^bf(x)p(x)\mathrm{d}x\int_a^bg(x)p(x)\mathrm{d}x\geq
+        \int_a^bp(x)\mathrm{d}x\int_a^bf(x)g(x)p(x)\mathrm{d}x
+    $$
+\end{itemize}
+
+\sssubsection{柯西不等式}
+
+设 $ f(x),g(x) $ 在 $ [a,b] $ 连续，则有$$
+    \left[\int_a^bf(x)g(x)\mathrm{d}x\right]^2\leq
+    \int_a^bf^2(x)\mathrm{d}x\int_a^bg^2(x)\mathrm{d}x
+$$

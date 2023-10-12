@@ -1,0 +1,298 @@
+\chapter{函数、极限、连续}
+
+\section{函数极限的计算}
+
+计算函数极限时，考虑$ \begin{cases}
+    \textrm{洛必达}\\ 
+    \textrm{等价}\\
+    \textrm{泰勒}\\
+    \textrm{导数定义}\\ 
+    \textrm{拉格朗日}\\
+\end{cases} $ 
+
+已知极限时，考虑
+$ \begin{cases}
+    \textrm{函数值 - 分母推分子}\\
+    \textrm{导数值 - 导数定义}\\
+    \textrm{函数符号 - 保号性}\\
+    \textrm{函数表达式 - 去极限号，即高阶无穷小}\\
+\end{cases} $
+
+\sssubsection{函数极限 - T1.2}
+
+直接设三次多项式为 $ f(x) = A(x-2a)(x-4a)(x-x_0), $ 
+代入已知条件求解。
+
+\sssubsection{微分方程性质 - T1.3}
+
+微分方程含有 $ y,y',y^\pprime $ 时，其
+$\begin{cases}
+    \textrm{无穷阶可导}\\
+    \textrm{含有初始条件}
+\end{cases}$
+
+利用泰勒展开将其展开，然后通过方程求系数。
+
+\sssubsection{变限积分求极限 - T1.4-6}
+
+变限积分函数求极限时，
+\begin{itemize}
+    \item 洛必达 - 
+    
+    $ n $  阶连续可导，洛 $ n $ 次；
+
+    $ n $  阶可导，洛 $ n-1 $ 次，最后一阶用定义。
+    \item \Attention{变限积分等价}
+    
+    变限积分函数，被积函数比值极限为 $ 1, $ 则变限积分等价；
+    
+    即 $ {\displaystyle\lim_{x\rightarrow x_0}}\dfrac{f(x)}{g(x)} = 1,
+    {\displaystyle\lim_{x\rightarrow x_0}}\varphi(x) = 0 \Rightarrow 
+    {\displaystyle\lim_{x\rightarrow x_0}}
+    \dfrac{\dis\int_{0}^{\varphi(x)}f(t)\mathrm{d}t}{\dis\int_{0}^{\varphi(x)}g(t)\mathrm{d}t} = 1. $ 
+    \item 泰勒展开 - 泰勒展开为多项式，然后求积分。
+\end{itemize}
+
+\sssubsection{泰勒嵌套泰勒 - T1.7-9}
+
+利用泰勒展开一部分后，将结果再次利用泰勒展开，化为多项式；如对
+$ f(g(x)), $ 先展开 $ g(x) $ 得到 $ f(t \whichis g(0) + g'(0)x + \cdots), $ 
+再展开为 $ f(0) + tf'(0) + \cdots $ 
+
+具体而言，
+\begin{equation*}
+    \begin{aligned}
+        \tan \tan x 
+        &= \tan x + \dfrac{1}{3}\tan^3 x + o(x^3)\\ 
+        &= x + \dfrac{1}{3}x^3 + o(x^3) + \dfrac{1}{3}[x + o(x)]^3 + o(x^3)
+        \\&= x + \dfrac{2}{3}x^3 + o(x^3).
+    \end{aligned}
+\end{equation*}
+
+注意，马克劳林展开要求 $ x,t = 0. $ 
+
+\sssubsection{拉格朗日/积分中值定理 - T1.8}
+
+对 $ f(g_1(x)) - f(g_2(x)) = g'(\xi)(g_1(x) - g_2(x)), $ 应用二定理需要 $ g'(\xi) $ 
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{cases}
+            \textrm{为非零因子}\\ 
+            \textrm{为零因子，结合夹逼准则}\\
+        \end{cases}
+    \end{aligned}
+\end{equation*}
+
+$ \exists\, \xi $ 介于 $ \sin x, \tan x, $ 则
+$ \xi \rightarrow 0, $ 因此当 $ g'(\xi) =  $ 
+\begin{itemize}
+    \item $ \cos \xi \rightarrow 1; $ 
+    \item $ \sin \xi \sim \xi \sim x $ 由于 $ \xi $ 介于 $ \sin x, \tan x $ 
+\end{itemize}
+时，都可以应用。
+
+\sssubsection{对数求导法 T1.10}
+
+对 $ \dis f(x) = \prod g(x) $ 时，求
+\begin{equation*}
+    \begin{aligned}
+        &\ln f(x) = \sum \ln g(x) \\ 
+        \Rightarrow & \dfrac{f'(x)}{f(x)} = \sum \dfrac{g'(x)}{g(x)}
+    \end{aligned}
+\end{equation*}
+
+通过 $ f'(x)/f(x) $ 与 $ f(x) $ 的极限求 $ f'(x) $ 的极限。
+
+\sssubsection{等价 T1.10}
+
+$ \square \rightarrow 1, \square - 1 = \ln (1 + \square - 1) = \ln(\square). $ 
+
+\sssubsection{T1.11-13}
+
+$ x \rightarrow 0 $ 时，
+\begin{equation*}
+    \begin{aligned}
+        &\textrm{拆项:} \ln(x+\sqrt{1+x^2}) = \ln(x+\sqrt{1+x^2}+1-1) 
+        \sim x + \sqrt{x^2+1} - 1 \sim x + \dfrac{x^2}{2} \sim x\\ 
+        &\textrm{泰勒:} \ln(x+\sqrt{1+x^2}) = x - \dfrac{1}{6}x^3 + o(x^3)
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{中值的极限 T1.14}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ x = x_0 $ 二阶可导，$ f^\pprime(x) \neq 0, $ 
+    
+    若 $ f(x) = f(x_0) + f'(x_0+\theta(x-x_0))(x-x_0),\theta\in (0,1), $ 
+    求 $ {\displaystyle\lim_{x\rightarrow x_0}}\theta. $ 
+    \item[\textbf{求解}] 由上式，有
+    \begin{equation*}
+        \begin{aligned}
+            &{\displaystyle\lim_{x\rightarrow x_0}}\dfrac{f(x) - f(x_0)}{x-x_0} = f'(x_0+\theta(x-x_0))\\ 
+            \Rightarrow & {\displaystyle\lim_{x\rightarrow x_0}}
+            \dfrac{f(x) - f(x_0)}{x-x_0} - f'(x_0) = {\displaystyle\lim_{x\rightarrow x_0}}
+            f'(x_0+\theta(x-x_0)) - f'(x_0)\\ 
+            \Rightarrow & {\displaystyle\lim_{x\rightarrow x_0}}
+            \dfrac{[f(x) - f(x_0)] - f'(x_0)(x-x_0)}{(x-x_0)^2} 
+            = {\displaystyle\lim_{x\rightarrow x_0}}
+            \dfrac{f'(x_0+\theta(x-x_0)) - f'(x_0)}{\theta(x-x_0)}\cdot\theta \\ 
+            \Rightarrow & f^\pprime(x_0){\displaystyle\lim_{x\rightarrow x_0}}\theta
+            = {\displaystyle\lim_{x\rightarrow x_0}}
+            \dfrac{f(x_0) + (x-x_0)f'(x_0) + \frac{(x-x_0)^2}{2}f^\pprime(x_0) - f(x_0) - f'(x_0)(x-x_0)
+            }{(x-x_0)^2} = \dfrac{1}{2}f^\pprime(x_0)
+        \end{aligned}
+    \end{equation*}
+    而 $ f^\pprime (x_0)\neq 0, $ 因此 $ {\displaystyle\lim_{x\rightarrow x_0}}\theta = \dfrac12. $ 
+\end{enumerate}
+
+可以向更高阶拓展，求解方法是类似的；如三阶，$ {\displaystyle\lim_{x\rightarrow x_0}}\theta = \dfrac{1}{3}. $ 
+
+事实上，对 $ n+1 $ 阶可导，$ f^{(n+1)}(0)\neq 0 $ 的情况，
+$ {\displaystyle\lim_{x\rightarrow x_0}}\theta = \dfrac{1}{n+1}. $ 
+
+
+\section{数列极限的计算}
+
+计算数列极限时，考虑
+$ \begin{cases}
+    \textrm{单调有界}\\
+    \textrm{夹逼准则}\\ 
+    \textrm{定积分}\\ 
+\end{cases} $ 
+
+\sssubsection{有递推公式的数列 T1.15-17}
+
+对 $ x_{n+1}=f(x_n)\begin{cases}
+    f(x)\textrm{递增}\begin{cases}
+        x_1 < x_2, x_2 = f(x_1) < f(x_2) = x_3,\cdots \{x_n\}\uparrow \\
+        x_1 > x_2, x_2 = f(x_1) > f(x_2) = x_3,\cdots \{x_n\}\downarrow
+    \end{cases} \textrm{使用单调有界定理}\\ 
+    f(x)\textrm{递减，数列不单调，则使用夹逼准则} 
+\end{cases} $ 
+
+\begin{enumerate}
+    \item[\textbf{例题}] 证明数列 $ 2,2+\dfrac{1}{2},2+\dfrac{1}{2+\frac{1}{2}}\cdots $ 收敛，并求其极限。
+    \item[\textbf{证明}] \begin{enumerate}[label = \roman*.]
+        \item 假设 $ \{x_n\} $ 收敛，取极限得极限值$ {\displaystyle\lim_{n\rightarrow +\infty}}x_n = a. $ 
+        \item \Attention{压缩映射}
+        
+        利用夹逼定理证明极限是 $ a. $ 
+
+        有 $ 0\leq |x_{n+1} - a| = |f(x_n) - f(a)|, $ 通过通分或拉格朗日得到
+
+        $ \textrm{原式} = \dfrac{1}{ax_n}|x_n-a| < \dfrac{1}{4}|x_n-a| < \dfrac{1}{4^2}|x_{n-1}-a|
+        \cdots < \dfrac{1}{4^n}|x_1-a|\rightarrow 0(n\rightarrow\infty) $
+        
+        此处每次下标减 $ 1 $ 时，提出一个 $ \dfrac{1}{4}. $ 这里 $ \dfrac{1}{4} $ 是压缩因子。
+        
+        压缩因子 $ k $ 是常数，其满足 $ 0 < k < 1. $ 
+
+        故由夹逼定理证明 $ {\displaystyle\lim_{n\rightarrow \infty}}|x_{n+1} - a| = 0. $ 
+    \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) = x + \ln(2-x), $ 
+    \begin{enumerate}[label = \Roman*.]
+        \item 求 $ f(x) $ 最大值；
+        \item 若 $ x_1 = \ln 2, x_{n+1} = f(x_n), n\in N, $ 证明数列
+        $ \{x_n\} $ 收敛，并求其极限。
+    \end{enumerate}
+    \item[\textbf{方法}] \begin{enumerate}[label = \roman*.]
+        \item 求导，最大值点为 $ x = 1, f(1) = 1. $ 
+        \item 数学归纳法证明 $ \forall i \in N, x_i < 1, $ 故其有上界。
+        
+        $ x_{n+1} - x_n = f(x_n) - x_n = \ln(2-x_n) > 0, $ 故其单调递增。
+
+        故 $ \{x_n\} $ 单调递增有上界，故收敛。两端取极限求极限值 
+        $ {\displaystyle\lim_{n\rightarrow \infty}}x_n = 1. $ 
+        \item[ii.]
+        假设数列收敛，两端取极限求极限值。
+
+        $ 0\leq |x_{n+1} - 1| = |f(x_n) - f(1)| \xlongequal{\textrm{拉格朗日}} 
+        |f'(\xi)||x_n - 1|<\cdots<0, $ 
+        故类似地，由夹逼定理证明数列收敛于上述极限值。
+    \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 见T1.17.
+    \item[\textbf{方法}] \begin{enumerate}[label = \roman*.]
+        \item 假设数列收敛，两端取极限求极限值。
+        分类证明 $ x_1 $ 有不同的值时极限存在。（都用单调有界）
+
+        或者使用压缩映射法。
+        \item $ x_{n+1} = \dfrac{c(1+x_n+c-c)}{c+x_n} = c+\dfrac{c-c^2}{c+x_n}. $ 
+        
+        假设其收敛，两端取极限求极限值。
+    \end{enumerate}
+\end{enumerate}
+
+\sssubsection{n次根号下n项和 - T1.18}
+
+将 $ n $ 项设为 $ \{x_n\} $ 的元素，利用夹逼准则，
+
+构造形如 $ \dsqrt[n]{x_i} < \textrm{原式} < \dsqrt[n]{nx_i} $ 
+的式子，使得 $ {\displaystyle\lim_{n\rightarrow \infty}}\dsqrt[n]{x_i},
+{\displaystyle\lim_{n\rightarrow \infty}} \dsqrt[n]{nx_i} $ 都存在；
+
+其中 $ x_i $ 取 $ x_k $ 中最大的；利用单调性求最大值。
+
+\sssubsection{n项和:夹逼准则结合定积分 - T1.19}
+
+\sssubsection{n项积:取对数转化为n项和 - T1.20-21}
+
+利用夹逼准则，使得 $ g(n) \sum f(\frac{i}{n})\frac{1}{n}<\textrm{原式}< \sum f(\frac{i}{n})\frac{1}{n}, $ 
+
+其中 $ {\displaystyle\lim_{n\rightarrow \infty}}g(n) = 1. $ 
+
+\sssubsection{Stolz定理 - 数列洛必达}
+
+若数列 $ \{x_n\},\{y_n\} $ 满足
+\begin{itemize}
+    \item $ \{y_n\} $ 单调递减趋于零，$ {\displaystyle\lim_{n\rightarrow \infty}}x_n = 0 $ 
+    或者 $ \{y_n\} $ 单调递增趋于正无穷；
+    （即 $ \dfrac{0}{0} $ 型或 $ \dfrac{\square}{\infty} $ 型）
+    \item $ {\displaystyle\lim_{n\rightarrow \infty}}\dfrac{x_{n+1}-x_n}{y_{n+1}-y_{n}} $ 
+    存在或为无穷，
+\end{itemize}
+
+则有$$
+    {\displaystyle\lim_{n\rightarrow \infty}} \dfrac{x_n}{y_n} = {\displaystyle\lim_{n\rightarrow \infty}}
+    \dfrac{x_{n+1} - x_n}{y_{n+1} - y_n}.
+$$
+
+特别地，
+$$
+    {\displaystyle\lim_{n\rightarrow \infty}}\dfrac{x_n}{n} = {\displaystyle\lim_{n\rightarrow \infty}}
+    (x_{n+1} - x_n).
+$$
+
+\sssubsection{达朗贝尔-柯西}
+
+\begin{equation*}
+    \begin{aligned}
+        {\displaystyle\lim_{n\rightarrow \infty}}\dsqrt[n]{a_n} &= 
+        \exp({\displaystyle\lim_{n\rightarrow \infty}}\dfrac{\ln a_n}{n}) 
+        = \exp[{\displaystyle\lim_{n\rightarrow \infty}}(\ln a_{n+1} - \ln a_n)] \\ 
+        &= \exp({\displaystyle\lim_{n\rightarrow \infty}}\ln \dfrac{a_{n+1}}{a_n})
+        = {\displaystyle\lim_{n\rightarrow \infty}}\dfrac{a_{n+1}}{a_n}.
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{n项积:定积分 T1.22}
+
+任意区间，任意分割，任意取点，化简换元转化为 $ [0,1],n $ 等分，任意取点，即
+
+$$
+    {\displaystyle\lim_{n\rightarrow \infty}}\sum_{i=1}^nf(\xi_i)\dfrac{1}{n}
+    = \int_0^1 f(x)\mathrm{d}x
+$$
+
+对介于 $ \dfrac{i-1}{n},\dfrac{i}{n} $ 的任意 $ \xi_i $ 都成立。
+
+
+
+
+

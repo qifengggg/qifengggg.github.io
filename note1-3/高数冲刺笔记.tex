@@ -1,0 +1,240 @@
+\documentclass[oneside]{ctexbook}
+\usepackage{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{ntheorem}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xeCJK}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{titlesec, blindtext, color}
+\usepackage{arydshln}
+\usepackage{hyperref} 
+\usepackage[OT1]{fontenc}
+\usepackage{geometry}
+\usepackage{comment}
+\usepackage{extarrows}
+\usepackage{inconsolata}
+\usepackage{yhmath}
+\usepackage{enumitem}
+\usepackage[titletoc]{appendix}
+
+\geometry{a4paper,scale=0.8}
+
+\hypersetup{hidelinks,
+	colorlinks=true,
+	allcolors=black,
+	pdfstartview=Fit,
+	breaklinks=true
+}
+
+\ctexset{
+	 chapter = {
+		name = {第,章},
+		format = \linespread{1.0}\zihao{1}\bfseries\sffamily\centering,
+		nameformat = {\fontsize{30pt}{0pt}\centering\vspace{15pt}},
+		titleformat = {\centering},
+		number = \chinese{chapter},
+		numberformat = \sffamily,
+		aftername = ,
+		beforeskip = {7pt},
+		afterskip = {18pt},
+		aftername = {\\},
+		pagestyle = plain,
+	},
+	section={
+		%format用于设置章节标题全局格式，作用域为标题和编号
+		%字号为小三，字体为黑体，左对齐
+		%+号表示在原有格式下附加格式命令
+		format+ = \zihao{-1} \heiti \raggedright\centering,
+		%name用于设置章节编号前后的词语
+		%前、后词语用英文状态下,分开
+		%如果没有前或后词语可以不填
+		name = {,.\,},
+		%number用于设置章节编号数字输出格式
+		%\chinese输出section编号为中文，\arabic输出为阿拉伯数字
+		number = \Roman{section},
+		%beforeskip用于设置章节标题前的垂直间距
+		%ex为当前字号下字母x的高度
+		%基础高度为1.0ex，可以伸展到1.2ex，也可以收缩到0.8ex
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		%afterskip用于设置章节标题后的垂直间距
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+		%aftername用于控制编号和标题之间的格式
+		%\hspace用于增加水平间距
+		aftername = \hspace{0pt}
+	},
+	subsection={
+		format+ = \zihao{-2} \kaishu  \raggedright,
+		%仅输出subsection编号且为中文
+		number = \roman{subsection},
+		name = {,.},
+		beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+		aftername = \hspace{0pt}
+	},
+	subsubsection={
+		%设置对齐方式为居中对齐
+		format+ = \zihao{-3} \fangsong,
+		%仅输出subsubsection编号，格式为阿拉伯数字，打字机字体
+		number = \ttfamily\arabic{subsubsection},
+		name = {,.},
+		%beforeskip = 1.0ex plus 0.2ex minus .2ex,
+		afterskip = 1.0ex plus 0.2ex minus .2ex,
+		aftername = \hspace{0pt}
+	}
+}
+
+
+\usepackage{titletoc}
+\titlecontents{section}[6em]{\bfseries \zihao{5} \vspace{2pt}}
+{\contentslabel{2.5em}}{\hspace*{-4em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{subsection}[7em]{\zihao{5}}{\contentslabel{2em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{subsubsection}[8em]{\zihao{5}}{\contentslabel{3em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{paragraph}[11em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+
+
+\newenvironment{Appendices}
+{
+
+	\ctexset{
+		chapter = {
+			name = {附录},
+			format = \linespread{1.0}\zihao{1}\bfseries\sffamily\centering,
+			nameformat = {\fontsize{30pt}{0pt}\centering\vspace{15pt}},
+			titleformat = {\centering},
+			%number = \chinese{chapter},
+			number = ,
+			numberformat = \sffamily,
+			aftername = ,
+			beforeskip = {7pt},
+			afterskip = {18pt},
+			aftername = {\\},
+			pagestyle = plain,
+		},
+		section={
+			%format用于设置章节标题全局格式，作用域为标题和编号
+			%字号为小三，字体为黑体，左对齐
+			%+号表示在原有格式下附加格式命令
+			format+ = \zihao{-1} \heiti \raggedright\centering,
+			%name用于设置章节编号前后的词语
+			%前、后词语用英文状态下,分开
+			%如果没有前或后词语可以不填
+			name = {,.\,},
+			%number用于设置章节编号数字输出格式
+			%\chinese输出section编号为中文，\arabic输出为阿拉伯数字
+			number = \Roman{section},
+			%beforeskip用于设置章节标题前的垂直间距
+			%ex为当前字号下字母x的高度
+			%基础高度为1.0ex，可以伸展到1.2ex，也可以收缩到0.8ex
+			beforeskip = 1.0ex plus 0.2ex minus .2ex,
+			%afterskip用于设置章节标题后的垂直间距
+			afterskip = 1.0ex plus 0.2ex minus .2ex,
+			%aftername用于控制编号和标题之间的格式
+			%\hspace用于增加水平间距
+			aftername = \hspace{0pt}
+		},
+		subsection={
+			format+ = \zihao{-2} \kaishu  \raggedright,
+			%仅输出subsection编号且为中文
+			number = \roman{subsection},
+			name = {,.},
+			beforeskip = 1.0ex plus 0.2ex minus .2ex,
+			afterskip = 1.0ex plus 0.2ex minus .2ex,
+			aftername = \hspace{0pt}
+		},
+		subsubsection={
+			%设置对齐方式为居中对齐
+			format+ = \zihao{-3} \fangsong,
+			%仅输出subsubsection编号，格式为阿拉伯数字，打字机字体
+			number = \ttfamily\arabic{subsubsection},
+			name = {,.},
+			%beforeskip = 1.0ex plus 0.2ex minus .2ex,
+			afterskip = 1.0ex plus 0.2ex minus .2ex,
+			aftername = \hspace{0pt}
+		}
+	}
+}
+
+
+\fancyhf{}
+\fancyhead[L]{
+	\begin{minipage}[c]{0.06\textwidth}
+		\hyperlink{Index}{\includegraphics[height=7.5mm]{1.jpg}}
+	\end{minipage}
+	\begin{minipage}[c]{0.4\textwidth}
+		冲刺高数笔记
+	\end{minipage}}
+\fancyhead[R]{
+    \begin{minipage}[r]{0.1\textwidth}
+    \href{https://qifengggg.github.io/}{奇峰}
+    \end{minipage}
+}
+\cfoot{\hyperlink{Index}{\thepage}}
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+%\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand{\labelenumi}{\roman{enumi}.}
+\renewcommand{\labelitemii}{$ \circ $ }
+\newcommand{\dis}{\displaystyle}
+\newcommand{\Attention}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\sssubsection}[1]{\noindent\textbf{#1}}
+\newcommand{\nextline}{\vspace{5pt}\newline}
+\newcommand{\dsqrt}{\dis\sqrt}
+\newcommand{\pprime}{{\prime\prime}}
+\newcommand{\ppprime}{{\prime\prime\prime}}
+\newcommand{\whichis}{\mathop{=}\limits^\triangle}
+
+\title{\includegraphics[scale=0.6]{1.jpg}\\ \textsf{冲刺高数笔记}}
+\author{\href{https://qifengggg.github.io/}{奇峰}}
+\date{之前}
+
+\begin{document}
+
+\theoremseparator{}
+\newtheorem{def1}{定义}[section]
+\newtheorem{theo1}{定理}[section]
+\newtheorem{func1}{方法}[section]
+\newtheorem{infer1}{推论}[section]
+\newenvironment{proof}{\begin{itemize}\item \textbf{证明}
+	
+	}{\end{itemize}}
+%\newenvironment{<环境名称>}[<参数个数>][<首参数默认值>]{<环境前定义>}
+%							{<环境后定义>}
+
+
+\newenvironment{Def}[1][\quad{}]{\begin{def1}\textbf{#1}}{\end{def1}}
+\newenvironment{Theo}[1][\quad{}]{\begin{theo1}\textbf{#1}}{\end{theo1}}
+\newenvironment{Func}[1][\quad{}]{\begin{func1}\textbf{#1}}{\end{func1}}
+\newenvironment{Infer}[1][\quad{}]{\begin{infer1}\textbf{#1}}{\end{infer1}}
+\newenvironment{Field}[1][\quad{}]{\noindent\newline\textbf{#1}}{}
+
+\setlength{\parskip}{3pt}
+\setenumerate[1]{topsep=2pt}
+\setitemize[1]{topsep=2pt}
+
+\frontmatter
+\maketitle
+\hypertarget{Index}{}
+\tableofcontents
+
+\mainmatter
+
+\input{texs/ChapterI.tex}
+\input{texs/ChapterII.tex}
+\input{texs/ChapterIII.tex}
+\input{texs/ChapterIV.tex}
+
+\end{document}

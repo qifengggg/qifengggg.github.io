@@ -1,0 +1,314 @@
+\chapter{微分方程}
+
+\section{一阶微分方程}
+
+$ y' = f(ax+by+c) \Rightarrow  $ 令 $ u = ax+by+c. $ 
+
+$ 2yy' = (y^2)'; y'\cos y = (\sin y)'. $ 
+
+\sssubsection{微分方程解的极限 - T4.3}
+
+不定积分可以转化为变限积分函数。
+
+$$
+    \int f(t)\mathrm{d}t \Rightarrow \int_0^x f(t)\mathrm{d}t + C,
+$$
+
+其中 $ C\in\mathbb{R}. $ 事实上，$ 0 $ 可以改为任何数，甚至 $ -\infty $ (若其收敛)。
+
+\sssubsection{微分方程解的有界性与周期性 - T4.4}
+
+\begin{enumerate}
+    \item[\textbf{例题}]
+    若 $ f(x) $ 为 $ \mathbb{R} $ 上有界的连续函数，则
+    \begin{itemize}
+        \item 微分方程 $ y'+y=f(x) $ 在 $ \mathbb{R} $ 上存在一有界解；
+        \item 若 $ f(x) $ 以 $ T $ 为周期，则前述解也以 $ T $ 为周期。
+    \end{itemize}
+    \item[\textbf{方法}] 
+    题设方程的通解为 $ \dis e^{-x}\left[\int_{-\infty}^x e^tf(t)\mathrm{d}t + C\right], $ 
+    不妨令 $ C = 0, $ 则有一解 $ y = \dis e^{-x}\int_{-\infty}^xe^tf(t)\mathrm{d}t. $ 
+
+    由于 $ f(x) $ 有界即 $ |f(x)|\leq M, $ 有
+    \begin{equation*}
+        \begin{aligned}
+            |y| &= \left|e^{-x}\int_{-\infty}^xe^tf(t)\mathrm{d}t\right|
+            \\ &\leq e^{-x}\int_{-\infty}^xe^t|f(t)|\mathrm{d}t
+            \\ &\leq Me^{-x}\int_{-\infty}^xe^t\mathrm{d}t = M.
+        \end{aligned}
+    \end{equation*}
+    因此 $ y $ 有界。
+
+    此时，若 $ f(x) $ 周期为 $ T, $ 则有
+    \begin{equation*}
+        \begin{aligned}
+            y(x+T) &= e^{-x-T}\int_{-\infty}^{x+T}e^{t}f(t)\mathrm{d}t \\ 
+            &= e^{-x-T}\int_{-\infty}^{x+T}e^{t}f(t)\mathrm{d}t \quad  \\ 
+            &= e^{-x-T}\int_{-\infty}^{u}e^{u+t}f(u+t)\mathrm{d}u (t = u + T) \\ 
+            &= e^{-x-T+T}\int_{-\infty}^ue^uf(u)\mathrm{d}u = y(x).
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\section{二阶线性微分方程}
+
+\sssubsection{微分方程的逆问题}
+
+对给定通解，求多阶导数，直到能将所有任意常数都消去。
+
+对给定多特解，做差求无关解，线性组合得齐次通解。
+齐次通解得到齐次方程，结合特解得非齐次方程。
+
+也可以直接求非齐次通解再求导。
+
+\sssubsection{高阶常系数线性齐次方程 $ (n\geq 3) $ - T4.7}
+
+对方程形如
+$$
+    y^{(n)} + p_1y^{(n-1)} + \cdots + p_ny = 0
+$$
+解其特征方程 
+$$
+    r^n + p_1r^{n-1} + \cdots + p_n = 0
+$$
+
+其中，若有
+\begin{itemize}
+    \item $ k $ 重实根 $ r = r_i, $ 则通解中包含 
+    
+    $ (C_0 + C_1x + \cdots C_{k-1}x^{k-1})e^{r_ix}; $ 
+    \item $ k $ 重共轭复根 $ r = \alpha \pm \beta i, $ 则通解中包含
+    
+    $ e^{\alpha x}
+    [(C_0+C_1x+\cdots+C_{k-1}x^{k-1})\sin\beta x + (D_0+D_1x+\cdots+D_{k-1}x^{k-1})\cos\beta x]. $
+\end{itemize}
+
+\sssubsection{T4.8}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设二阶可导函数 $ f(x) $ 满足
+    $ f^2(x) - f^2(y) = f(x+y)f(x-y), $ 则
+    \begin{itemize}
+        \item $ f^\pprime(x)f(y) = f^\pprime(y)f(x); $ 
+        \item 若 $ f^\pprime(1) = f(1) = 1, $ 求 $ f(x). $ 
+    \end{itemize}
+    \item[\textbf{方法}] 
+    对题设关于 $ x $ 求偏导，有
+    $$
+        2f(x)f'(x) = f(x+y)f'(x-y) +f'(x+y)f(x-y)
+    $$
+    再关于 $ y $ 求偏导，有
+    \begin{equation*}
+        \begin{aligned}
+            &0 = f'(x+y)f'(x-y) - f(x+y)f^\pprime(x-y) - f'(x-y)f'(x+y) + f(x-y)f^\pprime(x+y)\\
+            \Rightarrow &f(x+y)f^\pprime(x-y) = f(x-y)f^\pprime(x+y)    
+        \end{aligned}
+    \end{equation*}
+    令 $ u = x+y, v = x-y $ 即证。
+
+    对第一问结论，令 $ y = 1, $ 则有 $ f^\pprime(x) - f(x) = 0, $ 
+    又有 $ f(0) = 0,f(1) = 1, $ 可以解得 $ f(x). $ 
+\end{enumerate}
+
+\sssubsection{非齐次项为分段函数 - T4.9}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 求 $ y^\pprime + y' - 2y = \min\{e^x,1\} $ 的通解。
+    \item[\textbf{方法}] 分段地讨论两个方程的通解，事实上，其为
+    $$
+        y_1 = C_1e^{-2x} + C_2e^x + \dfrac{1}{3}xe^x;\quad{}y_2 = C_3e^{-2x} + C_4e^x - \dfrac{1}{2},
+    $$
+    其中 $ C_i\in\mathbb{R}. $ 
+
+    由于原方程通解在 $ x = 0 $ 处可导，有
+    \begin{equation*}
+        \begin{aligned}
+            \begin{cases}
+                C_1 + C_2 = C_3 + C_4 - \dfrac{1}{2}\\     
+                -2C_1 + C_2 + \dfrac{1}{3} = -2C_3 + C_4
+            \end{cases} \Rightarrow
+            \begin{cases}
+                C_3 = C_1 + \dfrac{1}{18}\vspace{3pt}\\
+                C_4 = C_2 + \dfrac{4}{9}
+            \end{cases}
+        \end{aligned}
+    \end{equation*}
+    代入，得到原方程通解，其中 $ C_1,C_2 \in \mathbb{R}. $ 
+\end{enumerate}
+
+\section{微分方程综合题}
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{cases}
+            \textrm{导函数}\\
+            \textrm{切法线}\\
+            \textrm{变限积分函数}\\
+            \textrm{定积分应用}\\
+            \textrm{偏导数}\\
+            \textrm{二重积分}\\
+        \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{T4.11}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 
+    设 $ f(x) $ 满足 $ f(x+y)=\dfrac{f(x)+f(y)}{1-f(x)f(y)}, f'(0) = 1, $ 
+    求 $ f(x). $ 
+    \item[\textbf{方法}] 
+    令 $ x = y = 0, $ 有 $ f(0) = \dfrac{2f(0)}{1-f^2(0)} \Rightarrow f(0) = 0. $ 而
+
+    \begin{equation*}
+        \begin{aligned}
+            f'(x) &= {\displaystyle\lim_{\Delta x\rightarrow 0}}
+            \dfrac{f(x+\Delta x) - f(x)}{\Delta x} 
+            = {\displaystyle\lim_{\Delta x\rightarrow 0}}
+            \dfrac{\frac{f(x)+f(\Delta x)}{1-f(x)f(\Delta x)}-f(x)}{\Delta x}\\ 
+            &= {\displaystyle\lim_{\Delta x\rightarrow 0}}
+            \dfrac{f(x)+f(\Delta x)-f(x)(1-f(x)f(\Delta x))}{\Delta x(1-f(x)f(\Delta x))}\\
+            &= {\displaystyle\lim_{\Delta x\rightarrow 0}}
+            \dfrac{f(\Delta x)(1+f^2(x))}{\Delta x}
+            = 1+f^2(x)
+        \end{aligned}
+    \end{equation*}
+
+    因此有 $ \dis \int \dfrac{\mathrm{d}f(x)}{1+f^2(x)} = \int \mathrm{d}x, $ 
+    解得 $ \arctan f(x) = x + C, $ 而 $ f(0) = 0, $ 故有 $ f(x) = \tan x. $ 
+\end{enumerate}
+
+\sssubsection{T4.12}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设曲线 $ y = f(x) $ 位于第一象限且过 $ (1,\sqrt{3}), $ 
+    其上任意一点 $ P(x,y) $ 的切线与 $ x $ 轴正半轴交点为 $ A, $ 且有
+    $ \angle OPA = \dfrac{\pi}{4}, $ 求 $ f(x). $ 
+    \item[\textbf{方法}] 
+    由题，设 $ P $ 切线倾斜角为 $ \theta, $ 则有 $ \theta = \dfrac{\pi}{4} + \arctan \dfrac{y}{x}. $ 
+    那么，
+    \begin{equation*}
+        \begin{aligned}
+            y' = \tan \theta = \tan(\dfrac{\pi}{4}+\arctan \frac{y}{x}) = 
+            \dfrac{1 + \frac{y}{x}}{1 - \frac{y}{x}}.
+        \end{aligned}
+    \end{equation*}
+    求解上式即可。
+\end{enumerate}
+
+\sssubsection{变限积分函数结合微分方程 - T4.13}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设有连续函数 $\dis f(x) = \int_0^xf(t)\mathrm{d}t+\int_0^1tf^2(t)\mathrm{d}t,
+    f(t)\not\equiv 0, $ 
+    求 $ f(x). $ 
+    \item[\textbf{方法}] 显然 $ f(x) $ 无穷阶可导，对原式求导，
+    有 $ f'(x) = f(x) \Rightarrow f(x) = Ce^x, $ 
+    其中 $ C\in\mathbb{R}. $ 
+    
+    若令 $ A = \dis\int_0^1tf^2(t)\mathrm{d}t, $ 
+    则有 $ f(0) = A, $ 故 $ C = A, $ 即 $ f(x) = Ae^x. $ 
+
+    那么将 $ x = 0 $ 代入原式，则有
+    \begin{equation*}
+        \begin{aligned}
+            &\int_0^1tf^2(t)\mathrm{d}t = A = A^2\int_0^1te^{2t}\mathrm{d}t = \dfrac{A^2}{4}(e^2+1)\\ 
+            \Rightarrow & A\left(\dfrac{e^2+1}{4}A-1\right) = 0.
+        \end{aligned}
+    \end{equation*}
+    而由题，$ f(x)\not\equiv 0 \Rightarrow a \not\equiv 0, $ 
+    因此 $ a = \dfrac{4}{e^2+1}, $ 即 $ f(x) = \dfrac{4}{e^2+1}e^x. $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ [a,b] $ 连续，满足
+    $$
+        \dfrac{1}{x_2-x_1}\int_{x_1}^{x_2}f(x)\mathrm{d}x = \dfrac{1}{2}\left[f(x_1)+f(x_2)\right],\, 
+        x_1,x_2\in[a,b]
+    $$
+    求 $ f(x). $ 
+    \item[\textbf{方法}] 
+    令 $ x_1 = a, x_2 = x \neq a, $ 则有
+    \begin{equation*}
+        \begin{aligned}
+            &2\int_a^xf(t)\mathrm{d}t = (x-a)[f(x)-f(a)]\\ 
+            \Rightarrow & 2f(x) = (x-a)f'(x) + f(x) - f(a)\\ 
+            \Rightarrow & f(x) = C(x-a)+f(a),\, C\in \mathbb{R}.
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x) $ 在 $ [0,\pi] $ 连续，满足 
+    $$
+        \int_0^\pi\min\{x,y\}f(y)\mathrm{d}y = 4f(x)
+    $$
+    求 $ f(x). $ 
+    \item[\textbf{方法}] 
+    由题，可以知道
+    \begin{equation*}
+        \begin{aligned}
+            &\int_0^x yf(y)\mathrm{d}y + x\int_x^\pi f(y)\mathrm{d}y = 4f(x) \\ 
+            \Rightarrow & xf(x) - xf(x) + \int_x^\pi f(y)\mathrm{d}y = 4f'(x) \\ 
+            \Rightarrow & f^\pprime(x) + \dfrac{1}{4}f(x) = 0\\
+            \Rightarrow & f(x) = C_1\cos \dfrac{1}{2}x + C_2\sin \dfrac{1}{2}x,
+            \,C_1,C_2 \in \mathbb{R}.
+        \end{aligned}
+    \end{equation*}
+    而 $ f(0) = 0, $ 则有 $ C_1 = 0, $ 即 $ f(x) = C\sin \dfrac{1}{2}x, $ 
+    其中 $ C\in \mathbb{R}. $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设连续函数 $ f(x) $ 满足 
+    $$
+        x = \int_0^xf(t)\mathrm{d}t + \int_0^xtf(t-x)\mathrm{d}t
+    $$
+    求 $ f(x). $ 
+    \item[\textbf{方法}] 
+    由题，可以知道
+    \begin{equation*}
+        \begin{aligned}
+            &x = \int_0^xf(t)\mathrm{d}t - \int_0^{-x}(t-x)f(t)\mathrm{d}t\\ 
+            \Rightarrow & f(x) = 1 + \int_0^{-x}f(t)\mathrm{d}t \\ 
+            \Rightarrow & f'(x) = -f(-x) \Rightarrow f'(-x) = -f(x) \\ 
+            \Rightarrow & f^\pprime(x) = f'(-x) \\ 
+            \Rightarrow & f^\pprime(x) + f(x) = 0 \\ 
+            \Rightarrow & f(x) = A\sin x + B\cos x.
+        \end{aligned} 
+    \end{equation*}
+    可以知道 $ f(0) = 1, f'(0) = -1, $ 故有 $ f(x) = \cos x - \sin x. $ 
+\end{enumerate}
+
+\sssubsection{T4.14}
+
+当待解微分方程中出现形如 $ \dis x\int_0^xf(t)\mathrm{d}t $ 的式子时，不要直接求导，而应当
+设 $ \dis g(x) = \int_0^xf(t)\mathrm{d}t $ 后再计算。
+
+\sssubsection{T4.15}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ f(x,y) = F(\dfrac{y}{x}) $ 有 
+    $ \dfrac{\partial^2 f}{\partial^2 x}+\dfrac{\partial^2 f}{\partial^2 y} = 0, $  
+    求 $ f(x,y). $ 
+    \item[\textbf{方法}] 设 $ \dfrac{y}{x} = u, $ 则
+    \begin{equation*}
+        \begin{aligned}
+            \dfrac{\partial f}{\partial x} &= -F'(u)\dfrac{y}{x^2} \\ 
+            \dfrac{\partial^2 f}{\partial^2 x} &= \dfrac{2y}{x^3}F'(u) + \dfrac{y^2}{x^4}F^\pprime(u)\\ 
+            \dfrac{\partial f}{\partial y} &= \dfrac{1}{x}F'(u)\\
+            \dfrac{\partial^2 f}{\partial^2 y} &= \dfrac{1}{x^2}F^\pprime(u)\\
+        \end{aligned}
+    \end{equation*}
+    那么，可以知道
+    \begin{equation*}
+        \begin{aligned}
+            &\dfrac{2y}{x^3}F'(u) + \dfrac{y^2}{x^4}F^\pprime(u)+\dfrac{1}{x^2}F^\pprime(u) = 0 \\ 
+            \Rightarrow & (1+u^2)F^\pprime(u) + 2uF'(u) = 0 \\ 
+            \Rightarrow & \left[(1+u^2)F'(u)\right]' = 0 \\ 
+            \Rightarrow & F'(u) = \dfrac{C_1}{1+u^2} \\ 
+            \Rightarrow & F(u) = C_1\arctan(u) + C_2, 
+        \end{aligned}
+    \end{equation*}
+    即 $ f(x,y) = C_1\arctan\left(\dfrac{y}{x}\right) + C_2,$ 其中 $ C_1,C_2\in\mathbb{R}. $ 
+\end{enumerate}
