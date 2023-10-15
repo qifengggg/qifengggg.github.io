@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  12 OCT 2023 21:40
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  15 OCT 2023 22:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1101,7 +1101,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[19])
+[19]) (./texs/ChapterV.tex
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[20]
+第五章
+[21
+
+]
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[22]
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[23])
 \tf@thm=\write6
 \openout6 = `高数冲刺笔记.thm'.
 
@@ -1115,7 +1152,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[20] (./高数冲刺笔记.aux)
+[24] (./高数冲刺笔记.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
@@ -1124,15 +1161,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `高数冲刺笔记.out' has not changed.
-(rerunfilecheck)             Checksum: 29B0CBEBDE1B0B021FCF54EF428ED227;2533.
+(rerunfilecheck)             Checksum: D9E6A997CD91BA47220495A454C8BAD5;2823.
  ) 
 Here is how much of TeX's memory you used:
- 21751 strings out of 476179
- 446357 string characters out of 5813073
- 775564 words of memory out of 5000000
- 42082 multiletter control sequences out of 15000+600000
+ 21757 strings out of 476179
+ 446458 string characters out of 5813073
+ 775899 words of memory out of 5000000
+ 42085 multiletter control sequences out of 15000+600000
  537505 words of font info for 148 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,23n,97p,1192b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 高数冲刺笔记.pdf (22 pages).
+Output written on 高数冲刺笔记.pdf (26 pages).

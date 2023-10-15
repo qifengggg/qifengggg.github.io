@@ -20,4 +20,7 @@
 \contentsline {section}{\numberline {I.\,}一阶微分方程}{15}{section.4.1}%
 \contentsline {section}{\numberline {II.\,}二阶线性微分方程}{16}{section.4.2}%
 \contentsline {section}{\numberline {III.\,}微分方程综合题}{17}{section.4.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}二重积分}{21}{chapter.5}%
+\contentsline {section}{\numberline {I.\,}交换积分次序}{21}{section.5.1}%
+\contentsline {section}{\numberline {II.\,}二重积分的计算}{22}{section.5.2}%
 \contentsfinish 
