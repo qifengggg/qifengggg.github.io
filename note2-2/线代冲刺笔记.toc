@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {一.\,}求特征值和特征向量}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {i.}抽象矩阵}{1}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {ii.}具体矩阵}{1}{subsection.0.1.2}%
+\contentsline {section}{\numberline {二.\,}相似}{1}{section.0.2}%

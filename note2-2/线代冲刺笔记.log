@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  26 OCT 2023 15:48
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  18 NOV 2023 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**线代强化笔记
-(./线代强化笔记.tex
+**线代冲刺笔记
+(./线代冲刺笔记.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (e:/texlive/2022/texmf-dist/tex/latex/ctex/ctexbook.cls (e:/texlive/2022/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
 File: ctexbackend.cfg 2021/12/12 v2.5.8 Backend configuration file (CTEX)
@@ -689,8 +689,8 @@ Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 Package hyperref Info: Option `colorlinks' set `true' on input line 37.
 Package hyperref Info: Option `breaklinks' set `true' on input line 37.
 \c@sectionCnt=\count368
- (./线代强化笔记.aux)
-\openout1 = `线代强化笔记.aux'.
+ (./线代冲刺笔记.aux)
+\openout1 = `线代冲刺笔记.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 204.
 LaTeX Font Info:    ... okay on input line 204.
@@ -786,9 +786,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 204.
 LaTeX Info: Redefining \pageref on input line 204.
 LaTeX Info: Redefining \nameref on input line 204.
- (./线代强化笔记.out) (./线代强化笔记.out)
+ (./线代冲刺笔记.out) (./线代冲刺笔记.out)
 \@outlinefile=\write4
-\openout4 = `线代强化笔记.out'.
+\openout4 = `线代冲刺笔记.out'.
 
 
 *geometry* driver: auto-detecting
@@ -884,43 +884,18 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 
 
 
-] (./线代强化笔记.toc
+] (./线代冲刺笔记.toc
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 2.
+(Font)              size <10.95> substituted on input line 1.
 
-[1
-
-])
+)
 \tf@toc=\write5
-\openout5 = `线代强化笔记.toc'.
+\openout5 = `线代冲刺笔记.toc'.
 
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
+ [1
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[2] (./texs/ChapterO.tex [1
-
-
-]) (./texs/ChapterI.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[2]
-第一章
+] (./texs/ChapterV.tex
 
 Package fontspec Info: Could not resolve font "SimHei/BI" (it probably doesn't
 (fontspec)             exist).
@@ -945,10 +920,39 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
+
 LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
-(Font)              using `TU/SimHei(0)/m/n' instead on input line 33.
+(Font)              using `TU/SimHei(0)/m/n' instead on input line 3.
 
-[3
+
+Package fontspec Info: Could not resolve font "KaiTi/BI" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Could not resolve font "KaiTi/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Could not resolve font "KaiTi/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Font family 'KaiTi(0)' created for font 'KaiTi' with
+(fontspec)             options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"KaiTi/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
+(Font)              using `TU/KaiTi(0)/m/n' instead on input line 5.
+
+[1
+
 
 ]
 File: 1.jpg Graphic file (type bmp)
@@ -961,308 +965,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[4]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[5]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[6]) (./texs/ChapterII.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[7]
-第二章
-[8
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[9]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[10]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[11]
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <22.08249> not available
-(Font)              size <20.74> substituted on input line 324.
-
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 324.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 324.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 324.
-
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[12]) (./texs/ChapterIII.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[13]
-第三章
-[14
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[15]) (./texs/ChapterIV.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[16]
-第四章
-[17
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[18]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[19]) (./texs/ChapterV.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[20]
-第五章
-[21
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[22]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[23]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[24]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[25]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[26]) (./texs/ChapterVI.tex
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[27]
-第六章
-[28
-
-]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[29]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[30]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[31]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[32]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 21.33955pt, for example:
-(fancyhdr)                \setlength{\headheight}{21.33955pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
-
-[33])
+[2])
 \tf@thm=\write6
-\openout6 = `线代强化笔记.thm'.
+\openout6 = `线代冲刺笔记.thm'.
 
 File: 1.jpg Graphic file (type bmp)
 <1.jpg>
@@ -1274,24 +979,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[34] (./线代强化笔记.aux)
+[3] (./线代冲刺笔记.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.34248pt have occurred.
+(Font)              up to 0.41063pt have occurred.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `线代强化笔记.out' has not changed.
-(rerunfilecheck)             Checksum: 159B75E279CB9781E09CEF0E6D03CB3C;3132.
+Package rerunfilecheck Info: File `线代冲刺笔记.out' has not changed.
+(rerunfilecheck)             Checksum: 2C7A2E3A61ACA4B221B224513627C9FF;364.
  ) 
 Here is how much of TeX's memory you used:
- 21882 strings out of 476179
- 454947 string characters out of 5813073
- 780376 words of memory out of 5000000
- 42193 multiletter control sequences out of 15000+600000
- 546659 words of font info for 190 fonts, out of 8000000 for 9000
+ 21547 strings out of 476179
+ 437475 string characters out of 5813073
+ 772424 words of memory out of 5000000
+ 41886 multiletter control sequences out of 15000+600000
+ 534823 words of font info for 149 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,31n,97p,1192b,713s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,97p,1192b,578s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 线代强化笔记.pdf (37 pages).
+Output written on 线代冲刺笔记.pdf (5 pages).

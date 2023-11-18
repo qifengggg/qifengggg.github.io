@@ -1,0 +1,229 @@
+\chapter*{特征值与特征向量}
+
+\Section{求特征值和特征向量}
+
+\subsection{抽象矩阵}
+
+对 $ r(A) = 1 \Leftrightarrow A =\alpha\beta^\top $ 的矩阵，有
+
+\begin{enumerate}
+    \item $ A^n = \textrm{tr}(A)^{n-1}\alpha\beta^\top; $ 
+    \item $ \lambda_1 = \textrm{tr}(A), \alpha_1 = \alpha; $ 
+    $ \lambda_2,\cdots,\lambda_n = 0, \alpha_i $ 是 $ \beta^\top X = 0 $ 的解，共 $ n - 1 $ 个。
+    \item $ A $ 可相似对角化，当且仅当 $ \textrm{tr}(A) \neq 0; $ 
+    \item $ A = \sum \lambda_i\gamma_i\gamma_i^\top = \textrm{tr}(A)\gamma_1\gamma_1^\top, $ 
+    其中 $ \gamma_i $ 是经过正交化的特征向量。
+\end{enumerate}
+
+实对称矩阵特征向量相互之间是正交的。对三阶实对称矩阵，
+\begin{itemize}
+    \item \textbf{知二求一}
+    
+    求向量积 $ \alpha_1\times \alpha_2, $ 即 
+    $ \begin{vmatrix}
+        a_1&b_1&c_1\\ a_2&b_2&c_2\\ i&j&k
+    \end{vmatrix} $ 
+    \item \textbf{知一求二}
+    
+    取合适的 $ a,b,c $ 使得 $ \alpha_2 = (a, b, 0)^\top, \alpha_3 = (-b, a, c) $ 与已知的 $ \alpha_1 $ 
+    两两正交。
+\end{itemize}
+
+\subsection{具体矩阵}
+
+以 $ |A - \lambda E| = 0 $ 求特征值，$ |A-\lambda_0 E|X = 0 $ 求对应特征向量。
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ \alpha_1 = (1,1,0)^\top, \alpha_2 = (1,0,1)^\top $ 为三阶矩阵 $ A $ 对应
+    $ \lambda_1 = 1, \lambda_2 = 2 $ 的特征向量，
+    
+    $ \beta = (-1,1,-2)^\top, $ 求 $ A^2\beta. $ 
+    \item[\textbf{方法}]
+    用已知的特征向量线性\textbf{表示}给定的 $ \beta. $ 具体而言，
+    \begin{equation*}
+        \begin{aligned}
+            \beta = \alpha_1 - 2\alpha_2 
+            \Leftrightarrow  A^2\beta = A^2\alpha_1 - 2A^2\alpha^2 
+            = \alpha_1 - 8\alpha_2.
+        \end{aligned}
+    \end{equation*}
+\end{enumerate} 
+
+\Section{相似}
+
+\begin{enumerate}
+    \item[\textbf{例题}]
+    设 $ 3 $ 阶矩阵 $ A $ 有三个不同的特征值 $ \lambda_i, $ 对应的特征向量是 $ \alpha_i, $ 
+    $ \beta = \sum \alpha_i. $ 
+    \begin{enumerate}
+        \item 证明 $ \beta $ 不是 $ A $ 的特征向量。
+        \item 证明 $ \beta,A\beta,A^2\beta $ 线性无关。
+        \item 若 $ A^3\beta = 2A\beta + A^2\beta, $ 求 $ A $ 的特征值，求 $ |A+2E|. $ 
+    \end{enumerate}
+    \item[\textbf{方法}]
+    \begin{enumerate}
+        \item 反证即可。
+        \item 
+        由于 $ (\beta,A\beta,A^2\beta) = (\alpha_1,\alpha_2,\alpha_3)
+        \begin{pmatrix}
+            1 & \lambda_1 & \lambda_1^2\\
+            2 & \lambda_2 & \lambda_2^2\\
+            3 & \lambda_3 & \lambda_3^2\\
+        \end{pmatrix}, $ 而后二者都满秩，故前者满秩，故三向量无关。
+        \item 通过构造 $ P $ 并通过化简得到等式 $ AP = PB $ 以找到具体的相似矩阵。
+        
+        具体而言，令 $ P = (\beta,A\beta,A^2\beta), $ 则
+        \begin{equation*}
+            \begin{aligned}
+                AP &= (A\beta,A^2\beta,(2A+A^2)\beta)\\ 
+                &= (\beta,A\beta,A^2\beta)\begin{pmatrix}
+                    0&0&0\\
+                    1&0&1\\
+                    0&1&2\\
+                \end{pmatrix}
+            \end{aligned}
+        \end{equation*}
+        那么有 $ P^{-1}AP = B, $ 那么，$ \lambda_A = \lambda_B, |A+2E| = |B+2E|. $ 
+    \end{enumerate}
+\end{enumerate}
+
+\sssubsection{$ AB^{-1} $ 的快速求法}
+
+\begin{equation*}    
+    \begin{aligned}
+        \left(
+        \begin{array}{c}
+            P_2 \\\hdashline  P_1
+        \end{array}
+        \right)
+        \xlongrightarrow{\textrm{列变换}}
+        \left(
+        \begin{array}{c}
+            E \\\hdashline P_1P_2^{-1}
+        \end{array}
+        \right)
+    \end{aligned}
+\end{equation*}
+
+类似地，
+
+\begin{equation*}    
+    \begin{aligned}
+        \left(
+        \begin{array}{c:c}
+            P_1 & P_2
+        \end{array}
+        \right)
+        \xlongrightarrow{\textrm{行变换}}
+        \left(
+        \begin{array}{c:c}
+            E & P_1^{-1}P_2
+        \end{array}
+        \right)
+    \end{aligned}
+\end{equation*}
+
+\sssubsection{相似对角化结合传递性及其快速求法}
+
+若有 $ P_1^{-1}AP_1 = \Lambda = P_2^{-1}AP_2, $ 则有
+$ B = (P_1P_2^{-1})^{-1}A(P_1P_2^{-1}). $ 
+
+事实上，若有三阶 $ A,B, $ 存在 $ P = (\alpha_1,\alpha_2,\alpha_3) $ 使得 $ AP = PB, $ 那么
+\begin{equation*}
+    \begin{aligned}
+        AP = PB \Leftrightarrow A(\alpha_1,\alpha_2,\alpha_3) = (\alpha_1,\alpha_2,\alpha_3)B
+    \end{aligned}
+\end{equation*}
+
+由此可以得到三个方程组，分别求出 $ \alpha_1,\alpha_2,\alpha_3, $ 
+即可得到 $ P $ 使得 $ P^{-1}AP = B. $ 
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ A = \begin{pmatrix}
+        2&0&0\\0&0&1\\0&1&0\\
+    \end{pmatrix}, B=\begin{pmatrix}
+        1&0&0\\0&-1&0\\0&-6&2\\
+    \end{pmatrix} $ 
+    求 $ P $ 使得 $ P^{-1}AP = B. $ 
+    \item[\textbf{方法}]
+    设 $ P = (\alpha_1,\alpha_2,\alpha_3), $ 那么有
+    \begin{equation*}
+        \begin{aligned}
+            AP = PB &\Rightarrow
+            A(\alpha_1,\alpha_2,\alpha_3) = (\alpha_1,\alpha_2,\alpha_3)B \\ 
+            &\Rightarrow 
+            A(\alpha_1,\alpha_2,\alpha_3) = (\alpha_1,-\alpha_2-6\alpha_3,2\alpha_3)
+        \end{aligned}
+    \end{equation*}
+    那么有
+    \begin{equation*}
+        \begin{aligned}
+            &(A-E)\alpha_1 = 0\\
+            &(A-2E)\alpha_3 = 0\\ 
+            &(A+E)\alpha_2 = -6\alpha_3
+        \end{aligned}
+    \end{equation*}
+    分别求解，解得
+    \begin{equation*}
+        \begin{aligned}
+            \alpha_1 = (0,1,1)^\top, \alpha_3 = (1,0,0)^\top,
+            \alpha_2 = k(0,-1,1)^\top+(-2,0,0)^\top, k\in \mathbb{R}.
+        \end{aligned}
+    \end{equation*}
+    由于 $ k = 0 $ 时，$ P $ 不满秩，令 $ k = 1, $ 得到
+    $ P = \begin{pmatrix}
+        0&-2&1\\1&-1&0\\1&1&0\\
+    \end{pmatrix} $ 满足题设。
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ A $ 为三阶矩阵，三维列向量 $ \alpha_1,\alpha_2,\alpha_3 $ 线性无关，
+    且 $ A\alpha_1 = \alpha_1+\alpha_2+\alpha_3, 
+    A\alpha_2 = 2\alpha_2+\alpha_3,
+    A\alpha_3 = 2\alpha_2+3\alpha_3, $ 
+    求可逆矩阵 $ P $ 使得 $ P^{-1}AP $ 为对角阵。
+    \item[\textbf{方法}]
+    由于
+    \begin{equation*}
+        \begin{aligned}
+            A(\alpha_1,\alpha_2,\alpha_3) = (\alpha_1,\alpha_2,\alpha_3)
+            \begin{pmatrix}
+                1&0&0\\1&2&2\\1&1&3\\
+            \end{pmatrix}
+        \end{aligned}
+    \end{equation*}
+    设 $ \begin{pmatrix}
+        1&0&0\\1&2&2\\1&1&3\\
+    \end{pmatrix} = B, $ 
+    那么 $ A,B $ 相似。
+
+    由于 $ B = \begin{pmatrix}
+        0&0&&\\1&1&2\\1&1&2
+    \end{pmatrix}+E=(0,1,1)^\top(1,1,2) + E, $ 
+    前者特征值为 $ 3,0,0, $ 有 $ B $ 的特征值为 $ 4,1,1. $ 
+\end{enumerate}
+
+\sssubsection{相乘为零的矩阵的性质}
+
+若 $ AB = O, $ 有
+\begin{itemize}
+    \item $ r(A)+r(B)\leq n; $ 
+    \item $ B $ 的列向量是 $ AX=0 $ 的解；
+    \item $ B $ 的非零列向量是 $ A $ 的特征值为 $ 0 $ 对应的特征向量；
+    \item $ A $ 的行向量与 $ B $ 的列向量正交。
+\end{itemize}
+
+\sssubsection{矩阵的二次方程有两个互异的根}
+
+若 $ n $ 阶矩阵 $ A $ 满足
+\begin{equation*}
+    \begin{aligned}
+        A^2 - (\lambda_1+\lambda_2)A + \lambda_1\lambda_2E = 
+        (A-\lambda_1E)(\lambda_2-A) = 0
+    \end{aligned}
+\end{equation*}
+
+则\begin{itemize}
+    \item $ r(A-\lambda_1E) + r(\lambda_2E-A) = n; $ 
+    \item $ A $ 可以相似对角化。
+\end{itemize}
