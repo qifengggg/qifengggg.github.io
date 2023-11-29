@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  18 NOV 2023 21:25
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.6)  29 NOV 2023 19:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -965,7 +965,56 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[2])
+[2]
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[3]
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[4]) (./texs/ChapterVI.tex
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[5] [6
+
+]
+Overfull \hbox (15.11493pt too wide) in paragraph at lines 123--128
+[]\TU/SimSun(0)/m/n/10.53937 设 三 阶 实 对 称 矩 阵 $\OML/cmm/m/it/10.53937 A$ \TU/SimSun(0)/m/n/10.53937 满 足 $\OML/cmm/m/it/10.53937 A[]^^K \OT1/cmr/m/n/10.53937 = \OML/cmm/m/it/10.53937 ^^K; ^^K \OT1/cmr/m/n/10.53937 = (\OMS/cmsy/m/n/10.53937 ^^@\OT1/cmr/m/n/10.53937 1\OML/cmm/m/it/10.53937 ; \OMS/cmsy/m/n/10.53937 ^^@\OT1/cmr/m/n/10.53937 1\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 1)[]\OML/cmm/m/it/10.53937 ;$ \TU/SimSun(0)/m/n/10.53937 存 在 正 交 矩 阵 $\OML/cmm/m/it/10.53937 Q$ \TU/SimSun(0)/m/n/10.53937 使 得 $\OML/cmm/m/it/10.53937 Q[]AQ \OT1/cmr/m/n/10.53937 = [] \OML/cmm/m/it/10.53937 ;$ 
+ []
+
+File: 1.jpg Graphic file (type bmp)
+<1.jpg>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 21.33955pt, for example:
+(fancyhdr)                \setlength{\headheight}{21.33955pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
+
+[7])
 \tf@thm=\write6
 \openout6 = `线代冲刺笔记.thm'.
 
@@ -979,7 +1028,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-9.33955pt}.
 
-[3] (./线代冲刺笔记.aux)
+[8] (./线代冲刺笔记.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
@@ -988,15 +1037,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `线代冲刺笔记.out' has not changed.
-(rerunfilecheck)             Checksum: 2C7A2E3A61ACA4B221B224513627C9FF;364.
+(rerunfilecheck)             Checksum: 01D9B37C59548A7B64669A3DACEB9C8B;824.
  ) 
 Here is how much of TeX's memory you used:
- 21547 strings out of 476179
- 437475 string characters out of 5813073
- 772424 words of memory out of 5000000
- 41886 multiletter control sequences out of 15000+600000
+ 21578 strings out of 476179
+ 439099 string characters out of 5813073
+ 775424 words of memory out of 5000000
+ 41914 multiletter control sequences out of 15000+600000
  534823 words of font info for 149 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,17n,97p,1192b,578s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,97p,1192b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 线代冲刺笔记.pdf (5 pages).
+Output written on 线代冲刺笔记.pdf (10 pages).

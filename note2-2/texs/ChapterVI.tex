@@ -1,0 +1,241 @@
+\chapter*{二次型}
+
+\Section{求二次型的标准形或规范型}
+
+\begin{itemize}
+    \item 拉格朗日配方法 \begin{enumerate}
+        \item 配方（配干净）
+        \item 换元 $ X = CY $ 
+    \end{enumerate}
+    \item 合同变换法
+    \begin{equation*}
+        \begin{aligned}
+            \begin{pmatrix}
+                A \\ E
+            \end{pmatrix}
+            \xlongrightarrow{\textrm{行列成对的初等变换}}
+            \begin{pmatrix}
+                \Lambda \\ C
+            \end{pmatrix}
+        \end{aligned}
+    \end{equation*}
+    即行怎么变，列马上怎么变。如，
+
+    \begin{equation*}
+        \begin{aligned}
+            \begin{pmatrix}
+                1 & 2 & 3 \\
+                2 & 3 & 4 \\
+                3 & 4 & 5 \\ 
+                & \cdots & \\
+            \end{pmatrix}
+            &\xlongrightarrow{\textrm{第一行/列的负二倍加到第二行/列}}
+            \begin{pmatrix}
+                1 & 0  & 3 \\
+                0 & -1 & -2 \\
+                3 & -2 & 5 \\ 
+                & \cdots & \\
+            \end{pmatrix}\\
+            &\xlongrightarrow{\textrm{第一行/列的负三倍加到第三行/列}}
+            \begin{pmatrix}
+                1 & 0  & 0 \\
+                0 & -1 & -2 \\
+                0 & -2 & -4 \\ 
+                & \cdots & \\
+            \end{pmatrix}\\
+            &\xlongrightarrow{\textrm{第二行/列的负二倍加到第三行/列}}
+            \begin{pmatrix}
+                1 & 0  & 0 \\
+                0 & -1 & 0 \\
+                0 & 0 & 0 \\ 
+                & \cdots & \\
+            \end{pmatrix}
+        \end{aligned}
+    \end{equation*}
+    \item 正交变换法
+    \begin{enumerate}
+        \item 特征值
+        \item 特征向量
+        \item 单位化
+    \end{enumerate}
+    得到正交变换 $ X=QY $ 使得 $ f = \dis\sum \lambda_iy_i^2. $ 
+\end{itemize}
+
+\begin{itemize}
+    \item 经过可逆线性变换二次型矩阵合同
+    \begin{equation*}
+        \begin{aligned}
+            X^\top AX \xlongequal{X = CY} (CY)^\top A (CY)
+            = Y^\top \overbrace{C^\top AC}^B Y
+        \end{aligned}
+    \end{equation*}
+    \item 经过正交变换二次型矩阵既相似又合同
+    \begin{equation*}
+        \begin{aligned}
+            X^\top AX \xlongequal{X = QY} (QY)^\top A (QY)
+            = Y^\top \overbrace{Q^\top AQ}^B Y = Y^\top \overbrace{Q^{-1} AQ}^B Y 
+        \end{aligned}
+    \end{equation*}
+    其中 $ Q $ 是正交矩阵。
+\end{itemize}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 
+    求二次型 $ x^\top Ax = (x_1 + 2x_2 + ax_3)(x_1 + 5x_2 + bx_3) $ 的正惯性指数和负惯性指数。
+    \item[\textbf{方法}] \textbf{普通配方法}
+    
+    令
+    \begin{equation*}
+        \begin{aligned}
+            \begin{cases}
+                y_1 = x_1 + 2x_2 + ax_3\\
+                y_2 = x_1 + 5x_2 + bx_3\\
+                y_3 = x_3
+            \end{cases}
+            \begin{cases}
+                y_1 = z_1 + z_2\\
+                y_2 = z_1 - z_2\\ 
+                y_3 = z_3
+            \end{cases}
+        \end{aligned}
+    \end{equation*}
+    由于矩阵
+    \begin{equation*}
+        \begin{aligned}
+            \begin{pmatrix}
+                1&2&a\\1&5&b\\0&0&1
+            \end{pmatrix}
+            \begin{pmatrix}
+                1&1&0\\1&-1&0\\0&0&1
+            \end{pmatrix}
+        \end{aligned}
+    \end{equation*}
+    行列式均不为零，故前二者均为可逆变换，因此可以得到
+    \begin{equation*}
+        \begin{aligned}
+            x^\top Ax = z_1^2 - z_2^2
+        \end{aligned}
+    \end{equation*}
+    因此其正惯性指数和负惯性指数均为 $ 1. $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设三阶实对称矩阵 $ A $ 满足 $ A^*\alpha = \alpha, \alpha = (-1,-1,1)^\top, $ 
+    存在正交矩阵 $ Q $ 使得 $ Q^\top AQ = \begin{pmatrix}
+        -1&&\\&-1&\\&&2
+    \end{pmatrix}, $ 
+    \begin{enumerate}
+        \item 求矩阵 $ A; $ 
+        \item 求二次型 $ f(x_1,x_2,x_3)=x^\top (A^*)^{-1}x $ 的表达式与规范型。
+    \end{enumerate}
+    \item[\textbf{方法}] 
+    \begin{enumerate}
+        \item \textbf{法一}
+        
+        由于 $ AA^*\alpha = 2\alpha = A\alpha, $ 有 $ \alpha $ 是 $ A $ 对应
+        特征值为 $ 2 $ 的特征向量。
+        
+        可以知道，$ A $ 有特征向量 
+        $ \gamma_1 = \dfrac{1}{\sqrt 2}(1,-1,0)^\top, \gamma_2 = \dfrac{1}{\sqrt 6}
+        (1,1,2)^\top $ 对应 $ \lambda_1 = \lambda_2 = -1; $ 
+        
+        有特征向量 $ \gamma_3 = \dfrac{1}{\sqrt 3}(1,1,-1)^\top $ 
+        对应 $ \lambda_3 = 2. $ 
+        
+        那么有 $ Q = (\gamma_1,\gamma_2,\gamma_3) $ 使得 $ Q^\top AQ = \Lambda. $ 
+        那么，$ A = Q\Lambda Q^\top = \begin{pmatrix}
+            0&1&-1\\1&0&-1\\-1&-1&0
+        \end{pmatrix}. $ 
+
+        \textbf{法二}
+
+        由 $ Q^\top \overbrace{(A+E)}^{r=1}Q = \begin{pmatrix}
+            0&&\\&0&\\&&3
+        \end{pmatrix}, $ 有 $ A+E = \lambda_3\gamma_3\gamma_3^\top, $ 
+        其中 $ \lambda_3 = 3, \gamma_3 = \dfrac{1}{\sqrt 3}(1,1,-1)^\top. $ 
+        \item 由于 $ (A^*)^{-1} = (|A|A^{-1})^{-1} = \dfrac{1}{2}A, $ 有 $ f = \dfrac{1}{2}x^\top Ax = x_1x_2 - x_1x_3 - x_2x_3. $ 
+        
+        由于 $ \dfrac{1}{2}A $ 的特征值为 $ -\dfrac{1}{2},-\dfrac{1}{2},1, $ 知道二次型的规范型为
+        $ f = -y_1^2 - y_2^2 + y_3^2. $ 
+    \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ A = \begin{pmatrix}
+        2&2&0\\8&2&0\\0&0&6
+    \end{pmatrix}, $ 求正交变换 $ x = Qy $ 将二次型 $ x^\top Ax $ 转化为标准形。
+    \item[\textbf{方法}] 此处 $ A $ 不是实对称矩阵。
+    
+    \textbf{法一}
+
+    将 $ x^\top Ax $ 展开并求二次型的矩阵 $ B. $ 
+
+    \textbf{法二}
+
+    可以知道，二次型的矩阵 $ B = \dfrac{1}{2}(A+A^\top). $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设二次型 $ f(x_1,x_2,x_3) = x_1^2 + 5x_2^2 + 5x_3^2 +2x_1x_2 - 4x_1x_3, $ 
+    \begin{enumerate}
+        \item 求正交变换 $ x = Qy $ 将二次型化为标准形。
+        \item 当 $ x^\top x = 2 $ 时，求 $ f(x_1,x_2,x_3) $ 的最大值。
+    \end{enumerate}
+    \item[\textbf{方法}] 
+    \begin{enumerate}
+        \item 略。
+        \item 当 $ x\top x = 2 $ 时，
+        \begin{equation*}
+            \begin{aligned}
+                x^\top x = (Qy)^\top (Qy) = y^\top Q^\top Q y = y^\top y = 
+                y_1^2 + y_2^2 + y_3^2 = 2
+            \end{aligned}
+        \end{equation*}
+        而
+        \begin{equation*}
+            \begin{aligned}
+                x^\top Ax = 5y_2^2 + 6y_3^2 \leq
+                6(y_1^2+y_2^2+y_3^2)|_{y_3^2 = 2} = 12
+            \end{aligned}
+        \end{equation*}
+        故最大值为 $ 12. $ 
+        
+        同理，
+        \begin{equation*}
+            \begin{aligned}
+                x^\top Ax \geq 0(y_1^2+y_2^2+y_3^2)|_{y_1^2 = 2} = 0
+            \end{aligned}
+        \end{equation*}
+    \end{enumerate}
+\end{enumerate}
+
+\sssubsection{二次型的最值}
+
+设 $ n $ 元二次型 $ f = x^\top Ax $ 的特征值为 $ \lambda_i, $ 则对任意 $ n $ 维列向量 $ x, $ 有
+\begin{equation*}
+    \begin{aligned}
+        \lambda_{\textrm{min}} x^\top x\leq x^\top Ax\leq \lambda_{\textrm{max}}x^\top x
+    \end{aligned}
+\end{equation*}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ A = \begin{pmatrix}
+        2&1&-1\\1&2&1\\-1&1&2\\
+    \end{pmatrix}, B = \begin{pmatrix}
+        1&0&1\\0&1&1\\1&1&2\\
+    \end{pmatrix}, $ 
+    \begin{enumerate}
+        \item 证明 $ A,B $ 不相似；
+        \item 求可逆矩阵 $ C $ 使得 $ C^\top AC = B. $ 
+    \end{enumerate}
+    \item[\textbf{方法}] \textbf{规范型结合传递性}
+    
+    由于 $ \textrm{tr}(A)\neq \textrm{tr}(B), $ 二者不相似。
+
+    \begin{equation*}
+        \begin{aligned}
+            C_1^\top AC_1 = \overset{\textrm{规范型}}\Lambda = C_2^\top BC_2 \Rightarrow
+            B = (C_1C_2^{-1})^\top A(C_1C_2^{-1})
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}

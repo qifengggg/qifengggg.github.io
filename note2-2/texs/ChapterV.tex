@@ -227,3 +227,122 @@ $ B = (P_1P_2^{-1})^{-1}A(P_1P_2^{-1}). $
     \item $ r(A-\lambda_1E) + r(\lambda_2E-A) = n; $ 
     \item $ A $ 可以相似对角化。
 \end{itemize}
+
+\Section{实对称矩阵的计算}
+
+\subsection{求正交矩阵}
+
+\begin{enumerate}
+    \item 特征值 $ \Rightarrow \Lambda = \begin{pmatrix}
+        \lambda_1&&\\&\ddots&\\&&\lambda_n
+    \end{pmatrix} $ 
+    \item 特征向量 $ \Rightarrow P = (\alpha_1,\cdots,\alpha_n) $ 
+    \item 单位化 $ \Rightarrow Q = (\gamma_1,\cdots,\gamma_n) $ 
+\end{enumerate}
+
+\subsection{求实对称矩阵}
+
+\begin{itemize}
+    \item $ P^{-1}AP = \Lambda, A = P\Lambda P^{-1} $ 
+    \item $ Q^\top AQ = \Lambda, A = Q\Lambda Q^\top $ 
+    \item 分解定理 - $ A = \dis\sum\lambda_i\gamma_i\gamma_i^\top $ 
+    \item 特别地，$ r(A) = 1 $ 时，$ A = \textrm{tr}(A)\gamma_1\gamma_1^\top $ 
+\end{itemize}
+
+\begin{enumerate}
+    \item[\textbf{定理}] 设 $ A $ 为 $ n $ 阶矩阵，则 $ A $ 可正交相似对角化 $ \Leftrightarrow A $ 为实对称矩阵。
+    \item[\textbf{证明}] 
+    由于 $ A $ 可正交相似对角化 $  \Rightarrow Q^\top AQ =\Lambda \Rightarrow
+    A = Q\Lambda Q^\top \Rightarrow A^\top = Q^\top \Lambda Q = A, $ 
+    故 $ A $ 为实对称矩阵。
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 设 $ A $ 为三阶实对称矩阵，正交矩阵 $ Q = (\gamma_i) $ 使得 $ Q^\top AQ = \begin{pmatrix}
+        2&&\\&3&\\&&4
+    \end{pmatrix}, $ 求 $ A - \gamma_1\gamma_1^\top $ 的特征值。 
+    \item[\textbf{方法}] 
+    由于 $ A = \dis \sum\lambda_i\gamma_i\gamma_i^\top 
+    \Rightarrow A - \gamma_1\gamma_1^\top = 
+    1\gamma_1\gamma_1^\top + 
+    3\gamma_2\gamma_2^\top + 
+    4\gamma_3\gamma_3^\top $ 
+    因此特征值分别为 $ 1,3,4. $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}] 令 $ A = \begin{pmatrix}
+        1&1&1\\1&3&1\\1&1&1
+    \end{pmatrix}, $ 求正交矩阵 $ Q $ 使得 $ Q^\top (A+A^*)Q $ 为对角矩阵。
+
+    $ ※ $  需要 $ A $ 与 $ A^* $ 同时正交相似对角化。
+    \item[\textbf{方法}]
+    
+    可以求出正交矩阵 $ Q = (\gamma_i) $ 令 $ Q^\top AQ \whichis \Lambda = \begin{pmatrix}
+        0&&\\&1&\\&&4
+    \end{pmatrix}. $ 其中，
+    \begin{equation*}
+        \begin{aligned}
+            \gamma_1 = \dfrac{1}{\sqrt 2}(1,0,-1)^\top,
+            \gamma_2 = \dfrac{1}{\sqrt 3}(1,-1,1)^\top,
+            \gamma_3 = \dfrac{1}{\sqrt 6}(1,2,1)^\top.
+        \end{aligned}
+    \end{equation*}
+    此时，由于
+    \begin{equation*}
+        \begin{aligned}
+            A = Q\Lambda Q^\top \Rightarrow A^* = (Q\Lambda Q^\top)^*
+            = (Q^\top)^*\Lambda^*Q^* \\ 
+            Q^\top A^*Q = Q^\top(Q^\top)^*\Lambda^*Q^*Q = |Q^\top|\Lambda^*|Q|
+            = \begin{pmatrix}
+                4&&\\&0&\\&&0
+            \end{pmatrix}.
+        \end{aligned}
+    \end{equation*}
+    那么 $ Q^\top(A+A^*)Q = Q^\top AQ + Q^\top A^*Q = \begin{pmatrix}
+        4&&\\&1&\\&&4
+    \end{pmatrix}. $ 
+    \item[\textbf{方法}] \textbf{表格法推广}
+    
+    对三阶 $ A $ 的伴随矩阵 $ A^*, $ 有
+    \begin{table}[!htbp]\centering
+        \begin{tabular}{ccc}
+        \toprule
+        $ A^* $ & $ \lambda $ & $ \alpha $  \\ \midrule
+        1 & $ \lambda_2\lambda_3 $ & $ \alpha_1 $  \\
+        2 & $ \lambda_1\lambda_3 $ & $ \alpha_2 $  \\
+        3 & $ \lambda_1\lambda_2 $ & $ \alpha_3 $  \\ \bottomrule
+        \end{tabular}
+    \end{table}
+
+    那么，若 $ A $ 对应的特征值是 $ 0,1,4, $ 由表可以知道
+    $ A^* $ 对应的特征值是 $ 4,0,0, $ 由此可以快速地计算
+    $ A $ 与 $ A^* $ 的对角矩阵。
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}]
+    设 $ A = \begin{pmatrix}
+        5&-3&3\\-1&7&1\\5&5&3
+    \end{pmatrix}, $ 求矩阵 $ C $ 使得 $ A = C^3. $ 
+    \item[\textbf{方法}] \Attention{分解出秩为一的矩阵}
+    
+    对矩阵 $ A = \begin{pmatrix}
+        x&\square&a\\y&\square&b\\\square&\square&\square
+    \end{pmatrix}, $ 
+    尝试将其分解为 $ \begin{pmatrix}
+        z&\square&a\\y&\square&b\\\square&\square&\square
+    \end{pmatrix}_B + kE $ 使得 $ z,y $ 与 $ a,b $ 等比例。
+
+    此时可以通过 $ B $ 求 $ A $ 特征值特征向量。由于 $ A = C^3, C $ 的特征值 $ \lambda_C = \dsqrt[3]{\lambda_A}. $ 
+\end{enumerate}
+
+\begin{enumerate}
+    \item[\textbf{例题}]
+    设 $ A = \begin{pmatrix}
+        5&-3&3\\-3&5&3\\3&3&5
+    \end{pmatrix}, $ 求矩阵 $ C $ 使得 $ A = C^3. $
+    \item[\textbf{方法}] 
+    由于 $ A $ 是实对称矩阵，可以相似对角化，因此
+    可以直接求 $ Q $ 使得 $ Q^\top AQ = \Lambda. $ 
+\end{enumerate}
