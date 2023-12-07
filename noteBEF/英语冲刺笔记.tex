@@ -22,6 +22,8 @@
 \usepackage{comment}
 \usepackage{extarrows}
 \usepackage{inconsolata}
+\usepackage{enumitem}
+\usepackage{ulem}
 
 \geometry{
 	a4paper,
@@ -41,7 +43,7 @@
 		\hyperlink{Index}{\includegraphics[height=7.5mm]{1.jpg}}
 	\end{minipage}
 	\begin{minipage}[c]{0.4\textwidth}
-	英语小作文笔记
+	英语冲刺笔记
 	\end{minipage}}
 \fancyhead[R]{
     \begin{minipage}[r]{0.1\textwidth}
@@ -57,9 +59,13 @@
 \usepackage{titletoc}
 \titlecontents{section}[4em]{\bfseries \zihao{5} \vspace{2pt}}
 {\contentslabel{2em}}{\hspace*{-4em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+
+
+\begin{comment}
 \titlecontents{subsection}[5em]{\zihao{5}}{\contentslabel{2em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
 \titlecontents{subsubsection}[7em]{\zihao{5}}{\contentslabel{3em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
-\titlecontents{paragraph}[11em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{paragraph}[11em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}	
+\end{comment}
 
 \pagestyle{fancy}
 
@@ -69,7 +75,7 @@
 }
 %\renewcommand{\qedsymbol}{$\blacksquare$}
 
-\renewcommand{\labelenumi}{\roman{enumi}.}
+\renewcommand{\labelenumi}{\Roman{enumi}.}
 \newcommand{\dis}{\displaystyle}
 \newcommand{\Attention}[1]{\textcolor{red}{\bf{#1}}}
 \newcommand{\sssubsection}[1]{\noindent\textbf{#1}}
@@ -79,6 +85,7 @@
 \newcommand{\whichis}{\mathop=\limits^\Delta}
 \newcommand{\atRight}[1]{\makebox[0.94\linewidth][r]{#1}}
 \newcommand{\YS}{\makebox[0.94\linewidth][r]{Yours sincerely,}}
+\newcommand{\YT}{\makebox[0.94\linewidth][r]{Yours truely,}}
 \newcommand{\LM}{\makebox[0.94\linewidth][r]{Li Ming}}
 \newcommand{\Chapter}[1]{\chapter{\hyperlink{Index}{#1}}}
 \newcommand{\YSLM}{
@@ -87,10 +94,15 @@
 	\LM
 }
 
+\newcommand{\YTLM}{
+	\YT
+	
+	\LM
+}
 
-\titleformat{\chapter}{\centering\Huge\bfseries\vspace{-2em}}{类型\,\thechapter}{1em}{}
+\titleformat{\chapter}{\centering\Huge\bfseries\vspace{-2em}}{第 \thechapter 章}{0.5em}{}
 
-\title{\includegraphics[scale=0.6]{1.jpg}\\ \textsf{英语小作文笔记}}
+\title{\includegraphics[scale=0.6]{1.jpg}\\ \textsf{英语冲刺笔记}}
 \author{\href{https://qifengggg.github.io/}{奇峰}}
 \date{之前}
 
@@ -124,7 +136,7 @@
 
 \mainmatter
 
-\input{texs/ChapterO.tex}
 \input{texs/ChapterI.tex}
+\input{texs/ChapterEX.tex}
 
 \end{document}
